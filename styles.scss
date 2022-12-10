@@ -1,13 +1,117 @@
-/* css styles */
-.faux-block {
-    display: block;
-    padding-bottom: 0.4em;
+/*-- scss:defaults --*/
+$purple:  #170C3A !default;
+$light-orange:  #FB9E07 !default;
+$orange:  #EE6A24 !default;
+$red:     #CF4446 !default;
+
+$link-color: $orange !default;
+$link-decoration: none !default;
+$link-hover-color: $red !default;
+$link-hover-decoration: underline !default;
+
+$navbar-bg: $purple !default;
+$navbar-fg: #fff !default;
+$navbar-hl: $light-orange !default;
+
+body, html{
+    height: 100% !important; /*Body covers the full viewing range*/
+    width: 100% !important;
+    margin: 0; /*No blank space*/
+    padding: 0;
 }
 
-/* Changing default jolla layout*/
-.about-links {
-    display: flex;
-    flex-direction: row !important;
-    justify-content: center;
-    gap: 1em
+#quarto-header {
+    color:white !important;
+    transition: color .5s ease-in;
+    
 }
+
+.navbar-title:hover {
+    color: $light-orange;
+}
+
+#quarto-content {
+    width: 95%;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-items: center;
+}
+
+.container {
+    grid-template-columns: 1fr 2fr;
+    padding-top: 15px;
+    width: 100%;
+    margin-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pad {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+
+@media (min-width: 500px) and (max-width: 992px) {
+    .container {
+        padding: 50px;
+    }
+
+    .grid {
+        gap: 0 !important;
+    }
+}
+
+
+
+.about {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px;
+    text-align: center;
+}
+img {
+    height: 15em !important;
+    width: 15em;
+    object-fit: cover;
+
+}
+
+.presentation-text {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.presentation-subtext {
+    font-size: 1.1rem;
+    padding-top: .5rem;
+    font-weight: normal;
+    color: rgb(0, 0, 0, .5)
+}
+
+.network-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    color:$orange
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+

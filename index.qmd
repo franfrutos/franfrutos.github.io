@@ -1,20 +1,55 @@
 ---
-about:
-  template: jolla
-  image: source/myself_main.jpeg
-  image-shape: round
-  links:
-    - icon: twitter
-      href: https://twitter.com/Fran_gfr
-    - icon: github
-      href: https://github.com/franfrutos
-    - text: "{{< fa brands researchgate >}}"
-      href: https://www.researchgate.net/profile/Francisco-Garre-Frutos-2
-    - text: "{{< fa brands linkedin-in >}}"
-format: 
-    html:
-        css: styles.scss
-        banner-header-class: "home"
+pagetitle: "{{< meta website.title >}}"
+description-meta: "{{< meta website.description >}}"
+main-photo: /source/myself_main.jpeg
+format:
+  html:
+    quarto-template-params:
+      banner-header-class: "home"
+    theme: styles.scss
+    toc: false
+    anchor-sections: false
+    page-layout: custom
 ---
+:::{.row}
+:::{.grid .container}
+:::{.g-col-12 .g-col-lg-4 .pad}
+:::{.about}
+```{=html}
+<div class="">
+    <picture>
+      <img class="rounded-circle" src="{{< meta main-photo >}}" alt="{{< meta website.title >}}">
+    </picture>
+</div>
+```
+:::{#presentation}
+```{=html}
+<div class="presentation-text">Francisco Garre-Frutos</div>
+<div class="presentation-subtext">Data analyst and experimental psychologist</div>
+```
+:::{.network-icon}
+```{=html}
+<!-- Truco extrañisimo. Para que font awesome funcione en un code block de html es necesario poner un shortcode referenciando lo que se va a utilizar-->
+{{< fa brands >}}
+<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-twitter fa-xl" aria-label="twitter"></i></a>
+<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a>
+<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-researchgate fa-xl" aria-label="researchgate"></i></a>
+<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a><a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-envelope fa-xl" aria-label="envelope"></i></a>
+```
+:::
+:::
+:::
+:::
 
-Hey, this is my personal website (just born). Here I will post interesting things I learn along the way. 
+:::{.bio .g-col-12 .g-col-lg-8 .pad}
+# About me
+
+I am currently a PhD student in experimental psychology in the [Cognitive Neuroscience group](https://cimcyc.ugr.es/investigacion/grupos/hum379) at the University of Granada and I collaborate with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/quienes-somos/) (CALL) at the Autonomous University of Madrid. My work focuses on investigating the role of rewards in attentional capture. 
+
+Outside academia, I love programming, statistics, data visualisation, data analysis and web development (although the latter may seem strange). I have experience developing software to run online experiments and working with large amounts of data, both attitudinal (surveys, questionnaires) and behavioural.
+
+The website is work im progress!
+
+:::
+:::
+:::

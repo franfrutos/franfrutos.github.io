@@ -8,9 +8,8 @@ website:
   description: "Francisco Garre-Frutos is a Ph.D student at University of Granada, researching about the influence of selection history on attentional capture (and coding and plotting things)."
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: About
+        href: index.qmd
 
   page-footer:
     center: |
@@ -19,10 +18,7 @@ website:
 
 format:
   html:
-    theme: 
-      light: lumen
-      dark: slate
-    css: styles.scss
+    theme: styles.scss
     toc: true
 
 
