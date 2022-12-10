@@ -1,7 +1,20 @@
 ---
-title: "franfrutos.github.io"
+about:
+  template: jolla
+  image: source/myself_main.jpeg
+  image-shape: round
+  links:
+    - icon: twitter
+      href: https://twitter.com/Fran_gfr
+    - icon: github
+      href: https://github.com/franfrutos
+    - text: "{{< fa brands researchgate >}}"
+      href: https://www.researchgate.net/profile/Francisco-Garre-Frutos-2
+    - text: "{{< fa brands linkedin-in >}}"
+format: 
+    html:
+        css: styles.scss
+        banner-header-class: "home"
 ---
 
-This is a Quarto website.
-
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Hey, this is my personal website (just born). Here I will post interesting things I learn along the way. 

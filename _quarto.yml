@@ -1,18 +1,28 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "franfrutos.github.io"
+  title: "Francisco Garre-Frutos"
+  favicon: source/favicon-32.png # Provisional favicon
+  description: "Francisco Garre-Frutos is a Ph.D student at University of Granada, researching about the influence of selection history on attentional capture (and coding and plotting things)."
   navbar:
     left:
       - href: index.qmd
         text: Home
       - about.qmd
 
+  page-footer:
+    center: |
+      <span class="faux-block">&#169; {{< var years >}}, {{< meta website.title >}}</span>
+
+
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      light: lumen
+      dark: slate
+    css: styles.scss
     toc: true
 
 

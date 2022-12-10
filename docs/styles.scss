@@ -1,0 +1,11 @@
+/* css styles */
+.faux-block {
+    display: block;
+    padding-bottom: 0.4em;
+}
+
+.about-links {
+    flex-direction: row !important;
+    justify-content: center;
+    gap: 2em
+}
