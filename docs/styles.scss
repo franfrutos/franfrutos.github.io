@@ -4,8 +4,10 @@
     padding-bottom: 0.4em;
 }
 
+/* Changing default jolla layout*/
 .about-links {
+    display: flex;
     flex-direction: row !important;
     justify-content: center;
-    gap: 2em
+    gap: 1em
 }
