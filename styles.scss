@@ -30,19 +30,14 @@ body, html{
     color: $light-orange;
 }
 
-#quarto-content {
-    width: 95%;
-    margin-right: auto !important;
-    margin-left: auto !important;
-}
 
-
-.container {
-    padding-top: 15px;
-    width: 100%;
-    margin-top: 0;
-    padding-left: 15px;
-    padding-right: 15px;
+/* The page overflow the screen in the home site*/
+#home {
+    #quarto-content {
+        width: 95%;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    } 
 }
 
 .pad {
@@ -56,9 +51,10 @@ body, html{
     .container {
         padding: 50px;
     }
-
-    .grid {
-        gap: 0 !important;
+    #home {
+        .grid {
+            gap: 0 !important;
+        }
     }
 }
 
@@ -100,7 +96,7 @@ img {
     color:$orange
 }
 
-.bio {
+#about-me {
     display: flex;
     flex-direction: column;
     justify-content: start;

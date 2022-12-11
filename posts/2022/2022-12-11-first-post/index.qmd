@@ -1,0 +1,13 @@
+---
+title: "First Post!"
+date: 2022-12-11
+description: "I'm just playing with quarto blogs."
+categories: [categories, VScode, R, Python, uwu]
+image: ../../../source/pollito.jpg
+---
+
+# Hello World!
+
+## Hello World!
+
+### Hello World...

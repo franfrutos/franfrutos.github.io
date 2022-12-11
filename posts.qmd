@@ -1,0 +1,9 @@
+---
+title: "Blog"
+description-meta: "{{< meta website.description >}}"
+listing: # Make a Custom Listing when I can!
+  contents: posts
+  sort: "date desc"
+  categories: true
+---
+

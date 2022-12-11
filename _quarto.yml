@@ -10,6 +10,8 @@ website:
     left:
       - text: About
         href: index.qmd
+      - text: Blog
+        href: posts.qmd
 
   page-footer:
     center: |

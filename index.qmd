@@ -11,15 +11,12 @@ format:
     anchor-sections: false
     page-layout: custom
 ---
+:::{#home}
 :::{.grid .container}
 :::{.g-col-12 .g-col-lg-4 .pad}
 :::{.about}
 ```{=html}
-<div class="">
-    <picture>
-      <img class="rounded-circle" src="{{< meta main-photo >}}" alt="{{< meta website.title >}}">
-    </picture>
-</div>
+  <img class="rounded-circle myself" src="{{< meta main-photo >}}" alt="{{< meta website.title >}}">
 ```
 :::{#presentation}
 ```{=html}
@@ -40,14 +37,15 @@ format:
 :::
 :::
 
-:::{.bio .g-col-12 .g-col-lg-8 .pad}
+:::{.g-col-12 .g-col-lg-8 .pad}
 # About me
 
 I am currently a PhD student in experimental psychology in the [Cognitive Neuroscience group](https://cimcyc.ugr.es/investigacion/grupos/hum379) at the University of Granada and I collaborate with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/quienes-somos/) (CALL) at the Autonomous University of Madrid. My work focuses on investigating the role of rewards in attentional capture. 
 
-Outside academia, I love programming, statistics, data visualisation, data analysis and web development (although the latter may seem strange). I have experience developing software to run online experiments and working with large amounts of data, both attitudinal (surveys, questionnaires) and behavioural.
+I love programming, statistics, data visualisation, data analysis and web development. I have experience developing software to run online experiments and working with large amounts of data, both attitudinal (surveys, questionnaires) and behavioural.
 
-The website is work im progress!
+The website is work in progress!
 
+:::
 :::
 :::
