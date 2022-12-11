@@ -1,6 +1,7 @@
 /.quarto/
 
 /.luarc.json
-/.file.qmd
+file.qmd
 /.file.html
 /.Rprofile
+

@@ -6,8 +6,12 @@ categories: [categories, VScode, R, Python, uwu]
 image: ../../../source/pollito.jpg
 ---
 
-# Hello World!
+This is a a density plot of 100 samples random normal distribution vs the density function of a normal distribution: 
 
-## Hello World!
-
-### Hello World...
+```{r}
+library(ggplot2)
+ggplot(data.frame(x = rnorm(1e3, 0, 1)), aes(x = x)) +
+    geom_density(color = "#EE6A24", fill = "#170C3A", alpha = .5) +
+    theme_minimal() +
+    stat_function(fun = dnorm, args = list(mean = 0, sd = 1), fill = "#170C3A", geom = "area", alpha = .5)
+```
