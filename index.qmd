@@ -31,10 +31,10 @@ format:
 ```{=html}
 <!-- Truco extrañisimo. Para que font awesome funcione en un code block de html es necesario poner un shortcode referenciando lo que se va a utilizar-->
 {{< fa brands >}}
-<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-twitter fa-xl" aria-label="twitter"></i></a>
-<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a>
-<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-researchgate fa-xl" aria-label="researchgate"></i></a>
-<a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a><a href="http://localhost:6415/www.google.com"><i class="fa-brands fa-envelope fa-xl" aria-label="envelope"></i></a>
+<a href="https://twitter.com/Fran_gfr"><i class="fa-brands fa-twitter fa-xl" aria-label="twitter"></i></a>
+<a href="https://github.com/franfrutos"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a>
+<a href="https://www.researchgate.net/profile/Francisco-Garre-Frutos-2"><i class="fa-brands fa-researchgate fa-xl" aria-label="researchgate"></i></a>
+<a href="https://www.linkedin.com/in/francisco-garre-frutos-462070129/"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a><a href="fgfrutos@gmail.com"><i class="fa-brands fa-envelope fa-xl" aria-label="envelope"></i></a>
 ```
 :::
 :::
