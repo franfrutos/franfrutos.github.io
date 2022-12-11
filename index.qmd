@@ -21,7 +21,7 @@ format:
 :::{#presentation}
 ```{=html}
 <div class="presentation-text">Francisco Garre-Frutos</div>
-<div class="presentation-subtext">Data analyst and experimental psychologist</div>
+<div class="presentation-subtext">Experimental psychologist</div>
 ```
 :::{.network-icon}
 ```{=html}
