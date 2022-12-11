@@ -11,7 +11,6 @@ format:
     anchor-sections: false
     page-layout: custom
 ---
-:::{.row}
 :::{.grid .container}
 :::{.g-col-12 .g-col-lg-4 .pad}
 :::{.about}
@@ -50,6 +49,5 @@ Outside academia, I love programming, statistics, data visualisation, data analy
 
 The website is work im progress!
 
-:::
 :::
 :::
