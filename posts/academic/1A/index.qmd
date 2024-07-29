@@ -1,0 +1,11 @@
+---
+title: "Measuring visual attention in the wild (a  prime in how to conduct online visual studies)"
+date: 2022-12-11
+description: "I'm just playing with quarto blogs."
+categories: []
+draft: true
+---
+
+
+
+

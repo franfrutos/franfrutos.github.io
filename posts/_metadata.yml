@@ -1,0 +1,14 @@
+
+title-block-banner: true
+
+# Default knitr options
+execute:
+  echo: true
+  message: true
+  warning: true
+  freeze: auto
+
+# Default author
+author:
+  - name: Francisco Garre Frutos
+    #url: https://franfrutos.github.io/

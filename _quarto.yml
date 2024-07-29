@@ -1,0 +1,40 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Francisco Garre-Frutos"
+  favicon: source/favicon-32.png
+  description: "Francisco Garre-Frutos is a Ph.D student at University of Granada, researching about the influence of selection history on attentional capture (and coding and plotting things)."
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: CV
+        href: CV.qmd
+  page-footer:
+    center: |
+      <span>&#169; {{< var years >}}, {{< var name >}}</span>
+  search: false
+      
+format:
+  html:
+    theme: 
+     light: styles.scss
+     dark: dark.scss
+    anchor-sections: true
+    toc: true
+    toc-depth: 2
+    toc-location: left
+    citations-hover: true
+    code-link: true
+    link-external-newwindow: true
+    highlight-style: ayu
+    code-fold: show
+    html-math-method: mathjax
+    linestretch: 1.25
+    code-block-border-left: "#31BAE9"
+    footnotes-hover: true
+    reference-location: margin
+    citation-location: margin
+

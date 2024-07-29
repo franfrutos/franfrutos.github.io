@@ -1,0 +1,102 @@
+---
+format: 
+  html:
+    toc-location: right
+---
+# Francisco Garre-Frutos
+::: {.content-visible when-format="html"}
+[{{< fa globe >}} Website](https://franfrutos.github.io/){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Website"} [{{< fa envelope >}} Email](mailto:fgfrutos@ugr.es){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="email"} [{{< fa brands twitter >}} Twitter](https://www.twitter.com/Fran_gfr){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Twitter"} [{{< fa brands github >}} Github](https://www.github.io/franfrutos){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Github"}
+:::
+
+## <i class="fa-solid fa-graduation-cap"></i> Education
+
+-   2021--Present \| **Ph.D.** *Experimental Psychology*, University of Granada. 
+
+    - Ph.D. founded by an FPU grant awarded by the Spanish Ministry of Universities, supervised by [Juan Lupiáñez](https://www.ugr.es/personal/juan-lupianez-castillo) and [Miguel A. Vadillo](https://mvadillo.com/). My research focuses on the study of the learning conditions of Value-Modulated Attentional Capture (VMAC). Specifically, this thesis aims to test the extent to which we can consider VMAC as an implicit psychological process. 
+
+-   2021--2022 \| **M.S.** *Cogntive and Behavioral Neuroscience*, University of Granada.
+
+-   2016--2020 \| **B.S.** *Psychology*, University of Murcia
+
+
+## <i class="fa-solid fa-file-lines"></i> Publications
+
+López-Martínez, P., **Garre-Frutos, F.**, Vadillo, M. A. Luque, D. (2024). Reliability and validity of experimental measures of habits. *In preparation*. 
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+**Garre-Frutos, F.**, Solana, P., López-Martínez, P., Lupiañez, J., Luque, D., Vadillo, M. A. (2024). Is there value in value-driven distraction? A meta-analysis of studies on individual differences. *Data being collected*. 
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+**Garre-Frutos, F.**\*, López-Martínez, P\*., Luque, D., Vadillo, M. A., González, F. (2024). Is there persistence in value-modulated attentional capture under reversed contingencyes? *Data being collected*. 
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+González, F., **Garre-Frutos, F.**, Hinojosa-Aguayo, I., Hall., G. (2024). Extinction of outcome-specific PIT, instrumental outcome devaluation, and reward-related attentional capture are predicted by affect-driven impulsivity. *Under review at Learning & Behavior*. 
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+Manini, G., **Garre-Frutos, F.**, Botta, F., Martínez-Arévalo, E., Lupiañez, J. (2024). Distraction vs. Interference: Handling fully irrelevant vs. potentially relevant distractors. *Under review at Visual Cognition*. 
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+**Garre-Frutos, F.**, Lupiañez, J., & Vadillo, M. A. (2024). Value-modulated attentional capture depends on explicit awareness. *PsyArXiv*. [https://doi.org/10.31234/osf.io/hpexf](https://doi.org/10.31234/osf.io/hpexf).
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+**Garre-Frutos, F.**, Lupiañez, J. (2024). Inhibition of Return and Learned Value. *PsyArXiv*. [https://doi.org/10.31234/osf.io/p4m29](https://doi.org/10.31234/osf.io/p4m29).
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+**Garre-Frutos, F.**, Vadillo, M. A., González, F., & Lupiáñez, J. (2024). On the reliability of value-modulated attentional capture: An online replication and multiverse analysis. *Behavior Research Methods*, 1-18. [https://doi.org/10.3758/s13428-023-02329-5](https://doi.org/10.3758/s13428-023-02329-5).
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">

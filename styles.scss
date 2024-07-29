@@ -1,0 +1,158 @@
+/*-- scss:defaults --*/
+$purple: #170C3A !default;
+$light-purple: #7556de42;
+$light-orange: #FB9E07 !default;
+$orange: #EE6A24 !default;
+$red: #CF4446 !default;
+
+$link-color: $orange !default;
+$link-decoration: none !default;
+$link-hover-color: $red !default;
+$link-hover-decoration: underline !default;
+$btn-bg: $red !default;
+
+$navbar-bg: $purple !default;
+$navbar-fg: #fff !default;
+$navbar-hl: $light-orange !default;
+
+body,
+html {
+    //height: 80% !important;
+    /*Body covers the full viewing range*/
+    width: 100% !important;
+    margin: 0;
+    /*No blank space*/
+    padding: 0;
+
+}
+
+#quarto-header {
+    color: white !important;
+    transition: color .5s ease-in;
+}
+
+.navbar-title:hover {
+    color: $light-orange;
+}
+
+
+/* The page overflow the screen in the home site*/
+#home {
+    justify-content: center;
+
+    #quarto-content {
+        width: 95%;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    //padding: 0rem 0rem;
+
+    li {
+        font-size: 1.1em;
+
+        .inf {
+            font-size: 0.7em;
+            color: rgb(0, 0, 0, .5)
+        }
+
+        padding-bottom: 1rem;
+    }
+}
+
+.network-icon {
+    a {
+        transition: all .2s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.2);
+        color: $orange !important;
+    }
+}
+
+.footer {
+    border-top: 1px solid #dee2e6;
+}
+
+.about {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20%;
+    text-align: center;
+}
+
+#about {
+    padding-top: 20px;
+}
+
+img.myself {
+    height: 15em !important;
+    width: 15em;
+    object-fit: cover;
+
+}
+
+.presentation-text {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.presentation-subtext {
+    font-size: 1.1rem;
+    padding-top: .5rem;
+    font-weight: normal;
+    color: rgb(0, 0, 0, .5)
+}
+
+.network-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    color: $orange
+}
+
+#about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#recursive-text {
+    height: 25.5px;
+    color: rgb(0, 0, 0, .5)
+}
+
+#recursive-text::after {
+    content: " |";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.btn {
+    background-color: $orange !important;
+    border-color: $orange !important;
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: $light-orange !important;
+    border-color: $light-orange !important;
+}

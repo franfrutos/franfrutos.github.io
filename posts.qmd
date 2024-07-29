@@ -1,0 +1,27 @@
+---
+title: "Portfolio"
+description-meta: "{{< meta website.description >}}"
+---
+
+Work in progress!
+
+<!-- Change this to include in the header of the HTML document.
+     This is an example on how to add interactivity using JS!
+ -->
+<script>
+  const ux_text = document.querySelector("#tabset-1-2-tab");
+  if (window.matchMedia('(max-width: 550px)').matches) {
+    ux_text.textContent = "UX";
+  }
+  window.addEventListener('resize', () => {
+    const ux_text = document.querySelector("#tabset-1-2-tab");
+    console.log(ux_text);
+    
+        // min-width changed to max-width
+    if (window.matchMedia('(max-width: 550px)').matches) {
+        ux_text.textContent = "UX";
+    } else {
+        ux_text.textContent = "User Expererience (UX)";
+    }
+  });
+</script>
