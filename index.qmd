@@ -77,7 +77,7 @@ typewriter();
 :::
 :::{#about}
 <br>
-I am currently a Ph.D. student in Experimental Psychology in the [Cognitive Neuroscience Group](https://cimcyc.ugr.es/investigacion/grupos/hum379) at the University of Granada, collaboratign with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/quienes-somos/) (CALL) at the Autonomous University of Madrid. My current work focuses on investigating the extent to which reward-related attentional biases are implicit, automatic, and uncontrollable. I am also very interested in psychometrics applied to experimental psychology, multilevel modeling, signal detection theory and reinforcement learning.
+I am currently a Ph.D. student in Experimental Psychology in the [Cognitive Neuroscience Group](https://www.ugr.es/~neurocog/) at the University of Granada, collaboratign with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/) (CALL) at the Autonomous University of Madrid. My current work focuses on investigating the extent to which reward-related attentional biases are implicit, automatic, and uncontrollable. I am also very interested in psychometrics applied to experimental psychology, multilevel modeling, signal detection theory and reinforcement learning.
 
 :::
 :::
