@@ -1,0 +1,11 @@
+---
+title: "Google Data Analytics Capstone"
+date: 2022-12-11
+description: "I'm just playing with quarto blogs."
+categories: []
+draft: true
+---
+
+
+
+

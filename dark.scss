@@ -1,0 +1,177 @@
+/*-- scss:defaults --*/
+$purple: #170C3A !default;
+$light-purple: #7556de42;
+$lighter-purple: #baa8f442;
+$light-orange: #FB9E07 !default;
+$orange: #EE6A24 !default;
+$red: #CF4446 !default;
+
+/* Dark mode variables */
+$body-bg: #1e1e1e !default;
+/* Dark mode background color */
+$body-color: #cfcfcf !default;
+/* Dark mode text color */
+$link-color: #EE6A24 !default;
+/* Dark mode link color */
+$input-bg: #2e2e2e !default;
+/* Dark mode input background color */
+$popover-bg: #2c2c2c !default;
+/* Dark mode popover background color */
+
+$link-decoration: none !default;
+$link-hover-color: $red !default;
+$link-hover-decoration: underline !default;
+
+$navbar-bg: $purple !default;
+$navbar-fg: #fff !default;
+$navbar-hl: $light-orange !default;
+
+/*-- scss:defaults --*/
+$purple: #170C3A !default;
+$light-purple: #7556de42;
+$light-orange: #FB9E07 !default;
+$orange: #EE6A24 !default;
+$red: #CF4446 !default;
+
+$link-color: $orange !default;
+$link-decoration: none !default;
+$link-hover-color: $red !default;
+$link-hover-decoration: underline !default;
+
+$navbar-bg: $purple !default;
+$navbar-fg: #fff !default;
+$navbar-hl: $light-orange !default;
+
+body,
+html {
+    //height: 80% !important;
+    /*Body covers the full viewing range*/
+    width: 100% !important;
+    margin: 0;
+    /*No blank space*/
+    padding: 0;
+
+}
+
+#quarto-header {
+    color: white !important;
+    transition: color .5s ease-in;
+}
+
+.navbar-title:hover {
+    color: $light-orange;
+}
+
+
+/* The page overflow the screen in the home site*/
+#home {
+    justify-content: center;
+
+    #quarto-content {
+        width: 95%;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+
+    //padding: 0rem 0rem;
+
+    li {
+        font-size: 1.1em;
+
+        .inf {
+            font-size: 0.7em;
+            color: rgb(0, 0, 0, .5)
+        }
+
+        padding-bottom: 1rem;
+    }
+}
+
+.network-icon {
+    a {
+        transition: all .1s ease-in-out;
+    }
+
+    a:hover {
+        transform: scale(1.2);
+        color: $orange !important;
+    }
+}
+
+.footer {
+    border-top: 1px solid #4a4b4d;
+}
+
+.about {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20%;
+    text-align: center;
+}
+
+#about {
+    padding-top: 20px;
+}
+
+img.myself {
+    height: 15em !important;
+    width: 15em;
+    object-fit: cover;
+
+}
+
+.presentation-text {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.network-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    color: $orange
+}
+
+#about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+
+#recursive-text {
+    height: 25.5px;
+    color: rgba(175, 175, 175, 0.5)}
+
+#recursive-text::after {
+    content: " |";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.btn {
+    background-color: $light-purple !important;
+    border-color: $light-purple !important;
+    transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: $lighter-purple !important;
+    border-color: $lighter-purple !important;
+}

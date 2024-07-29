@@ -1,0 +1,78 @@
+---
+main-photo: /source/myself_main.jpeg
+format:
+  html:
+    quarto-template-params:
+      banner-header-class: "home"
+    toc: false
+    anchor-sections: false
+    page-layout: custom
+---
+
+:::{#home}
+:::{.about}
+```{=html}
+  <img class="rounded-circle myself" src="{{< meta main-photo >}}" alt="{{ var name }}">
+```
+:::{#presentation}
+```{=html}
+<div class="presentation-text">Francisco Garre-Frutos</div>
+<div id="recursive-text">Experimental psychologist.</div>
+<script>
+const it_text = document.getElementById("recursive-text");
+const it_list = ["Experimental Psychologist.", "Cognitive Neuroscientist.", "Ph.D. student."];
+console.log(it_text);
+let counter = 0, step = 150, current_text, char_pos = 0, adding = true;
+
+const typewriter = () => {
+    setTimeout(() => {
+        current_text = it_list[counter];
+        if (current_text.slice(0, char_pos) == "") {
+          it_text.textContent = " ";
+        } else {
+          it_text.textContent = current_text.slice(0, char_pos);
+        }
+        if (adding) {
+            if (char_pos >= current_text.length) {
+                adding = false;
+                setTimeout(() => {
+                    typewriter();
+                }, 1000);
+                return;
+            } else {
+              char_pos++;
+            }
+        } else {
+            if (char_pos == 0) {
+                adding = true;
+                counter = (counter < 2)? counter+1: 0;
+                current_text = it_list[counter];
+            } else {
+                char_pos--;
+            }
+        }
+        typewriter();
+    }, step)
+}
+
+typewriter();
+
+</script>
+```
+:::{.network-icon}
+```{=html}
+<!-- Truco extrañisimo. Para que font awesome funcione en un code block de html es necesario poner un shortcode referenciando lo que se va a utilizar-->
+{{< fa brands >}}
+<a href="https://twitter.com/Fran_gfr"><i class="fa-brands fa-twitter fa-xl" aria-label="twitter"></i></a>
+<a href="https://github.com/franfrutos"><i class="fa-brands fa-github fa-xl" aria-label="github"></i></a>
+<a href="https://www.linkedin.com/in/francisco-garre-frutos-462070129/"><i class="fa-brands fa-linkedin fa-xl" aria-label="linkedin"></i></a><a href="mailto:fgfrutos@gmail.com"><i class="fa-solid fa-envelope fa-xl" aria-label="envelope"></i></a>
+```
+:::
+:::
+:::{#about}
+<br>
+I am currently a Ph.D. student in Experimental Psychology in the [Cognitive Neuroscience Group](https://cimcyc.ugr.es/investigacion/grupos/hum379) at the University of Granada, collaboratign with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/quienes-somos/) (CALL) at the Autonomous University of Madrid. My current work focuses on investigating the extent to which reward-related attentional biases are implicit, automatic, and uncontrollable. I am also very interested in psychometrics applied to experimental psychology, multilevel modeling, signal detection theory and reinforcement learning.
+
+:::
+:::
+:::
