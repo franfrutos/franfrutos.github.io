@@ -1,19 +1,26 @@
 /*-- scss:defaults --*/
+// Colors
 $purple: #170C3A !default;
 $light-purple: #7556de42;
 $light-orange: #FB9E07 !default;
 $orange: #EE6A24 !default;
 $red: #CF4446 !default;
+$gray-900: #212529 !default;
 
+// Links
 $link-color: $orange !default;
 $link-decoration: none !default;
 $link-hover-color: $red !default;
 $link-hover-decoration: underline !default;
-$btn-bg: $red !default;
 
+// Navigation
 $navbar-bg: $purple !default;
 $navbar-fg: #fff !default;
 $navbar-hl: $light-orange !default;
+
+// Body
+$body-color: $gray-900 !default;
+
 
 body,
 html {
@@ -46,18 +53,6 @@ html {
         margin-left: auto !important;
     }
 
-    //padding: 0rem 0rem;
-
-    li {
-        font-size: 1.1em;
-
-        .inf {
-            font-size: 0.7em;
-            color: rgb(0, 0, 0, .5)
-        }
-
-        padding-bottom: 1rem;
-    }
 }
 
 .network-icon {
@@ -81,6 +76,7 @@ html {
     align-items: center;
     padding: 30px 20%;
     text-align: center;
+    line-height: 1.5em;
 }
 
 #about {
@@ -101,12 +97,6 @@ img.myself {
     font-weight: bold;
 }
 
-.presentation-subtext {
-    font-size: 1.1rem;
-    padding-top: .5rem;
-    font-weight: normal;
-    color: rgb(0, 0, 0, .5)
-}
 
 .network-icon {
     display: flex;
@@ -207,7 +197,7 @@ img.myself {
 
     /* Estilos específicos para pantallas extra grandes y monitores 4K */
     .about {
-        padding: 30px 28%;
+        padding: 30px 25%;
     }
 
 }
