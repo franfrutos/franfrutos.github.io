@@ -175,3 +175,57 @@ img.myself {
     background-color: $lighter-purple !important;
     border-color: $lighter-purple !important;
 }
+
+/* Teléfonos móviles en modo retrato */
+@media (max-width: 480px) {
+
+    /* Estilos específicos para móviles en retrato */
+    .about {
+            padding: 30px 8%;
+        }
+}
+
+/* Teléfonos móviles en modo paisaje y tabletas pequeñas en modo retrato */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    /* Estilos específicos para móviles en paisaje y tabletas pequeñas en retrato */
+    .about {
+            padding: 30px 10%;
+        }
+}
+
+/* Tabletas en modo paisaje y computadoras portátiles pequeñas */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Estilos específicos para tabletas en paisaje y computadoras portátiles pequeñas */
+    .about {
+            padding: 30px 8%;
+        }
+}
+
+/* Computadoras portátiles y pantallas de escritorio pequeñas */
+@media (min-width: 1025px) and (max-width: 1200px) {
+
+    /* Estilos específicos para computadoras portátiles y pantallas de escritorio pequeñas */
+    .about {
+            padding: 30px 15%;
+        }
+}
+
+/* Pantallas de escritorio grandes */
+@media (min-width: 1201px) and (max-width: 1600px) {
+
+    /* Estilos específicos para pantallas de escritorio grandes */
+    .about {
+            padding: 30px 15%;
+        }
+}
+
+/* Pantallas extra grandes y monitores 4K */
+@media (min-width: 1601px) {
+    /* Estilos específicos para pantallas extra grandes y monitores 4K */
+    .about {
+            padding: 30% 25%;
+        }
+
+}
