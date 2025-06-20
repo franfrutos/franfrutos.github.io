@@ -44,7 +44,17 @@ format:
 
 <hr width="10%">
 
-González, F., **Garre-Frutos, F.**,  Hinojosa-Aguayo, I., & Hall, G. (2024). Extinction of outcome-specific Pavlovian-to-instrumental transfer (PIT), instrumental outcome devaluation, and reward-related attentional capture are predicted by affect-driven impulsivity. *Learning & Behavior*. [https://doi.org/10.3758/s13420-025-00676-1](https://doi.org/10.3758/s13420-025-00676-1).
+González, F., **Garre-Frutos, F.**,  Hinojosa-Aguayo, I., & Hall, G. (2025). Extinction of outcome-specific Pavlovian-to-instrumental transfer (PIT), instrumental outcome devaluation, and reward-related attentional capture are predicted by affect-driven impulsivity. *Learning & Behavior*. [https://doi.org/10.3758/s13420-025-00676-1](https://doi.org/10.3758/s13420-025-00676-1).
+
+::: {.content-visible when-format="html"}
+::: {.btn-group role="group" aria-label="Open Science Links"}
+[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
+:::
+:::
+
+<hr width="10%">
+
+**Garre-Frutos, F.**, Lupiáñez, J., & Vadillo, M. (*in press*). Value-modulated attentional capture depends on awareness. *Psychonomic Bulletin & Review*.
 
 ::: {.content-visible when-format="html"}
 ::: {.btn-group role="group" aria-label="Open Science Links"}
@@ -86,16 +96,6 @@ Manini, G.\*, **Garre-Frutos, F.**\*, Botta, F., Martínez-Arévalo, E., Lupiañ
 [Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
 :::
 :::
-
-**Garre-Frutos, F.**, Lupiañez, J., & Vadillo, M. A. (2024). Value-modulated attentional capture depends on awareness. *PsyArXiv*. [https://osf.io/preprints/psyarxiv/hpexf_v2/](https://osf.io/preprints/psyarxiv/hpexf_v2/).
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
-
-<hr width="10%">
 
 Martínez-López, P., Vázquez-Millán, A., **Garre-Frutos, F.**, Luque., D. (2024). Assessing the Validity Evidence for Habit Measures Based on Time Pressure. *PsyArXiv*. [https://osf.io/preprints/psyarxiv/q52wb_v2/](https://osf.io/preprints/psyarxiv/q52wb_v2/).
 
