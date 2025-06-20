@@ -24,6 +24,7 @@ format:
 
 ### Journal Artcles
 <hr>
+
 **Garre-Frutos, F.**, Vadillo, M. A., González, F., & Lupiáñez, J. (2024). On the reliability of value-modulated attentional capture: An online replication and multiverse analysis. *Behavior Research Methods*, 1-18. [https://doi.org/10.3758/s13428-023-02329-5](https://doi.org/10.3758/s13428-023-02329-5).
 
 ::: {.content-visible when-format="html"}

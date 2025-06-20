@@ -64,7 +64,8 @@ typewriter();
 <!-- Truco extrañisimo. Para que font awesome funcione en un code block de html es necesario poner un shortcode referenciando lo que se va a utilizar-->
 {{< fa brands >}}
 {{< ai google-scholar >}}
-<a href="https://twitter.com/Fran_gfr"><i class="fa-brands fa-twitter fa-2x" aria-label="twitter"></i></a>
+<a href="https://twitter.com/Fran_gfr"><i class="fa-brands fa-twitter fa-2x" aria-label="twitter\X"></i></a>
+<a href="https://bsky.app/profile/frangfr.bsky.social"><i class="fa-brands fa-bluesky fa-2x" aria-label="bluesky"></i></a>
 <a href="https://github.com/franfrutos"><i class="fa-brands fa-github fa-2x" aria-label="github"></i></a>
 <a href="https://www.linkedin.com/in/francisco-garre-frutos-462070129/"><i class="fa-brands fa-linkedin fa-2x" aria-label="linkedin"></i></a>
 <a href="mailto:fgfrutos@gmail.com"><i class="fa-solid fa-envelope fa-2x" aria-label="email"></i></a>
