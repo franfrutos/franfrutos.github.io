@@ -6,14 +6,14 @@ format:
 ---
 # Francisco Garre-Frutos
 ::: {.content-visible when-format="html"}
-[{{< fa globe >}} Website](https://franfrutos.github.io/){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Website"} [{{< fa envelope >}} Email](mailto:fgfrutos@ugr.es){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="email"} [{{< fa brands twitter >}} Twitter](https://www.twitter.com/Fran_gfr){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Twitter"} [{{< fa brands github >}} Github](https://www.github.io/franfrutos){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Github"} [{{< fa brands bluesky >}} Bluesky](https://bsky.app/profile/frangfr.bsky.social){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Bluesky"}
+[{{< fa globe >}} Website](https://franfrutos.github.io/){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Website"} [{{< fa envelope >}} Email](mailto:fgfrutos@gmail.com){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="email"} [{{< fa brands twitter >}} Twitter](https://www.twitter.com/Fran_gfr){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Twitter"} [{{< fa brands github >}} Github](https://www.github.io/franfrutos){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Github"} [{{< fa brands bluesky >}} Bluesky](https://bsky.app/profile/frangfr.bsky.social){.btn .btn-primary .btn-sm role="button" data-toggle="data" title="Bluesky"}
 :::
 
 ## <i class="fa-solid fa-graduation-cap"></i> Education
 
--   2021--Present \| **Ph.D.** *Experimental Psychology*, University of Granada. 
+-   2021--2025 \| **Ph.D.** *Experimental Psychology*, University of Granada. 
 
-    - Ph.D. founded by an FPU grant awarded by the Spanish Ministry of Universities, supervised by [Juan Lupiáñez](https://www.ugr.es/personal/juan-lupianez-castillo) and [Miguel A. Vadillo](https://mvadillo.com/). My research focuses on the study of the learning conditions of Value-Modulated Attentional Capture (VMAC). Specifically, this thesis aims to test the extent to which we can consider VMAC as an implicit psychological process. 
+    - Ph.D. founded by an FPU grant awarded by the Spanish Ministry of Universities, supervised by [Juan Lupiáñez](https://www.ugr.es/personal/juan-lupianez-castillo) and [Miguel A. Vadillo](https://mvadillo.com/).
 
 -   2021--2022 \| **M.S.** *Cogntive and Behavioral Neuroscience*, University of Granada.
 
@@ -54,10 +54,13 @@ González, F., **Garre-Frutos, F.**,  Hinojosa-Aguayo, I., & Hall, G. (2025). Ex
 
 Franco-Martínez, A., Ferrer-Mendieta, A., Peiro-Lanchares, C., Vadillo, M. A., & **Garre-Frutos, F.** (2025). Choose your own PAS? Quantitative and Qualitative Validity Evidence for the Perceptual Awareness Scale. *PsyArXiv*. [https://osf.io/preprints/psyarxiv/n7zuw_v1](https://osf.io/preprints/psyarxiv/n7zuw_v1). Submitted manuscript.
 
+<hr width="10%">
+
 Theeuwes, J., Manini, G., **Garre-Frutos, F.**, Lupiañez, J., & Van Moorselaar, D. The capture debate revisited: Proactive or reactive suppression—*That is the Question*. Submitted manuscript.
 
+<hr width="10%">
 
-**Garre-Frutos, F.**, Vadillo, M. A. Theeuwes, J., Van Moorselaar, D., & Lupiañez, J.  (2025). The role of selective attention in value-modulated attentional capture. *PsyArXiv*. [https://doi.org/10.31234/osf.io/kv2rx_v2](https://doi.org/10.31234/osf.io/kv2rx_v3). Submitted manuscript.
+**Garre-Frutos, F.**, Vadillo, M. A. Theeuwes, J., Van Moorselaar, D., & Lupiañez, J.  (2025). The role of selective attention in value-modulated attentional capture. *PsyArXiv*. [https://doi.org/10.31234/osf.io/kv2rx_v3](https://doi.org/10.31234/osf.io/kv2rx_v3). Submitted manuscript.
 
 <hr width="10%">
 
