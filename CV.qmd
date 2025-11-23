@@ -25,96 +25,51 @@ format:
 ### Journal Artcles
 <hr>
 
-**Garre-Frutos, F.**, Vadillo, M. A., González, F., & Lupiáñez, J. (2024). On the reliability of value-modulated attentional capture: An online replication and multiverse analysis. *Behavior Research Methods*, 1-18. [https://doi.org/10.3758/s13428-023-02329-5](https://doi.org/10.3758/s13428-023-02329-5).
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+Franco-Martínez, A., Rey-Sáez, R., Adrián-Ventura, J., … **Garre-Frutos, F.**, … Vadillo, M. A. (in press). Replicating the unconscious working memory effect: A multisite preregistered study. *Neuroscience of Consciousness*. <https://doi.org/10.1093/nc/niaf046>.
 
 <hr width="10%">
 
-**Garre-Frutos, F.**, A. Ariza., & González, F. (2024). The effect of reward and punishment on the extinction of attentional capture elicited by value-related stimuli. *Psychological Research*, *89*, 89. [https://doi.org/10.1007/s00426-025-02115-2](https://doi.org/10.1007/s00426-025-02115-2).
+Martínez-López, P., Vázquez-Millán, A., **Garre-Frutos, F.**, & Luque., D. (in press). Assessing the Validity Evidence for Habit Measures Based on Time Pressure. *Behavior Research Methods*. <https://doi.org/10.3758/s13428-025-02865-2>.
 
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+<hr width="10%">
+
+**Garre-Frutos, F.**, Lupiáñez, J., & Vadillo, M. A. (2025). Value-modulated attentional capture depends on awareness. Psychonomic Bulletin & Review, 32, 3025–3040. [https://doi.org/10.3758/s13423-025-02734-1](https://doi.org/10.3758/s13423-025-02734-1).
 
 <hr width="10%">
 
 González, F., **Garre-Frutos, F.**,  Hinojosa-Aguayo, I., & Hall, G. (2025). Extinction of outcome-specific Pavlovian-to-instrumental transfer (PIT), instrumental outcome devaluation, and reward-related attentional capture are predicted by affect-driven impulsivity. *Learning & Behavior*. [https://doi.org/10.3758/s13420-025-00676-1](https://doi.org/10.3758/s13420-025-00676-1).
 
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+<hr width="10%">
+
+**Garre-Frutos, F.**, A. Ariza., & González, F. (2024). The effect of reward and punishment on the extinction of attentional capture elicited by value-related stimuli. *Psychological Research*, *89*, 89. [https://doi.org/10.1007/s00426-025-02115-2](https://doi.org/10.1007/s00426-025-02115-2).
 
 <hr width="10%">
 
-**Garre-Frutos, F.**, Lupiáñez, J., & Vadillo, M. (*in press*). Value-modulated attentional capture depends on awareness. *Psychonomic Bulletin & Review*.
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+**Garre-Frutos, F.**, Vadillo, M. A., González, F., & Lupiáñez, J. (2024). On the reliability of value-modulated attentional capture: An online replication and multiverse analysis. *Behavior Research Methods, 56*(6), 5986-6003. [https://doi.org/10.3758/s13428-023-02329-5](https://doi.org/10.3758/s13428-023-02329-5).
 
 <hr width="10%">
-
-
 
 ### Submitted papers
 <hr>
-Manini, G., **Garre-Frutos, F.**, Botta, F., Martínez-Arévalo, E., Lupiañez, J. (2024). Distraction vs. Interference: Handling fully irrelevant vs. potentially relevant distractors. *PsyArXiv*. [https://doi.org/10.31234/osf.io/rkpb8_v1](https://doi.org/10.31234/osf.io/rkpb8_v1).
 
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+Franco-Martínez, A., Ferrer-Mendieta, A., Peiro-Lanchares, C., Vadillo, M. A., & **Garre-Frutos, F.** (2025). Choose your own PAS? Quantitative and Qualitative Validity Evidence for the Perceptual Awareness Scale. *PsyArXiv*. [https://osf.io/preprints/psyarxiv/n7zuw_v1](https://osf.io/preprints/psyarxiv/n7zuw_v1). Submitted manuscript.
 
-<hr width="10%">
+Theeuwes, J., Manini, G., **Garre-Frutos, F.**, Lupiañez, J., & Van Moorselaar, D. The capture debate revisited: Proactive or reactive suppression—*That is the Question*. Submitted manuscript.
 
 
-Manini, G.\*, **Garre-Frutos, F.**\*, Botta, F., Martínez-Arévalo, E., Lupiañez, J. (2024). Facilitation by Irrelevant Distractors Under High Perceptual Load: Suppression or Controlled Attentional Capture? *PsyArXiv*. [https://doi.org/10.31234/osf.io/xq2h8_v2](https://doi.org/10.31234/osf.io/xq2h8_v2)
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+**Garre-Frutos, F.**, Vadillo, M. A. Theeuwes, J., Van Moorselaar, D., & Lupiañez, J.  (2025). The role of selective attention in value-modulated attentional capture. *PsyArXiv*. [https://doi.org/10.31234/osf.io/kv2rx_v2](https://doi.org/10.31234/osf.io/kv2rx_v3). Submitted manuscript.
 
 <hr width="10%">
 
-**Garre-Frutos, F.**, Vadillo, M. A. Theeuwes, J., Van Moorselaar, D., & Lupiañez, J., &  (2024). The Role of Selective Attention in Value-Modulated Attentional Capture. *PsyArXiv*. [https://doi.org/10.31234/osf.io/kv2rx_v2](https://doi.org/10.31234/osf.io/kv2rx_v2).
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
-
-Martínez-López, P., Vázquez-Millán, A., **Garre-Frutos, F.**, Luque., D. (2024). Assessing the Validity Evidence for Habit Measures Based on Time Pressure. *PsyArXiv*. [https://osf.io/preprints/psyarxiv/q52wb_v2/](https://osf.io/preprints/psyarxiv/q52wb_v2/).
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+Manini, G.\*, **Garre-Frutos, F.**\*, Botta, F., Martínez-Arévalo, E., & Lupiañez, J. (2025). Facilitation by Irrelevant Distractors Under High Perceptual Load: Suppression or Controlled Attentional Capture? *PsyArXiv*. [https://doi.org/10.31234/osf.io/xq2h8_v3](https://doi.org/10.31234/osf.io/xq2h8_v3). Submitted manuscript.
 
 <hr width="10%">
 
-**Garre-Frutos, F.**, Lupiañez, J. (2024). Inhibition of Return and Learned Value. *PsyArXiv*. [https://doi.org/10.31234/osf.io/p4m29](https://doi.org/10.31234/osf.io/p4m29).
+Manini, G., **Garre-Frutos, F.**, Botta, F., Martínez-Arévalo, E., Lupiañez, J. (2024). Distraction vs. Interference: Handling fully irrelevant vs. potentially relevant distractors. *PsyArXiv*. [https://doi.org/10.31234/osf.io/rkpb8_v1](https://doi.org/10.31234/osf.io/rkpb8_v1). Submitted manuscript.
 
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+<hr width="10%">
+
+**Garre-Frutos, F.**, Lupiañez, J. (2024). Inhibition of Return and Learned Value. *PsyArXiv*. [https://doi.org/10.31234/osf.io/p4m29](https://doi.org/10.31234/osf.io/p4m29). Submitted manuscript.
 
 <hr width="10%">
 
@@ -123,50 +78,20 @@ Martínez-López, P., Vázquez-Millán, A., **Garre-Frutos, F.**, Luque., D. (20
 
 **Garre-Frutos, F.**\*, López-Martínez, P\*., Luque, D., Vadillo, M. A., González, F. (2024). Explicit knowledge modulates Pavlovian attentional biases. *In preparation*. 
 
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+<hr width="10%">
+
+López-Martínez, P., **Garre-Frutos, F.**, Vadillo, M. A. Luque, D. Lingering habits: Testing the temporal stability of habits. *Data being collected*. 
 
 <hr width="10%">
 
 López-Martínez, P., **Garre-Frutos, F.**, Vadillo, M. A. Luque, D. Reliability and validity of experimental measures of habits. *In preparation*. 
 
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+<hr width="10%">
+
+**Garre-Frutos, F.**, Solana, P., López-Martínez, P., Lupiañez, J., González, F., & Vadillo, M. A. Is there value in value-driven distraction? A meta-analysis of studies on individual differences. *In preparation*. 
 
 <hr width="10%">
 
-**Garre-Frutos, F.**, Solana, P., López-Martínez, P., Lupiañez, J., Luque, D., & Vadillo, M. A. Is there value in value-driven distraction? A meta-analysis of studies on individual differences. *In preparation*. 
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
-
-<hr width="10%">
-
-**Garre-Frutos, F.**, Ariza, A., López-Martínez, P., & González, F. Is attentional sign-tracking associated with emotional impulsivity? a meta-analysis. *In preparation*. 
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
-
-<hr width="10%">
-
-Manini, G.\*, **Garre-Frutos, F.**\*, Botta, F., Martínez-Arévalo, E., Lupiañez, J.. Do perceptual modulates how we handel fully irrelevant distractors? A meta-analysis. *In preparation*. 
-
-::: {.content-visible when-format="html"}
-::: {.btn-group role="group" aria-label="Open Science Links"}
-[Data](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="data" title="data"} [Code](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="code" title="Data File"} [PDF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="pdf" title="Data File"} [OSF](){.btn-sm .btn .btn-primary .disabled role="button" data-toggle="osf" title="Data File"}
-:::
-:::
+Rey-Sáez, R., Franco-Martínez, A., Castillejo, A., Vadillo, M. A., & **Garre-Frutos, F.**. A multilevel signal detection approach to unconscious processing research. *In preparation*. 
 
 <hr width="10%">
