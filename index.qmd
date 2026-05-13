@@ -16,7 +16,7 @@ format:
 ```
 :::{#presentation}
 ```{=html}
-<div class="presentation-text">Francisco Garre-Frutos</div>
+<div class="presentation-text">Francisco Garre-Frutos, PhD</div>
 <div id="recursive-text">Experimental psychologist.</div>
 <script>
 const it_text = document.getElementById("recursive-text");
@@ -77,7 +77,7 @@ typewriter();
 :::
 :::
 :::{#about}
-I am currently a Ph.D. student in Experimental Psychology in the [Cognitive Neuroscience Group](https://www.ugr.es/~neurocog/) at the University of Granada, collaboratign with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/) (CALL) at the Autonomous University of Madrid. My current work focuses on investigating the extent to which reward-related attentional biases are implicit, automatic, and uncontrollable. I am also very interested in psychometrics applied to experimental psychology, multilevel modeling, signal detection theory and reinforcement learning.
+I am currently a Posdoctoral fellow in Experimental Psychology in the [Cognitive Neuroscience Group](https://www.ugr.es/~neurocog/) at the University of Granada, collaboratign with the [Cognition, Attention and Learning Laboratory](https://calluam.wordpress.com/) (CALL) at the Autonomous University of Madrid. My current work focuses on investigating the extent to which reward-related attentional biases are implicit, automatic, and uncontrollable. I am also very interested in psychometrics applied to experimental psychology, multilevel modeling, signal detection theory and reinforcement learning.
 
 :::
 :::
