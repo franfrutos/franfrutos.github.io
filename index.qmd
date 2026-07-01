@@ -1,6 +1,6 @@
 ---
 pagetitle: "Francisco Garre-Frutos, PhD"
-description: "Postdoctoral research in experimental psychology."
+description: "Postdoctoral researcher in experimental psychology."
 image: "/assets/og-image.png"
 header-includes: |
   <meta property="og:type" content="profile">

@@ -12,7 +12,7 @@ affiliation: Autonomous University of Madrid
 url: "https://franfrutos.github.io"
 
 # One line shown as the meta description + share-card description (home & default).
-description: "Postdoctoral research in experimental psychology."
+description: "Postdoctoral researcher in experimental psychology."
 
 # Generic share image (dark branded card). Papers get their own auto-generated
 # card (see scripts/build-og.mjs); this is the fallback for the home/CV.
