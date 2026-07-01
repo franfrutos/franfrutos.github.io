@@ -213,10 +213,23 @@ function typstBody(cv, papers) {
 function build() {
   const cv = readYaml('data/cv.yml');
   const { papers } = readYaml('data/papers.yml');
-  fs.writeFileSync(path.join(root, 'cv/_cv-body.qmd'),
-    '<!-- AUTO-GENERATED from data/cv.yml + data/papers.yml by scripts/build-cv.mjs — do not edit. -->\n' +
+  // Generate the WHOLE cv/cv.qmd (front matter + inlined Typst body). It used to
+  // be a committed cv.qmd with `{{< include _cv-body.qmd >}}`, but Quarto resolves
+  // that include during its initial project scan — before pre-render runs — so on
+  // a fresh checkout (CI) the generated _cv-body.qmd doesn't exist yet and the
+  // render aborts. Generating the whole file (like the research pages) avoids it.
+  fs.writeFileSync(path.join(root, 'cv/cv.qmd'),
+    '---\n' +
+    '# AUTO-GENERATED from data/cv.yml + data/papers.yml by scripts/build-cv.mjs — do not edit.\n' +
+    'format: fgf-cv-typst\n' +
+    'output-file: Garre-Frutos-CV\n' +
+    'keep-typ: true\n' +                                  // kept so build-cv-dark.mjs can recompile the dark PDF
+    'font-paths:\n' +
+    '  - cv/_extensions/fgf-cv/fonts\n' +                 // base = project root (full render / CI)
+    '  - _extensions/fgf-cv/fonts\n' +                    // base = cv/ (single-file render)
+    '---\n\n' +
     '```{=typst}\n' + typstBody(cv, papers) + '```\n');
-  console.log('built cv/_cv-body.qmd');
+  console.log('built cv/cv.qmd');
 
   // Private variant: if .private/private.yml exists (gitignored, local-only),
   // merge it and emit a standalone Typst so build-cv-dark.mjs can compile a
