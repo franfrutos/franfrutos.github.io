@@ -26,7 +26,7 @@ papers:
     authors: Garre-Frutos, F.†, Martínez-López, P.†, Ariza, A., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
     venue: PsyArXiv
     preprint: true
-    url: https://doi.org/10.31234/osf.io/uwge3
+    url: https://osf.io/preprints/psyarxiv/uwge3
     tags: [VMAC, awareness, Pavlovian]
     keywords: [selective attention, reward learning, reversal learning, explicit knowledge, associative learning]
     osf:
@@ -79,7 +79,7 @@ papers:
     title: The role of selective attention in value-modulated attentional capture
     authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., van Moorselaar, D., & Lupiáñez, J.
     venue: Psychonomic Bulletin & Review
-    url: https://doi.org/10.31234/osf.io/kv2rx   # readable preprint (PsyArXiv) until the final DOI exists
+    url: https://osf.io/preprints/psyarxiv/kv2rx   # readable preprint (PsyArXiv) until the final DOI exists
     tags: [VMAC, selective attention]
     keywords: [attentional capture, learning, reward, selective attention, awareness]
     osf:
@@ -149,7 +149,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     status: Manuscript submitted to Psicológica
-    url: https://doi.org/10.31234/osf.io/p4m29
+    url: https://osf.io/preprints/psyarxiv/p4m29
     tags: [IOR, reward learning]
     keywords: [Learned value, Selection history, Inhibition of Return, Spatial Cueing]
     osf:
@@ -181,7 +181,7 @@ papers:
     authors: Manini, G., Garre-Frutos, F., Botta, F., Martín-Arévalo, E., & Lupiáñez, J.
     venue: PsyArXiv
     preprint: true
-    url: https://doi.org/10.31234/osf.io/rkpb8
+    url: https://osf.io/preprints/psyarxiv/rkpb8
     tags: [perceptual load, distraction]
     keywords: [attentional capture, Perceptual Load, visual distraction, distractor relevance]
     osf:
@@ -198,7 +198,7 @@ papers:
     authors: Manini, G.†, Garre-Frutos, F.†, Martín-Arévalo, E., Botta, F., & Lupiáñez, J.
     venue: PsyArXiv
     preprint: true
-    url: https://doi.org/10.31234/osf.io/xq2h8
+    url: https://osf.io/preprints/psyarxiv/xq2h8
     tags: [perceptual load, suppression]
     keywords: [Attentional Capture, Distractor Suppression, Visual Search, Perceptual Load]
     osf:
@@ -215,7 +215,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     status: Manuscript resubmitted to Behavior Research Methods
-    url: https://doi.org/10.31234/osf.io/n7zuw
+    url: https://osf.io/preprints/psyarxiv/n7zuw
     tags: [PAS, awareness, validity]
     keywords: [perceptual awareness scale, validity, psychometrics, unconscious processing]
     osf:
@@ -232,7 +232,7 @@ papers:
     authors: Martínez-López, P., Garre-Frutos, F., Vadillo, M. A., & Luque, D.
     venue: PsyArXiv
     preprint: true
-    url: https://doi.org/10.31234/osf.io/r62pa
+    url: https://osf.io/preprints/psyarxiv/r62pa
     tags: [habits, validity]
     keywords: [habit formation, habit expression, learning, validity, reliability]
     osf:
@@ -249,7 +249,7 @@ papers:
     authors: Franco-Martínez, A., Garre-Frutos, F., & Tomás, G.
     venue: PsyArXiv
     preprint: true
-    url: https://doi.org/10.31234/osf.io/xkaw6
+    url: https://osf.io/preprints/psyarxiv/xkaw6
     tags: [creativity, measurement]
     keywords: [invented alien creatures task, creativity, digital, process measures]
     osf:
