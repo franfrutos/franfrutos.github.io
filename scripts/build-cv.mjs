@@ -392,7 +392,10 @@ function buildHtml() {
   // theme — wired in assets/js/site.js (apply()), which targets #cv-dl.
   const page =
     '---\n' +
-    'pagetitle: "Curriculum Vitae"\n' +
+    // Full tab title set here + empty title-prefix suppresses Quarto's default
+    // " – <site title>" suffix, so the CV tab reads exactly this (not "… – …, PhD").
+    'pagetitle: "Curriculum Vitae · Francisco Garre-Frutos"\n' +
+    'title-prefix: ""\n' +
     'description: "Academic CV of Francisco Garre-Frutos — postdoctoral researcher in experimental psychology (Autonomous University of Madrid)."\n' +
     'image: "/assets/og-image.png"\n' +
     'header-includes: |\n' +
