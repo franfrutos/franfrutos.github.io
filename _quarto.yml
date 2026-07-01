@@ -13,11 +13,12 @@ project:
     - node scripts/build-cv-dark.mjs
   resources:
     - assets/**
+    - CNAME              # custom domain for GitHub Pages (copied into _site/CNAME each deploy)
 
 website:
   title: "Francisco Garre-Frutos, PhD"
   favicon: assets/favicon.svg
-  site-url: "https://franfrutos.github.io"
+  site-url: "https://fgarrefrutos.com"
   # Native Open Graph + Twitter cards; per-page title/description/image (front
   # matter) drive them. Extra og/JSON-LD lives in _includes/head.html (build-meta).
   open-graph: true
