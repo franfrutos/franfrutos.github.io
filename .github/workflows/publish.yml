@@ -27,6 +27,8 @@ jobs:
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: "1.7.31"   # pin to the version the site is developed/verified against
 
       # `quarto render` runs the Node pre-render scripts (build-data → geocode →
       # build-papers). Node is preinstalled on the runner; the YAML parser is
