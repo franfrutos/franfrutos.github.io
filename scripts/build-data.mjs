@@ -44,6 +44,7 @@ function buildJourney() {
 }
 
 const header = (name) => '/* AUTO-GENERATED from data/' + name + ' by scripts/build-data.mjs — do not edit.\n * Edit the YAML; this file is rebuilt on every render. */\n';
+fs.mkdirSync(path.join(root, 'assets/data'), { recursive: true }); // may not exist on a fresh checkout
 fs.writeFileSync(path.join(root, 'assets/data/research.js'), header('papers.yml') + 'window.FGF_THEMES = ' + JSON.stringify(buildResearch(), null, 2) + ';\n');
 fs.writeFileSync(path.join(root, 'assets/data/journey.js'), header('journey.yml') + 'window.FGF_JOURNEY = ' + JSON.stringify(buildJourney(), null, 2) + ';\n');
 console.log('built assets/data/research.js + journey.js from YAML');
