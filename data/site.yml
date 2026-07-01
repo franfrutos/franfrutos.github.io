@@ -22,6 +22,12 @@ tagline: "How learning and attention shape human cognition and behavior."
 ogImage: "/assets/og-image.png"
 twitter: "@Fran_gfr"
 
+# Google Search Console "HTML tag" verification token (just the content value,
+# not the whole <meta>). Emitted into every page's <head> by build-meta.mjs.
+# Leave "" when not verifying. Used to verify the old franfrutos.github.io URL
+# so its stale search result gets recrawled (both domains serve this same head).
+googleVerification: ""
+
 # Fed to the JSON-LD Person entity (helps Google/Scholar understand your topics).
 keywords:
   - Attention

@@ -14,6 +14,7 @@ project:
   resources:
     - assets/**
     - CNAME              # custom domain for GitHub Pages (copied into _site/CNAME each deploy)
+    - google8e1efdef24f8244c.html   # Google Search Console verification for franfrutos.github.io
 
 website:
   title: "Francisco Garre-Frutos, PhD"
