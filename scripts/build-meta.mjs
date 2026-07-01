@@ -70,7 +70,10 @@ const head = `<!-- GENERATED from data/site.yml by scripts/build-meta.mjs — do
 <link rel="icon" href="${fav('/assets/favicon-32.png')}" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="${fav('/assets/favicon-180.png')}">
 
-<!-- og:site_name + Twitter @site (Quarto generates og:title/description/image and
+${SITE.googleVerification ? `<!-- Google Search Console (verifies franfrutos.github.io, same head served there) -->
+<meta name="google-site-verification" content="${esc(SITE.googleVerification)}">
+
+` : ''}<!-- og:site_name + Twitter @site (Quarto generates og:title/description/image and
      twitter:title/description/image/card from each page's front matter). -->
 <meta property="og:site_name" content="${esc(SITE.name)}">
 <meta name="twitter:site" content="${esc(SITE.twitter || '')}">
