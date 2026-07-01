@@ -22,6 +22,8 @@ function buildResearch() {
   const { threads, papers } = readYaml('data/papers.yml');
   const ids = new Set(threads.map((t) => t.id));
   papers.forEach((p) => { if (!ids.has(p.thread)) console.error('  ✗ paper "' + p.title + '" has unknown thread: "' + p.thread + '"'); });
+  // Newest first within each section; a non-numeric year ("in press") ranks above all.
+  const yr = (p) => { const n = Number(p.year); return Number.isFinite(n) ? n : Infinity; };
   return threads.map((t) => ({
     num: str(t.num), short: t.short, title: t.title, blurb: t.blurb,
     pubs: papers.filter((p) => p.thread === t.id).map((p) => {
@@ -29,7 +31,7 @@ function buildResearch() {
       ['url', 'slug', 'osf', 'tags', 'keywords', 'abstract', 'bibtex', 'ris',
        'volume', 'issue', 'pages', 'articleno', 'status'].forEach((k) => { if (p[k] != null) pub[k] = p[k]; });
       return pub;
-    }),
+    }).sort((a, b) => yr(b) - yr(a)),
   }));
 }
 
