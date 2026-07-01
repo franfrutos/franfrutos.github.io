@@ -19,8 +19,8 @@ _quarto_internal_scss_error.scss
 /assets/data/city-coords.js
 /research/*/
 
-# CV body + on-site page generated from data/cv.yml + data/papers.yml by build-cv.mjs
-/cv/_cv-body.qmd
+# CV page (PDF source) + on-site HTML page, generated from data/cv.yml + papers.yml
+/cv/cv.qmd
 /cv/index.qmd
 # Intermediate Typst kept (keep-typ) so build-cv-dark.mjs can recompile the dark PDF
 /cv/cv.typ
