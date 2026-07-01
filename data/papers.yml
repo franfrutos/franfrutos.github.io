@@ -1,0 +1,301 @@
+# Research threads (the 3 sections) and publications.
+# To add a paper: copy a block under `papers:` and set `thread` to a thread id above.
+# Coordinates not needed. Optional: url, tags, slug, osf, keywords, abstract, bibtex, ris.
+
+threads:
+  - id: learning
+    num: "01"
+    short: Learning & attention
+    title: (Implicit) learning & attention
+    blurb: Our ability to process information is deeply intertwined with our experience of the world. In this section, I present some of my work showing how learning shapes attention, and its boundary conditions.
+  - id: distraction
+    num: "02"
+    short: Distraction & capture
+    title: Distraction & attentional capture
+    blurb: How do we cope with irrelevant information? In this section, I present some of my work on the factors that determine when a salient distractor captures attention despite our goals — and when it does not.
+  - id: validity
+    num: "03"
+    short: Validity
+    title: Validity
+    blurb: Do we measure what we think we are measuring? Are our measures — and the inferences we draw from them — reliable enough? In this section, you can find some of my work on validity.
+
+papers:
+  - thread: learning
+    year: 2026
+    title: Explicit knowledge modulates Pavlovian attentional biases
+    authors: Garre-Frutos, F.†, Martínez-López, P.†, Ariza, A., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+    venue: PsyArXiv
+    preprint: true
+    url: https://doi.org/10.31234/osf.io/uwge3
+    tags: [VMAC, awareness, Pavlovian]
+    keywords: [selective attention, reward learning, reversal learning, explicit knowledge, associative learning]
+    osf:
+      prereg: https://osf.io/g96yj
+      materials: https://osf.io/xzs9f/
+      data: https://osf.io/xzs9f/
+      code: https://osf.io/xzs9f/
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      There is plenty of evidence showing that the history of stimulus-reward pairings can cause such stimuli to capture our attention more easily, even when attending to them actually prevents the delivery of a reward. Once established, these Pavlovian attentional biases are believed to operate automatically and persist even when they no longer predict a reward. This reflects an inflexible form of attentional sign-tracking. In this study, we investigated how reversal learning of Pavlovian attentional biases is affected by explicit knowledge. Across three experiments, we demonstrate that verbal instructions alone can modulate previously learned attentional biases (Experiments 1 and 2a) and that, when not informed of the reversal, participants still exhibit strong associations between Pavlovian attentional biases and individual differences in awareness of the new, reversed contingencies (Experiment 2b). Computational modelling of a previously published dataset reveals that instructions may prompt a rapid model-based revaluation by eliciting the automatic updating of the stimuli's value representation. However, such updating can be counterproductive, as attending to the previously high-value distractor reduces the likelihood of receiving a reward when contingencies are re-evaluated. These findings emphasize the importance of explicit knowledge in the updating process.
+  - thread: learning
+    year: 2025
+    title: Value-modulated attentional capture depends on awareness
+    authors: Garre-Frutos, F., Lupiáñez, J., & Vadillo, M. A.
+    venue: Psychonomic Bulletin & Review
+    volume: 32
+    issue: 6
+    pages: 3025–3040
+    url: https://doi.org/10.3758/s13423-025-02734-1
+    slug: vmac-awareness
+    osf:
+      materials: https://github.com/franfrutos/VMAC_awareness/tree/main/Materials
+      data: https://github.com/franfrutos/VMAC_awareness/tree/main/Input
+      code: https://github.com/franfrutos/VMAC_awareness/tree/main/Scripts
+      oa: https://link.springer.com/article/10.3758/s13423-025-02734-1
+    tags: [VMAC, awareness]
+    keywords: [Attention, Awareness, Capture, Learning, Reward]
+    abstract: >-
+      Value-modulated attentional capture (VMAC) refers to a process by which a priori neutral stimuli gain attentional priority when associated with reward, independently of goal or stimulus-driven attentional control. Although VMAC is considered an automatic and implicit process, the role of awareness of the stimulus–reward contingency on its learning process remains unclear at best. In a well-powered replication of a previous study, we found that VMAC is absent when participants are not explicitly informed about the stimulus–reward contingency in the pre-task instructions. In a second experiment, we show that when instructions are manipulated between groups, only the instructed group shows VMAC. Interestingly, although the no-instruction group did not show VMAC at the group level, participants who became aware of the stimulus–reward contingencies did nevertheless show robust VMAC at the end of the task. Meta-analytic evidence further supports our conclusion by showing that studies that include instructions about the stimulus–reward contingencies yield significantly larger VMAC effects. Taken collectively, these findings suggest that the learning process behind VMAC may not be entirely implicit.
+    bibtex: |-
+      @article{garrefrutos2025value,
+        title   = {Value-modulated attentional capture depends on awareness},
+        author  = {Garre-Frutos, Francisco and Lupiáñez, Juan and Vadillo, Miguel A.},
+        journal = {Psychonomic Bulletin \& Review},
+        year    = {2025},
+        doi     = {10.3758/s13423-025-02734-1}
+      }
+    ris: |-
+      TY  - JOUR
+      AU  - Garre-Frutos, F.
+      AU  - Lupiáñez, J.
+      AU  - Vadillo, M. A.
+      TI  - Value-modulated attentional capture depends on awareness
+      JO  - Psychonomic Bulletin & Review
+      PY  - 2025
+      DO  - 10.3758/s13423-025-02734-1
+      ER  -
+  - thread: learning
+    year: in press
+    title: The role of selective attention in value-modulated attentional capture
+    authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., van Moorselaar, D., & Lupiáñez, J.
+    venue: Psychonomic Bulletin & Review
+    url: https://doi.org/10.31234/osf.io/kv2rx   # readable preprint (PsyArXiv) until the final DOI exists
+    tags: [VMAC, selective attention]
+    keywords: [attentional capture, learning, reward, selective attention, awareness]
+    osf:
+      prereg: https://osf.io/f3bm8/overview
+      materials: https://github.com/franfrutos/vmac_selective/tree/main/Materials
+      data: https://github.com/franfrutos/vmac_selective/tree/main/Input
+      code: https://github.com/franfrutos/vmac_selective/tree/main/Scripts
+      # Accepted / in press — final access (OA vs postprint) not decided yet → "in production" gear badge.
+      production: true
+    abstract: >-
+      Stimuli that reliably predict reward can increase their capacity to capture attention. This Value-Modulated Attentional Capture (VMAC) is typically viewed as independent of task goals or physical salience, arising from associative learning. However, recent evidence suggests that the awareness of the stimulus-reward contingency may be necessary during the acquisition of such attentional biases, although the underlying mechanism remains unclear. One possibility is that awareness mediates the learning process of VMAC by directing selective attention toward the reward-predictive feature. The present preregistered study tested whether reward-related attentional biases arise primarily from such selective attention, independently of awareness. Participants performed a visual search task in which one of two singleton distractors—one predicting high reward, the other low reward—appeared on a subset of trials. Selective attention to the reward-predictive feature (i.e., distractor color) was manipulated between groups: In some trials, one group reported the reward-predictive distractor's color, while the other reported a non-reward-predictive feature (its location). Otherwise, the stimulus–reward contingencies remained identical for both groups. The typical VMAC effect, as measured by slower response times for the high-value compared to the low-value distractor, emerged only in the group that attended to the color. Critically, the previous result cannot be explained by individual differences in awareness. These findings indicate that selective attention to the reward-predictive feature contributes to the acquisition of reward-related attentional biases, independently of awareness about the color-reward contingency.
+  - thread: learning
+    year: 2025
+    title: The effect of reward and punishment on the extinction of attentional capture elicited by value-related stimuli
+    authors: Garre-Frutos, F., Ariza, A., & González, F.
+    venue: Psychological Research
+    volume: 89
+    issue: 3
+    articleno: 89
+    url: https://doi.org/10.1007/s00426-025-02115-2
+    tags: [reward learning, extinction]
+    keywords: [attention, capture, value, learning, sign-tracking, extinction]
+    osf:
+      materials: https://github.com/franfrutos/vmac_extinction/tree/main/Materials
+      data: https://github.com/franfrutos/vmac_extinction/tree/main/Input
+      code: https://github.com/franfrutos/vmac_extinction/tree/main/scripts
+      oa: https://link.springer.com/article/10.1007/s00426-025-02115-2
+    abstract: >-
+      Particular features of the stimuli that predict significant outcomes tend to capture our attention in a rather automatic and inflexible way. This form of attention has been described as a Pavlovian bias that mimics the phenomenon of sign-tracking described in animals, where reward-predictive cues become motivational magnets. In humans, Value-Modulated Attentional Capture (VMAC) refers to a phenomenon where distractors that signal high-value outcomes receive higher attentional priority. VMAC is particularly difficult to extinguish, showing a similar persistence often described in animal sign-tracking. In the present study, we evaluated to what extent VMAC would persist using a more specific extinction procedure than previous research, where instead of removing the possibility of obtaining rewards, the different discriminant stimuli that signal reward equate its value. Furthermore, we manipulated between experiments whether the high-value distractor predicted high-reward and high-punishment contingent to response accuracy (mimicking previous research; Experiment 1) or only high-reward (Experiment 2), and also explored the association of VMAC and its persistence with measures of emotional impulsivity employed in past research. Our results show that when both rewards and punishments are possible, VMAC does not extinguish after an extensive extinction stage, nor is it associated with measures of emotional impulsivity. When punishments were removed, we showed that VMAC gradually extinguished both in response times and accuracy and that the persistence of VMAC was significantly associated with positive urgency. We discussed these results on the potential of punishments to qualitatively alter learning and response strategies employed by participants.
+  - thread: learning
+    year: 2025
+    title: "Extinction of outcome-specific Pavlovian-to-instrumental transfer (PIT), instrumental outcome devaluation, and reward-related attentional capture are predicted by affect-driven impulsivity"
+    authors: González, F., Garre-Frutos, F., Hinojosa-Aguayo, I., & Hall, G.
+    venue: Learning & Behavior
+    volume: 53
+    issue: 4
+    pages: 335–354
+    url: https://doi.org/10.3758/s13420-025-00676-1
+    tags: [PIT, impulsivity]
+    keywords: [Attentional sign-tracking, Emotion regulation, Extinction, Incentive salience, Negative urgency, Pavlovian instrumental transfer]
+    osf:
+      oa: https://doi.org/10.3758/s13420-025-00676-1
+    abstract: >-
+      In two online experiments, we aimed to study the relationship between emotion dysregulation and persistence of incentive salience attributed to reward cues. Participants' negative urgency (NU) was assessed before they completed a value-modulated attentional capture (VMAC) task measuring incentive salience as attentional sign-tracking. This consisted of two phases — rewarded and unrewarded — to evaluate the persistence of the VMAC effect. Subsequently, a Pavlovian-to-instrumental transfer (PIT) procedure was employed as another measure of incentive salience. In Experiment 1 both outcome-specific and general PIT effects were assessed, along with the impact of instrumental outcome devaluation (OD). Experiment 2 focused on the effect of Pavlovian extinction on specific PIT. Both outcome devaluation and extinction are indices of implicit emotion regulation. In Experiment 1, the OD index showed a significant positive correlation with specific PIT and a negative correlation with the NU score. In Experiment 2, the extinction index of specific PIT, linked to the level of explicit knowledge of the contingencies, correlated negatively with NU. The VMAC effect and its persistence showed correlations with NU, positive and negative, respectively (Experiment 1). No relationships were found between any measure of VMAC and OD or PIT effects in any of the experiments. These findings suggest that difficulties in emotion regulation are associated with increased attentional sign-tracking and can hinder action control and selection. These phenomena may be governed by distinct mechanisms, with the VMAC effect being more automatic and the specific PIT effect exhibiting varying degrees of goal-directed behavior depending on the effectiveness of implicit emotion regulation strategies.
+  - thread: learning
+    year: 2024
+    title: "On the reliability of value-modulated attentional capture: An online replication and multiverse analysis"
+    authors: Garre-Frutos, F., Vadillo, M. A., González, F., & Lupiáñez, J.
+    venue: Behavior Research Methods
+    volume: 56
+    issue: 6
+    pages: 5986–6003
+    url: https://doi.org/10.3758/s13428-023-02329-5
+    tags: [VMAC, reliability, multiverse]
+    keywords: [Learning, Multiverse, Reliability, Value-modulated attentional capture, Visual search]
+    osf:
+      materials: https://osf.io/dvh8e/
+      data: https://osf.io/dvh8e/
+      code: https://osf.io/dvh8e/
+      oa: https://link.springer.com/article/10.3758/s13428-023-02329-5
+    abstract: >-
+      Stimuli predicting rewards are more likely to capture attention, even when they are not relevant to our current goals. Individual differences in value-modulated attentional capture (VMAC) have been associated with various psychopathological conditions in the scientific literature. However, the claim that this attentional bias can predict individual differences requires further exploration of the psychometric properties of the most common experimental paradigms. The current study replicated the VMAC effect in a large online sample (N = 182) and investigated the internal consistency, with a design that allowed us to measure the effect during learning (rewarded phase) and after acquisition, once feedback was omitted (unrewarded phase). Through the rewarded phase there was gradual increase of the VMAC effect, which did not decline significantly throughout the unrewarded phase. Furthermore, we conducted a reliability multiverse analysis for 288 different data preprocessing specifications across both phases. Specifications including more blocks in the analysis led to better reliability estimates in both phases, while specifications that removed more outliers also improved reliability, suggesting that specifications with more, but less noisy, trials led to better reliability estimates. Nevertheless, in most instances, especially those considering fewer blocks of trials, reliability estimates fell below the minimum recommended thresholds for research on individual differences. Given the present results, we encourage researchers working on VMAC to take into account reliability when designing studies aimed at capturing individual differences and provide recommendations to improve methodological practices.
+  - thread: learning
+    year: 2024
+    title: Inhibition of Return and Learned Value
+    authors: Garre-Frutos, F., & Lupiáñez, J.
+    venue: PsyArXiv
+    preprint: true
+    status: Manuscript submitted to Psicológica
+    url: https://doi.org/10.31234/osf.io/p4m29
+    tags: [IOR, reward learning]
+    keywords: [Learned value, Selection history, Inhibition of Return, Spatial Cueing]
+    osf:
+      prereg: https://osf.io/fa6v9
+      materials: https://osf.io/k3byv
+      data: https://osf.io/k3byv
+      code: https://osf.io/k3byv
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      Salient stimuli automatically attract attention, leading to facilitation effects, but later reduce the likelihood that attention will be recaptured at the same location or by the same object, a phenomenon known as inhibition of return (IOR). Interestingly, IOR is a modulable phenomenon in response to different manipulations of both cue and target. To date, few studies have investigated whether the arbitrary association of an irrelevant dimension (e.g., color) with different levels of reward can affect IOR. In two pre-registered studies, we manipulated the amount of reward associated with a target in a Posner-type task and examined whether such a manipulation affected the IOR effect in a phase in which the participant received feedback on his performance and in a phase in which feedback was omitted. Experiment 1 showed that learned value can modulate the IOR effect only when feedback is omitted. Experiment 2 nominally replicated the previous results, but not statistically. Suspecting a relatively small effect size, we analyzed both experiments together (total N = 100) observing a consistent reduction of the IOR effect for targets associated with high reward compared to those associated with low reward. A meta-analysis of the current and two other conceptually similar published studies further suggests that although value can modulate IOR, the effect size may be small, and a high sample size may be needed to research this topic. These results are discussed in light of recent theories of attentional orienting and return inhibition.
+  - thread: distraction
+    year: in press
+    title: "The capture debate revisited: Proactive or reactive suppression — that is the question"
+    authors: Theeuwes, J., Manini, G., Garre-Frutos, F., Lupiáñez, J., & van Moorselaar, D.
+    venue: Visual Cognition
+    tags: [attentional capture, suppression]
+    keywords: [attention, capture, suppression, search]
+    osf:
+      materials: https://osf.io/6r2kf/
+      data: https://osf.io/6r2kf/
+      code: https://osf.io/6r2kf/
+      # Accepted / in press at Visual Cognition — final access status pending → "in production" gear.
+      production: true
+    abstract: >-
+      A central debate in attention research concerns whether visual selection is primarily driven by stimulus-driven salience or by goal-driven top-down control. According to the stimulus-driven account, salient distractors automatically capture attention before being suppressed, whereas the signal suppression hypothesis proposes proactive prevention of capture. We tested these competing views in two experiments. In Experiment 1, participants searched for a rotated T among Ls under conditions inducing either singleton detection or feature search mode, with a salient color distractor present or absent. Distractors slowed search in singleton detection mode but produced a distractor presence benefit when searching in feature search mode. Importantly, in feature search, reaction times increased with target–distractor distance, indicating initial capture at the distractor location followed by serial search. In Experiment 2, using a heterogeneous display typically used to test the signal suppression hypothesis, we again observed a robust distractor presence benefit alongside a clear display size effect, confirming that search was conducted serially. Although standard distance analyses revealed no effect, exploratory analyses accounting for search direction uncovered distance-dependent costs consistent with rapid disengagement. Together, these findings suggest that even under feature-search conditions, salient distractors briefly capture attention before their priority is rapidly reduced. This post-selection reduction, which may reflect either active or passive suppression, allows attention to disengage from the distractor. Thus, the findings challenge strict proactive suppression accounts and support a rapid disengagement account.
+  - thread: distraction
+    year: 2026
+    title: Handling fully irrelevant vs. potentially relevant distractors as a function of perceptual load
+    authors: Manini, G., Garre-Frutos, F., Botta, F., Martín-Arévalo, E., & Lupiáñez, J.
+    venue: PsyArXiv
+    preprint: true
+    url: https://doi.org/10.31234/osf.io/rkpb8
+    tags: [perceptual load, distraction]
+    keywords: [attentional capture, Perceptual Load, visual distraction, distractor relevance]
+    osf:
+      prereg: https://osf.io/jxusq/registrations
+      materials: https://osf.io/jxusq
+      data: https://github.com/franfrutos/handeling_visual_distraction/tree/main/Input
+      code: https://github.com/franfrutos/handeling_visual_distraction/tree/main/Scripts
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      In a previous study, we investigated how task performance is affected by fully irrelevant distractors (sharing neither features nor location with the target) vs. potentially relevant distractors (sharing features and location with it), as a function of perceptual load. We observed a systematic dissociation: the effect of potentially relevant distractors increased under high-load, whereas the effect of fully irrelevant distractors remained unchanged. However, it is unclear whether this dissociation reflected a difference between distractor types or instead resulted from two methodological factors. The present study addressed this question by testing whether the double dissociation persists even when key experimental design aspects are controlled. Namely, (i) the effectiveness of the perceptual load manipulation, and (ii) the comparability between distractor effects. In Experiment 1, we replicated the perceptual load pattern and observed the double dissociation. The effect of fully irrelevant distractors decreased under high-load, whereas that of potentially relevant distractors increased. Three subsequent experiments systematically manipulated task parameters that differ between the original perceptual load task and our previous work, to assess their contribution to an effective load manipulation. Despite these variations, the double dissociation remained robust. In a final experiment, we further improved the comparability between the effects of each distractor type by using a common baseline measure, confirming that perceptual load modulates the effects of fully irrelevant vs. potentially relevant distractors in different ways. These findings suggest that distractor processing depends critically on its task relevance, while also highlighting the need to investigate the boundary conditions of perceptual load effects.
+  - thread: distraction
+    year: 2026
+    title: "Facilitation by irrelevant distractors under high perceptual load: Suppression or controlled distractor prioritization?"
+    authors: Manini, G.†, Garre-Frutos, F.†, Martín-Arévalo, E., Botta, F., & Lupiáñez, J.
+    venue: PsyArXiv
+    preprint: true
+    url: https://doi.org/10.31234/osf.io/xq2h8
+    tags: [perceptual load, suppression]
+    keywords: [Attentional Capture, Distractor Suppression, Visual Search, Perceptual Load]
+    osf:
+      materials: https://github.com/franfrutos/reversed_effect_pl
+      data: https://github.com/franfrutos/reversed_effect_pl/tree/main/Input
+      code: https://github.com/franfrutos/reversed_effect_pl/tree/main/Scripts
+      # preprint → shows the PsyArXiv "Preprint" badge in the OA slot automatically
+    abstract: >-
+      Perceptual load theory is a key framework in visual attention research, demonstrating that under high-load conditions, fully irrelevant distractors are no longer processed and do not disrupt task performance. In our recent work (Manini et al., 2026), we replicated this effect. However, we also found that under high load, the distractor not only failed to impair performance but actually led to faster reaction times (RTs) in distractor-present trials. In the attentional capture literature, this reversed effect is typically considered to reflect distractor suppression. However, in the perceptual load task, where the distractor is placed outside the relevant search array, suppression should not logically lead to faster responses. Furthermore, the faster responses were accompanied by increased error rates, leading us to hypothesize that this reversed effect may reflect some form of distractor prioritization rather than distractor suppression. To test this hypothesis, we first analyzed the consistency of this effect across all available open-data resources using the Forster and Lavie (2008b) task. We then reanalyzed the same data, incorporating the spatial proximity between target and distractor as an additional variable: distractors appearing near the target strongly drove the reversed RT effect, while distractors presented far from the target led to increased error rates. These findings challenge the idea that high perceptual load prevents the processing of irrelevant stimuli. Moreover, they suggest that faster RTs in distractor-present conditions do not necessarily indicate distractor suppression, as commonly assumed in attentional capture research, offering new insight into the interpretation of behavioral observations in this field.
+  - thread: validity
+    year: 2026
+    title: "Choose your own PAS? Quantitative and qualitative validity evidence for the Perceptual Awareness Scale"
+    authors: Franco-Martínez, A., Ferrer-Mendieta, A., Peiró Lanchares, C., Vadillo, M. A., & Garre-Frutos, F.
+    venue: PsyArXiv
+    preprint: true
+    status: Manuscript resubmitted to Behavior Research Methods
+    url: https://doi.org/10.31234/osf.io/n7zuw
+    tags: [PAS, awareness, validity]
+    keywords: [perceptual awareness scale, validity, psychometrics, unconscious processing]
+    osf:
+      prereg: https://osf.io/zwegr
+      materials: https://osf.io/jd7ak/
+      data: https://osf.io/jd7ak/
+      code: https://osf.io/jd7ak/
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      One of the most widely used measures of awareness in unconscious processing studies is the Perceptual Awareness Scale (PAS). Although specific category labels and detailed instructions were suggested since its first formulation, the PAS is currently proposed as a methodological approach rather than a fixed scale. Consequently, authors tend to adapt this scale to their experimental tasks often without specifying their PAS properties or without providing adequate justification for the modifications. In this work, we tested how "choosing your own PAS" affects response-process validity both quantitatively and qualitatively, in the same unconscious working memory (WM) task as in Franco-Martínez et al. (2026) replication. In a preregistered 2×2×2 between-subjects design (N = 176), we manipulated (a) the Version of the PAS labels, (b) whether Examples were provided, and (c) whether labels appeared in the onscreen Display. In a post-experiment PAS questionnaire participants were asked to qualitatively report how they recalled and interpreted the scale. The typical effect of interest and its reliability were robust under the Version and Examples manipulations, but presenting the New Version and/or with Examples increased the proportion of "unconscious" trials, enhancing statistical power. Although the effect of interest increased in the ScaleOnly Display, the qualitative evidence suggests participants in this condition tend to forget the PAS labels and ultimately use them differently from intended. Finally, we provide practical recommendations for the use of PAS and a post-experiment PAS questionnaire to evaluate its validity.
+  - thread: validity
+    year: 2026
+    title: "The experimental study of habitual behavior in humans: A review of the validity of current protocols"
+    authors: Martínez-López, P., Garre-Frutos, F., Vadillo, M. A., & Luque, D.
+    venue: PsyArXiv
+    preprint: true
+    url: https://doi.org/10.31234/osf.io/r62pa
+    tags: [habits, validity]
+    keywords: [habit formation, habit expression, learning, validity, reliability]
+    osf:
+      materials: https://osf.io/tpn85/
+      data: https://osf.io/tpn85/
+      code: https://osf.io/tpn85/
+      # supplement project currently private on OSF — links resolve once it's made public
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      Although habits are widely recognized as playing a key role across psychological science, current laboratory methods may limit our understanding of these behaviors. Within the dual-system framework, habits are defined as context-triggered, outcome-insensitive responses that emerge gradually with repeated instrumental training. Many human experimental paradigms have been developed in an attempt to test this characterization of habits. However, in most cases, they have not provided clear evidence of habit formation, suggesting a gap between habit theory and existing methodologies. In the present study, we systematically review evidence on the construct validity of fourteen paradigms in which the amount of training was manipulated. We also reanalyze publicly available datasets from studies using these paradigms to assess the psychometric reliability of their main measures, thereby extending the available validity evidence. Paradigms that most closely mirror classical approaches derived from habit theory have consistently failed to induce habits, whereas more recent approaches have revealed training effects. However, these novel paradigms often rely on broader operationalizations that substantially diverge from traditional definitions of habit. Among the paradigms reviewed, the forced-response task stands out as capable of inducing habitual behavior while providing a narrowly operationalized measure with acceptable reliability. Finally, we argue that strengthening the credibility of the field will require greater attention to the psychometric properties of habit measures, including precise operationalization, reliability, and systematic validity testing.
+  - thread: validity
+    year: 2026
+    title: Measuring creativity process and product with a digitized Invented Alien Creatures Task
+    authors: Franco-Martínez, A., Garre-Frutos, F., & Tomás, G.
+    venue: PsyArXiv
+    preprint: true
+    url: https://doi.org/10.31234/osf.io/xkaw6
+    tags: [creativity, measurement]
+    keywords: [invented alien creatures task, creativity, digital, process measures]
+    osf:
+      materials: https://osf.io/zm3qr/
+      data: https://osf.io/zm3qr/
+      code: https://osf.io/zm3qr/
+      # supplement project currently private on OSF — links resolve once it's made public
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      Creativity research has traditionally relied on final creation products while paying much less attention to the processes through which those products emerge. At the same time, some classical creativity tasks, such as the Invented Alien Creatures (IAC) task, have been implemented heterogeneously across studies, limiting comparability and potentially contributing to current concerns about methodological credibility and replicability. In this paper, we introduce a digitized version of the IAC task, the dIAC, designed to address both issues. The dIAC includes an open-source jsPsych drawing interface, the Creative Creature Creator (CrCrCr), which allows participants to invent creatures using freehand brushes and editable predefined stickers, while automatically recording all their actions throughout the creative process. The dIAC preserves conventional product-based assessment, such as consensual ratings and anatomical invariants, while also generating fine-grained digital indicators of both creative product and process (e.g., flexibility, elaboration, revision behavior, drawing phases times) and detailed time-stamped action logs (e.g., generate, move, transform, eliminate...). To illustrate the measurement potential of the dIAC and refine its workflow, we conducted a pilot study. Although the current sample was not intended for confirmatory inference, we could explore that external ratings showed high interrater agreement in dimensions such as unusualness and overall creativity, and several digitally-derived indicators appeared promising as correlates of rated creativity such as the flexibility, elaboration, or drawing time. Readers are invited to create their own creatures and check their outputs with our current demo of the creator, publicly available at [demoCrCrCr.github.io](https://aliciafrancomartinez.github.io/demoCrCrCr.github.io/). By combining fine-grained process data with an openly accessible and standardized implementation of a classic task, the dIAC aims to support a more cumulative, transparent, and methodologically rigorous line of research on creativity.
+  - thread: validity
+    year: 2026
+    title: "Replicating the unconscious working memory effect: A multisite Registered Report"
+    authors: Franco-Martínez, A., Rey-Sáez, R., Adrián-Ventura, J., … Garre-Frutos, F., et al.
+    venue: Neuroscience of Consciousness
+    volume: "2026"
+    issue: 1
+    articleno: niaf046
+    url: https://doi.org/10.1093/nc/niaf046
+    tags: [working memory, registered report]
+    keywords: [Registered Report, multisite, perceptual awareness, replication, unconscious, working memory]
+    osf:
+      prereg: http://osf.io/nz6m5
+      materials: https://osf.io/xzv9t
+      data: https://osf.io/xzv9t
+      code: https://osf.io/xzv9t
+      oa: https://academic.oup.com/nc/article/2026/1/niaf046/8429939
+    abstract: >-
+      Although in recent years some studies have found evidence suggesting that working memory (WM) may operate on unconscious perceptual contents, decisive demonstrations of the existence of unconscious WM are lacking. In the present Registered Report, we replicate the first study on this topic by Soto et al. (Working memory without consciousness. Curr Biol 2011;21:R912–3.): a visual discrimination task asking participants to report the direction in which a subliminal Gabor grating was rotated after a 2-s delay. We acquired a multisite sample from 19 laboratories, with a larger number of participants (N = 531) and trials (720 in two sessions) than those typically used in previous studies. As a result, a large-sample, international, and open-access dataset is now available for researchers and further analyses. Furthermore, some minimal baseline requirements were guaranteed for the experimental task (i.e. number of valid trials, motivation, and consistent labels for the Perceptual Awareness Scale). The results showed (1) above-chance WM performance in cue-present trials reported as unseen (.55 accuracy), (2) a significant positive correlation between WM performance and cue detection sensitivity (r = .228), and (3) a significant above-chance intercept in the regression of performance on sensitivity (β0 = .521). These findings suggest that WM can operate on unconscious representations, although it remains positively associated with perceptual sensitivity. Crucially, because measurement error could compromise the interpretation of these three results, we provide evidence for our measures' excellent reliability and, more fundamentally, for their validity.
+  - thread: validity
+    year: 2026
+    title: Assessing the validity evidence for habit measures based on time pressure
+    authors: Martínez-López, P., Vázquez-Millán, A., Garre-Frutos, F., & Luque, D.
+    venue: Behavior Research Methods
+    volume: 58
+    issue: 1
+    articleno: 7
+    url: https://doi.org/10.3758/s13428-025-02865-2
+    tags: [habits, psychometrics]
+    keywords: [habit formation, learning, replicability, reliability, convergent validity]
+    osf:
+      prereg: https://osf.io/3bzx6
+      materials: https://osf.io/4s3c8/
+      data: https://osf.io/4s3c8/
+      code: https://osf.io/4s3c8/
+      # Not open access — link the shareable postprint (shows the PsyArXiv "Postprint" badge).
+      postprint: https://osf.io/preprints/psyarxiv/q52wb_v5
+    abstract: >-
+      Animal research has shown that repeatedly performing a rewarded action leads to its transition into a habit—an inflexible response controlled by stimulus–response associations. Efforts to reproduce this principle in humans have yielded mixed results. Only two laboratory paradigms have demonstrated behavior habitualization following extensive instrumental training compared to minimal training: the forced-response task and the "aliens" outcome-devaluation task. These paradigms assess habitualization through distinct measures. The forced-response task focuses on the persistence of a trained response when a reversal is required, whereas the outcome-devaluation task measures reaction time switch costs—slowdowns in goal-directed responses conflicting with the trained habit. Although both measures have produced results consistent with the learning theory—showing stronger evidence of habits in overtrained conditions—their construct validity remains insufficiently established. In this study, participants completed 4 days of training in each paradigm. We replicated previous results in the forced-response task; in the outcome-devaluation task, a similar pattern emerged, observing the loss of a response speed advantage gained through training. We then examined the reliability of each measure and evaluated their convergent validity. Habitual responses in the forced-response task and reaction time switch costs in the outcome-devaluation task demonstrated good reliability, allowing us to assess whether individual differences remained stable. However, the two measures were not associated, providing no evidence of convergent validity. This suggests that these measures capture distinct aspects of the balance between habitual and goal-directed control. Our results highlight the need for further evaluation of the validity and reliability of current measures of habitual control in humans.

@@ -1,0 +1,337 @@
+# "My journey in science" map entries.
+# To add one: copy a block under `journey:` (city + country + year + type + title + venue).
+# Coordinates are filled in automatically from the city name (GeoNames).
+# type: Degree | Appointment | Course | Talk | Poster | Organizer
+
+journey:
+  - city: Murcia
+    country: Spain
+    year: '2020'
+    from: '2016'
+    type: Degree
+    title: BSc in Psychology
+    venue: University of Murcia
+    distinction: Outstanding Undergraduate Award
+  - city: Murcia
+    country: Spain
+    year: '2020'
+    from: '2019'
+    type: Appointment
+    title: Collaboration grant scholarship
+    venue: University of Murcia
+    note: Ministry of Education
+  - city: Granada
+    country: Spain
+    year: '2021'
+    from: '2020'
+    type: Degree
+    title: MSc in Cognitive & Behavioral Neuroscience
+    venue: University of Granada
+  - city: Granada
+    country: Spain
+    year: '2021'
+    from: '2020'
+    type: Appointment
+    title: Research-initiation scholarship
+    venue: University of Granada
+  - city: Granada
+    country: Spain
+    year: '2025'
+    from: '2021'
+    type: Appointment
+    title: Predoctoral researcher
+    venue: University of Granada
+    note: FPU fellowship
+  - city: Granada
+    country: Spain
+    year: '2022'
+    type: Course
+    title: Computational Modelling of Behavioral Data
+    venue: CIMCYC · University of Granada
+  - city: Granada
+    country: Spain
+    year: '2025'
+    type: Course
+    title: 'EEG: Preprocessing & Univariate and Multivariate Analyses'
+    venue: University of Granada
+  - city: Granada
+    country: Spain
+    year: '2025'
+    type: Poster
+    title: The role of selective attention and explicit awareness in reward-related attentional biases
+    venue: Meetings of the Alhambra
+    authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., Van Moorselaar, D., & Lupiáñez, J.
+    place: Granada, Spain · Apr 2025
+  - city: Granada
+    country: Spain
+    year: '2025'
+    type: Talk
+    title: Implicit learning effects on attentional control and capture
+    venue: VII Jornadas de Investigación CIMCYC
+    authors: Garre-Frutos, F., Vadillo, M. A., Martínez-López, P., Ariza, A., González, F., & Lupiáñez, J.
+    place: Granada, Spain · Jun 2025
+  - city: Granada
+    country: Spain
+    year: '2023'
+    type: Poster
+    title: 'Incentive salience and action control and selection: Individual differences'
+    venue: Jornadas de Investigación 10º Aniversario CIMCYC
+    authors: Ariza, A., Martínez-López, P., Garre-Frutos, F., & González, F.
+    place: Granada, Spain · May 2023
+  - city: Granada
+    country: Spain
+    year: '2025'
+    from: '2021'
+    type: Degree
+    title: PhD in Psychology
+    subtitle: “Awareness, Control & Automaticity in Value-Modulated Attentional Capture”
+    link: https://www.researchgate.net/publication/400441832_Awareness_Control_and_Automaticity_in_Value-Modulated_Attentional_Capture
+    venue: University of Granada
+    distinction: Cum laude · International Doctorate
+  - city: Granada
+    country: Spain
+    year: '2026'
+    type: Appointment
+    title: Postdoctoral researcher
+    venue: CIMCYC · University of Granada
+  - city: Madrid
+    country: Spain
+    year: '2026'
+    from: '2026'
+    ongoing: true
+    type: Appointment
+    title: Postdoctoral researcher
+    venue: Autonomous University of Madrid
+  - city: Granada
+    country: Spain
+    year: '2025'
+    type: Organizer
+    title: II CIMCYC Workshop on Computational Modelling of Behavioral Data
+    venue: CIMCYC · University of Granada
+  - city: Granada
+    country: Spain
+    year: '2025'
+    type: Organizer
+    title: CIMCYC Workshop on Learning and Attention
+    venue: CIMCYC · University of Granada
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Organizer
+    title: 'Measuring individual differences with experimental tasks: current pitfalls and future directions'
+    venue: Symposium · XIV SEPEX Conference
+    place: Almería, Spain · Oct 2024
+  - city: Amsterdam
+    country: Netherlands
+    year: '2024'
+    type: Appointment
+    title: Visiting researcher
+    venue: Theeuwes lab · Vrije Universiteit Amsterdam
+  - city: Amsterdam
+    country: Netherlands
+    year: '2024'
+    type: Course
+    title: Annual JAGS Workshop — Bayesian Modeling for Cognitive Science
+    venue: University of Amsterdam
+  - city: Potsdam
+    country: Germany
+    year: '2023'
+    type: Course
+    title: SMLP — Advanced Bayesian Data Analysis
+    venue: University of Potsdam
+  - city: Potsdam
+    country: Germany
+    year: '2026'
+    type: Course
+    title: SMLP — Advanced Frequentist Statistics with Julia
+    venue: University of Potsdam
+  - city: Barcelona
+    country: Spain
+    year: '2026'
+    type: Course
+    title: BAMB — Summer School on Advanced Modeling of Behavior
+    venue: Centre de Recerca Matemàtica
+  - city: Barcelona
+    country: Spain
+    year: '2026'
+    type: Talk
+    title: Explicit knowledge modulates Pavlovian attentional biases
+    venue: APS Annual Convention
+    authors: Garre-Frutos, F., López-Martínez, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+    place: Barcelona, Spain · May 2026
+  - city: Madrid
+    country: Spain
+    year: '2025'
+    type: Talk
+    title: Modelling Pavlovian attentional biases through reinforcement learning
+    venue: 14th Reunión Científica sobre Atención
+    authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
+    place: Madrid, Spain · Apr 2025
+  - city: Madrid
+    country: Spain
+    year: '2025'
+    type: Poster
+    title: 'Hierarchical models in experimental psychology: A solution for measuring unconscious psychological processes'
+    venue: 14th Reunión Científica sobre Atención
+    authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., Castillejo, I., & Vadillo, M. A.
+    place: Madrid, Spain · Apr 2025
+  - city: San Sebastián
+    country: Spain
+    year: '2025'
+    type: Talk
+    title: 'Lingering habits: Testing the temporal stability of habits'
+    venue: Spanish Society for Comparative Psychology
+    authors: Martínez-López, P., Garre-Frutos, F., León, J. J., Vázquez-Millán, A., Molinero, S., Pérez-Velasco, N., Vadillo, M. A., & Luque, D.
+    place: San Sebastián, Spain · Oct 2025
+  - city: San Sebastián
+    country: Spain
+    year: '2025'
+    type: Poster
+    title: 'Persistence of incentive salience: Devaluation of Pavlovian-to-instrumental transfer (PIT) and reversal of value-modulated attentional capture (VMAC)'
+    venue: Spanish Society for Comparative Psychology
+    authors: Ariza, A., Garre-Frutos, F., & González, F.
+    place: San Sebastián, Spain · Oct 2025
+  - city: Tenerife
+    country: Spain
+    year: '2025'
+    type: Talk
+    title: 'Reliability and validity of experimental measures of value-driven attention: A meta-analysis on individual differences studies'
+    venue: European Association of Methodology
+    authors: Garre-Frutos, F., Solana, P., López-Martínez, P., Lupiáñez, J., & Vadillo, M. A.
+    place: Tenerife, Spain · Jul 2025
+  - city: Tenerife
+    country: Spain
+    year: '2025'
+    type: Talk
+    title: Choose your own PAS? Studying the validity of the Perceptual Awareness Scale
+    venue: European Association of Methodology
+    authors: Franco-Martínez, A., Ferrer-Mendieta, A., Peiró-Lanchares, C., Garre-Frutos, F., & Vadillo, M. A.
+    place: Tenerife, Spain · Jul 2025
+  - city: Tenerife
+    country: Spain
+    year: '2025'
+    type: Talk
+    title: A systematic review and an internal consistency analysis of behavioral habit measures
+    venue: European Association of Methodology
+    authors: Martínez-López, P., Garre-Frutos, F., Luque, D., & Vadillo, M. A.
+    place: Tenerife, Spain · Jul 2025
+  - city: Seville
+    country: Spain
+    year: '2024'
+    type: Talk
+    title: 'What psychometrics can offer to experimental psychology: The multilevel model as an heir of the factorial approach'
+    venue: Methodology of Social and Health Sciences
+    authors: Rey-Sáez, R., Garre-Frutos, F., & Vadillo, M. A.
+    place: Seville, Spain · Sep 2024
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Talk
+    title: An online replication and multiverse reliability analysis of value-modulated attentional capture
+    venue: XIV SEPEX Conference
+    authors: Garre-Frutos, F., Vadillo, M. A., González, F., & Lupiáñez, J.
+    place: Almería, Spain · Oct 2024
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Talk
+    title: Evaluation of the permutation-based split-half reliability in experimental paradigms for habit induction in humans
+    venue: XIV SEPEX Conference
+    authors: Martínez-López, P., Garre-Frutos, F., Vadillo, M. A., & Luque, D.
+    place: Almería, Spain · Oct 2024
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Poster
+    title: Is there value in value-driven distraction? A meta-analysis of studies on individual differences
+    venue: XIV SEPEX Conference
+    authors: Garre-Frutos, F., Lupiáñez, J., & Vadillo, M. A.
+    place: Almería, Spain · Oct 2024
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Poster
+    title: Value-modulated attentional capture depends on explicit awareness
+    venue: XIV SEPEX Conference
+    authors: Garre-Frutos, F., Lupiáñez, J., & Vadillo, M. A.
+    place: Almería, Spain · Oct 2024
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Poster
+    title: Explicit knowledge modulates reversal learning in value-modulated attentional capture
+    venue: XIV SEPEX Conference
+    authors: Ariza, A., Martínez-López, P., Garre-Frutos, F., Luque, D., Vadillo, M. A., & González, F.
+    place: Almería, Spain · Oct 2024
+  - city: Almería
+    country: Spain
+    year: '2024'
+    type: Poster
+    title: Using a forced-response task to measure habit formation in humans
+    venue: XIV SEPEX Conference
+    authors: Martínez-López, P., Vázquez-Millán, A., Garre-Frutos, F., & Luque, D.
+    place: Almería, Spain · Oct 2024
+  - city: Baeza
+    country: Spain
+    year: '2024'
+    type: Poster
+    title: Persistence of the value-modulated attentional capture (VMAC) effect using a reward-only variant task and specific extinction of the increase-signal in reward magnitude
+    venue: Spanish Society for Comparative Psychology
+    authors: Ariza, A., Garre-Frutos, F., & González, F.
+    place: Baeza, Spain · Sep 2024
+  - city: Porto
+    country: Portugal
+    year: '2023'
+    type: Poster
+    title: Inhibition of return and learned value
+    venue: 22nd Conference of the European Society for Cognitive Psychology
+    authors: Garre-Frutos, F., & Lupiáñez, J.
+    place: Porto, Portugal · Aug 2023
+  - city: Porto
+    country: Portugal
+    year: '2023'
+    type: Poster
+    title: 'Interference vs. distraction: Qualitatively different attentional capture effects depending on distractor relevance'
+    venue: 22nd Conference of the European Society for Cognitive Psychology
+    authors: Manini, G., Garre-Frutos, F., Botta, F., Martín-Arévalo, E., & Lupiáñez, J.
+    place: Porto, Portugal · Aug 2023
+  - city: Faro
+    country: Portugal
+    year: '2022'
+    type: Poster
+    title: A VMAC online replication and multiverse reliability analysis
+    venue: International APPE–SEPEX Meeting
+    authors: Garre-Frutos, F., Hinojosa-Aguayo, I., González, F., Vadillo, M. A., & Lupiáñez, J.
+    place: Faro, Portugal · May 2022
+  - city: Dublin
+    country: Ireland
+    year: '2025'
+    type: Poster
+    title: Modelling Pavlovian attentional biases through reinforcement learning
+    venue: Reinforcement Learning and Decision-Making Conference
+    authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
+    place: Dublin, Ireland · Jun 2025
+  - city: Heraklion
+    country: Greece
+    year: '2025'
+    type: Poster
+    title: Selective attention and explicit awareness independently contribute to the learning process of reward-related attentional biases
+    venue: 28th Annual Meeting of the ASSC
+    authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., Van Moorselaar, D., & Lupiáñez, J.
+    place: Heraklion, Greece · Jul 2025
+  - city: Heraklion
+    country: Greece
+    year: '2025'
+    type: Poster
+    title: 'Addressing methodological challenges in unconscious process research: A hierarchical modeling approach'
+    venue: 28th Annual Meeting of the ASSC
+    authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., Castillejo, I., & Vadillo, M. A.
+    place: Heraklion, Greece · Jul 2025
+  - city: Tokyo
+    country: Japan
+    year: '2024'
+    type: Poster
+    title: The role of informational value on value-modulated attentional capture
+    venue: 27th Annual Meeting of the ASSC
+    authors: Garre-Frutos, F., Vadillo, M. A., Botta, F., & Lupiáñez, J.
+    place: Tokyo, Japan · Jul 2024
