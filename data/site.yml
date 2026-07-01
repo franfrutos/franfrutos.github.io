@@ -1,0 +1,36 @@
+# =============================================================================
+# Site identity & SEO — the ONE place to edit everything that shows in the
+# browser tab, in share cards (Twitter / LinkedIn / WhatsApp / Slack), and in
+# search engines. scripts/build-meta.mjs turns this into the page <head>
+# (og / twitter / JSON-LD) on every render, so you never touch HTML by hand.
+# =============================================================================
+
+name: Francisco Garre-Frutos
+title: "Francisco Garre-Frutos, PhD"          # site title → browser tab + og:title
+role: Postdoctoral Researcher
+affiliation: Autonomous University of Madrid
+url: "https://franfrutos.github.io"
+
+# One line shown as the meta description + share-card description (home & default).
+description: "Postdoctoral research in experimental psychology."
+
+# Generic share image (dark branded card). Papers get their own auto-generated
+# card (see scripts/build-og.mjs); this is the fallback for the home/CV.
+ogImage: "/assets/og-image.png"
+twitter: "@Fran_gfr"
+
+# Fed to the JSON-LD Person entity (helps Google/Scholar understand your topics).
+keywords:
+  - Attention
+  - Associative learning
+  - Value-modulated attentional capture
+  - Cognitive psychology
+
+# Your profiles → JSON-LD `sameAs` (links your identity across the web).
+profiles:
+  orcid:        "https://orcid.org/0000-0001-9810-186X"
+  scholar:      "https://scholar.google.es/citations?user=RWd96bwAAAAJ&hl=es"
+  osf:          "https://osf.io/4ney2/"
+  github:       "https://github.com/franfrutos"
+  bluesky:      "https://bsky.app/profile/frangfr.bsky.social"
+  researchgate: "https://www.researchgate.net/profile/Francisco-Garre-Frutos-2"
