@@ -103,9 +103,10 @@ function main() {
 
   console.log(`geocoded ${Object.keys(coords).length}/${cities.length} cities → ${path.relative(root, OUT)}`);
   if (problems.length) {
+    // Warn but don't fail the build — a missing coordinate just drops that map
+    // point; it shouldn't block a deploy.
     console.error('\nUNRESOLVED cities (add to OVERRIDES in scripts/geocode-cities.mjs):');
     console.error(problems.join('\n'));
-    process.exitCode = 1;
   }
 }
 
