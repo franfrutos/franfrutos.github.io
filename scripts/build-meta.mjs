@@ -79,5 +79,6 @@ const head = `<!-- GENERATED from data/site.yml by scripts/build-meta.mjs — do
 <script type="application/ld+json">${jsonLd}</script>
 `;
 
+fs.mkdirSync(path.join(root, '_includes'), { recursive: true }); // may not exist on a fresh checkout
 fs.writeFileSync(path.join(root, '_includes', 'head.html'), head);
 console.log('generated _includes/head.html from data/site.yml');

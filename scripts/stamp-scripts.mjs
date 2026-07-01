@@ -61,5 +61,6 @@ for (const [comment, srcs] of GROUPS) {
   lines.push('');
 }
 
+fs.mkdirSync(path.join(root, '_includes'), { recursive: true }); // may not exist on a fresh checkout
 fs.writeFileSync(path.join(root, '_includes', 'scripts.html'), lines.join('\n').trimEnd() + '\n');
 console.log('stamped _includes/scripts.html');
