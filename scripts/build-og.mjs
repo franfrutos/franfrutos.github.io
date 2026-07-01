@@ -70,6 +70,23 @@ function cardTyp(p) {
   ].join('\n');
 }
 
+// The generic profile card (home/CV share image), from data/site.yml: name +
+// research tagline + affiliation, same brand look (hills, coral rule) as the papers.
+function profileTyp() {
+  const suffix = SITE.title.startsWith(SITE.name) ? SITE.title.slice(SITE.name.length) : '';
+  const footer = SITE.affiliation + (SITE.lab ? ' · ' + SITE.lab : '');
+  return [
+    '#set page(width: 12.5in, height: 6.5625in, margin: (x: 0.95in, y: 0.9in), fill: rgb("#1b1e26"))',
+    '#set text(font: "IBM Plex Mono", fill: rgb("#e9ebef"))',
+    '#place(bottom + right, dx: 0.9in, dy: 1.35in, ' + HILLS_TYP + ')',
+    '#place(horizon + left, dy: -0.6in, text(size: 43pt, weight: "bold")[' + escTyp(SITE.name) + '#text(fill: rgb("#6c7382"))[' + escTyp(suffix) + ']])',
+    '#place(horizon + left, dy: 0.25in, box(width: 8.6in, text(size: 23pt, fill: rgb("#aab0bd"), style: "italic")[' + escTyp(SITE.tagline) + ']))',
+    '#place(bottom + left, text(size: 18pt, fill: rgb("#ff5a3c"))[' + escTyp(footer) + '])',
+    '#place(bottom + left, dx: -0.95in, dy: 0.9in, rect(width: 12.5in, height: 10pt, fill: rgb("#ff5a3c")))',
+  ].join('\n');
+}
+
+const PPI = 192; // 2x the 1200x630 OG size → stays crisp on retina + after platform re-compression
 const manifestPath = path.join(outDir, '.manifest.json');
 let manifest = {};
 try { manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8')); } catch {}
@@ -77,18 +94,20 @@ const next = {};
 const tmp = path.join(outDir, '_card.typ');
 let built = 0, skipped = 0, failed = 0;
 
-for (const p of papers) {
-  const slug = paperSlug(p);
-  const out = path.join(outDir, slug + '.png');
-  const typ = cardTyp(p);
-  const hash = crypto.createHash('md5').update(typ).digest('hex');
-  next[slug] = hash;
-  if (manifest[slug] === hash && fs.existsSync(out)) { skipped++; continue; }
+// Compile a Typst card to PNG, skipping when its content-hash (incl. PPI) is unchanged.
+function render(key, typ, out) {
+  const hash = crypto.createHash('md5').update(PPI + ':' + typ).digest('hex');
+  next[key] = hash;
+  if (manifest[key] === hash && fs.existsSync(out)) { skipped++; return; }
   fs.writeFileSync(tmp, typ);
-  const r = spawnSync('quarto typst compile "' + tmp + '" "' + out + '" --font-path "' + fonts + '" --ppi 96', { stdio: 'pipe', shell: true });
+  const r = spawnSync('quarto typst compile "' + tmp + '" "' + out + '" --font-path "' + fonts + '" --ppi ' + PPI, { stdio: 'pipe', shell: true });
   if (r.status === 0) built++;
-  else { failed++; delete next[slug]; console.error('build-og: failed for ' + slug + (r.stderr ? '\n' + r.stderr.toString() : '')); }
+  else { failed++; delete next[key]; console.error('build-og: failed for ' + key + (r.stderr ? '\n' + r.stderr.toString() : '')); }
 }
+
+for (const p of papers) render(paperSlug(p), cardTyp(p), path.join(outDir, paperSlug(p) + '.png'));
+render('_profile', profileTyp(), path.join(root, 'assets/og-image.png')); // generic home/CV card
+
 try { fs.unlinkSync(tmp); } catch {}
 fs.writeFileSync(manifestPath, JSON.stringify(next, null, 0));
-console.log('og cards: ' + built + ' built, ' + skipped + ' cached' + (failed ? ', ' + failed + ' failed' : '') + ' → assets/og/');
+console.log('og cards: ' + built + ' built, ' + skipped + ' cached' + (failed ? ', ' + failed + ' failed' : '') + ' → assets/og/ + og-image.png');

@@ -7,8 +7,9 @@ _quarto_internal_scss_error.scss
 # Generated each render from data/site.yml (scripts/build-meta.mjs)
 /_includes/head.html
 
-# Per-paper Open Graph share cards, Typst→PNG (scripts/build-og.mjs)
+# Open Graph share cards, Typst→PNG (scripts/build-og.mjs): per-paper + generic
 /assets/og/
+/assets/og-image.png
 
 # Stamped each render with content-hash cache-busters (scripts/stamp-scripts.mjs)
 /_includes/scripts.html
