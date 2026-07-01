@@ -224,7 +224,7 @@ So instead of just dropping a boring "CV" section here (you can [see my boring c
       </div>
     </div>
     <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px 28px; margin:64px 0 0;">
-      <p style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--panel-ink2); margin:0; line-height:1.7;">© 2026 Francisco Garre-Frutos&nbsp;·&nbsp;made with R<i class="fa-brands fa-r-project" style="font-size:13px; color:#276DC3; vertical-align:middle; margin:0 1px;"></i>, Quarto<img src="/assets/logos/quarto.svg" alt="Quarto" width="13" height="13" style="vertical-align:middle; margin:0 1px;"> and Claude<img src="/assets/logos/claude.svg" alt="Claude" width="13" height="13" style="vertical-align:middle; margin:0 1px;"></p>
+      <p style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--panel-ink2); margin:0; line-height:1.7;">© 2026 Francisco Garre-Frutos&nbsp;·&nbsp;made with R<i class="fa-brands fa-r-project" style="font-size:13px; color:#276DC3; vertical-align:middle; margin:0 1px 0 4px;"></i>, Quarto<img src="/assets/logos/quarto.svg" alt="Quarto" width="13" height="13" style="vertical-align:middle; margin:0 1px 0 4px;"> and Claude<img src="/assets/logos/claude.svg" alt="Claude" width="13" height="13" style="vertical-align:middle; margin:0 1px 0 4px;"></p>
       <a href="https://github.com/franfrutos/franfrutos.github.io" target="_blank" title="Source on GitHub" style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--panel-ink2); display:inline-flex; align-items:center; gap:7px; white-space:nowrap;"><i class="fa-brands fa-github" style="font-size:15px;"></i>View the source at GitHub</a>
     </div>
   </div>
