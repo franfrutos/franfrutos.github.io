@@ -22,6 +22,7 @@ website:
   # Favicons are declared in _includes/head.html (build-meta.mjs) with content-hash
   # cache-busting + a root favicon.ico, so no `favicon:` here (avoids a duplicate link).
   site-url: "https://fgarrefrutos.com"
+  search: false            # custom nav has no search box; drops ~150 KB of quarto-search JS
   # Native Open Graph + Twitter cards; per-page title/description/image (front
   # matter) drive them. Extra og/JSON-LD lives in _includes/head.html (build-meta).
   open-graph: true

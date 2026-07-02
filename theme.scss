@@ -603,3 +603,13 @@ html.fgf-dark .cv-dl-dark { display: block; }
   .hero-figure { width: 100% !important; max-width: 300px; }
   .hero-photo { width: 100% !important; height: auto !important; aspect-ratio: 1 / 1; }
 }
+
+/* Respect users who ask for less motion: near-instant transitions/animations. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
