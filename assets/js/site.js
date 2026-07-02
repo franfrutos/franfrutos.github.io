@@ -464,8 +464,8 @@
     }
 
     // Basemap is purely decorative — pins are placed from geocoded coordinates
-    // (city-coords.js), so a light 50m basemap is plenty and strokes cheaply.
-    fetch('/assets/countries-50m.json').then(function (r) { return r.json(); }).then(function (topo) {
+    // (city-coords.js), so the light 110m basemap is plenty and strokes cheaply.
+    fetch('/assets/countries-110m.json').then(function (r) { return r.json(); }).then(function (topo) {
       _topo = topo;
       var tries = 0;
       var tick = function () { if (buildGeoMap()) { buildPins(); maybeCenter(); } else if (tries++ < 80) setTimeout(tick, 80); };
