@@ -46,6 +46,7 @@ papers:
     issue: 6
     pages: 3025–3040
     url: https://doi.org/10.3758/s13423-025-02734-1
+    date: "2025/07/16"           # Crossref issued → citation_publication_date
     slug: vmac-awareness
     osf:
       materials: https://github.com/franfrutos/VMAC_awareness/tree/main/Materials
@@ -100,6 +101,7 @@ papers:
     issue: 3
     articleno: 89
     url: https://doi.org/10.1007/s00426-025-02115-2
+    date: "2025/04/16"           # Crossref issued → citation_publication_date
     tags: [reward learning, extinction]
     keywords: [attention, capture, value, learning, sign-tracking, extinction]
     osf:
@@ -118,6 +120,7 @@ papers:
     issue: 4
     pages: 335–354
     url: https://doi.org/10.3758/s13420-025-00676-1
+    date: "2025/05/14"           # Crossref issued → citation_publication_date
     tags: [PIT, impulsivity]
     keywords: [Attentional sign-tracking, Emotion regulation, Extinction, Incentive salience, Negative urgency, Pavlovian instrumental transfer]
     osf:
@@ -133,6 +136,7 @@ papers:
     issue: 6
     pages: 5986–6003
     url: https://doi.org/10.3758/s13428-023-02329-5
+    date: "2024/01/09"           # Crossref issued → citation_publication_date
     tags: [VMAC, reliability, multiverse]
     keywords: [Learning, Multiverse, Reliability, Value-modulated attentional capture, Visual search]
     osf:
@@ -269,6 +273,7 @@ papers:
     issue: 1
     articleno: niaf046
     url: https://doi.org/10.1093/nc/niaf046
+    date: "2026/01/19"           # Crossref online (issue-year matches) → citation_publication_date
     tags: [working memory, registered report]
     keywords: [Registered Report, multisite, perceptual awareness, replication, unconscious, working memory]
     osf:

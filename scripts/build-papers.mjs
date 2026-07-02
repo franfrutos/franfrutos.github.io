@@ -132,13 +132,21 @@ function genRis(p) {
 }
 // Highwire citation_* meta tags → Zotero Connector + Google Scholar can detect the paper.
 function citationMeta(p) {
-  const L = []; const add = (n, c) => L.push('  <meta name="' + n + '" content="' + esc(c) + '">');
+  const L = []; const add = (n, c) => { if (c != null && c !== '') L.push('  <meta name="' + n + '" content="' + esc(c) + '">'); };
   add('citation_title', p.title);
   splitAuthors(p.authors).forEach((a) => add('citation_author', a));
-  if (p.year && /^\d/.test(String(p.year))) add('citation_publication_date', p.year);
+  // Prefer a full publication date (YYYY/MM/DD from Crossref, stored in papers.yml)
+  // over the bare year; an in-press paper (year "in press") has neither → omitted.
+  add('citation_publication_date', p.date || (/^\d/.test(String(p.year)) ? p.year : ''));
   if (p.venue && p.venue.toLowerCase() !== 'under review') add('citation_journal_title', p.venue);
+  add('citation_volume', p.volume);
+  add('citation_issue', p.issue);
+  // A page range → first/last; a single page or an article e-locator → first page only.
+  if (p.pages != null) { const [sp, ep] = String(p.pages).split(/\s*[–-]\s*/); add('citation_firstpage', sp); if (ep) add('citation_lastpage', ep); }
+  else if (p.articleno != null) add('citation_firstpage', p.articleno);
   const doi = citeDoi(p); if (doi) add('citation_doi', doi);
-  add('citation_public_url', SITE.url + '/research/' + paperSlug(p) + '/');
+  add('citation_abstract_html_url', SITE.url + '/research/' + paperSlug(p) + '/');
+  add('citation_language', 'en');
   return L.join('\n');
 }
 // Share/description card text: the abstract opening (~160 chars), links stripped to
