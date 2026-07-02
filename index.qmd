@@ -78,7 +78,7 @@ header-includes: |
               <a href="https://github.com/franfrutos" target="_blank" title="GitHub" class="social-link"><i class="fa-brands fa-github" style="font-size:19px;"></i></a>
               <a href="https://www.researchgate.net/profile/Francisco-Garre-Frutos-2" target="_blank" title="ResearchGate" class="social-link"><i class="ai ai-researchgate" style="font-size:19px;"></i></a>
               <a href="https://bsky.app/profile/frangfr.bsky.social" target="_blank" title="Bluesky" class="social-link"><i class="fa-brands fa-bluesky" style="font-size:19px;"></i></a>
-              <a href="https://x.com/Fran_gfr" target="_blank" title="X" class="social-link"><i class="fa-brands fa-x-twitter" style="font-size:18px;"></i></a>
+              <a href="https://osf.io/4ney2/" target="_blank" title="OSF" class="social-link"><i class="ai ai-osf" style="font-size:19px;"></i></a>
               <a href="mailto:fgfrutos@gmail.com" title="Email" class="social-link"><i class="fa-solid fa-envelope" style="font-size:18px;"></i></a>
             </div>
           </div>
@@ -219,7 +219,7 @@ So instead of just dropping a boring "CV" section here (you can [see my boring c
           <a href="https://github.com/franfrutos" target="_blank" title="GitHub" class="social-ic-dark"><i class="fa-brands fa-github" style="font-size:17px;"></i></a>
           <a href="https://www.researchgate.net/profile/Francisco-Garre-Frutos-2" target="_blank" title="ResearchGate" class="social-ic-dark"><i class="ai ai-researchgate" style="font-size:17px;"></i></a>
           <a href="https://bsky.app/profile/frangfr.bsky.social" target="_blank" title="Bluesky" class="social-ic-dark"><i class="fa-brands fa-bluesky" style="font-size:17px;"></i></a>
-          <a href="https://x.com/Fran_gfr" target="_blank" title="X" class="social-ic-dark"><i class="fa-brands fa-x-twitter" style="font-size:16px;"></i></a>
+          <a href="https://osf.io/4ney2/" target="_blank" title="OSF" class="social-ic-dark"><i class="ai ai-osf" style="font-size:17px;"></i></a>
         </div>
       </div>
     </div>

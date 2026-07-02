@@ -25,7 +25,7 @@ header:
   # (The phone lives in .private/private.yml → only the local private PDF shows it.)
   contacts:
     - { icon: email,   label: fgfrutos@gmail.com,   url: "mailto:fgfrutos@gmail.com" }
-    - { icon: web,     label: franfrutos.github.io, url: "https://franfrutos.github.io" }
+    - { icon: web,     label: fgarrefrutos.com, url: "https://fgarrefrutos.com" }
     - { icon: scholar, label: Scholar,  url: "https://scholar.google.es/citations?user=RWd96bwAAAAJ&hl=es" }
     - { icon: orcid,   label: ORCID,    url: "https://orcid.org/0000-0001-9810-186X" }
     - { icon: osf,     label: OSF,      url: "https://osf.io/4ney2/" }
