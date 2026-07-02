@@ -14,11 +14,13 @@ project:
   resources:
     - assets/**
     - CNAME              # custom domain for GitHub Pages (copied into _site/CNAME each deploy)
+    - favicon.ico        # root /favicon.ico — Google's classic favicon lookup path
     - google8e1efdef24f8244c.html   # Google Search Console verification for franfrutos.github.io
 
 website:
   title: "Francisco Garre-Frutos, PhD"
-  favicon: assets/favicon.svg
+  # Favicons are declared in _includes/head.html (build-meta.mjs) with content-hash
+  # cache-busting + a root favicon.ico, so no `favicon:` here (avoids a duplicate link).
   site-url: "https://fgarrefrutos.com"
   # Native Open Graph + Twitter cards; per-page title/description/image (front
   # matter) drive them. Extra og/JSON-LD lives in _includes/head.html (build-meta).

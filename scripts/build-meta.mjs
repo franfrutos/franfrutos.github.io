@@ -65,9 +65,12 @@ const head = `<!-- GENERATED from data/site.yml by scripts/build-meta.mjs — do
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
 
-<!-- Favicons -->
+<!-- Favicons — root .ico (Google's classic lookup) + scalable SVG (modern browsers)
+     + raster PNGs. sizes="any" on the .ico lets browsers prefer the SVG. -->
+<link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="${fav('/assets/favicon.svg')}" type="image/svg+xml">
 <link rel="icon" href="${fav('/assets/favicon-32.png')}" sizes="32x32" type="image/png">
+<link rel="icon" href="${fav('/assets/favicon-512.png')}" sizes="512x512" type="image/png">
 <link rel="apple-touch-icon" href="${fav('/assets/favicon-180.png')}">
 
 ${SITE.googleVerification ? `<!-- Google Search Console (verifies franfrutos.github.io, same head served there) -->
