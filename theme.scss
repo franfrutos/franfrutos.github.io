@@ -495,6 +495,12 @@ html.fgf-dark [data-site] .h-btn-primary:hover { background: color-mix(in srgb, 
   .foot-next { text-align: left !important; }
   .abstract-panel { padding: 22px 20px !important; }
 
+  /* Action buttons: a tidy 2-col grid (equal widths) instead of an uneven wrap.
+     With an odd count (preprints have no PDF button) the lone last one spans both. */
+  .h-actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .h-actions > .h-btn { justify-content: center; }
+  .h-actions > *:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
   /* Detail- & CV-page nav (these have no burger menu — make them fit) */
   .page-nav-inner { padding-left: 18px !important; padding-right: 18px !important; }
   .page-nav-inner .nav-wordmark { font-size: 13px !important; }    /* "Francisco" is hidden via .nav-fname */
