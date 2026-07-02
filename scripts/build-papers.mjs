@@ -12,6 +12,12 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const RESEARCH = path.join(root, 'assets/data/research.js');
 const OUTDIR = path.join(root, 'research');
+const PDFDIR = path.join(root, 'assets/pdf');
+// A self-hosted full-text PDF (final version-of-record or accepted postprint) that
+// lives next to the page, so Google Scholar can index the full text (citation_pdf_url
+// must be same-directory). Returns the filename if one is committed, else null.
+// Only stable finals are hosted — preprints stay on PsyArXiv (see the OA/Scholar plan).
+function pdfName(p) { const f = paperSlug(p) + '.pdf'; return fs.existsSync(path.join(PDFDIR, f)) ? f : null; }
 
 const ME = 'Garre-Frutos, F.', DAG = '†';
 const DAG_TITLE = 'Shared first authorship — these authors contributed equally';
@@ -145,6 +151,7 @@ function citationMeta(p) {
   if (p.pages != null) { const [sp, ep] = String(p.pages).split(/\s*[–-]\s*/); add('citation_firstpage', sp); if (ep) add('citation_lastpage', ep); }
   else if (p.articleno != null) add('citation_firstpage', p.articleno);
   const doi = citeDoi(p); if (doi) add('citation_doi', doi);
+  const pdf = pdfName(p); if (pdf) add('citation_pdf_url', SITE.url + '/research/' + paperSlug(p) + '/' + pdf);
   add('citation_abstract_html_url', SITE.url + '/research/' + paperSlug(p) + '/');
   add('citation_language', 'en');
   return L.join('\n');
@@ -231,7 +238,11 @@ function renderPaper(p, threadTitle, prev, next) {
 
   // pagetitle is just the paper title; Quarto appends the site title (" – Francisco
   // Garre-Frutos") once — adding it here too would double the suffix in <title>.
-  return '---\npagetitle: ' + JSON.stringify(p.title) + '\ndescription: ' + JSON.stringify(shareDescription(p)) + '\nimage: ' + JSON.stringify(SITE.url + '/assets/og/' + paperSlug(p) + '.png') + '\nheader-includes: |\n' + paperHead(p) + '\n---\n\n::: {data-site=""}\n\n' + body + '\n:::\n';
+  // When a full-text PDF is hosted, list it as a page resource so Quarto copies it
+  // into _site/research/<slug>/ next to index.html (main() drops the file there).
+  const pdf = pdfName(p);
+  const resLine = pdf ? 'resources:\n  - ' + pdf + '\n' : '';
+  return '---\npagetitle: ' + JSON.stringify(p.title) + '\ndescription: ' + JSON.stringify(shareDescription(p)) + '\nimage: ' + JSON.stringify(SITE.url + '/assets/og/' + paperSlug(p) + '.png') + '\n' + resLine + 'header-includes: |\n' + paperHead(p) + '\n---\n\n::: {data-site=""}\n\n' + body + '\n:::\n';
 }
 
 function main() {
@@ -247,6 +258,8 @@ function main() {
     const prev = flat[(i - 1 + flat.length) % flat.length].p, next = flat[(i + 1) % flat.length].p;
     const dir = path.join(OUTDIR, slug);
     fs.mkdirSync(dir, { recursive: true });
+    const pdf = pdfName(p);
+    if (pdf) fs.copyFileSync(path.join(PDFDIR, pdf), path.join(dir, pdf));
     fs.writeFileSync(path.join(dir, 'index.qmd'), renderPaper(p, threadTitle, prev, next));
   });
   console.log('built ' + seen.size + ' paper detail pages → research/<slug>/');
