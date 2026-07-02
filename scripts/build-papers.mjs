@@ -199,6 +199,10 @@ function renderPaper(p, threadTitle, prev, next) {
   const primary = p.url
     ? '<a href="' + esc(p.url) + '" target="_blank" class="h-btn h-btn-primary"><i class="' + (preprintLink ? 'ai ai-psyarxiv' : 'fa-solid fa-up-right-from-square') + '"></i> ' + (preprintLink ? 'Preprint (PsyArXiv)' : 'Published version') + '</a>'
     : '<span class="h-btn h-btn-ghost off"><i class="fa-solid fa-hourglass-half"></i> ' + esc(p.venue) + '</span>';
+  // Direct link to the self-hosted full text (when we host one) so visitors — not
+  // just Scholar's crawler — can read the PDF without leaving the site.
+  const pdfFile = pdfName(p);
+  const pdfBtn = pdfFile ? '<a href="' + esc(pdfFile) + '" target="_blank" class="h-btn h-btn-ghost"><i class="fa-solid fa-file-pdf"></i> PDF</a>' : '';
   // "Add to Zotero", hybrid: if the paper has a citable article DOI, hand it to
   // Zotero's save-by-DOI service (rich CrossRef metadata). Otherwise (in press, or
   // a paper whose only DOI is a preprint we keep out of the citation) offer a .ris
@@ -227,7 +231,7 @@ function renderPaper(p, threadTitle, prev, next) {
 '    <h1 style="font-family:\'IBM Plex Mono\', monospace; font-weight:600; font-size:33px; line-height:1.2; letter-spacing:0; margin:0 0 24px; color:var(--ink); text-wrap:balance;">' + esc(p.title) + '</h1>\n' +
 '    <p style="font-family:\'IBM Plex Mono\',monospace; font-size:14.5px; color:var(--ink2); margin:0 0 10px; line-height:1.6; letter-spacing:-0.01em;">' + authorPartsHTML(p.authors) + '</p>\n' +
 '    <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-style:italic; font-family:\'IBM Plex Mono\',monospace; font-size:20px; color:var(--accent);">' + esc(p.venue) + '</span>' + preprintTag + '</p>\n' +
-'    <div class="h-actions">' + primary + zotero + '<a href="#cite" class="h-btn h-btn-ghost"><i class="fa-solid fa-quote-right"></i> Cite</a></div>\n' +
+'    <div class="h-actions">' + primary + pdfBtn + zotero + '<a href="#cite" class="h-btn h-btn-ghost"><i class="fa-solid fa-quote-right"></i> Cite</a></div>\n' +
 '    <div class="h-badges">' + badgesHTML(p) + '</div>\n' +
 '  </div></header>\n\n  ' + abstractSection + '\n\n' +
 '  <section id="cite" style="padding:48px 0 0;"><div class="sec-label"><span></span><h2>How to cite</h2></div>\n' +
