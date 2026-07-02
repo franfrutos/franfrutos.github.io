@@ -44,3 +44,6 @@ scripts/.geonames-cache/
 .DS_Store
 Thumbs.db
 *.log
+
+# Icon subsetting: cached upstream FA/Academicons sources (see scripts/build-icons.py)
+/scripts/.icon-cache/

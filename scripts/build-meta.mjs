@@ -61,9 +61,9 @@ const head = `<!-- GENERATED from data/site.yml by scripts/build-meta.mjs — do
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- Icon fonts -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+<!-- Icon fonts: self-hosted subset of Font Awesome + Academicons (only the glyphs
+     the site uses, ~9 KB total vs ~420 KB from the CDNs). Built by scripts/build-icons.py. -->
+<link rel="stylesheet" href="${fav('/assets/icons.css')}">
 
 <!-- Favicons — root .ico (Google's classic lookup) + scalable SVG (modern browsers)
      + raster PNGs. sizes="any" on the .ico lets browsers prefer the SVG. -->

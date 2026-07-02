@@ -11,6 +11,7 @@ project:
     - node scripts/stamp-scripts.mjs
   post-render:
     - node scripts/build-cv-dark.mjs
+    - node scripts/strip-assets.mjs
   resources:
     - assets/**
     - CNAME              # custom domain for GitHub Pages (copied into _site/CNAME each deploy)
