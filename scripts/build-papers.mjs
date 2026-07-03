@@ -150,7 +150,14 @@ function citationMeta(p) {
   // A page range → first/last; a single page or an article e-locator → first page only.
   if (p.pages != null) { const [sp, ep] = String(p.pages).split(/\s*[–-]\s*/); add('citation_firstpage', sp); if (ep) add('citation_lastpage', ep); }
   else if (p.articleno != null) add('citation_firstpage', p.articleno);
-  const doi = citeDoi(p); if (doi) add('citation_doi', doi);
+  const doi = citeDoi(p);
+  if (doi) {
+    add('citation_doi', doi);
+    // Belt-and-suspenders: the same DOI in the DC and PRISM formats some crawlers
+    // (incl. Altmetric) look for, in case they don't read Highwire citation_doi.
+    add('dc.identifier', 'doi:' + doi);
+    add('prism.doi', doi);
+  }
   const pdf = pdfName(p); if (pdf) add('citation_pdf_url', SITE.url + '/research/' + paperSlug(p) + '/' + pdf);
   add('citation_abstract_html_url', SITE.url + '/research/' + paperSlug(p) + '/');
   add('citation_language', 'en');
