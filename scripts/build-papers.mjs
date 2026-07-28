@@ -156,7 +156,7 @@ function citationMeta(p) {
     // Belt-and-suspenders: the same DOI in the DC and PRISM formats some crawlers
     // (incl. Altmetric) look for, in case they don't read Highwire citation_doi.
     add('dc.identifier', 'doi:' + doi);
-    add('prism.doi', doi);
+    add('prism.doi', 'doi:' + doi);
   }
   const pdf = pdfName(p); if (pdf) add('citation_pdf_url', SITE.url + '/research/' + paperSlug(p) + '/' + pdf);
   add('citation_abstract_html_url', SITE.url + '/research/' + paperSlug(p) + '/');
