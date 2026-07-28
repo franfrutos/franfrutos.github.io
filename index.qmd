@@ -2,6 +2,9 @@
 pagetitle: "Francisco Garre-Frutos, PhD"
 description: "Postdoctoral researcher in experimental psychology."
 image: "/assets/og-image.png"
+# Old site had a separate /about.html — its content now lives on the home page,
+# so the alias emits a redirect stub there for pre-redesign links.
+aliases: ["/about.html"]
 header-includes: |
   <meta property="og:type" content="profile">
 ---

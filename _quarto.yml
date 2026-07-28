@@ -34,6 +34,7 @@ website:
 format:
   html:
     theme: theme.scss
+    canonical-url: true   # <link rel="canonical"> from site-url; fixes GSC "Duplicate, no canonical"
     page-layout: full
     toc: false
     anchor-sections: false

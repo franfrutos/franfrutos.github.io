@@ -398,6 +398,9 @@ function buildHtml() {
     'title-prefix: ""\n' +
     'description: "Academic CV of Francisco Garre-Frutos — postdoctoral researcher in experimental psychology (Autonomous University of Madrid)."\n' +
     'image: "/assets/og-image.png"\n' +
+    // Old site served the CV at /CV.html — alias emits a redirect stub there
+    // so pre-redesign links (and Google's index) land on /cv/ instead of a 404.
+    'aliases: ["/CV.html"]\n' +
     'header-includes: |\n' +
     '  <meta property="og:type" content="profile">\n' +
     '---\n\n' +
