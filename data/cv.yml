@@ -61,14 +61,10 @@ experience:
     right: Madrid, Spain
     org: Autonomous University of Madrid · Cognition, Attention & Learning Lab (CALL)
     dates: Since 2026
-    fields:
-      - [PI, "Miguel A. Vadillo."]
   - title: Postdoctoral Researcher
     right: Granada, Spain
     org: University of Granada · Mind, Brain & Behavior Research Center (CIMCYC)
     dates: 2026
-    fields:
-      - [PI, "Juan Lupiáñez."]
   - title: Predoctoral Researcher (FPU Fellow)
     right: Granada, Spain
     org: University of Granada · Mind, Brain & Behavior Research Center (CIMCYC)
@@ -90,20 +86,22 @@ experience:
 # is stated once, in the Amsterdam appointment; the end-of-degree award once,
 # here. Travel awards / society prizes go here too when they arrive.
 awards:
-  - title: FPU Predoctoral Fellowship (Formación de Profesorado Universitario)
+  - title: Bridging Postdoctoral Contract
+    right: Granada, Spain
+    org: University of Granada · UGR–Santander Bridging Contracts Programme
+    dates: 2026
+  - title: FPU Predoctoral Fellowship
     org: Ministry of Universities, Government of Spain
     dates: 2021 – 2025
-  - title: Research Initiation Scholarship (Beca de Iniciación a la Investigación)
+  - title: Research Initiation Scholarship
     right: Granada, Spain
     org: University of Granada · Plan Propio de Investigación
     dates: 2020 – 2021
-    fields:
-      - [Research, "Attention and learned value, with Juan Lupiáñez."]
-  - title: Extraordinary End-of-Degree Award (Premio Extraordinario Fin de Grado)
+  - title: Extraordinary End-of-Degree Award
     right: Murcia, Spain
     org: University of Murcia
     dates: 2020
-  - title: Collaboration Scholarship (Beca de Colaboración)
+  - title: Collaboration Scholarship
     right: Murcia, Spain
     org: Spanish Ministry of Education · University of Murcia
     dates: 2019 – 2020
