@@ -165,6 +165,9 @@ function typstBody(cv, papers) {
   out += section('Research Experience');
   cv.experience.forEach((e) => { out += emitEntry(e); });
 
+  out += section('Awards & Fellowships');
+  (cv.awards || []).forEach((e) => { out += emitEntry(e); });
+
   out += section('Methods & Technical Expertise');
   (cv.methods || []).forEach(([label, value]) => {
     out += '#methodrow([' + inlineMd(label) + '], [' + inlineMd(value) + '])\n';
@@ -357,6 +360,7 @@ function buildHtml() {
   let body = '';
   body += secHtml('Education', cv.education.map(entryHtml).join(''));
   body += secHtml('Research Experience', cv.experience.map(entryHtml).join(''));
+  body += secHtml('Awards & Fellowships', (cv.awards || []).map(entryHtml).join(''));
   body += secHtml('Methods & Technical Expertise',
     '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');
   body += secHtml('Specialized Training', cv.training.map((t) => entryHtml({ title: t.title, right: t.dates, org: t.org })).join(''));
