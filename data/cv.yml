@@ -214,20 +214,20 @@ conferences:
     - authors: Franco-Martínez, A., Ferrer-Mendieta, A., Peiró Lanchares, C., Vadillo, M. A., & Garre-Frutos, F.
       year: 2026
       title: "What do we mean by “validity” in experimental measures? An illustrative study with the Perceptual Awareness Scale (PAS)."
-      venue: "Invited symposium *Experimental Psychometrics* (org. Ricardo Rey-Sáez), XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain, September 9–11."
-    - authors: Garre-Frutos, F., López-Martínez, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+      venue: "Invited talk, symposium *Experimental Psychometrics* (org. Ricardo Rey-Sáez), XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain, September 9–11."
+    - authors: Garre-Frutos, F., Martínez-López, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
       year: 2026
       title: Explicit knowledge modulates Pavlovian attentional biases.
       venue: APS Annual Convention, Barcelona, Spain, May 28–30.
     - authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
       year: 2026
       title: Temporal stability in the expression of laboratory-based habits.
-      venue: "Invited symposium *Mechanisms of Habit Formation and Expression: Cognitive, Neural, and Clinical Perspectives* (chairs: Massimo Köster and Eike Buabang), APS Annual Convention, Barcelona, Spain, May 28–30."
+      venue: "Invited talk, symposium *Mechanisms of Habit Formation and Expression: Cognitive, Neural, and Clinical Perspectives* (chairs: Massimo Köster and Eike Buabang), APS Annual Convention, Barcelona, Spain, May 28–30."
     - authors: Martínez-López, P., Garre-Frutos, F., León, J. J., Vázquez-Millán, A., Molinero, S., Pérez-Velasco, N., Vadillo, M. A., & Luque, D.
       year: 2025
       title: "Lingering habits: Testing the temporal stability of habits."
       venue: XXXV International Congress of the Spanish Society for Comparative Psychology, Donostia / San Sebastián, Spain, October 1–3.
-    - authors: Garre-Frutos, F., Solana, P., López-Martínez, P., Lupiáñez, J., & Vadillo, M. A.
+    - authors: Garre-Frutos, F., Solana, P., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
       year: 2025
       title: "Reliability and validity of experimental measures of value-driven attention: A meta-analysis on individual differences studies."
       venue: XI Conference of the European Association of Methodology, Tenerife, Spain, July 23–25.
@@ -241,7 +241,7 @@ conferences:
       venue: XI Conference of the European Association of Methodology, Tenerife, Spain, July 23–25.
     - authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
       year: 2025
-      title: Modelling Pavlovian attentional biases through reinforcement learning.
+      title: Modelling learned attentional biases through Pavlovian learning.
       venue: 14th Reunión Científica sobre Atención, Madrid, Spain, April 3–4.
     - authors: Rey-Sáez, R., Garre-Frutos, F., & Vadillo, M. A.
       year: 2024
@@ -268,7 +268,7 @@ conferences:
       year: 2025
       title: Selective attention and explicit awareness independently contribute to the learning process of reward-related attentional biases.
       venue: 28th Annual Meeting of the Association for the Scientific Study of Consciousness, Heraklion, Greece, July 6–9.
-    - authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., & Vadillo, M. A.
+    - authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., Castillejo, I., & Vadillo, M. A.
       year: 2025
       title: "Addressing methodological challenges in unconscious process research: A hierarchical modeling approach."
       venue: 28th Annual Meeting of the Association for the Scientific Study of Consciousness, Heraklion, Greece, July 6–9.
@@ -276,11 +276,11 @@ conferences:
       year: 2025
       title: "Hierarchical models in experimental psychology: A solution for measuring unconscious psychological processes."
       venue: 14th Reunión Científica sobre Atención, Madrid, Spain, April 3–4.
-    - authors: Garre-Frutos, F.
+    - authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., Van Moorselaar, D., & Lupiáñez, J.
       year: 2025
-      title: The role of selective attention and explicit awareness in reward-related attentional biases.
+      title: Selective attention and explicit awareness independently contribute to the learning process of reward-related attentional biases.
       venue: "Meetings of the Alhambra: The Cognitive Neuroscience of Consciousness, Granada, Spain, April 25–26."
-    - authors: Garre-Frutos, F.
+    - authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
       year: 2025
       title: Modelling Pavlovian attentional biases through reinforcement learning.
       venue: Reinforcement Learning and Decision-Making Conference, Dublin, Ireland, June 11–14.
@@ -288,7 +288,7 @@ conferences:
       year: 2025
       title: Implicit learning effects on attentional control and capture.
       venue: VII Jornadas de Investigación CIMCYC, Granada, Spain, June 5.
-    - authors: Garre-Frutos, F., & Ariza, A.
+    - authors: Ariza, A., Garre-Frutos, F., & González, F.
       year: 2025
       title: "Persistence of incentive salience: Devaluation of Pavlovian-to-instrumental transfer (PIT) and reversal of value-modulated attentional capture (VMAC)."
       venue: XXXV International Congress of the Spanish Society for Comparative Psychology, Donostia / San Sebastián, Spain, October 1–3.
