@@ -51,8 +51,6 @@ education:
     right: Murcia, Spain
     org: University of Murcia
     dates: 2016 – 2020
-    fields:
-      - [Distinction, "Extraordinary End-of-Degree Award (best academic record of the graduating class)."]
 
 # Research experience / appointments — each entry carries who (PI/host/supervisors)
 # and a one-line research focus so the appointment is self-explanatory.
@@ -85,34 +83,30 @@ experience:
       - [Host, "Jan Theeuwes."]
       - [Research, "Statistical learning and reward-driven attentional biases; funded by an FPU short research stay grant (EEBB)."]
 
-# Awards, fellowships and competitive scholarships (no amounts — personal
-# fellowships are listed without €; project money lives under `funded:`).
-# Travel awards / society prizes go here too when they arrive.
+# Awards, fellowships and competitive scholarships. One line per entry: the
+# award name says what it is, so no prose description (the only extra line is
+# where the funder alone doesn't convey the work). No amounts — personal
+# fellowships go without €; project money lives under `funded:`. The EEBB stay
+# is stated once, in the Amsterdam appointment; the end-of-degree award once,
+# here. Travel awards / society prizes go here too when they arrive.
 awards:
   - title: FPU Predoctoral Fellowship (Formación de Profesorado Universitario)
     org: Ministry of Universities, Government of Spain
     dates: 2021 – 2025
-    fields:
-      - [Award, "Nationally competitive four-year doctoral fellowship, funding the PhD at the University of Granada."]
-      - [Mobility, "FPU short research stay grant (EEBB) funding a research visit to the Vrije Universiteit Amsterdam (2024)."]
   - title: Research Initiation Scholarship (Beca de Iniciación a la Investigación)
     right: Granada, Spain
     org: University of Granada · Plan Propio de Investigación
     dates: 2020 – 2021
     fields:
-      - [Award, "Competitive research scholarship; research on attention and learned value with Juan Lupiáñez."]
+      - [Research, "Attention and learned value, with Juan Lupiáñez."]
   - title: Extraordinary End-of-Degree Award (Premio Extraordinario Fin de Grado)
     right: Murcia, Spain
     org: University of Murcia
     dates: 2020
-    fields:
-      - [Award, "Awarded to the best academic record of the BSc Psychology graduating class."]
   - title: Collaboration Scholarship (Beca de Colaboración)
     right: Murcia, Spain
     org: Spanish Ministry of Education · University of Murcia
     dates: 2019 – 2020
-    fields:
-      - [Award, "Competitive final-year undergraduate research scholarship."]
 
 # Methods & Technical Expertise — right-aligned label + value rows.
 methods:
