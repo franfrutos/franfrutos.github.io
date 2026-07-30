@@ -111,9 +111,10 @@ function pubItem(p) {
 }
 
 function talkItem(t) {
+  // venue goes through inlineMd (not escTyp) so *asterisks* italicise symposium names.
   const body =
     authorsTyp(t.authors) + ' (' + escTyp(t.year) + '). ' +
-    '#emph[' + escTyp(t.title) + '] ' + escTyp(t.venue);
+    '#emph[' + escTyp(t.title) + '] ' + inlineMd(t.venue);
   return '#pubitem([' + body + '])\n';
 }
 
@@ -316,7 +317,7 @@ function pubHtml(p) {
   return '<li class="cv-pub">' + authorsHtml(p.authors) + ' (' + htmlEsc(p.year) + '). ' + title + ' ' + venueHtml(p) + ' ' + badgesHtml(p) + '</li>';
 }
 function talkHtml(t) {
-  return '<li class="cv-pub">' + authorsHtml(t.authors) + ' (' + htmlEsc(t.year) + '). <em>' + htmlEsc(t.title) + '</em> ' + htmlEsc(t.venue) + '</li>';
+  return '<li class="cv-pub">' + authorsHtml(t.authors) + ' (' + htmlEsc(t.year) + '). <em>' + htmlEsc(t.title) + '</em> ' + inlineHtml(t.venue) + '</li>';
 }
 function entryHtml(e) {
   let h = '<div class="cv-entry"><div class="t">' + inlineHtml(e.title) + '</div><div class="r">' + inlineHtml(e.right) + '</div>';
