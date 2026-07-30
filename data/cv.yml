@@ -380,8 +380,6 @@ events:
     right: Valencia, Spain
     org: Workshop · XV SEPEX & II Joint Meeting SEPEX–BAPS
     dates: 2026
-    fields:
-      - [Organizers, "Francisco Garre-Frutos, Alicia Franco-Martínez, and Pablo Solana."]
   - title: II CIMCYC Workshop on computational modelling of behavioral data
     right: Granada, Spain
     org: Workshop · Mind, Brain, and Behavior Research Center
