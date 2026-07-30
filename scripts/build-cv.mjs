@@ -35,13 +35,16 @@ const lcfirst = (s) => (s ? s.charAt(0).toLowerCase() + s.slice(1) : s);
 
 // Convert our light markdown (only *italics*) into Typst content, escaping the
 // rest. Used for every human-authored string from the YAML.
+// *italics* and [text](url) links; link text may itself contain *italics*.
 function inlineMd(s) {
   s = String(s == null ? '' : s);
   let out = '', last = 0, m;
-  const re = /\*([^*]+)\*/g;
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*]+)\*/g;
   while ((m = re.exec(s))) {
     out += escTyp(s.slice(last, m.index));
-    out += '#emph[' + escTyp(m[1]) + ']';
+    out += m[1] != null
+      ? '#link("' + escStr(m[2]) + '")[' + inlineMd(m[1]) + ']'
+      : '#emph[' + escTyp(m[3]) + ']';
     last = re.lastIndex;
   }
   return out + escTyp(s.slice(last));
@@ -112,9 +115,10 @@ function pubItem(p) {
 
 function talkItem(t) {
   // venue goes through inlineMd (not escTyp) so *asterisks* italicise symposium names.
+  const title = '#emph[' + escTyp(t.title) + ']';
   const body =
     authorsTyp(t.authors) + ' (' + escTyp(t.year) + '). ' +
-    '#emph[' + escTyp(t.title) + '] ' + inlineMd(t.venue);
+    (t.url ? '#link("' + escStr(t.url) + '")[' + title + ']' : title) + ' ' + inlineMd(t.venue);
   return '#pubitem([' + body + '])\n';
 }
 
@@ -257,11 +261,18 @@ function build() {
 // =============================================================================
 
 const htmlEsc = (s) => String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+// Mirror of inlineMd for the HTML page: *italics* + [text](url) links.
 function inlineHtml(s) {
   s = String(s == null ? '' : s);
   let out = '', last = 0, m;
-  const re = /\*([^*]+)\*/g;
-  while ((m = re.exec(s))) { out += htmlEsc(s.slice(last, m.index)); out += '<em>' + htmlEsc(m[1]) + '</em>'; last = re.lastIndex; }
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*]+)\*/g;
+  while ((m = re.exec(s))) {
+    out += htmlEsc(s.slice(last, m.index));
+    out += m[1] != null
+      ? '<a class="pub-title-link" target="_blank" href="' + htmlEsc(m[2]) + '">' + inlineHtml(m[1]) + '</a>'
+      : '<em>' + htmlEsc(m[3]) + '</em>';
+    last = re.lastIndex;
+  }
   return out + htmlEsc(s.slice(last));
 }
 function authorsHtml(s) {
@@ -317,7 +328,9 @@ function pubHtml(p) {
   return '<li class="cv-pub">' + authorsHtml(p.authors) + ' (' + htmlEsc(p.year) + '). ' + title + ' ' + venueHtml(p) + ' ' + badgesHtml(p) + '</li>';
 }
 function talkHtml(t) {
-  return '<li class="cv-pub">' + authorsHtml(t.authors) + ' (' + htmlEsc(t.year) + '). <em>' + htmlEsc(t.title) + '</em> ' + inlineHtml(t.venue) + '</li>';
+  const title = '<em>' + htmlEsc(t.title) + '</em>';
+  const linked = t.url ? '<a class="pub-title-link" target="_blank" href="' + htmlEsc(t.url) + '">' + title + '</a>' : title;
+  return '<li class="cv-pub">' + authorsHtml(t.authors) + ' (' + htmlEsc(t.year) + '). ' + linked + ' ' + inlineHtml(t.venue) + '</li>';
 }
 function entryHtml(e) {
   let h = '<div class="cv-entry"><div class="t">' + inlineHtml(e.title) + '</div><div class="r">' + inlineHtml(e.right) + '</div>';

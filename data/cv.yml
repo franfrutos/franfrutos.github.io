@@ -37,7 +37,7 @@ education:
     org: University of Granada
     dates: 2021 – 2025
     fields:
-      - [Thesis, "*Awareness, Control, and Automaticity in Value-Modulated Attentional Capture.*"]
+      - [Thesis, "[*Awareness, Control, and Automaticity in Value-Modulated Attentional Capture.*](https://www.researchgate.net/publication/400441832_Awareness_Control_and_Automaticity_in_Value-Modulated_Attentional_Capture)"]
       - [Supervisors, "Juan Lupiáñez and Miguel A. Vadillo."]
       - [Distinction, "International Doctorate; cum laude."]
   - title: MSc in Cognitive and Behavioral Neuroscience
@@ -143,6 +143,7 @@ outreach_publications:
     year: 2025
     title: Is wanting enough? Control and automaticity in learned attentional biases.
     venue: Ciencia Cognitiva, 19(1), 8–10.
+    url: https://www.cienciacognitiva.org/?p=2486
 
 funded:
   - title: Understanding the Learning and Unlearning Dynamics of Myths about (Cyber)Violence Against Women
@@ -357,8 +358,8 @@ supervision:
     org: BSc student mentoring
     dates: 2026
     fields:
-      - [Project, "*On the Nature of Conscious Experience: A Comparison of Subjective Report Methods.*"]
-      - [Supervisors, "Daniel Sanabria Lucena and Francisco Garre-Frutos."]
+      - [Project, "*Continuous-tracking of subjective report methods of conscious experience.*"]
+      - [Supervisors, "Daniel Sanabria and Francisco Garre-Frutos."]
   - title: Pablo Martínez-López
     right: University of Granada
     org: MSc thesis supervision
