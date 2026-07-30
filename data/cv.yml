@@ -114,6 +114,7 @@ awards:
 methods:
   - [Quantitative, "Multilevel modelling, psychometrics, reliability analysis, meta-analysis, signal detection theory, computational modelling, reinforcement learning, multiverse inference."]
   - [Programming, "R, Python, JavaScript, Julia, Stan."]
+  - [Language Models, "Text embeddings for the analysis of qualitative reports; LLM-assisted screening in editorial workflows."]
   - [Experimental Tools, "PsychoPy, E-Prime, OpenSesame, jsPsych, online behavioural testing, JASP, Jamovi."]
   - [Reproducibility, "OSF, preregistration, Quarto/Markdown, Git/GitHub workflows, open materials and data sharing."]
 
@@ -395,13 +396,12 @@ events:
     dates: 2024
 
 service:
-  - title: Junior Editor, Psicológica
-    right: Psicológica
+  - title: Junior Editor
+    right: "*Psicológica*"
     org: Editorial service
     dates: Since 2025
     fields:
-      - [Journal, "*Psicológica.*"]
-      - [Role, "Junior editorial role supporting the journal's peer-review and editorial workflow."]
+      - [Role, "Support the journal's peer-review and editorial workflow, including the adoption of LLM-based screening tools."]
   - title: Ad hoc reviewer
     right: 5 journals
     org: Peer review

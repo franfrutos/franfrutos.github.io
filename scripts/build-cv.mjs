@@ -173,14 +173,6 @@ function typstBody(cv, papers) {
   out += section('Awards & Fellowships');
   (cv.awards || []).forEach((e) => { out += emitEntry(e); });
 
-  out += section('Methods & Technical Expertise');
-  (cv.methods || []).forEach(([label, value]) => {
-    out += '#methodrow([' + inlineMd(label) + '], [' + inlineMd(value) + '])\n';
-  });
-
-  out += section('Specialized Training');
-  (cv.training || []).forEach((t) => { out += emitEntry({ title: t.title, right: t.dates, org: t.org }); });
-
   out += section('Publications');
   published.forEach((p) => { out += pubItem(p); });
   if ((cv.outreach_publications || []).length) {
@@ -191,6 +183,11 @@ function typstBody(cv, papers) {
   out += section('Ongoing Work');
   ongoing.forEach((p) => { out += pubItem(p); });
 
+  out += section('Methods & Technical Expertise');
+  (cv.methods || []).forEach(([label, value]) => {
+    out += '#methodrow([' + inlineMd(label) + '], [' + inlineMd(value) + '])\n';
+  });
+
   out += section('Funded Projects');
   cv.funded.forEach((e) => { out += emitEntry(e); });
 
@@ -200,14 +197,17 @@ function typstBody(cv, papers) {
   out += '\n#subhead("Poster presentations")\n\n';
   cv.conferences.poster.forEach((t) => { out += talkItem(t); });
 
+  out += section('Academic Events Organized');
+  cv.events.forEach((e) => { out += emitEntry(e); });
+
   out += section('Teaching');
   cv.teaching.forEach((e) => { out += emitEntry(e); });
 
   out += section('Student Supervision');
   cv.supervision.forEach((e) => { out += emitEntry(e); });
 
-  out += section('Academic Events Organized');
-  cv.events.forEach((e) => { out += emitEntry(e); });
+  out += section('Specialized Training');
+  (cv.training || []).forEach((t) => { out += emitEntry({ title: t.title, right: t.dates, org: t.org }); });
 
   out += section('Academic Service & Professional Memberships');
   cv.service.forEach((e) => { out += emitEntry(e); });
@@ -375,22 +375,21 @@ function buildHtml() {
   body += secHtml('Education', cv.education.map(entryHtml).join(''));
   body += secHtml('Research Experience', cv.experience.map(entryHtml).join(''));
   body += secHtml('Awards & Fellowships', (cv.awards || []).map(entryHtml).join(''));
-  body += secHtml('Methods & Technical Expertise',
-    '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');
-  body += secHtml('Specialized Training', cv.training.map((t) => entryHtml({ title: t.title, right: t.dates, org: t.org })).join(''));
-
   let pubs = '<ul class="cv-publist">' + published.map(pubHtml).join('') + '</ul>';
   if ((cv.outreach_publications || []).length)
     pubs += '<div class="cv-subhead">Outreach publication</div><ul class="cv-publist">' + cv.outreach_publications.map(talkHtml).join('') + '</ul>';
   body += secHtml('Publications', pubs);
   body += secHtml('Ongoing Work', '<ul class="cv-publist">' + ongoing.map(pubHtml).join('') + '</ul>');
+  body += secHtml('Methods & Technical Expertise',
+    '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');
   body += secHtml('Funded Projects', cv.funded.map(entryHtml).join(''));
   body += secHtml('Conference Presentations',
     '<div class="cv-subhead">Oral presentations</div><ul class="cv-publist">' + cv.conferences.oral.map(talkHtml).join('') + '</ul>' +
     '<div class="cv-subhead">Poster presentations</div><ul class="cv-publist">' + cv.conferences.poster.map(talkHtml).join('') + '</ul>');
+  body += secHtml('Academic Events Organized', cv.events.map(entryHtml).join(''));
   body += secHtml('Teaching', cv.teaching.map(entryHtml).join(''));
   body += secHtml('Student Supervision', cv.supervision.map(entryHtml).join(''));
-  body += secHtml('Academic Events Organized', cv.events.map(entryHtml).join(''));
+  body += secHtml('Specialized Training', cv.training.map((t) => entryHtml({ title: t.title, right: t.dates, org: t.org })).join(''));
   body += secHtml('Academic Service & Professional Memberships', cv.service.map(entryHtml).join(''));
   body += secHtml('Outreach Activities', cv.outreach.map(entryHtml).join(''));
 
