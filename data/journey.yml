@@ -199,6 +199,15 @@ journey:
   - city: Valencia
     country: Spain
     year: '2026'
+    type: Talk
+    title: 'Advancing credibility in habit research: No trust without valid measurement'
+    venue: XV SEPEX & II Joint Meeting SEPEX–BAPS
+    note: 'Invited symposium · Experimental Psychometrics'
+    authors: Martínez-López, P., Garre-Frutos, F., Vadillo, M. A., & Luque, D.
+    place: Valencia, Spain · Sep 2026
+  - city: Valencia
+    country: Spain
+    year: '2026'
     type: Organizer
     title: How do I preregister my study? A hands-on workshop
     venue: Workshop · XV SEPEX & II Joint Meeting SEPEX–BAPS
