@@ -65,7 +65,7 @@ journey:
   - city: Granada
     country: Spain
     year: '2025'
-    type: Talk
+    type: Poster
     title: Implicit learning effects on attentional control and capture
     venue: VII Jornadas de Investigación CIMCYC
     authors: Garre-Frutos, F., Vadillo, M. A., Martínez-López, P., Ariza, A., González, F., & Lupiáñez, J.
@@ -94,6 +94,7 @@ journey:
     type: Appointment
     title: Postdoctoral researcher
     venue: CIMCYC · University of Granada
+    note: UGR–Santander bridging contract
   - city: Madrid
     country: Spain
     year: '2026'
@@ -157,13 +158,73 @@ journey:
     type: Talk
     title: Explicit knowledge modulates Pavlovian attentional biases
     venue: APS Annual Convention
-    authors: Garre-Frutos, F., López-Martínez, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+    authors: Garre-Frutos, F., Martínez-López, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
     place: Barcelona, Spain · May 2026
+  - city: Barcelona
+    country: Spain
+    year: '2026'
+    type: Talk
+    title: Temporal stability in the expression of laboratory-based habits
+    venue: APS Annual Convention
+    note: 'Invited symposium · Mechanisms of Habit Formation and Expression'
+    authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
+    place: Barcelona, Spain · May 2026
+  - city: Valencia
+    country: Spain
+    year: '2026'
+    type: Talk
+    title: Explicit knowledge modulates Pavlovian attentional biases
+    venue: XV SEPEX & II Joint Meeting SEPEX–BAPS
+    note: 'Invited symposium · Current Debates in Research on Habits'
+    authors: Garre-Frutos, F., Martínez-López, P., Ariza, A., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+    place: Valencia, Spain · Sep 2026
+  - city: Valencia
+    country: Spain
+    year: '2026'
+    type: Talk
+    title: A multilevel signal detection framework for unconscious processing research
+    venue: XV SEPEX & II Joint Meeting SEPEX–BAPS
+    note: 'Invited symposium · Experimental Psychometrics'
+    authors: Garre-Frutos, F., Franco-Martínez, A., Vadillo, M. A., & Rey-Sáez, R.
+    place: Valencia, Spain · Sep 2026
+  - city: Valencia
+    country: Spain
+    year: '2026'
+    type: Talk
+    title: What do we mean by “validity” in experimental measures? An illustrative study with the Perceptual Awareness Scale (PAS)
+    venue: XV SEPEX & II Joint Meeting SEPEX–BAPS
+    note: 'Invited symposium · Experimental Psychometrics'
+    authors: Franco-Martínez, A., Ferrer-Mendieta, A., Peiró Lanchares, C., Vadillo, M. A., & Garre-Frutos, F.
+    place: Valencia, Spain · Sep 2026
+  - city: Valencia
+    country: Spain
+    year: '2026'
+    type: Organizer
+    title: How do I preregister my study? A hands-on workshop
+    venue: Workshop · XV SEPEX & II Joint Meeting SEPEX–BAPS
+    note: With Alicia Franco-Martínez and Pablo Solana
+    place: Valencia, Spain · Sep 2026
+  - city: Madrid
+    country: Spain
+    year: '2026'
+    type: Poster
+    title: Do we learn habits at the same rate in November as in March?
+    venue: 'Habits: Behaviour, Neurons and Clinical Evidence · First REHPE Meeting'
+    authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
+    place: Madrid, Spain · Jun 2026
+  - city: Madrid
+    country: Spain
+    year: '2026'
+    type: Poster
+    title: Multiverse analysis of habit measurements in the forced-response task
+    venue: 'Habits: Behaviour, Neurons and Clinical Evidence · First REHPE Meeting'
+    authors: León, J. J., Martínez-López, P., Garre-Frutos, F., & Luque, D.
+    place: Madrid, Spain · Jun 2026
   - city: Madrid
     country: Spain
     year: '2025'
     type: Talk
-    title: Modelling Pavlovian attentional biases through reinforcement learning
+    title: Modelling learned attentional biases through Pavlovian learning
     venue: 14th Reunión Científica sobre Atención
     authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
     place: Madrid, Spain · Apr 2025
@@ -197,7 +258,7 @@ journey:
     type: Talk
     title: 'Reliability and validity of experimental measures of value-driven attention: A meta-analysis on individual differences studies'
     venue: European Association of Methodology
-    authors: Garre-Frutos, F., Solana, P., López-Martínez, P., Lupiáñez, J., & Vadillo, M. A.
+    authors: Garre-Frutos, F., Solana, P., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
     place: Tenerife, Spain · Jul 2025
   - city: Tenerife
     country: Spain
@@ -284,7 +345,7 @@ journey:
     year: '2023'
     type: Poster
     title: Inhibition of return and learned value
-    venue: 22nd Conference of the European Society for Cognitive Psychology
+    venue: 23rd Conference of the European Society for Cognitive Psychology
     authors: Garre-Frutos, F., & Lupiáñez, J.
     place: Porto, Portugal · Aug 2023
   - city: Porto
@@ -292,7 +353,7 @@ journey:
     year: '2023'
     type: Poster
     title: 'Interference vs. distraction: Qualitatively different attentional capture effects depending on distractor relevance'
-    venue: 22nd Conference of the European Society for Cognitive Psychology
+    venue: 23rd Conference of the European Society for Cognitive Psychology
     authors: Manini, G., Garre-Frutos, F., Botta, F., Martín-Arévalo, E., & Lupiáñez, J.
     place: Porto, Portugal · Aug 2023
   - city: Faro
