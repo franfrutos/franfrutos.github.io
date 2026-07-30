@@ -403,11 +403,11 @@ service:
       - [Journal, "*Psicológica.*"]
       - [Role, "Junior editorial role supporting the journal's peer-review and editorial workflow."]
   - title: Ad hoc reviewer
-    right: 3 journals
+    right: 5 journals
     org: Peer review
     dates: Since 2025
     fields:
-      - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, and *Behavior Research Methods.*"]
+      - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, and *Frontiers in Cognition.*"]
   - title: Professional Societies
     org: Professional memberships
     fields:
