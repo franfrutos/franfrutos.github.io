@@ -45,7 +45,8 @@ education:
     org: University of Granada
     dates: 2020 – 2021
     fields:
-      - [Thesis, "*Inhibition of return and learned value.*"]
+      # Points at the preprint until the paper is published — then swap in the article URL.
+      - [Thesis, "[*Inhibition of return and learned value.*](https://osf.io/preprints/psyarxiv/p4m29)"]
       - [Supervisor, "Juan Lupiáñez."]
   - title: BSc in Psychology
     right: Murcia, Spain
