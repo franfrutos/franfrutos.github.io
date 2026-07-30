@@ -20,6 +20,14 @@ threads:
     blurb: Do we measure what we think we are measuring? Are our measures — and the inferences we draw from them — reliable enough? In this section, you can find some of my work on validity.
 
 papers:
+  # cvOnly → CV's "Ongoing Work" only; no website page, no share card. Drop the
+  # flag (and add a thread + url) once there's a preprint to link to.
+  - cvOnly: true
+    year: 2026
+    title: "Addressing teaching and learning misconceptions through refutation texts: A registered report"
+    authors: Fernández, J. G., Ferrero, M., Garre-Frutos, F., & Vadillo, M. A.
+    venue: Under review
+    status: Stage 1 manuscript under review
   - thread: learning
     year: 2026
     title: Explicit knowledge modulates Pavlovian attentional biases

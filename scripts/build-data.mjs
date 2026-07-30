@@ -19,7 +19,10 @@ const readYaml = (f) => yaml.load(fs.readFileSync(path.join(root, f), 'utf8'));
 const str = (v) => (v == null ? v : String(v));
 
 function buildResearch() {
-  const { threads, papers } = readYaml('data/papers.yml');
+  const { threads, papers: all } = readYaml('data/papers.yml');
+  // `cvOnly: true` keeps a manuscript in the CV (build-cv reads papers.yml
+  // directly) but off the website — for work with no preprint to link to yet.
+  const papers = all.filter((p) => !p.cvOnly);
   const ids = new Set(threads.map((t) => t.id));
   papers.forEach((p) => { if (!ids.has(p.thread)) console.error('  ✗ paper "' + p.title + '" has unknown thread: "' + p.thread + '"'); });
   // Newest first within each section; a non-numeric year ("in press") ranks above all.

@@ -105,7 +105,8 @@ function render(key, typ, out) {
   else { failed++; delete next[key]; console.error('build-og: failed for ' + key + (r.stderr ? '\n' + r.stderr.toString() : '')); }
 }
 
-for (const p of papers) render(paperSlug(p), cardTyp(p), path.join(outDir, paperSlug(p) + '.png'));
+// cvOnly papers have no website page, so they need no share card either.
+for (const p of papers.filter((p) => !p.cvOnly)) render(paperSlug(p), cardTyp(p), path.join(outDir, paperSlug(p) + '.png'));
 render('_profile', profileTyp(), path.join(root, 'assets/og-image.png')); // generic home/CV card
 
 try { fs.unlinkSync(tmp); } catch {}
