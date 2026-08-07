@@ -68,9 +68,27 @@
     render();
   }
 
+  // The Altmetric embed script builds the donut <img> itself, without an alt
+  // attribute — watch the wrapper and label the image for screen readers as
+  // soon as it appears.
+  function initAltmetricAlt() {
+    var wrap = document.querySelector('.fgf-alt');
+    if (!wrap || !window.MutationObserver) return;
+    function label() {
+      var img = wrap.querySelector('img:not([alt])');
+      if (img) img.setAttribute('alt', 'Altmetric information');
+      return !!img;
+    }
+    if (label()) return;
+    var mo = new MutationObserver(function () { if (label()) mo.disconnect(); });
+    mo.observe(wrap, { childList: true, subtree: true });
+  }
+
+  function init() { initCite(); initAltmetricAlt(); }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCite);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    initCite();
+    init();
   }
 })();

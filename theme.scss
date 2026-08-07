@@ -396,10 +396,11 @@ html.fgf-dark [data-site] .abstract-body { color: #c4c9d2; }
 .badge:hover { border-color: var(--accent); background: var(--accent); color: #fff; }
 
 // Altmetric donut (official embed) — shown bare, no frame: wrapping it in a
-// site-styled pill looked worse (tried and reverted). Only sizing, so the
-// donut sits proportionate to the badge row. Hidden when there are no mentions
-// (the embed script leaves the span empty and images never render).
-.fgf-alt img { width: 34px; height: 34px; display: block; }
+// site-styled pill looked worse (tried and reverted). Only sizing: 48px keeps
+// the center score legible without dominating the hero (native asset is 64px,
+// so it downscales crisp). Hidden when there are no mentions (the embed script
+// leaves the span empty and no image renders).
+.fgf-alt img { width: 48px; height: 48px; display: block; }
 
 .paper-hero {
   position: relative; overflow: hidden;
