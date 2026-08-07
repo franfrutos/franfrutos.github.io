@@ -400,6 +400,12 @@ html.fgf-dark [data-site] .abstract-body { color: #c4c9d2; }
 // the center score legible without dominating the hero (native asset is 64px,
 // so it downscales crisp). Hidden when there are no mentions (the embed script
 // leaves the span empty and no image renders).
+// Flex down the whole chain (wrapper + embed + its <a>) removes the inline
+// baseline gap so the donut centers optically on the OSF pill row. The inner
+// selectors out-specify Altmetric's own .altmetric-embed rules.
+.fgf-alt,
+.fgf-alt .altmetric-embed,
+.fgf-alt .altmetric-embed a { display: flex; align-items: center; }
 .fgf-alt img { width: 48px; height: 48px; display: block; }
 // The center score is baked into the PNG in dark gray on transparency — in dark
 // mode it vanishes. Fix: a small luminous disc in the donut HOLE only (measured

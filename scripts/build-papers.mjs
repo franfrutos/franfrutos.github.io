@@ -257,7 +257,7 @@ function renderPaper(p, threadTitle, prev, next) {
       // Altmetric's data encoding — .fgf-alt in theme.scss integrates the rest
       // (size, alignment, hover) with the badge row. Hidden when there are no mentions.
       (altmetricDoi(p)
-        ? '<span class="fgf-alt" style="margin-left:auto;"><span class="altmetric-embed" data-badge-type="donut" data-link-target="_blank" data-hide-no-mentions="true" data-doi="' + esc(altmetricDoi(p)) + '"></span></span>'
+        ? '<span class="fgf-alt" style="margin-left:auto;"><span class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-link-target="_blank" data-hide-no-mentions="true" data-doi="' + esc(altmetricDoi(p)) + '"></span></span>'
         : '') + '</div>\n' +
 '  </div></header>\n\n  ' + abstractSection + '\n\n' +
 '  <section id="cite" style="padding:48px 0 0;"><div class="sec-label"><span></span><h2>How to cite</h2></div>\n' +
