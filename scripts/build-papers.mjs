@@ -252,8 +252,12 @@ function renderPaper(p, threadTitle, prev, next) {
 '    <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-style:italic; font-family:\'IBM Plex Mono\',monospace; font-size:20px; color:var(--accent);">' + esc(p.venue) + '</span>' + preprintTag + '</p>\n' +
 '    <div class="h-actions">' + primary + pdfBtn + zotero + '<a href="#cite" class="h-btn h-btn-ghost"><i class="fa-solid fa-quote-right"></i> Cite</a></div>\n' +
 '    <div class="h-badges" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">' + badgesHTML(p) +
+      // Official Altmetric embed (their public API needs a key since Nov 2025, so a
+      // fully site-themed badge isn't possible client-side). The donut's colors are
+      // Altmetric's data encoding — .fgf-alt in theme.scss integrates the rest
+      // (size, alignment, hover) with the badge row. Hidden when there are no mentions.
       (altmetricDoi(p)
-        ? '<span class="altmetric-embed" style="margin-left:auto;" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="' + esc(altmetricDoi(p)) + '"></span>'
+        ? '<span class="fgf-alt" style="margin-left:auto;"><span class="altmetric-embed" data-badge-type="donut" data-link-target="_blank" data-hide-no-mentions="true" data-doi="' + esc(altmetricDoi(p)) + '"></span></span>'
         : '') + '</div>\n' +
 '  </div></header>\n\n  ' + abstractSection + '\n\n' +
 '  <section id="cite" style="padding:48px 0 0;"><div class="sec-label"><span></span><h2>How to cite</h2></div>\n' +

@@ -395,6 +395,21 @@ html.fgf-dark [data-site] .abstract-body { color: #c4c9d2; }
 }
 .badge:hover { border-color: var(--accent); background: var(--accent); color: #fff; }
 
+// Altmetric donut (official embed) — integrate with the .badge row: same pill
+// frame and hover as our badges, donut scaled to the row height. The pill is on
+// OUR wrapper (.fgf-alt), not on .altmetric-embed, because Altmetric's injected
+// stylesheet overrides styles on its own class. Hidden until a donut renders
+// (:has(img)), so papers with no mentions show nothing. The donut's own colors
+// are Altmetric's data encoding, so they stay as-is in both themes.
+.fgf-alt { display: none; }
+.fgf-alt:has(img) {
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line); border-radius: 100px; padding: 4px 9px;
+  transition: border-color .18s, transform .18s;
+}
+.fgf-alt:has(img):hover { border-color: var(--accent); transform: translateY(-1px); }
+.fgf-alt img { width: 26px; height: 26px; display: block; }
+
 .paper-hero {
   position: relative; overflow: hidden;
   background: var(--card); border: 1px solid var(--line); border-radius: 14px;
