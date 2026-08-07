@@ -402,9 +402,14 @@ html.fgf-dark [data-site] .abstract-body { color: #c4c9d2; }
 // leaves the span empty and no image renders).
 .fgf-alt img { width: 48px; height: 48px; display: block; }
 // The center score is baked into the PNG in dark gray on transparency — in dark
-// mode it vanishes, so give the donut a white disc to sit on (light mode needs none).
+// mode it vanishes. Fix: a small luminous disc in the donut HOLE only (measured
+// on the 128px asset: ring spans 52–98% of the radius, the score ≤19%), fading
+// out at 48% so it never touches the ring — the ring itself floats on the dark
+// card. Light mode needs nothing.
 [data-site][data-theme="dark"] .fgf-alt img,
-html.fgf-dark [data-site] .fgf-alt img { background: #fff; border-radius: 50%; box-shadow: 0 0 0 3px #fff; }
+html.fgf-dark [data-site] .fgf-alt img {
+  background: radial-gradient(closest-side, #fff 36%, rgba(255, 255, 255, .92) 42%, rgba(255, 255, 255, 0) 48%);
+}
 
 .paper-hero {
   position: relative; overflow: hidden;
