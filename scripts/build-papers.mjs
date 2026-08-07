@@ -199,6 +199,16 @@ function paperHead(p) {
   return citationMeta(p) + '\n  <meta property="og:type" content="article">\n' + jsonLd(p);
 }
 
+// DOI for the Altmetric badge: the citable article DOI when there is one;
+// otherwise the PsyArXiv preprint DOI (10.31234/osf.io/<slug>), which Altmetric
+// also tracks. Version suffixes are stripped — Altmetric aggregates on the base.
+function altmetricDoi(p) {
+  const d = citeDoi(p);
+  if (d) return d.replace(/_v\d+$/, '');
+  const m = (p.url || '').match(/psyarxiv\/([a-z0-9]+)/i);
+  return m ? '10.31234/osf.io/' + m[1] : '';
+}
+
 function renderPaper(p, threadTitle, prev, next) {
   const cd = citeData(p), tabs = ['apa', 'bibtex', 'ris'];
   // Label the primary button by where its link actually goes: a PsyArXiv url is a
@@ -241,13 +251,17 @@ function renderPaper(p, threadTitle, prev, next) {
 '    <p style="font-family:\'IBM Plex Mono\',monospace; font-size:14.5px; color:var(--ink2); margin:0 0 10px; line-height:1.6; letter-spacing:-0.01em;">' + authorPartsHTML(p.authors) + '</p>\n' +
 '    <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-style:italic; font-family:\'IBM Plex Mono\',monospace; font-size:20px; color:var(--accent);">' + esc(p.venue) + '</span>' + preprintTag + '</p>\n' +
 '    <div class="h-actions">' + primary + pdfBtn + zotero + '<a href="#cite" class="h-btn h-btn-ghost"><i class="fa-solid fa-quote-right"></i> Cite</a></div>\n' +
-'    <div class="h-badges">' + badgesHTML(p) + '</div>\n' +
+'    <div class="h-badges" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">' + badgesHTML(p) +
+      (altmetricDoi(p)
+        ? '<span class="altmetric-embed" style="margin-left:auto;" data-badge-type="donut" data-badge-popover="left" data-hide-no-mentions="true" data-doi="' + esc(altmetricDoi(p)) + '"></span>'
+        : '') + '</div>\n' +
 '  </div></header>\n\n  ' + abstractSection + '\n\n' +
 '  <section id="cite" style="padding:48px 0 0;"><div class="sec-label"><span></span><h2>How to cite</h2></div>\n' +
 '    <div class="cite-card" id="fgf-cite-card"><div class="cite-head"><div class="cite-tabs">' + tabBtns + '</div><button class="cite-copy"><i class="fa-regular fa-copy"></i> <span>Copy</span></button></div><div id="fgf-cite-body"></div></div>\n  </section>\n\n' +
 '  <nav class="paper-foot"><a class="foot-link" href="/research/' + paperSlug(prev) + '/"><span class="foot-dir">← Previous</span><span class="foot-title">' + esc(prev.title) + '</span></a><a class="foot-link foot-next" href="/research/' + paperSlug(next) + '/"><span class="foot-dir">Next →</span><span class="foot-title">' + esc(next.title) + '</span></a></nav>\n' +
 '  <div style="text-align:center; margin-top:28px;"><a href="/#research" class="nav-link" style="color:var(--ink3);">← Back to all research</a></div>\n</article>\n\n' +
-'<script type="application/json" id="fgf-cite">\n' + JSON.stringify(cd, null, 2) + '\n</script>\n```\n';
+'<script type="application/json" id="fgf-cite">\n' + JSON.stringify(cd, null, 2) + '\n</script>\n' +
+(altmetricDoi(p) ? '<script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>\n' : '') + '```\n';
 
   // pagetitle is just the paper title; Quarto appends the site title (" – Francisco
   // Garre-Frutos") once — adding it here too would double the suffix in <title>.

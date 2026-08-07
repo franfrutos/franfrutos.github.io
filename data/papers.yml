@@ -260,7 +260,7 @@ papers:
     authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
     venue: PsyArXiv
     preprint: true
-    url: https://osf.io/preprints/psyarxiv/ve3qf_v1
+    url: https://osf.io/preprints/psyarxiv/ve3qf   # unversioned → always resolves to the latest version
     tags: [habits, individual differences]
     keywords: [habit learning, habit expression, temporal stability, individual differences, forced-response task, test-retest reliability]
     osf:
@@ -325,6 +325,6 @@ papers:
       data: https://osf.io/4s3c8/
       code: https://osf.io/4s3c8/
       # Not open access — link the shareable postprint (shows the PsyArXiv "Postprint" badge).
-      postprint: https://osf.io/preprints/psyarxiv/q52wb_v5
+      postprint: https://osf.io/preprints/psyarxiv/q52wb   # unversioned → always the latest (accepted) version
     abstract: >-
       Animal research has shown that repeatedly performing a rewarded action leads to its transition into a habit—an inflexible response controlled by stimulus–response associations. Efforts to reproduce this principle in humans have yielded mixed results. Only two laboratory paradigms have demonstrated behavior habitualization following extensive instrumental training compared to minimal training: the forced-response task and the "aliens" outcome-devaluation task. These paradigms assess habitualization through distinct measures. The forced-response task focuses on the persistence of a trained response when a reversal is required, whereas the outcome-devaluation task measures reaction time switch costs—slowdowns in goal-directed responses conflicting with the trained habit. Although both measures have produced results consistent with the learning theory—showing stronger evidence of habits in overtrained conditions—their construct validity remains insufficiently established. In this study, participants completed 4 days of training in each paradigm. We replicated previous results in the forced-response task; in the outcome-devaluation task, a similar pattern emerged, observing the loss of a response speed advantage gained through training. We then examined the reliability of each measure and evaluated their convergent validity. Habitual responses in the forced-response task and reaction time switch costs in the outcome-devaluation task demonstrated good reliability, allowing us to assess whether individual differences remained stable. However, the two measures were not associated, providing no evidence of convergent validity. This suggests that these measures capture distinct aspects of the balance between habitual and goal-directed control. Our results highlight the need for further evaluation of the validity and reliability of current measures of habitual control in humans.
