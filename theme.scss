@@ -401,6 +401,10 @@ html.fgf-dark [data-site] .abstract-body { color: #c4c9d2; }
 // so it downscales crisp). Hidden when there are no mentions (the embed script
 // leaves the span empty and no image renders).
 .fgf-alt img { width: 48px; height: 48px; display: block; }
+// The center score is baked into the PNG in dark gray on transparency — in dark
+// mode it vanishes, so give the donut a white disc to sit on (light mode needs none).
+[data-site][data-theme="dark"] .fgf-alt img,
+html.fgf-dark [data-site] .fgf-alt img { background: #fff; border-radius: 50%; box-shadow: 0 0 0 3px #fff; }
 
 .paper-hero {
   position: relative; overflow: hidden;
