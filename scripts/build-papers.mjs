@@ -28,7 +28,9 @@ function authorPartsHTML(s) {
   s.split(ME).forEach((seg, i, arr) => { if (seg) pushText(seg); if (i < arr.length - 1) out.push('<span class="au-me">' + esc(ME) + '</span>'); });
   return out.join('');
 }
-function doiOf(p) { const m = (p.url || '').match(/doi\.org\/(.+)$/); return m ? m[1] : ''; }
+// An explicit `doi:` field wins (e.g. a final article DOI assigned at proofs
+// stage while `url` still points at the readable preprint); else derive from url.
+function doiOf(p) { if (p.doi) return String(p.doi).replace(/^https?:\/\/doi\.org\//, ''); const m = (p.url || '').match(/doi\.org\/(.+)$/); return m ? m[1] : ''; }
 // True when `url` points at a PsyArXiv preprint (its DOI is 10.31234/…).
 const isPreprintUrl = (p) => /(?:^|\/)10\.31234\/|psyarxiv/i.test(p.url || '');
 // The DOI to *cite*: a PsyArXiv preprint DOI belongs to the preprint, so only cite

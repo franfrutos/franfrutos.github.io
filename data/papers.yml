@@ -88,7 +88,8 @@ papers:
     title: The role of selective attention in value-modulated attentional capture
     authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., van Moorselaar, D., & Lupiáñez, J.
     venue: Psychonomic Bulletin & Review
-    url: https://osf.io/preprints/psyarxiv/kv2rx   # readable preprint (PsyArXiv) until the final DOI exists
+    doi: 10.3758/s13423-026-02964-x   # final DOI (assigned at proofs; 404s until published online)
+    url: https://osf.io/preprints/psyarxiv/kv2rx   # readable preprint (PsyArXiv) until the DOI resolves — then swap url to the DOI
     tags: [VMAC, selective attention]
     keywords: [attentional capture, learning, reward, selective attention, awareness]
     osf:
@@ -253,6 +254,23 @@ papers:
       # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
     abstract: >-
       Although habits are widely recognized as playing a key role across psychological science, current laboratory methods may limit our understanding of these behaviors. Within the dual-system framework, habits are defined as context-triggered, outcome-insensitive responses that emerge gradually with repeated instrumental training. Many human experimental paradigms have been developed in an attempt to test this characterization of habits. However, in most cases, they have not provided clear evidence of habit formation, suggesting a gap between habit theory and existing methodologies. In the present study, we systematically review evidence on the construct validity of fourteen paradigms in which the amount of training was manipulated. We also reanalyze publicly available datasets from studies using these paradigms to assess the psychometric reliability of their main measures, thereby extending the available validity evidence. Paradigms that most closely mirror classical approaches derived from habit theory have consistently failed to induce habits, whereas more recent approaches have revealed training effects. However, these novel paradigms often rely on broader operationalizations that substantially diverge from traditional definitions of habit. Among the paradigms reviewed, the forced-response task stands out as capable of inducing habitual behavior while providing a narrowly operationalized measure with acceptable reliability. Finally, we argue that strengthening the credibility of the field will require greater attention to the psychometric properties of habit measures, including precise operationalization, reliability, and systematic validity testing.
+  - thread: validity
+    year: 2026
+    title: Habit learning and expression as stable traits
+    authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
+    venue: PsyArXiv
+    preprint: true
+    url: https://osf.io/preprints/psyarxiv/ve3qf_v1
+    tags: [habits, individual differences]
+    keywords: [habit learning, habit expression, temporal stability, individual differences, forced-response task, test-retest reliability]
+    osf:
+      prereg: https://osf.io/87h36/registrations
+      materials: https://osf.io/87h36
+      data: https://osf.io/87h36
+      code: https://osf.io/87h36
+      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+    abstract: >-
+      Individual differences in the capacity to learn and control habits are central to current models of psychopathology, which assume an overreliance on habit behavior in transdiagnostic compulsivity. However, whether these tendencies reflect stable, trait-like cognitive processes remains unclear. We examined the temporal stability of individual differences in habit learning and expression. Across two preregistered experiments, we assessed stimulus–response habits using the same stimuli after one day or different stimuli after four months. Evidence for stable individual differences in habit commissions was strong and comparable across experiments, indicating trait-like habit learning and expression. Improvements in response time across learning were stable and correlated with habits, suggesting an early trait-like index of habitualization. Stable processes of habit formation were reflected during both habit acquisition and expression.
   - thread: validity
     year: 2026
     title: Measuring creativity process and product with a digitized Invented Alien Creatures Task

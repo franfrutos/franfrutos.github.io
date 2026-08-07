@@ -31,7 +31,7 @@ function buildResearch() {
     num: str(t.num), short: t.short, title: t.title, blurb: t.blurb,
     pubs: papers.filter((p) => p.thread === t.id).map((p) => {
       const pub = { year: str(p.year), title: p.title, authors: p.authors, venue: p.venue, isPreprint: !!p.preprint };
-      ['url', 'slug', 'osf', 'tags', 'keywords', 'abstract', 'bibtex', 'ris',
+      ['url', 'doi', 'slug', 'osf', 'tags', 'keywords', 'abstract', 'bibtex', 'ris',
        'volume', 'issue', 'pages', 'articleno', 'status', 'date'].forEach((k) => { if (p[k] != null) pub[k] = p[k]; });
       return pub;
     }).sort((a, b) => yr(b) - yr(a)),
