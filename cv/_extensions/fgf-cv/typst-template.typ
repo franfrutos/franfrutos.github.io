@@ -217,78 +217,25 @@
   v(2pt)
 }
 
-// --- Cover letter helpers ---------------------------------------------------
-// Recipient block (left) + date (right), then a subject line with the coral
-// tick, echoing the section-header motif.
-#let lettermeta(recipient: (), date: none, subject: none) = {
-  block(above: 30pt, width: 100%, {
-    grid(
-      columns: (1fr, auto),
-      column-gutter: 16pt,
-      align: (start + top, end + top),
-      {
-        set text(font: mono, size: 9.3pt, fill: ink2)
-        set par(leading: 6.8pt)
-        recipient.join(linebreak())
-      },
-      text(font: mono, size: 9.2pt, style: "italic", fill: ink3)[#date],
-    )
-  })
-  if subject != none {
-    block(above: 24pt, below: 6pt, {
-      box(width: 22pt, height: 2pt, fill: accent, baseline: -2.5pt)
-      h(9pt)
-      text(font: mono, size: 10.6pt, weight: "semibold", fill: ink)[#subject]
-    })
-  }
-  v(8pt)
-}
-
-// Closing line + semibold signature name.
-#let letterclose(closing: "Sincerely,", name: "") = block(above: 22pt, {
-  text(font: mono, fill: ink2)[#closing]
-  v(18pt)
-  text(font: mono, size: 10.4pt, weight: "semibold", fill: ink)[#name]
-})
-
-// --- The document wrapper, applied as a show rule (typst-show.typ uses cv;
-//     a standalone letter file uses `#show: letter`). -------------------------
-#let _paged(
-  label,
-  doc,
-  margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
-  size: 9.3pt,
-  leading: 7.9pt,
-  spacing: 7.9pt,
-) = {
-  set document(title: "Francisco Garre-Frutos — " + label, author: "Francisco Garre-Frutos")
+// --- The document wrapper, applied as a show rule by typst-show.typ. ---------
+#let cv(doc) = {
+  set document(title: "Francisco Garre-Frutos — Curriculum Vitae", author: "Francisco Garre-Frutos")
   set page(
     paper: "a4",
     fill: paper,
-    margin: margin,
+    margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
     footer: context {
       set text(font: mono, size: 7.6pt, tracking: 0.5pt, fill: ink3)
       grid(
         columns: (1fr, auto, 1fr),
         align: (left + horizon, center + horizon, right + horizon),
         upper(datetime.today().display("[month repr:long] [year]")),
-        upper[Francisco Garre-Frutos #h(4pt)·#h(4pt) #label],
+        upper[Francisco Garre-Frutos #h(4pt)·#h(4pt) Curriculum Vitae],
         [#counter(page).display()],
       )
     },
   )
-  set text(font: mono, size: size, weight: "regular", fill: ink, lang: "en", hyphenate: false)
-  set par(leading: leading, spacing: spacing, justify: false)
+  set text(font: mono, size: 9.3pt, weight: "regular", fill: ink, lang: "en", hyphenate: false)
+  set par(leading: 7.9pt, spacing: 7.9pt, justify: false)
   doc
 }
-#let cv(doc) = _paged("Curriculum Vitae", doc)
-// Letters get roomier margins, a slightly larger body and real paragraph air —
-// one page of prose breathes differently than a dense CV.
-#let letter(doc) = _paged(
-  "Cover Letter",
-  doc,
-  margin: (top: 2.3cm, bottom: 2.1cm, left: 2.8cm, right: 2.8cm),
-  size: 9.7pt,
-  leading: 9.4pt,
-  spacing: 13pt,
-)
