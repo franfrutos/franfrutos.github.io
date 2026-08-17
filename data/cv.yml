@@ -64,7 +64,6 @@ experience:
     dates: Since 2026
     fields:
       - [Supervisor, "Miguel A. Vadillo."]
-      - [Research, "Attention, reward learning, awareness, and computational modelling."]
     stays:
       - title: Ghent University · Braem Lab
         right: Ghent, Belgium
@@ -89,7 +88,7 @@ experience:
         dates: Sept. – Dec. 2024
         fields:
           - [Host, "Jan Theeuwes."]
-          - [Research, "Statistical learning and reward-driven attentional biases; funded by an FPU short research stay grant (EEBB)."]
+          - [Research, "Statistical learning and reward-driven attentional biases."]
 
 # Awards, fellowships and competitive scholarships. One line per entry: the
 # award name says what it is, so no prose description (the only extra line is
@@ -102,9 +101,16 @@ awards:
     right: Granada, Spain
     org: University of Granada · UGR–Santander Bridging Contracts Programme
     dates: 2026
+  - title: RLDM Mobility Award
+    org: Reinforcement Learning and Decision Making Conference (RLDM)
+    dates: 2026
   - title: FPU Predoctoral Fellowship
     org: Ministry of Universities, Government of Spain
     dates: 2021 – 2025
+  - title: FPU Short Research Stay Grant (EEBB)
+    right: Amsterdam, the Netherlands
+    org: Ministry of Universities, Government of Spain
+    dates: 2024
   - title: Science Outreach Grant
     org: Spanish Society for Experimental Psychology (SEPEX)
     dates: 2025
