@@ -161,6 +161,11 @@
   text(font: mono, size: 8.2pt, weight: "semibold", tracking: 1.1pt, fill: accent)[#upper(title)]
 })
 
+// --- A visibly-clickable link: soft coral underline, used for linked titles
+//     (publications, theses) so PDF readers can tell what is clickable.
+//     Masthead contacts keep plain links — the coral icons already signal it. --
+#let plink(url, body) = link(url, underline(stroke: 0.6pt + accent.lighten(45%), offset: 2.2pt, evade: true, body))
+
 // --- Masthead. --------------------------------------------------------------
 // contacts: array of (icon: str, label: str, url: str or none)
 #let cvheader(
@@ -210,9 +215,44 @@
   v(2pt)
 }
 
-// --- The document wrapper, applied as a show rule by typst-show.typ. ---------
-#let cv(doc) = {
-  set document(title: "Francisco Garre-Frutos — Curriculum Vitae", author: "Francisco Garre-Frutos")
+// --- Cover letter helpers ---------------------------------------------------
+// Recipient block (left) + date (right), then a subject line with the coral
+// tick, echoing the section-header motif.
+#let lettermeta(recipient: (), date: none, subject: none) = {
+  block(above: 24pt, width: 100%, {
+    grid(
+      columns: (1fr, auto),
+      column-gutter: 16pt,
+      align: (start + top, end + top),
+      {
+        set text(font: mono, size: 9.3pt, fill: ink2)
+        set par(leading: 6.8pt)
+        recipient.join(linebreak())
+      },
+      text(font: mono, size: 9.2pt, style: "italic", fill: ink3)[#date],
+    )
+  })
+  if subject != none {
+    block(above: 20pt, below: 4pt, {
+      box(width: 22pt, height: 2pt, fill: accent, baseline: -2.5pt)
+      h(9pt)
+      text(font: mono, size: 10.4pt, weight: "semibold", fill: ink)[#subject]
+    })
+  }
+  v(6pt)
+}
+
+// Closing line + semibold signature name.
+#let letterclose(closing: "Sincerely,", name: "") = block(above: 18pt, {
+  text(font: mono, size: 9.3pt, fill: ink2)[#closing]
+  v(14pt)
+  text(font: mono, size: 10pt, weight: "semibold", fill: ink)[#name]
+})
+
+// --- The document wrapper, applied as a show rule (typst-show.typ uses cv;
+//     a standalone letter file uses `#show: letter`). -------------------------
+#let _paged(label, doc) = {
+  set document(title: "Francisco Garre-Frutos — " + label, author: "Francisco Garre-Frutos")
   set page(
     paper: "a4",
     fill: paper,
@@ -223,7 +263,7 @@
         columns: (1fr, auto, 1fr),
         align: (left + horizon, center + horizon, right + horizon),
         upper(datetime.today().display("[month repr:long] [year]")),
-        upper[Francisco Garre-Frutos #h(4pt)·#h(4pt) Curriculum Vitae],
+        upper[Francisco Garre-Frutos #h(4pt)·#h(4pt) #label],
         [#counter(page).display()],
       )
     },
@@ -231,4 +271,9 @@
   set text(font: mono, size: 9.3pt, weight: "regular", fill: ink, lang: "en", hyphenate: false)
   set par(leading: 7.9pt, spacing: 7.9pt, justify: false)
   doc
+}
+#let cv(doc) = _paged("Curriculum Vitae", doc)
+#let letter(doc) = {
+  show par: set par(leading: 8.6pt, spacing: 11pt)
+  _paged("Cover Letter", doc)
 }

@@ -43,7 +43,7 @@ function inlineMd(s) {
   while ((m = re.exec(s))) {
     out += escTyp(s.slice(last, m.index));
     out += m[1] != null
-      ? '#link("' + escStr(m[2]) + '")[' + inlineMd(m[1]) + ']'
+      ? '#plink("' + escStr(m[2]) + '")[' + inlineMd(m[1]) + ']'
       : '#emph[' + escTyp(m[3]) + ']';
     last = re.lastIndex;
   }
@@ -57,7 +57,7 @@ function authorsTyp(s) {
   return String(s)
     .split(ME)
     .map((seg) => dagger(escTyp(seg)))
-    .join('#text(weight: "semibold")[' + escTyp(ME) + ']');
+    .join('#text(weight: "semibold", fill: ink)[' + escTyp(ME) + ']');
 }
 
 // --- Publication formatting -------------------------------------------------
@@ -66,7 +66,10 @@ const isPublished = (p) => !p.preprint && String(p.venue || '').toLowerCase() !=
 function venueTyp(p) {
   if (isPublished(p)) {
     let tail = '';
-    if (p.volume != null) tail += ', ' + escTyp(p.volume);
+    // APA 7: the volume number is italicized along with the journal name. The
+    // trailing ; ends the code expression so a following "(issue)" isn't parsed
+    // as a function call on the emph content.
+    if (p.volume != null) tail += ', #emph[' + escTyp(p.volume) + '];';
     if (p.issue != null) tail += '(' + escTyp(p.issue) + ')';
     if (p.pages != null) tail += ', ' + escTyp(p.pages);
     else if (p.articleno != null)
@@ -103,7 +106,7 @@ function pubBadges(p) {
 function pubItem(p) {
   // The title links to the paper/preprint (clickable in the PDF) when there's a url.
   const title = '#emph[' + escTyp(p.title) + '.]';
-  const linked = p.url ? '#link("' + escStr(p.url) + '")[' + title + ']' : title;
+  const linked = p.url ? '#plink("' + escStr(p.url) + '")[' + title + ']' : title;
   const body =
     authorsTyp(p.authors) + ' (' + escTyp(p.year) + '). ' +
     linked + ' ' + venueTyp(p);
@@ -118,7 +121,7 @@ function talkItem(t) {
   const title = '#emph[' + escTyp(t.title) + ']';
   const body =
     authorsTyp(t.authors) + ' (' + escTyp(t.year) + '). ' +
-    (t.url ? '#link("' + escStr(t.url) + '")[' + title + ']' : title) + ' ' + inlineMd(t.venue);
+    (t.url ? '#plink("' + escStr(t.url) + '")[' + title + ']' : title) + ' ' + inlineMd(t.venue);
   return '#pubitem([' + body + '])\n';
 }
 
@@ -282,7 +285,8 @@ function authorsHtml(s) {
 function venueHtml(p) {
   if (isPublished(p)) {
     let tail = '';
-    if (p.volume != null) tail += ', ' + htmlEsc(p.volume);
+    // APA 7: the volume number is italicized along with the journal name.
+    if (p.volume != null) tail += ', <em>' + htmlEsc(p.volume) + '</em>';
     if (p.issue != null) tail += '(' + htmlEsc(p.issue) + ')';
     if (p.pages != null) tail += ', ' + htmlEsc(p.pages);
     else if (p.articleno != null) tail += ', ' + (/^\d+$/.test(String(p.articleno)) ? 'Article ' + htmlEsc(p.articleno) : htmlEsc(p.articleno));

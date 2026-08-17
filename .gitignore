@@ -25,6 +25,7 @@ _quarto_internal_scss_error.scss
 /cv/index.qmd
 # Intermediate Typst kept (keep-typ) so build-cv-dark.mjs can recompile the dark PDF
 /cv/cv.typ
+/cv/cover_letter/   # letters carry recipients and job ids — keep off the public repo
 
 # Private CV overlay + generated private PDFs (local only, never published)
 /.private/
