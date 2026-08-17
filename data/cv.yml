@@ -68,7 +68,7 @@ experience:
     stays:
       - title: Ghent University · Braem Lab
         right: Ghent, Belgium
-        dates: Sept. 2026 – Dec. 2026
+        dates: Sept. – Dec. 2026
         fields:
           - [Host, "Senne Braem."]
   - title: Postdoctoral Researcher
@@ -76,7 +76,7 @@ experience:
     org: University of Granada · CIMCYC
     dates: 2026
     fields:
-      - [Programme, "UGR–Santander Bridging Contracts Programme."]
+      - [Funding, "UGR–Santander Bridging Contracts Programme."]
   - title: Predoctoral Researcher (FPU Fellow)
     right: Granada, Spain
     org: University of Granada · CIMCYC
@@ -86,7 +86,7 @@ experience:
     stays:
       - title: Vrije Universiteit Amsterdam · Theeuwes Lab
         right: Amsterdam, the Netherlands
-        dates: Sept. 2024 – Dec. 2024
+        dates: Sept. – Dec. 2024
         fields:
           - [Host, "Jan Theeuwes."]
           - [Research, "Statistical learning and reward-driven attentional biases; funded by an FPU short research stay grant (EEBB)."]
