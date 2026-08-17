@@ -60,25 +60,36 @@ education:
 experience:
   - title: Postdoctoral Researcher
     right: Madrid, Spain
-    org: Autonomous University of Madrid · Cognition, Attention & Learning Lab (CALL)
+    org: Autonomous University of Madrid · CALL
     dates: Since 2026
+    fields:
+      - [Supervisor, "Miguel A. Vadillo."]
+      - [Research, "Attention, reward learning, awareness, and computational modelling."]
+    stays:
+      - title: Ghent University · Braem Lab
+        right: Ghent, Belgium
+        dates: Sept. 2026 – Dec. 2026
+        fields:
+          - [Host, "Senne Braem."]
   - title: Postdoctoral Researcher
     right: Granada, Spain
-    org: University of Granada · Mind, Brain & Behavior Research Center (CIMCYC)
+    org: University of Granada · CIMCYC
     dates: 2026
+    fields:
+      - [Programme, "UGR–Santander Bridging Contracts Programme."]
   - title: Predoctoral Researcher (FPU Fellow)
     right: Granada, Spain
-    org: University of Granada · Mind, Brain & Behavior Research Center (CIMCYC)
+    org: University of Granada · CIMCYC
     dates: Nov. 2021 – Dec. 2025
     fields:
       - [Supervisors, "Juan Lupiáñez and Miguel A. Vadillo."]
-  - title: Visiting Researcher
-    right: Amsterdam, the Netherlands
-    org: Vrije Universiteit Amsterdam · Jan Theeuwes Lab
-    dates: Sept. 2024 – Dec. 2024
-    fields:
-      - [Host, "Jan Theeuwes."]
-      - [Research, "Statistical learning and reward-driven attentional biases; funded by an FPU short research stay grant (EEBB)."]
+    stays:
+      - title: Vrije Universiteit Amsterdam · Theeuwes Lab
+        right: Amsterdam, the Netherlands
+        dates: Sept. 2024 – Dec. 2024
+        fields:
+          - [Host, "Jan Theeuwes."]
+          - [Research, "Statistical learning and reward-driven attentional biases; funded by an FPU short research stay grant (EEBB)."]
 
 # Awards, fellowships and competitive scholarships. One line per entry: the
 # award name says what it is, so no prose description (the only extra line is
@@ -127,16 +138,16 @@ training:
     org: Centre de Recerca Matemàtica (CRM), Barcelona · 92.5 hours
     dates: Jul. 2026
   - title: "Electroencephalography (EEG): Preprocessing and Introduction to Univariate and Multivariate Analyses"
-    org: Escuela de Doctorado de Ciencias de la Salud, University of Granada · 21 hours
+    org: University of Granada · 21 hours
     dates: Mar. 2025
   - title: "Annual JAGS Workshop: Bayesian Modeling for Cognitive Science"
-    org: Psychological Methods Group, University of Amsterdam · 140 hours
+    org: University of Amsterdam · 140 hours
     dates: Jul. 2024
   - title: "Seventh Summer School on Statistical Methods for Linguistics and Psychology (SMLP): Advanced Bayesian Data Analysis"
     org: University of Potsdam, Germany · 40 hours
     dates: Sept. 2023
   - title: CIMCYC Workshop on Computational Modelling of Behavioral Data
-    org: Mind, Brain, and Behavior Research Center (CIMCYC), University of Granada · 9 hours
+    org: CIMCYC · University of Granada · 9 hours
     dates: Jun. 2022
 
 # CV-only publications (not on the website). Rendered after the journal articles.
@@ -392,7 +403,7 @@ events:
     dates: 2025
   - title: "Measuring individual differences with experimental tasks: current pitfalls and future directions"
     right: Almería, Spain
-    org: Symposium · XIV Congreso de la Sociedad Española de Psicología Experimental
+    org: Symposium · XIV SEPEX Conference
     dates: 2024
 
 service:

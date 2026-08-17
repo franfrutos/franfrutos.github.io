@@ -140,7 +140,18 @@ function emitEntry(e) {
   (e.fields || []).forEach(([label, val]) => body.push('#kv("' + escStr(label) + '", [' + inlineMd(val) + '])'));
   if (e.body) body.push(inlineMd(e.body));
   if (body.length) args.push('body: [\n    ' + body.join('\n    ') + '\n  ]');
-  return '#entry(\n  ' + args.join(',\n  ') + ',\n)\n';
+  let out = '#entry(\n  ' + args.join(',\n  ') + ',\n)\n';
+  // Nested research stays (entry.stays) render indented under the position.
+  (e.stays || []).forEach((s) => {
+    const sa = [];
+    if (s.title) sa.push('title: [' + inlineMd(s.title) + ']');
+    if (s.right) sa.push('place: [' + inlineMd(s.right) + ']');
+    if (s.dates) sa.push('dates: [' + inlineMd(s.dates) + ']');
+    const sb = (s.fields || []).map(([label, val]) => '#kv("' + escStr(label) + '", [' + inlineMd(val) + '])');
+    if (sb.length) sa.push('body: [\n    ' + sb.join('\n    ') + '\n  ]');
+    out += '#substay(\n  ' + sa.join(',\n  ') + ',\n)\n';
+  });
+  return out;
 }
 
 const section = (title) => '\n#cvsection("' + escStr(title) + '")\n\n';
@@ -346,7 +357,16 @@ function entryHtml(e) {
   (e.fields || []).forEach(([l, v]) => body.push('<div class="cv-kv"><b>' + htmlEsc(l) + ':</b> ' + inlineHtml(v) + '</div>'));
   if (e.body) body.push('<p>' + inlineHtml(e.body) + '</p>');
   if (body.length) h += '<div class="b">' + body.join('') + '</div>';
-  return h + '</div>';
+  h += '</div>';
+  // Nested research stays, mirroring the PDF's #substay.
+  (e.stays || []).forEach((s) => {
+    h += '<div class="cv-stay"><div class="stay-label">Research stay</div>' +
+      '<div class="cv-entry"><div class="t">' + inlineHtml(s.title) + '</div><div class="r">' + inlineHtml(s.right) + (s.dates ? '<br>' + inlineHtml(s.dates) : '') + '</div>';
+    const sb = (s.fields || []).map(([l, v]) => '<div class="cv-kv"><b>' + htmlEsc(l) + ':</b> ' + inlineHtml(v) + '</div>');
+    if (sb.length) h += '<div class="b">' + sb.join('') + '</div>';
+    h += '</div></div>';
+  });
+  return h;
 }
 const secHtml = (title, inner) => '<section class="cv-sec"><div class="sec-label"><span></span><h2>' + htmlEsc(title) + '</h2></div>' + inner + '</section>';
 

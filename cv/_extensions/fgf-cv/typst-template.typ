@@ -102,6 +102,33 @@
   })
 }
 
+// --- A nested RESEARCH STAY under a main position: indented, with a coral
+//     small-caps label so international stays read as first-class merits. ------
+#let substay(title: none, place: none, dates: none, body: none) = {
+  block(above: 11pt, below: 0pt, breakable: false, width: 100%, inset: (left: 11pt), {
+    text(font: mono, size: 7.6pt, weight: "semibold", tracking: 1.3pt, fill: accent)[RESEARCH STAY]
+    v(3.5pt)
+    grid(
+      columns: (1fr, auto),
+      column-gutter: 16pt,
+      align: (start + top, end + top),
+      text(font: mono, size: 9.9pt, weight: "semibold", fill: ink)[#title],
+      {
+        set align(end)
+        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#place]
+        linebreak()
+        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#dates]
+      },
+    )
+    if body != none {
+      v(1pt)
+      set text(font: mono, size: 9.3pt, fill: ink2)
+      set par(leading: 8pt, justify: false)
+      body
+    }
+  })
+}
+
 // --- Labeled inline field used inside entry bodies (Thesis:, Supervisor:…). -
 #let kv(label, value) = block(above: 6pt, below: 0pt, {
   text(font: mono, size: 8.5pt, weight: "semibold", fill: ink)[#label:]
@@ -163,10 +190,10 @@
   text(font: mono, size: 8.2pt, weight: "semibold", tracking: 1.1pt, fill: accent)[#upper(title)]
 })
 
-// --- A visibly-clickable link: soft coral underline, used for linked titles
-//     (publications, theses) so PDF readers can tell what is clickable.
+// --- A visibly-clickable link for titles (publications, theses): no underline —
+//     the italic title in a darker ink than the surrounding ink2 text signals it.
 //     Masthead contacts keep plain links — the coral icons already signal it. --
-#let plink(url, body) = link(url, underline(stroke: 0.6pt + accent.lighten(45%), offset: 2.2pt, evade: true, body))
+#let plink(url, body) = link(url, text(fill: ink, body))
 
 // --- Masthead. --------------------------------------------------------------
 // contacts: array of (icon: str, label: str, url: str or none)
@@ -192,15 +219,16 @@
   v(3pt)
   text(font: mono, size: 9.5pt, style: "italic", fill: ink3)[#location]
   v(11pt)
+  // Sized + spaced so all contacts fit on ONE line (no orphaned "Bluesky").
   block(width: 100%, {
-    set text(font: mono, size: 9pt, fill: ink2)
+    set text(font: mono, size: 8.5pt, fill: ink2)
     contacts
       .map(c => box({
-        icon(c.icon, size: 9.5pt, fill: accent)
-        h(4.5pt)
+        icon(c.icon, size: 9pt, fill: accent)
+        h(4pt)
         if c.url != none { link(c.url)[#text(fill: ink2)[#c.label]] } else { text(fill: ink2)[#c.label] }
       }))
-      .join(box(inset: (x: 8pt), text(fill: ink3.lighten(15%))[\u{2022}]))
+      .join(box(inset: (x: 5.5pt), text(fill: ink3.lighten(15%))[\u{2022}]))
   })
   if tagline != "" {
     v(13pt)
