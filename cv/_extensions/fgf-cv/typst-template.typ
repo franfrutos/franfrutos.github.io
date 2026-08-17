@@ -111,9 +111,9 @@
 
 // --- A small rounded "open science" badge (Academicons glyph), as a soft
 //     coral chip so the open-science practices read at a glance. -------------
-#let osfbadge(key, on: true) = {
+#let osfbadge(key, on: true, url: none) = {
   let g = _OSF.at(key)
-  box(
+  let chipbox = box(
     inset: (x: 4pt, y: 3pt),
     radius: 3.5pt,
     fill: if on { chip } else { none },
@@ -121,6 +121,8 @@
     baseline: 3.6pt,
     text(font: g.at(0), size: 9.5pt, fill: if on { accent } else { ink3 })[#g.at(1)],
   )
+  // Lit badges link to their resource (same semantics as the website badges).
+  if on and url != none { link(url, chipbox) } else { chipbox }
 }
 
 // --- A right-aligned label + value row (Methods & Technical Expertise). -----
@@ -150,7 +152,7 @@
       body
       if badges.len() > 0 {
         v(4pt)
-        box(stack(dir: ltr, spacing: 5pt, ..badges.map(b => osfbadge(b.at(0), on: b.at(1)))))
+        box(stack(dir: ltr, spacing: 5pt, ..badges.map(b => osfbadge(b.at(0), on: b.at(1), url: b.at(2, default: none)))))
       }
     },
   )
@@ -219,7 +221,7 @@
 // Recipient block (left) + date (right), then a subject line with the coral
 // tick, echoing the section-header motif.
 #let lettermeta(recipient: (), date: none, subject: none) = {
-  block(above: 24pt, width: 100%, {
+  block(above: 30pt, width: 100%, {
     grid(
       columns: (1fr, auto),
       column-gutter: 16pt,
@@ -233,30 +235,37 @@
     )
   })
   if subject != none {
-    block(above: 20pt, below: 4pt, {
+    block(above: 24pt, below: 6pt, {
       box(width: 22pt, height: 2pt, fill: accent, baseline: -2.5pt)
       h(9pt)
-      text(font: mono, size: 10.4pt, weight: "semibold", fill: ink)[#subject]
+      text(font: mono, size: 10.6pt, weight: "semibold", fill: ink)[#subject]
     })
   }
-  v(6pt)
+  v(8pt)
 }
 
 // Closing line + semibold signature name.
-#let letterclose(closing: "Sincerely,", name: "") = block(above: 18pt, {
-  text(font: mono, size: 9.3pt, fill: ink2)[#closing]
-  v(14pt)
-  text(font: mono, size: 10pt, weight: "semibold", fill: ink)[#name]
+#let letterclose(closing: "Sincerely,", name: "") = block(above: 22pt, {
+  text(font: mono, fill: ink2)[#closing]
+  v(18pt)
+  text(font: mono, size: 10.4pt, weight: "semibold", fill: ink)[#name]
 })
 
 // --- The document wrapper, applied as a show rule (typst-show.typ uses cv;
 //     a standalone letter file uses `#show: letter`). -------------------------
-#let _paged(label, doc) = {
+#let _paged(
+  label,
+  doc,
+  margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
+  size: 9.3pt,
+  leading: 7.9pt,
+  spacing: 7.9pt,
+) = {
   set document(title: "Francisco Garre-Frutos — " + label, author: "Francisco Garre-Frutos")
   set page(
     paper: "a4",
     fill: paper,
-    margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
+    margin: margin,
     footer: context {
       set text(font: mono, size: 7.6pt, tracking: 0.5pt, fill: ink3)
       grid(
@@ -268,12 +277,18 @@
       )
     },
   )
-  set text(font: mono, size: 9.3pt, weight: "regular", fill: ink, lang: "en", hyphenate: false)
-  set par(leading: 7.9pt, spacing: 7.9pt, justify: false)
+  set text(font: mono, size: size, weight: "regular", fill: ink, lang: "en", hyphenate: false)
+  set par(leading: leading, spacing: spacing, justify: false)
   doc
 }
 #let cv(doc) = _paged("Curriculum Vitae", doc)
-#let letter(doc) = {
-  show par: set par(leading: 8.6pt, spacing: 11pt)
-  _paged("Cover Letter", doc)
-}
+// Letters get roomier margins, a slightly larger body and real paragraph air —
+// one page of prose breathes differently than a dense CV.
+#let letter(doc) = _paged(
+  "Cover Letter",
+  doc,
+  margin: (top: 2.3cm, bottom: 2.1cm, left: 2.8cm, right: 2.8cm),
+  size: 9.7pt,
+  leading: 9.4pt,
+  spacing: 13pt,
+)

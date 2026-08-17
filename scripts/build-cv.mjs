@@ -86,20 +86,23 @@ function venueTyp(p) {
   return '#emph[' + escTyp(p.venue) + '].';
 }
 
-// Always return all badges as [key, on] so missing practices render greyed-off.
+// Always return all badges as [key, on, url] so missing practices render
+// greyed-off and lit badges are clickable in the PDF. Same url semantics as the
+// website: a string value links there, `true` links to the paper itself.
 function pubBadges(p) {
   const o = p.osf || {};
+  const urlOf = (v) => (typeof v === 'string' ? v : (v ? p.url || null : null));
   return BADGE_KEYS.map((k) => {
     // The open-access slot adapts to how the paper is available: a preprint shows
     // the PsyArXiv glyph, a shared postprint likewise, and an accepted/in-press
     // paper whose final access status is unknown shows a gear ("in production") —
     // each instead of a greyed OA.
     if (k === 'oa') {
-      if (p.preprint) return ['preprint', true];
-      if (!o.oa && o.postprint) return ['postprint', true];
-      if (!o.oa && o.production) return ['production', true];
+      if (p.preprint) return ['preprint', true, p.url || null];
+      if (!o.oa && o.postprint) return ['postprint', true, urlOf(o.postprint)];
+      if (!o.oa && o.production) return ['production', true, urlOf(o.production)];
     }
-    return [k, !!o[k]];
+    return [k, !!o[k], urlOf(o[k])];
   });
 }
 
@@ -111,7 +114,7 @@ function pubItem(p) {
     authorsTyp(p.authors) + ' (' + escTyp(p.year) + '). ' +
     linked + ' ' + venueTyp(p);
   const badges = pubBadges(p)
-    .map(([k, on]) => '("' + k + '", ' + (on ? 'true' : 'false') + ')')
+    .map(([k, on, url]) => '("' + k + '", ' + (on ? 'true' : 'false') + ', ' + (url ? '"' + escStr(url) + '"' : 'none') + ')')
     .join(', ');
   return '#pubitem([' + body + '], badges: (' + badges + ',))\n';
 }
