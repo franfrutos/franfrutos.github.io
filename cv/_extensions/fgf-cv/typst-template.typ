@@ -190,10 +190,14 @@
   text(font: mono, size: 8.2pt, weight: "semibold", tracking: 1.1pt, fill: accent)[#upper(title)]
 })
 
-// --- A visibly-clickable link for titles (publications, theses): no underline —
-//     the italic title in a darker ink than the surrounding ink2 text signals it.
-//     Masthead contacts keep plain links — the coral icons already signal it. --
-#let plink(url, body) = link(url, text(fill: ink, body))
+// --- A visibly-clickable link for titles (publications, theses): signalled by
+//     COLOR, not italics (italics stay purely semantic, e.g. APA titles).
+//     Restrained member of the accent family: darkened coral on light paper
+//     (adequate contrast on white, reads as mid-gray in grayscale prints),
+//     the existing lighter coral on dark paper. Masthead contacts keep plain
+//     links — the coral icons already signal those. -----------------------------
+#let linkc = if _dark { accent } else { accent.darken(22%) }
+#let plink(url, body) = link(url, text(fill: linkc, body))
 
 // --- Masthead. --------------------------------------------------------------
 // contacts: array of (icon: str, label: str, url: str or none)

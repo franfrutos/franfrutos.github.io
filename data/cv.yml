@@ -57,38 +57,37 @@ education:
 # and a one-line research focus so the appointment is self-explanatory.
 # The undergraduate/MSc research scholarships live under `awards:` (they are
 # competitive awards, not appointments).
+# Ordering is intentional (professional progression, not strict reverse
+# chronology): the upcoming Ghent stay sits with the current postdoc stage.
 experience:
   - title: Postdoctoral Researcher
     right: Madrid, Spain
     org: Autonomous University of Madrid · CALL
-    dates: Since 2026
+    dates: Jul. 2026–present
+  - title: Visiting Postdoctoral Researcher
+    right: Ghent, Belgium
+    org: Ghent University · Senne Braem Lab
+    dates: Sept.–Dec. 2026 (scheduled)
     fields:
-      - [Supervisor, "Miguel A. Vadillo."]
-    stays:
-      - title: Ghent University · Braem Lab
-        right: Ghent, Belgium
-        dates: Sept. – Dec. 2026
-        fields:
-          - [Host, "Senne Braem."]
+      - [Host, "Senne Braem."]
   - title: Postdoctoral Researcher
     right: Granada, Spain
     org: University of Granada · CIMCYC
-    dates: 2026
+    dates: Jan.–Jun. 2026
     fields:
-      - [Funding, "UGR–Santander Bridging Contracts Programme."]
+      - [Funding, "UGR–Santander Bridging Postdoctoral Contract."]
   - title: Predoctoral Researcher (FPU Fellow)
     right: Granada, Spain
     org: University of Granada · CIMCYC
-    dates: Nov. 2021 – Dec. 2025
+    dates: Nov. 2021–Dec. 2025
     fields:
       - [Supervisors, "Juan Lupiáñez and Miguel A. Vadillo."]
-    stays:
-      - title: Vrije Universiteit Amsterdam · Theeuwes Lab
-        right: Amsterdam, the Netherlands
-        dates: Sept. – Dec. 2024
-        fields:
-          - [Host, "Jan Theeuwes."]
-          - [Research, "Statistical learning and reward-driven attentional biases."]
+  - title: Visiting Researcher
+    right: Amsterdam, the Netherlands
+    org: Vrije Universiteit Amsterdam · Jan Theeuwes Lab
+    dates: Sept.–Dec. 2024
+    fields:
+      - [Host, "Jan Theeuwes."]
 
 # Awards, fellowships and competitive scholarships. One line per entry: the
 # award name says what it is, so no prose description (the only extra line is
