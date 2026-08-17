@@ -105,7 +105,9 @@
 // --- A nested RESEARCH STAY under a main position: indented, with a coral
 //     small-caps label so international stays read as first-class merits. ------
 #let substay(title: none, place: none, dates: none, body: none) = {
-  block(above: 11pt, below: 0pt, breakable: false, width: 100%, inset: (left: 11pt), {
+  // A hairline on the left visually ties the stay to its parent position.
+  block(above: 11pt, below: 0pt, breakable: false, width: 100%,
+    stroke: (left: 1pt + hair), inset: (left: 13pt, top: 2pt, bottom: 2pt), {
     text(font: mono, size: 7.6pt, weight: "semibold", tracking: 1.3pt, fill: accent)[RESEARCH STAY]
     v(3.5pt)
     grid(

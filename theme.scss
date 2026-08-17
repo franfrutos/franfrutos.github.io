@@ -568,8 +568,9 @@ html.fgf-dark .cv-dl-dark { display: block; }
 .cv-entry .d { font-style: italic; color: var(--ink3); font-size: 12.5px; text-align: right; white-space: nowrap; }
 .cv-entry .b { grid-column: 1 / -1; color: var(--ink2); font-size: 14px; line-height: 1.6; margin-top: 6px; }
 .cv-entry .b p { margin: 0; }
-// Nested research stay under a position (mirrors the PDF's #substay).
-.cv-stay { margin: 12px 0 0 18px; }
+// Nested research stay under a position (mirrors the PDF's #substay):
+// a left hairline ties the stay to its parent position.
+.cv-stay { margin: 12px 0 0 4px; padding: 2px 0 2px 15px; border-left: 1px solid var(--line); }
 .cv-stay .stay-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
 .cv-stay .cv-entry { margin-top: 4px; }
 .cv-stay .cv-entry .t { font-size: 14px; }

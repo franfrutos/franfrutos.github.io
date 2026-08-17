@@ -64,12 +64,12 @@ experience:
     right: Madrid, Spain
     org: Autonomous University of Madrid · CALL
     dates: Jul. 2026–present
-  - title: Visiting Postdoctoral Researcher
-    right: Ghent, Belgium
-    org: Ghent University · Senne Braem Lab
-    dates: Sept.–Dec. 2026 (scheduled)
-    fields:
-      - [Host, "Senne Braem."]
+    stays:
+      - title: Ghent University · Senne Braem Lab
+        right: Ghent, Belgium
+        dates: Sept.–Dec. 2026 (scheduled)
+        fields:
+          - [Host, "Senne Braem."]
   - title: Postdoctoral Researcher
     right: Granada, Spain
     org: University of Granada · CIMCYC
@@ -82,12 +82,12 @@ experience:
     dates: Nov. 2021–Dec. 2025
     fields:
       - [Supervisors, "Juan Lupiáñez and Miguel A. Vadillo."]
-  - title: Visiting Researcher
-    right: Amsterdam, the Netherlands
-    org: Vrije Universiteit Amsterdam · Jan Theeuwes Lab
-    dates: Sept.–Dec. 2024
-    fields:
-      - [Host, "Jan Theeuwes."]
+    stays:
+      - title: Vrije Universiteit Amsterdam · Jan Theeuwes Lab
+        right: Amsterdam, the Netherlands
+        dates: Sept.–Dec. 2024
+        fields:
+          - [Host, "Jan Theeuwes."]
 
 # Awards, fellowships and competitive scholarships. One line per entry: the
 # award name says what it is, so no prose description (the only extra line is
@@ -130,7 +130,7 @@ awards:
 methods:
   - [Quantitative, "Multilevel modelling, psychometrics, reliability analysis, meta-analysis, signal detection theory, computational modelling, reinforcement learning, multiverse inference."]
   - [Programming, "R, Python, JavaScript, Julia, Stan."]
-  - [Language Models, "Text embeddings for the analysis of qualitative reports; LLM-assisted screening in editorial workflows."]
+  - [Language Models, "Text embeddings for the analysis of qualitative reports."]
   - [Experimental Tools, "PsychoPy, E-Prime, OpenSesame, jsPsych, online behavioural testing, JASP, Jamovi."]
   - [Reproducibility, "OSF, preregistration, Quarto/Markdown, Git/GitHub workflows, open materials and data sharing."]
 
