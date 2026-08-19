@@ -197,7 +197,7 @@ function typstBody(cv, papers) {
     cv.outreach_publications.forEach((p) => { out += talkItem(p); });
   }
 
-  out += section('Ongoing Work');
+  out += section('Preprints & Ongoing Work');
   ongoing.forEach((p) => { out += pubItem(p); });
 
   out += section('Methods & Technical Expertise');
@@ -226,7 +226,7 @@ function typstBody(cv, papers) {
   out += section('Specialized Training');
   (cv.training || []).forEach((t) => { out += emitEntry({ title: t.title, right: t.dates, org: t.org }); });
 
-  out += section('Academic Service & Professional Memberships');
+  out += section('Academic Service & Memberships');
   cv.service.forEach((e) => { out += emitEntry(e); });
 
   out += section('Outreach Activities');
@@ -406,7 +406,7 @@ function buildHtml() {
   if ((cv.outreach_publications || []).length)
     pubs += '<div class="cv-subhead">Outreach publication</div><ul class="cv-publist">' + cv.outreach_publications.map(talkHtml).join('') + '</ul>';
   body += secHtml('Publications', pubs);
-  body += secHtml('Ongoing Work', '<ul class="cv-publist">' + ongoing.map(pubHtml).join('') + '</ul>');
+  body += secHtml('Preprints & Ongoing Work', '<ul class="cv-publist">' + ongoing.map(pubHtml).join('') + '</ul>');
   body += secHtml('Methods & Technical Expertise',
     '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');
   body += secHtml('Funded Projects', cv.funded.map(entryHtml).join(''));
@@ -417,7 +417,7 @@ function buildHtml() {
   body += secHtml('Teaching', cv.teaching.map(entryHtml).join(''));
   body += secHtml('Student Supervision', cv.supervision.map(entryHtml).join(''));
   body += secHtml('Specialized Training', cv.training.map((t) => entryHtml({ title: t.title, right: t.dates, org: t.org })).join(''));
-  body += secHtml('Academic Service & Professional Memberships', cv.service.map(entryHtml).join(''));
+  body += secHtml('Academic Service & Memberships', cv.service.map(entryHtml).join(''));
   body += secHtml('Outreach Activities', cv.outreach.map(entryHtml).join(''));
 
   const nav =

@@ -62,7 +62,7 @@ education:
 experience:
   - title: Postdoctoral Researcher
     right: Madrid, Spain
-    org: Autonomous University of Madrid · CALL
+    org: Autonomous University of Madrid · Cognition, Attention and Learning Lab
     dates: Jul. 2026–present
     stays:
       - title: Ghent University · Braem Lab
@@ -375,21 +375,21 @@ supervision:
     dates: 2026
     fields:
       - [Project, "*Continuous-tracking of subjective report methods of conscious experience.*"]
-      - [Supervisors, "Daniel Sanabria and Francisco Garre-Frutos."]
+      - [Co-supervisors, "Daniel Sanabria and Francisco Garre-Frutos."]
   - title: Pablo Martínez-López
     right: University of Granada
     org: MSc thesis supervision
     dates: 2023
     fields:
       - [Project, "*Within-Subjects Experimental Study of Individual Differences in Value-Modulated Attentional Capture (VMAC) and its Reversal.*"]
-      - [Supervisors, "Felisa González and Francisco Garre-Frutos."]
+      - [Co-supervisors, "Felisa González and Francisco Garre-Frutos."]
   - title: Adriana Ariza
     right: University of Granada
     org: MSc thesis supervision
     dates: 2023
     fields:
       - [Project, "*Pavlovian-to-Instrumental Transfer and Implicit Emotion Regulation.*"]
-      - [Supervisors, "Felisa González and Francisco Garre-Frutos."]
+      - [Co-supervisors, "Felisa González and Francisco Garre-Frutos."]
 
 events:
   - title: "How do I preregister my study? A hands-on workshop"
@@ -421,9 +421,8 @@ service:
     org: Editorial service
     dates: Since 2025
     fields:
-      - [Role, "Support the journal's peer-review and editorial workflow, including the adoption of LLM-based screening tools."]
+      - [Role, "Conduct initial editorial assessments of submissions for suitability for peer review, with a focus on reporting quality, transparency, and reproducibility."]
   - title: Ad hoc reviewer
-    right: 5 journals
     org: Peer review
     fields:
       - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, and *Frontiers in Cognition.*"]
@@ -440,4 +439,4 @@ outreach:
   - title: European Night of the Researchers
     org: Science communication
     fields:
-      - [Activity, "Participant in *así funciona tu atención (y así te engaña)*, focused on communicating attention research to the public."]
+      - [Activity, "Participant in *Así funciona tu atención (y así te engaña)*, focused on communicating attention research to the public."]
