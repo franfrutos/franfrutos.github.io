@@ -65,7 +65,7 @@ experience:
     org: Autonomous University of Madrid · CALL
     dates: Jul. 2026–present
     stays:
-      - title: Ghent University · Senne Braem Lab
+      - title: Ghent University · Braem Lab
         right: Ghent, Belgium
         dates: Sept.–Dec. 2026 (scheduled)
         fields:
@@ -416,6 +416,12 @@ service:
     dates: Since 2025
     fields:
       - [Role, "Support the journal's peer-review and editorial workflow, including the adoption of LLM-based screening tools."]
+  - title: Recommender
+    right: PCI Registered Reports
+    org: Editorial service
+    dates: Since 2026
+    fields:
+      - [Role, "Handling editor for Stage 1 and Stage 2 Registered Reports at Peer Community In Registered Reports (PCI RR)."]
   - title: Ad hoc reviewer
     right: 5 journals
     org: Peer review
