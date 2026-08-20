@@ -88,7 +88,8 @@
       grid(
         columns: (1fr, auto),
         column-gutter: 16pt,
-        align: (start + bottom, end + bottom),
+        // top-aligned so a two-line org keeps the date pinned to its first line
+        align: (start + top, end + top),
         text(font: mono, size: 8.2pt, weight: "medium", tracking: 0.7pt, fill: ink3)[#upper(org)],
         text(font: mono, size: 9.2pt, style: "italic", fill: ink3)[#dates],
       )

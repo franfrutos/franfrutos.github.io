@@ -565,7 +565,7 @@ html.fgf-dark .cv-dl-dark { display: block; }
 .cv-entry .t { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px; color: var(--ink); }
 .cv-entry .r { font-style: italic; color: var(--ink3); font-size: 13px; text-align: right; white-space: nowrap; }
 .cv-entry .o { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink3); }
-.cv-entry .d { font-style: italic; color: var(--ink3); font-size: 12.5px; text-align: right; white-space: nowrap; }
+.cv-entry .d { font-style: italic; color: var(--ink3); font-size: 12.5px; text-align: right; white-space: nowrap; align-self: start; }
 .cv-entry .b { grid-column: 1 / -1; color: var(--ink2); font-size: 14px; line-height: 1.6; margin-top: 6px; }
 .cv-entry .b p { margin: 0; }
 // Nested research stay under a position (mirrors the PDF's #substay):
