@@ -31,8 +31,11 @@ header:
     - { icon: osf,     label: OSF,      url: "https://osf.io/4ney2/" }
     - { icon: bluesky, label: Bluesky,  url: "https://bsky.app/profile/frangfr.bsky.social" }
 
+# `id:` fields are stable, non-visible selectors used by the BIAL short-CV
+# profile in scripts/build-cv.mjs. They are never rendered.
 education:
-  - title: PhD in Psychology
+  - id: phd
+    title: PhD in Psychology
     right: Granada, Spain
     org: University of Granada
     dates: 2021 – 2025
@@ -40,7 +43,8 @@ education:
       - [Thesis, "[*Awareness, Control, and Automaticity in Value-Modulated Attentional Capture.*](https://www.researchgate.net/publication/400441832_Awareness_Control_and_Automaticity_in_Value-Modulated_Attentional_Capture)"]
       - [Supervisors, "Juan Lupiáñez and Miguel A. Vadillo."]
       - [Distinction, "International Doctorate; cum laude."]
-  - title: MSc in Cognitive and Behavioral Neuroscience
+  - id: msc
+    title: MSc in Cognitive and Behavioral Neuroscience
     right: Granada, Spain
     org: University of Granada
     dates: 2020 – 2021
@@ -48,7 +52,8 @@ education:
       # Points at the preprint until the paper is published — then swap in the article URL.
       - [Thesis, "[*Inhibition of return and learned value.*](https://osf.io/preprints/psyarxiv/p4m29)"]
       - [Supervisor, "Juan Lupiáñez."]
-  - title: BSc in Psychology
+  - id: bsc
+    title: BSc in Psychology
     right: Murcia, Spain
     org: University of Murcia
     dates: 2016 – 2020
@@ -60,28 +65,31 @@ education:
 # Ordering is intentional (professional progression, not strict reverse
 # chronology): the upcoming Ghent stay sits with the current postdoc stage.
 experience:
-  - title: Postdoctoral Researcher
+  - id: uam
+    title: Postdoctoral Researcher
     right: Madrid, Spain
-    org: Autonomous University of Madrid · CALL
+    org: "Autonomous University of Madrid · [CALL Lab](https://calluam.wordpress.com)"
     dates: Jul. 2026–present
     stays:
-      - title: Ghent University · Braem Lab
+      - title: "Ghent University · [Braem Lab](https://users.ugent.be/~sbraem/)"
         right: Ghent, Belgium
         dates: Sept.–Dec. 2026 (scheduled)
         fields:
           - [Host, "Senne Braem."]
-  - title: Postdoctoral Researcher
+  - id: ugr-bridge
+    title: Postdoctoral Researcher
     right: Granada, Spain
-    org: University of Granada · CIMCYC
+    org: "University of Granada · [CIMCYC](https://cimcyc.ugr.es)"
     dates: Jan.–Jun. 2026
-  - title: Predoctoral Researcher
+  - id: predoc
+    title: Predoctoral Researcher
     right: Granada, Spain
-    org: University of Granada · CIMCYC
+    org: "University of Granada · [CIMCYC](https://cimcyc.ugr.es)"
     dates: Nov. 2021–Dec. 2025
     fields:
       - [Supervisors, "Juan Lupiáñez and Miguel A. Vadillo."]
     stays:
-      - title: Vrije Universiteit Amsterdam · Theeuwes Lab
+      - title: "Vrije Universiteit Amsterdam · [Theeuwes Lab](https://www.theeuweslab.com)"
         right: Amsterdam, the Netherlands
         dates: Sept.–Dec. 2024
         fields:
@@ -94,32 +102,40 @@ experience:
 # is stated once, in the Amsterdam appointment; the end-of-degree award once,
 # here. Travel awards / society prizes go here too when they arrive.
 awards:
-  - title: Bridging Postdoctoral Contract
+  - id: bridging
+    title: Bridging Postdoctoral Contract
     right: Granada, Spain
     org: University of Granada · UGR–Santander Bridging Contracts Programme
     dates: 2026
-  - title: RLDM Mobility Award
+  - id: rldm
+    title: RLDM Mobility Award
     org: Reinforcement Learning and Decision Making Conference (RLDM)
     dates: 2025
-  - title: Science Outreach Grant
+  - id: sepex-outreach
+    title: Science Outreach Grant
     org: Spanish Society for Experimental Psychology (SEPEX)
     dates: 2025
-  - title: FPU Predoctoral Fellowship
+  - id: fpu
+    title: FPU Predoctoral Fellowship
     org: Ministry of Universities, Government of Spain
     dates: 2021 – 2025
-  - title: FPU Short Research Stay Grant (EEBB)
+  - id: eebb
+    title: FPU Short Research Stay Grant (EEBB)
     right: Amsterdam, the Netherlands
     org: Ministry of Universities, Government of Spain
     dates: 2024
-  - title: Research Initiation Scholarship
+  - id: initiation
+    title: Research Initiation Scholarship
     right: Granada, Spain
     org: University of Granada · Plan Propio de Investigación
     dates: 2020 – 2021
-  - title: Extraordinary End-of-Degree Award
+  - id: end-of-degree
+    title: Extraordinary End-of-Degree Award
     right: Murcia, Spain
     org: University of Murcia
     dates: 2020
-  - title: Collaboration Scholarship
+  - id: collaboration
+    title: Collaboration Scholarship
     right: Murcia, Spain
     org: Spanish Ministry of Education · University of Murcia
     dates: 2019 – 2020
@@ -127,29 +143,34 @@ awards:
 # Methods & Technical Expertise — right-aligned label + value rows.
 methods:
   - [Quantitative, "Multilevel modelling, psychometrics, reliability analysis, meta-analysis, signal detection theory, computational modelling, reinforcement learning, multiverse inference."]
-  - [Programming, "R, Python, JavaScript, Julia, Stan."]
-  - [Language Models, "Text embeddings for the analysis of qualitative reports."]
-  - [Experimental Tools, "PsychoPy, E-Prime, OpenSesame, jsPsych, online behavioural testing, JASP, Jamovi."]
-  - [Reproducibility, "OSF, preregistration, Quarto/Markdown, Git/GitHub workflows, open materials and data sharing."]
+  - [Programming, "R, Python, Julia, Stan, JavaScript."]
+  - [Experimental, "PsychoPy, E-Prime, OpenSesame, jsPsych, online behavioural testing."]
+  - [Open Science, "Preregistration, OSF, Git/GitHub, reproducible workflows, open materials and data."]
 
 # Specialized training — title + date (right); org line holds institution · hours.
 training:
-  - title: "Tenth Summer School on Statistical Methods for Linguistics and Psychology (SMLP): Advanced Methods in Frequentist Statistics with Julia"
+  - id: smlp-2026
+    title: "Tenth Summer School on Statistical Methods for Linguistics and Psychology (SMLP): Advanced Methods in Frequentist Statistics with Julia"
     org: University of Potsdam, Germany · 40 hours
     dates: Aug. 2026
-  - title: Barcelona Summer School on Advanced Modeling of Behavior (BAMB 2026)
+  - id: bamb
+    title: Barcelona Summer School on Advanced Modeling of Behavior (BAMB 2026)
     org: Centre de Recerca Matemàtica (CRM), Barcelona · 92.5 hours
     dates: Jul. 2026
-  - title: "Electroencephalography (EEG): Preprocessing and Introduction to Univariate and Multivariate Analyses"
+  - id: eeg
+    title: "Electroencephalography (EEG): Preprocessing and Introduction to Univariate and Multivariate Analyses"
     org: University of Granada · 21 hours
     dates: Mar. 2025
-  - title: "Annual JAGS Workshop: Bayesian Modeling for Cognitive Science"
+  - id: jags
+    title: "Annual JAGS Workshop: Bayesian Modeling for Cognitive Science"
     org: University of Amsterdam · 140 hours
     dates: Jul. 2024
-  - title: "Seventh Summer School on Statistical Methods for Linguistics and Psychology (SMLP): Advanced Bayesian Data Analysis"
+  - id: smlp-2023
+    title: "Seventh Summer School on Statistical Methods for Linguistics and Psychology (SMLP): Advanced Bayesian Data Analysis"
     org: University of Potsdam, Germany · 40 hours
     dates: Sept. 2023
-  - title: CIMCYC Workshop on Computational Modelling of Behavioral Data
+  - id: cimcyc-modelling
+    title: CIMCYC Workshop on Computational Modelling of Behavioral Data
     org: CIMCYC · University of Granada · 9 hours
     dates: Jun. 2022
 
@@ -162,13 +183,15 @@ outreach_publications:
     url: https://www.cienciacognitiva.org/?p=2486
 
 funded:
-  - title: Understanding the Learning and Unlearning Dynamics of Myths about (Cyber)Violence Against Women
+  - id: unlearn
+    title: Understanding the Learning and Unlearning Dynamics of Myths about (Cyber)Violence Against Women
     right: EUR 2,000
     org: María de Maeztu Unit of Excellence – CIMCYC · UNLEARN-CVAW
     dates: Since 2026
     fields:
       - [Role, "Co-PI."]
-  - title: Visiting Scholars Programme
+  - id: visiting-scholars
+    title: Visiting Scholars Programme
     right: EUR 12,000
     org: University of Granada Visiting Scholars Programme · PPVS2025-01
     dates: 2025 – 2027
@@ -176,35 +199,40 @@ funded:
       - [Visiting scholar, "Jan Theeuwes."]
       - [Responsible researcher, "María Ruz Cámara."]
       - [Team, "Juan Lupiáñez, David Richter, and Francisco Garre-Frutos."]
-  - title: "Let's ROC: A generalization of Signal Detection Theory for the study of unconscious mental processes"
+  - id: lets-roc
+    title: "Let's ROC: A generalization of Signal Detection Theory for the study of unconscious mental processes"
     right: EUR 150,000
     org: Agencia Estatal de Investigación (MCIN/AEI) · PID2023-150830NB-I00
     dates: Since 2024
     fields:
       - [Role, "Research team."]
       - [PI, "Miguel A. Vadillo, Universidad Autónoma de Madrid."]
-  - title: "Conceptual Analysis of Vigilance Decrement: Attentional Resources, Cognitive Control, and Mind-Wandering"
+  - id: vigilance-decrement
+    title: "Conceptual Analysis of Vigilance Decrement: Attentional Resources, Cognitive Control, and Mind-Wandering"
     right: EUR 177,250
     org: Agencia Estatal de Investigación (MCIN/AEI) · PID2023-148421NB-I00
     dates: Since 2024
     fields:
       - [Role, "Research team."]
       - [PI, "Juan Lupiáñez, University of Granada."]
-  - title: Experimentally investigating the formation of new habits in humans
+  - id: new-habits
+    title: Experimentally investigating the formation of new habits in humans
     right: EUR 109,868
     org: Agencia Estatal de Investigación (MCIN/AEI) · PID2021-126767NB-I00
     dates: 2022 – 2025
     fields:
       - [Role, "Research team."]
       - [PI, "David Luque, University of Málaga."]
-  - title: Incentive salience and resistance to extinction in action control and selection
+  - id: incentive-salience
+    title: Incentive salience and resistance to extinction in action control and selection
     right: EUR 50,009
     org: Agencia Estatal de Investigación (MCIN/AEI) · PID2021-127985NB-I00
     dates: 2021 – 2025
     fields:
       - [Role, "Research team."]
       - [PI, "Felisa González, University of Granada."]
-  - title: Theoretical, behavioral, and functional analysis of executive and vigilance and its implementation in neural networks
+  - id: executive-vigilance
+    title: Theoretical, behavioral, and functional analysis of executive and vigilance and its implementation in neural networks
     right: EUR 157,300
     org: Agencia Estatal de Investigación (MCIN/AEI) · PID2020-114790GB-I00
     dates: 2021 – 2024
@@ -214,11 +242,13 @@ funded:
 
 conferences:
   oral:
-    - authors: Garre-Frutos, F., Martínez-López, P., Ariza, A., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+    - id: sepex-baps-explicit
+      authors: Garre-Frutos, F., Martínez-López, P., Ariza, A., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
       year: 2026
       title: Explicit knowledge modulates Pavlovian attentional biases.
       venue: "Invited talk, symposium *Current Debates in Research on Habits*, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain, September 9–11."
-    - authors: Garre-Frutos, F., Franco-Martínez, A., Vadillo, M. A., & Rey-Sáez, R.
+    - id: sepex-baps-multilevel
+      authors: Garre-Frutos, F., Franco-Martínez, A., Vadillo, M. A., & Rey-Sáez, R.
       year: 2026
       title: A multilevel signal detection framework for unconscious processing research.
       venue: "Invited talk, symposium *Experimental Psychometrics*, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain, September 9–11."
@@ -242,7 +272,8 @@ conferences:
       year: 2025
       title: "Lingering habits: Testing the temporal stability of habits."
       venue: XXXV International Congress of the Spanish Society for Comparative Psychology, Donostia / San Sebastián, Spain, October 1–3.
-    - authors: Garre-Frutos, F., Solana, P., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
+    - id: eam-meta
+      authors: Garre-Frutos, F., Solana, P., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
       year: 2025
       title: "Reliability and validity of experimental measures of value-driven attention: A meta-analysis on individual differences studies."
       venue: XI Conference of the European Association of Methodology, Tenerife, Spain, July 23–25.
@@ -279,7 +310,8 @@ conferences:
       year: 2026
       title: Multiverse analysis of habit measurements in the forced-response task.
       venue: "Habits: Behaviour, Neurons and Clinical Evidence — First Meeting of the Experimental Psychology Network to Study Habits (REHPE), Madrid, Spain, June 15."
-    - authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., Van Moorselaar, D., & Lupiáñez, J.
+    - id: assc28-selective
+      authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., Van Moorselaar, D., & Lupiáñez, J.
       year: 2025
       title: Selective attention and explicit awareness independently contribute to the learning process of reward-related attentional biases.
       venue: 28th Annual Meeting of the Association for the Scientific Study of Consciousness, Heraklion, Greece, July 6–9.
@@ -295,7 +327,8 @@ conferences:
       year: 2025
       title: Selective attention and explicit awareness independently contribute to the learning process of reward-related attentional biases.
       venue: "Meetings of the Alhambra: The Cognitive Neuroscience of Consciousness, Granada, Spain, April 25–26."
-    - authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
+    - id: rldm-modelling
+      authors: Garre-Frutos, F., Luque, D., Martínez-López, P., Lupiáñez, J., & Vadillo, M. A.
       year: 2025
       title: Modelling Pavlovian attentional biases through reinforcement learning.
       venue: Reinforcement Learning and Decision-Making Conference, Dublin, Ireland, June 11–14.
@@ -311,7 +344,8 @@ conferences:
       year: 2024
       title: Persistence of the value-modulated attentional capture (VMAC) effect using a reward-only variant task and specific extinction of the increase-signal in reward magnitude.
       venue: XXXIV International Conference of the Spanish Society for Comparative Psychology, Baeza, Spain, September 25–27.
-    - authors: Garre-Frutos, F., Vadillo, M. A., Botta, F., & Lupiáñez, J.
+    - id: assc27-informational
+      authors: Garre-Frutos, F., Vadillo, M. A., Botta, F., & Lupiáñez, J.
       year: 2024
       title: The role of informational value on value-modulated attentional capture.
       venue: 27th Annual Meeting of the Association for the Scientific Study of Consciousness, Tokyo, Japan, July 2–5.
@@ -331,7 +365,8 @@ conferences:
       year: 2024
       title: Using a forced-response task to measure habit formation in humans.
       venue: XIV SEPEX Conference, Almería, Spain, October 23–25.
-    - authors: Garre-Frutos, F., & Lupiáñez, J.
+    - id: escop-ior
+      authors: Garre-Frutos, F., & Lupiáñez, J.
       year: 2023
       title: Inhibition of return and learned value.
       venue: 23rd Conference of the European Society for Cognitive Psychology, Porto, Portugal, August 24–27.
@@ -410,23 +445,27 @@ events:
     dates: 2024
 
 service:
-  - title: Recommender
+  - id: pci-rr
+    title: Recommender
     right: PCI Registered Reports
     org: Editorial service
     dates: Since 2026
     fields:
       - [Role, "Handling editor for Stage 1 and Stage 2 Registered Reports at Peer Community In Registered Reports (PCI RR)."]
-  - title: Junior Editor
+  - id: psicologica
+    title: Junior Editor
     right: "*Psicológica*"
     org: Editorial service
     dates: Since 2025
     fields:
       - [Role, "Conduct initial editorial assessments of submissions for suitability for peer review, with a focus on reporting quality, transparency, and reproducibility."]
-  - title: Ad hoc reviewer
+  - id: adhoc
+    title: Ad hoc reviewer
     org: Peer review
     fields:
       - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, and *Frontiers in Cognition.*"]
-  - title: Professional Societies
+  - id: societies
+    title: Professional Societies
     org: Professional memberships
     fields:
       - [Memberships, "Association for Psychological Science; Sociedad Española de Psicología Experimental; Association for the Scientific Study of Consciousness."]

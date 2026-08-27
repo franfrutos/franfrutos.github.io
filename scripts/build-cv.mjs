@@ -39,12 +39,14 @@ const lcfirst = (s) => (s ? s.charAt(0).toLowerCase() + s.slice(1) : s);
 function inlineMd(s) {
   s = String(s == null ? '' : s);
   let out = '', last = 0, m;
-  const re = /\[([^\]]+)\]\(([^)\s]+)\)|\*([^*]+)\*/g;
+  const re = /\[([^\]]+)\]\(([^)\s]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g;
   while ((m = re.exec(s))) {
     out += escTyp(s.slice(last, m.index));
     out += m[1] != null
       ? '#plink("' + escStr(m[2]) + '")[' + inlineMd(m[1]) + ']'
-      : '#emph[' + escTyp(m[3]) + ']';
+      : m[3] != null
+        ? '#text(weight: "semibold")[' + escTyp(m[3]) + ']'
+        : '#emph[' + escTyp(m[4]) + ']';
     last = re.lastIndex;
   }
   return out + escTyp(s.slice(last));
@@ -106,13 +108,17 @@ function pubBadges(p) {
   });
 }
 
-function pubItem(p) {
+function pubItem(p, opts = {}) {
   // The title links to the paper/preprint (clickable in the PDF) when there's a url.
-  const title = '#emph[' + escTyp(p.title) + '.]';
+  // Smart punctuation (both profiles): no trailing period after ? or !
+  // opts.badges === false (Short profile): omit the open-science badge row.
+  const dot = /[?!]$/.test(String(p.title)) ? '' : '.';
+  const title = '#emph[' + escTyp(p.title) + dot + ']';
   const linked = p.url ? '#plink("' + escStr(p.url) + '")[' + title + ']' : title;
   const body =
     authorsTyp(p.authors) + ' (' + escTyp(p.year) + '). ' +
     linked + ' ' + venueTyp(p);
+  if (opts.badges === false) return '#pubitem([' + body + '])\n';
   const badges = pubBadges(p)
     .map(([k, on, url]) => '("' + k + '", ' + (on ? 'true' : 'false') + ', ' + (url ? '"' + escStr(url) + '"' : 'none') + ')')
     .join(', ');
@@ -156,6 +162,160 @@ function emitEntry(e) {
 
 const section = (title) => '\n#cvsection("' + escStr(title) + '")\n\n';
 
+// Masthead emitter shared by the full and short bodies. `contactIcons` filters
+// (and orders) the contact row; `tagline` overrides the YAML one.
+function headerTyp(h, { contactIcons = null, tagline = null } = {}) {
+  let list = h.contacts || [];
+  if (contactIcons) list = contactIcons.map((ic) => list.find((c) => c.icon === ic)).filter(Boolean);
+  const contacts = list
+    .map((c) => '    (icon: "' + escStr(c.icon || 'web') + '", label: "' + escStr(c.label) + '", url: ' + (c.url ? '"' + escStr(c.url) + '"' : 'none') + ')')
+    .join(',\n');
+  return '#cvheader(\n' +
+    '  name: "' + escStr(h.name) + '",\n' +
+    '  surname: "' + escStr(h.surname) + '",\n' +
+    '  role: "' + escStr(h.role) + '",\n' +
+    '  field: "' + escStr(h.field) + '",\n' +
+    '  location: "' + escStr(h.location) + '",\n' +
+    '  tagline: "' + escStr(tagline != null ? tagline : h.tagline) + '",\n' +
+    '  contacts: (\n' + contacts + ',\n  ),\n' +
+    ')\n';
+}
+
+// ============================================================================
+// Render profiles: one source of truth (data/cv.yml + data/papers.yml), two
+// permanent outputs. FULL is the comprehensive record; SHORT is a reusable
+// max-4-page selective CV (fellowships, postdoc applications, grants…).
+// Selection is keyed by the stable, non-rendered `id:` fields in the YAML —
+// nothing is duplicated: update the data once and both CVs follow. Compact
+// typography for SHORT comes from the template's `--input fgfcompact=1`
+// branch (see typst-template.typ); every visual component is shared.
+//
+// Build:  node scripts/build-cv.mjs                 → both profiles
+//         node scripts/build-cv.mjs --profile full  → cv/cv.qmd only
+//         node scripts/build-cv.mjs --profile short → cv/cv-short.qmd only
+// ============================================================================
+const SHORT = {
+  eduFieldIds: ['phd'],                                     // MSc/BSc render bare
+  awards: ['bridging', 'rldm', 'sepex-outreach', 'fpu', 'eebb', 'end-of-degree'],
+  preprints: ['explicit-knowledge', 'load-distractors', 'load-facilitation', 'choose-your-own-pas', 'ior-learned-value'],
+  // Leadership first (Co-PI), then thematic relevance, then the international
+  // collaboration grant (Theeuwes visiting scholarship). Any future PI/Co-PI
+  // project should be added here with high priority.
+  funded: ['unlearn', 'lets-roc', 'vigilance-decrement', 'new-habits', 'visiting-scholars'],
+  training: ['bamb', 'eeg', 'jags', 'smlp-2023', 'cimcyc-modelling'],
+  service: ['pci-rr', 'psicologica', 'adhoc'],
+  // Curated conference subset (ids live in data/cv.yml conferences.oral/.poster).
+  // The second element is a compressed form of the YAML venue string: same
+  // conference, city, and presentation type — symposium titles and day ranges
+  // dropped. Selection favours first-author, invited/oral, international.
+  conferences: [
+    ['sepex-baps-explicit',   'Invited talk, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain.'],
+    ['sepex-baps-multilevel', 'Invited talk, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain.'],
+    ['eam-meta',              'Oral presentation, XI Conference of the European Association of Methodology, Tenerife, Spain.'],
+    ['assc28-selective',      'Poster, 28th Annual Meeting of the Association for the Scientific Study of Consciousness, Heraklion, Greece.'],
+    ['rldm-modelling',        'Poster, Reinforcement Learning and Decision-Making Conference, Dublin, Ireland.'],
+    ['assc27-informational',  'Poster, 27th Annual Meeting of the Association for the Scientific Study of Consciousness, Tokyo, Japan.'],
+    ['escop-ior',             'Poster, 23rd Conference of the European Society for Cognitive Psychology, Porto, Portugal.'],
+  ],
+};
+
+const byId = (list, ids) => ids.map((id) => (list || []).find((e) => e.id === id)).filter(Boolean);
+
+// † legend: emitted automatically after any displayed list that contains a
+// dagger-marked author line; omitted when the selection has none.
+const daggerLegend = (items) => items.some((p) => /\u2020/.test(String(p.authors || '')))
+  ? '#v(5pt)\n#h(18pt)#text(font: mono, size: 8pt, style: "italic", fill: ink3)[#super[\u2020] Equal contribution.]\n'
+  : '';
+
+// Compact funded-project entry (BOTH profiles): title + "EUR X · dates"
+// (right), agency · ref (org line, AEI shortened), and a single flowing
+// role line — no kv rows. PI/Co-PI roles render semibold so leadership reads
+// at a glance. FULL keeps every field (PI affiliation, team…); SHORT
+// condenses to Role · PI surname.
+function fundedEntry(e, { condensed = false } = {}) {
+  const f = Object.fromEntries(e.fields || []);
+  const strip = (s) => String(s || '').replace(/\.\s*$/, '');
+  const role = strip(f.Role);
+  const roleTyp = /\bPI\b/.test(role) ? '**' + role + '**' : role;
+  const parts = [];
+  if (role) parts.push(roleTyp);
+  if (condensed) {
+    if (f.PI) parts.push('PI: ' + strip(f.PI.split(',')[0].trim()));
+    // Visiting Scholars grant: no Role/PI fields — summarise from its own fields.
+    else if (!role && f['Visiting scholar']) parts.push('Research team · Visiting scholar: ' + strip(f['Visiting scholar']));
+  } else {
+    Object.entries(f).forEach(([k, v]) => { if (k !== 'Role') parts.push(k + ': ' + strip(v)); });
+  }
+  return emitEntry({
+    title: e.title,
+    right: [e.right, e.dates].filter(Boolean).join(' · '),
+    org: String(e.org || '').replace('Agencia Estatal de Investigación (MCIN/AEI)', 'AEI'),
+    dates: null,
+    body: parts.length ? parts.join(' · ') + '.' : '',
+  });
+}
+
+// Compact conference item (SHORT): authors (year). Title. Compressed venue.
+function shortTalkItem(t, venueShort) {
+  const body =
+    authorsTyp(t.authors) + ' (' + escTyp(t.year) + '). ' +
+    '#emph[' + escTyp(t.title) + '] ' + inlineMd(venueShort);
+  return '#pubitem([' + body + '])\n';
+}
+
+function typstBodyShort(cv, papers) {
+  const yr = (p) => { const n = Number(p.year); return Number.isFinite(n) ? n : Infinity; };
+  const published = papers.filter(isPublished).slice().sort((a, b) => yr(b) - yr(a));
+
+  // Masthead: exactly the same as FULL (same contacts, no profile tagline).
+  let out = headerTyp(cv.header);
+
+  out += section('Education');
+  cv.education.forEach((e) => {
+    out += emitEntry(SHORT.eduFieldIds.includes(e.id) ? e : { ...e, fields: null });
+  });
+
+  out += section('Research Experience');
+  cv.experience.forEach((e) => { out += emitEntry(e); });
+
+  out += section('Selected Fellowships & Awards');
+  byId(cv.awards, SHORT.awards).forEach((e) => { out += emitEntry(e); });
+
+  out += section('Peer-Reviewed Publications');
+  published.forEach((p) => { out += pubItem(p, { badges: false }); });
+  out += daggerLegend(published);
+
+  out += section('Selected Preprints & Ongoing Work');
+  const preprints = byId(papers, SHORT.preprints);
+  preprints.forEach((p) => { out += pubItem(p, { badges: false }); });
+  out += daggerLegend(preprints);
+
+  out += section('Selected Conference Presentations');
+  const allTalks = [...(cv.conferences.oral || []), ...(cv.conferences.poster || [])];
+  SHORT.conferences.forEach(([id, venueShort]) => {
+    const talk = allTalks.find((x) => x.id === id);
+    if (talk) out += shortTalkItem(talk, venueShort);
+  });
+
+  out += section('Methods & Technical Expertise');
+  (cv.methods || []).forEach(([label, value]) => {
+    out += '#methodrow([' + inlineMd(label) + '], [' + inlineMd(value) + '])\n';
+  });
+
+  out += section('Selected Funded Projects');
+  byId(cv.funded, SHORT.funded).forEach((e) => { out += fundedEntry(e, { condensed: true }); });
+
+  out += section('Selected Methodological Training');
+  byId(cv.training, SHORT.training).forEach((tr) => {
+    out += emitEntry({ title: tr.title, right: tr.dates, org: tr.org });
+  });
+
+  out += section('Academic Service');
+  byId(cv.service, SHORT.service).forEach((e) => { out += emitEntry(e); });
+
+  return out;
+}
+
 // --- Assemble the raw Typst body from a cv object + papers ------------------
 function typstBody(cv, papers) {
   // Non-numeric years ("in press") rank as the most recent so they sort to the top.
@@ -167,19 +327,7 @@ function typstBody(cv, papers) {
   let out = '';
 
   // Masthead
-  const h = cv.header;
-  const contacts = (h.contacts || [])
-    .map((c) => '    (icon: "' + escStr(c.icon || 'web') + '", label: "' + escStr(c.label) + '", url: ' + (c.url ? '"' + escStr(c.url) + '"' : 'none') + ')')
-    .join(',\n');
-  out += '#cvheader(\n' +
-    '  name: "' + escStr(h.name) + '",\n' +
-    '  surname: "' + escStr(h.surname) + '",\n' +
-    '  role: "' + escStr(h.role) + '",\n' +
-    '  field: "' + escStr(h.field) + '",\n' +
-    '  location: "' + escStr(h.location) + '",\n' +
-    '  tagline: "' + escStr(h.tagline) + '",\n' +
-    '  contacts: (\n' + contacts + ',\n  ),\n' +
-    ')\n';
+  out += headerTyp(cv.header);
 
   out += section('Education');
   cv.education.forEach((e) => { out += emitEntry(e); });
@@ -192,6 +340,7 @@ function typstBody(cv, papers) {
 
   out += section('Publications');
   published.forEach((p) => { out += pubItem(p); });
+  out += daggerLegend(published);
   if ((cv.outreach_publications || []).length) {
     out += '\n#subhead("Outreach publication")\n\n';
     cv.outreach_publications.forEach((p) => { out += talkItem(p); });
@@ -199,6 +348,7 @@ function typstBody(cv, papers) {
 
   out += section('Preprints & Ongoing Work');
   ongoing.forEach((p) => { out += pubItem(p); });
+  out += daggerLegend(ongoing);
 
   out += section('Methods & Technical Expertise');
   (cv.methods || []).forEach(([label, value]) => {
@@ -206,7 +356,7 @@ function typstBody(cv, papers) {
   });
 
   out += section('Funded Projects');
-  cv.funded.forEach((e) => { out += emitEntry(e); });
+  cv.funded.forEach((e) => { out += fundedEntry(e); });
 
   out += section('Conference Presentations');
   out += '#subhead("Oral presentations")\n\n';
@@ -238,12 +388,14 @@ function typstBody(cv, papers) {
 function build() {
   const cv = readYaml('data/cv.yml');
   const { papers } = readYaml('data/papers.yml');
+  const pIdx = process.argv.indexOf('--profile');
+  const profile = pIdx !== -1 ? process.argv[pIdx + 1] : 'all';   // full | short | all
   // Generate the WHOLE cv/cv.qmd (front matter + inlined Typst body). It used to
   // be a committed cv.qmd with `{{< include _cv-body.qmd >}}`, but Quarto resolves
   // that include during its initial project scan — before pre-render runs — so on
   // a fresh checkout (CI) the generated _cv-body.qmd doesn't exist yet and the
   // render aborts. Generating the whole file (like the research pages) avoids it.
-  fs.writeFileSync(path.join(root, 'cv/cv.qmd'),
+  if (profile !== 'short') fs.writeFileSync(path.join(root, 'cv/cv.qmd'),
     '---\n' +
     '# AUTO-GENERATED from data/cv.yml + data/papers.yml by scripts/build-cv.mjs — do not edit.\n' +
     'format: fgf-cv-typst\n' +
@@ -254,7 +406,28 @@ function build() {
     '  - _extensions/fgf-cv/fonts\n' +                    // base = cv/ (single-file render)
     '---\n\n' +
     '```{=typst}\n' + typstBody(cv, papers) + '```\n');
-  console.log('built cv/cv.qmd');
+  if (profile !== 'short') console.log('built cv/cv.qmd');
+
+  // SHORT profile — a permanent second output. Generated alongside FULL by
+  // default (the pre-render hook runs with no args), so CI builds and deploys
+  // _site/cv/Garre-Frutos-CV-Short.pdf on every push. `--profile full|short`
+  // builds just one. Compact typography is applied by the post-render
+  // recompile with --input fgfcompact=1 (scripts/build-cv-dark.mjs).
+  if (profile !== 'full') {
+    fs.writeFileSync(path.join(root, 'cv/cv-short.qmd'),
+      '---\n' +
+      '# AUTO-GENERATED (short profile) from data/cv.yml + data/papers.yml by scripts/build-cv.mjs — do not edit.\n' +
+      '# Regenerate with: node scripts/build-cv.mjs --profile short\n' +
+      'format: fgf-cv-typst\n' +
+      'output-file: Garre-Frutos-CV-Short\n' +
+      'keep-typ: true\n' +
+      'font-paths:\n' +
+      '  - cv/_extensions/fgf-cv/fonts\n' +
+      '  - _extensions/fgf-cv/fonts\n' +
+      '---\n\n' +
+      '```{=typst}\n' + typstBodyShort(cv, papers) + '```\n');
+    console.log('built cv/cv-short.qmd (short profile)');
+  }
 
   // Private variant: if .private/private.yml exists (gitignored, local-only),
   // merge it and emit a standalone Typst so build-cv-dark.mjs can compile a
@@ -340,9 +513,10 @@ function badgesHtml(p) {
   return '<span class="cv-badges">' + items.join('') + '</span>';
 }
 function pubHtml(p) {
+  const dot = /[?!]$/.test(String(p.title)) ? '' : '.';
   const title = p.url
-    ? '<a class="pub-title-link" target="_blank" href="' + htmlEsc(p.url) + '"><em>' + htmlEsc(p.title) + '.</em></a>'
-    : '<em>' + htmlEsc(p.title) + '.</em>';
+    ? '<a class="pub-title-link" target="_blank" href="' + htmlEsc(p.url) + '"><em>' + htmlEsc(p.title) + dot + '</em></a>'
+    : '<em>' + htmlEsc(p.title) + dot + '</em>';
   return '<li class="cv-pub">' + authorsHtml(p.authors) + ' (' + htmlEsc(p.year) + '). ' + title + ' ' + venueHtml(p) + ' ' + badgesHtml(p) + '</li>';
 }
 function talkHtml(t) {
@@ -427,8 +601,16 @@ function buildHtml() {
     '<div style="display:flex; gap:22px; align-items:center;">' +
     '<a href="/" class="nav-link nav-home">← Home</a>' +
     // Two links; theme.scss shows the one matching the current theme (html.fgf-dark).
-    '<a href="Garre-Frutos-CV.pdf" target="_blank" class="detail-link cv-dl cv-dl-light"><i class="fa-solid fa-file-arrow-down"></i> <span class="dl-text">Download PDF</span></a>' +
-    '<a href="Garre-Frutos-CV-dark.pdf" target="_blank" class="detail-link cv-dl cv-dl-dark"><i class="fa-solid fa-file-arrow-down"></i> <span class="dl-text">Download PDF</span></a>' +
+    // Version dropdown: Full (default, first) / Short. Each item exists in a
+    // light and a dark flavour; theme.scss shows the pair matching the theme.
+    '<details class="cv-dl-menu" style="position:relative;">' +
+    '<summary class="detail-link" style="cursor:pointer; list-style:none; user-select:none;"><i class="fa-solid fa-file-arrow-down"></i> <span class="dl-text">Download PDF</span> <i class="fa-solid fa-caret-down" style="font-size:10px;"></i></summary>' +
+    '<div style="position:absolute; right:0; top:calc(100% + 10px); background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:10px 14px; display:flex; flex-direction:column; gap:8px; min-width:170px; z-index:30; box-shadow:0 8px 24px rgba(0,0,0,0.12); white-space:nowrap;">' +
+    '<a href="Garre-Frutos-CV.pdf" target="_blank" class="detail-link cv-dl cv-dl-light">Full CV</a>' +
+    '<a href="Garre-Frutos-CV-dark.pdf" target="_blank" class="detail-link cv-dl cv-dl-dark">Full CV</a>' +
+    '<a href="Garre-Frutos-CV-Short.pdf" target="_blank" class="detail-link cv-dl cv-dl-light">Short CV</a>' +
+    '<a href="Garre-Frutos-CV-Short-dark.pdf" target="_blank" class="detail-link cv-dl cv-dl-dark">Short CV</a>' +
+    '</div></details>' +
     '<button data-theme-toggle aria-label="Toggle dark mode" class="theme-toggle"><i data-theme-icon class="fa-solid fa-sun" style="font-size:15px;"></i></button>' +
     '</div></div></nav>';
 

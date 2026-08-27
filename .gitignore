@@ -20,11 +20,15 @@ _quarto_internal_scss_error.scss
 /assets/data/city-coords.js
 /research/*/
 
-# CV page (PDF source) + on-site HTML page, generated from data/cv.yml + papers.yml
+# CV pages (PDF sources, full + short profiles) + on-site HTML page — all
+# generated from data/cv.yml + data/papers.yml by scripts/build-cv.mjs
 /cv/cv.qmd
+/cv/cv-short.qmd
 /cv/index.qmd
-# Intermediate Typst kept (keep-typ) so build-cv-dark.mjs can recompile the dark PDF
+# Intermediate Typst kept (keep-typ) so build-cv-dark.mjs can recompile the
+# dark and compact (short) PDFs
 /cv/cv.typ
+/cv/cv-short.typ
 /cv/cover_letter/   # letters carry recipients and job ids — keep off the public repo
 
 # Private CV overlay + generated private PDFs (local only, never published)

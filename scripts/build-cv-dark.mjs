@@ -22,11 +22,12 @@ const outDir = process.env.QUARTO_PROJECT_OUTPUT_DIR
   : path.join(root, '_site');
 
 const q = (s) => '"' + s + '"';
-function compile(typ, out, dark) {
+function compile(typ, out, dark, compact = false) {
   fs.mkdirSync(path.dirname(out), { recursive: true });
   // --root = repo root so the private .typ may import ../cv/... (typst sandboxes to the input's dir otherwise).
   const args = ['quarto', 'typst', 'compile', q(typ), q(out), '--root', q(root), '--font-path', q(fonts)];
   if (dark) args.push('--input', 'fgfdark=1');
+  if (compact) args.push('--input', 'fgfcompact=1');
   const r = spawnSync(args.join(' '), { stdio: 'inherit', shell: true });
   if (r.status !== 0) { console.error('build-cv-dark: compile failed for ' + out + ' (continuing)'); return; }
   console.log('built ' + path.relative(root, out).replace(/\\/g, '/'));
@@ -36,6 +37,15 @@ function compile(typ, out, dark) {
 const pubTyp = path.join(root, 'cv/cv.typ');
 if (fs.existsSync(pubTyp)) compile(pubTyp, path.join(outDir, 'cv', 'Garre-Frutos-CV-dark.pdf'), true);
 else console.log('build-cv-dark: cv/cv.typ not found (cv not rendered this pass) — skipping dark PDF');
+
+// Short CV (light + dark): Quarto renders cv-short.qmd without the compact
+// flag, so recompile the kept .typ with `--input fgfcompact=1` (same pattern
+// as the dark full CV). Runs on CI too — the site's CV page offers both PDFs.
+const shortTyp = path.join(root, 'cv/cv-short.typ');
+if (fs.existsSync(shortTyp)) {
+  compile(shortTyp, path.join(outDir, 'cv', 'Garre-Frutos-CV-Short.pdf'), false, true);
+  compile(shortTyp, path.join(outDir, 'cv', 'Garre-Frutos-CV-Short-dark.pdf'), true, true);
+} else console.log('build-cv-dark: cv/cv-short.typ not found — skipping short PDFs');
 
 // Private PDFs (local only).
 const privTyp = path.join(root, '.private/cv-private.typ');

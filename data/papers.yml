@@ -28,7 +28,9 @@ papers:
     authors: Fernández, J. G., Ferrero, M., Garre-Frutos, F., & Vadillo, M. A.
     venue: Under review
     status: Stage 1 manuscript under review
-  - thread: learning
+  # `id:` = stable selector for the BIAL short-CV profile (never rendered).
+  - id: explicit-knowledge
+    thread: learning
     year: 2026
     title: Explicit knowledge modulates Pavlovian attentional biases
     authors: Garre-Frutos, F.†, Martínez-López, P.†, Ariza, A., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
@@ -155,7 +157,8 @@ papers:
       oa: https://link.springer.com/article/10.3758/s13428-023-02329-5
     abstract: >-
       Stimuli predicting rewards are more likely to capture attention, even when they are not relevant to our current goals. Individual differences in value-modulated attentional capture (VMAC) have been associated with various psychopathological conditions in the scientific literature. However, the claim that this attentional bias can predict individual differences requires further exploration of the psychometric properties of the most common experimental paradigms. The current study replicated the VMAC effect in a large online sample (N = 182) and investigated the internal consistency, with a design that allowed us to measure the effect during learning (rewarded phase) and after acquisition, once feedback was omitted (unrewarded phase). Through the rewarded phase there was gradual increase of the VMAC effect, which did not decline significantly throughout the unrewarded phase. Furthermore, we conducted a reliability multiverse analysis for 288 different data preprocessing specifications across both phases. Specifications including more blocks in the analysis led to better reliability estimates in both phases, while specifications that removed more outliers also improved reliability, suggesting that specifications with more, but less noisy, trials led to better reliability estimates. Nevertheless, in most instances, especially those considering fewer blocks of trials, reliability estimates fell below the minimum recommended thresholds for research on individual differences. Given the present results, we encourage researchers working on VMAC to take into account reliability when designing studies aimed at capturing individual differences and provide recommendations to improve methodological practices.
-  - thread: learning
+  - id: ior-learned-value
+    thread: learning
     year: 2024
     title: Inhibition of Return and Learned Value
     authors: Garre-Frutos, F., & Lupiáñez, J.
@@ -187,7 +190,8 @@ papers:
       production: true
     abstract: >-
       A central debate in attention research concerns whether visual selection is primarily driven by stimulus-driven salience or by goal-driven top-down control. According to the stimulus-driven account, salient distractors automatically capture attention before being suppressed, whereas the signal suppression hypothesis proposes proactive prevention of capture. We tested these competing views in two experiments. In Experiment 1, participants searched for a rotated T among Ls under conditions inducing either singleton detection or feature search mode, with a salient color distractor present or absent. Distractors slowed search in singleton detection mode but produced a distractor presence benefit when searching in feature search mode. Importantly, in feature search, reaction times increased with target–distractor distance, indicating initial capture at the distractor location followed by serial search. In Experiment 2, using a heterogeneous display typically used to test the signal suppression hypothesis, we again observed a robust distractor presence benefit alongside a clear display size effect, confirming that search was conducted serially. Although standard distance analyses revealed no effect, exploratory analyses accounting for search direction uncovered distance-dependent costs consistent with rapid disengagement. Together, these findings suggest that even under feature-search conditions, salient distractors briefly capture attention before their priority is rapidly reduced. This post-selection reduction, which may reflect either active or passive suppression, allows attention to disengage from the distractor. Thus, the findings challenge strict proactive suppression accounts and support a rapid disengagement account.
-  - thread: distraction
+  - id: load-distractors
+    thread: distraction
     year: 2026
     title: Handling fully irrelevant vs. potentially relevant distractors as a function of perceptual load
     authors: Manini, G., Garre-Frutos, F., Botta, F., Martín-Arévalo, E., & Lupiáñez, J.
@@ -204,7 +208,8 @@ papers:
       # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
     abstract: >-
       In a previous study, we investigated how task performance is affected by fully irrelevant distractors (sharing neither features nor location with the target) vs. potentially relevant distractors (sharing features and location with it), as a function of perceptual load. We observed a systematic dissociation: the effect of potentially relevant distractors increased under high-load, whereas the effect of fully irrelevant distractors remained unchanged. However, it is unclear whether this dissociation reflected a difference between distractor types or instead resulted from two methodological factors. The present study addressed this question by testing whether the double dissociation persists even when key experimental design aspects are controlled. Namely, (i) the effectiveness of the perceptual load manipulation, and (ii) the comparability between distractor effects. In Experiment 1, we replicated the perceptual load pattern and observed the double dissociation. The effect of fully irrelevant distractors decreased under high-load, whereas that of potentially relevant distractors increased. Three subsequent experiments systematically manipulated task parameters that differ between the original perceptual load task and our previous work, to assess their contribution to an effective load manipulation. Despite these variations, the double dissociation remained robust. In a final experiment, we further improved the comparability between the effects of each distractor type by using a common baseline measure, confirming that perceptual load modulates the effects of fully irrelevant vs. potentially relevant distractors in different ways. These findings suggest that distractor processing depends critically on its task relevance, while also highlighting the need to investigate the boundary conditions of perceptual load effects.
-  - thread: distraction
+  - id: load-facilitation
+    thread: distraction
     year: 2026
     title: "Facilitation by irrelevant distractors under high perceptual load: Suppression or controlled distractor prioritization?"
     authors: Manini, G.†, Garre-Frutos, F.†, Martín-Arévalo, E., Botta, F., & Lupiáñez, J.
@@ -220,7 +225,8 @@ papers:
       # preprint → shows the PsyArXiv "Preprint" badge in the OA slot automatically
     abstract: >-
       Perceptual load theory is a key framework in visual attention research, demonstrating that under high-load conditions, fully irrelevant distractors are no longer processed and do not disrupt task performance. In our recent work (Manini et al., 2026), we replicated this effect. However, we also found that under high load, the distractor not only failed to impair performance but actually led to faster reaction times (RTs) in distractor-present trials. In the attentional capture literature, this reversed effect is typically considered to reflect distractor suppression. However, in the perceptual load task, where the distractor is placed outside the relevant search array, suppression should not logically lead to faster responses. Furthermore, the faster responses were accompanied by increased error rates, leading us to hypothesize that this reversed effect may reflect some form of distractor prioritization rather than distractor suppression. To test this hypothesis, we first analyzed the consistency of this effect across all available open-data resources using the Forster and Lavie (2008b) task. We then reanalyzed the same data, incorporating the spatial proximity between target and distractor as an additional variable: distractors appearing near the target strongly drove the reversed RT effect, while distractors presented far from the target led to increased error rates. These findings challenge the idea that high perceptual load prevents the processing of irrelevant stimuli. Moreover, they suggest that faster RTs in distractor-present conditions do not necessarily indicate distractor suppression, as commonly assumed in attentional capture research, offering new insight into the interpretation of behavioral observations in this field.
-  - thread: validity
+  - id: choose-your-own-pas
+    thread: validity
     year: 2026
     title: "Choose your own PAS? Quantitative and qualitative validity evidence for the Perceptual Awareness Scale"
     authors: Franco-Martínez, A., Ferrer-Mendieta, A., Peiró Lanchares, C., Vadillo, M. A., & Garre-Frutos, F.

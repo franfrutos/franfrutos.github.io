@@ -13,6 +13,32 @@
 // `--input fgfdark=1` (see _quarto.yml post-render). Palettes mirror the
 // website's light and `html.fgf-dark` design tokens (theme.scss).
 #let _dark  = sys.inputs.at("fgfdark", default: "0") == "1"
+// Compact mode (Short CV profile): `--input fgfcompact=1` at typst-compile
+// time. The default branch holds the full-CV spacing; the compact branch is
+// the denser Short-CV spacing. Components are IDENTICAL in both modes — only
+// the SP tokens below differ.
+#let _compact = sys.inputs.at("fgfcompact", default: "0") == "1"
+#let SP = if _compact {(
+  margin: (top: 1.85cm, bottom: 1.65cm, left: 1.9cm, right: 1.9cm),
+  body-size: 9.3pt,
+  sec-above: 23pt, sec-below: 10.5pt,
+  entry-above: 13pt,
+  stay-above: 9.5pt,
+  kv-above: 5pt,
+  method-above: 7pt, method-col: 4.0cm,
+  pub-above: 9pt,
+  subhead-above: 12.5pt, subhead-below: 3.5pt,
+)} else {(
+  margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
+  body-size: 9.3pt,
+  sec-above: 27pt, sec-below: 12pt,
+  entry-above: 16.5pt,
+  stay-above: 11pt,
+  kv-above: 6pt,
+  method-above: 7.5pt, method-col: 4.6cm,
+  pub-above: 11pt,
+  subhead-above: 15pt, subhead-below: 4pt,
+)}
 #let ink    = if _dark { rgb("#e9ebef") } else { rgb("#1a1d24") }  // primary text
 #let ink2   = if _dark { rgb("#aab0bd") } else { rgb("#454b59") }  // secondary
 #let ink3   = if _dark { rgb("#6c7382") } else { rgb("#878d9b") }  // muted meta
@@ -57,7 +83,7 @@
 
 // --- Section header: coral tick + uppercase muted label + hairline rule.
 //     `sticky` keeps the header on the same page as the entry that follows it. -
-#let cvsection(title) = block(above: 27pt, below: 12pt, breakable: false, sticky: true, width: 100%, {
+#let cvsection(title) = block(above: SP.sec-above, below: SP.sec-below, breakable: false, sticky: true, width: 100%, {
   grid(
     columns: (auto, 1fr),
     column-gutter: 12pt,
@@ -73,7 +99,7 @@
 
 // --- A two-column entry: title / right-meta, org / dates, then body. --------
 #let entry(title: none, right: none, org: none, dates: none, body: none) = {
-  block(above: 16.5pt, below: 0pt, breakable: false, width: 100%, {
+  block(above: SP.entry-above, below: 0pt, breakable: false, width: 100%, {
     if title != none or right != none {
       grid(
         columns: (1fr, auto),
@@ -95,8 +121,8 @@
       )
     }
     if body != none {
-      v(7pt)
-      set text(font: mono, size: 9.3pt, fill: ink2)
+      v(if _compact { 4pt } else { 7pt })
+      set text(font: mono, size: SP.body-size, fill: ink2)
       set par(leading: 8pt, justify: false)
       body
     }
@@ -107,36 +133,42 @@
 //     small-caps label so international stays read as first-class merits. ------
 #let substay(title: none, place: none, dates: none, body: none) = {
   // A hairline on the left visually ties the stay to its parent position.
-  block(above: 11pt, below: 0pt, breakable: false, width: 100%,
-    stroke: (left: 1pt + hair), inset: (left: 13pt, top: 2pt, bottom: 2pt), {
+  // Two tight rows (title | place, body | dates) — the same compact structure
+  // in BOTH profiles; only the surrounding spacing differs (via SP / _compact).
+  block(above: SP.stay-above, below: 0pt, breakable: false, width: 100%,
+    stroke: (left: 1pt + hair),
+    inset: if _compact { (left: 10pt, top: 1pt, bottom: 1pt) } else { (left: 12pt, top: 2pt, bottom: 2pt) }, {
     text(font: mono, size: 7.6pt, weight: "semibold", tracking: 1.3pt, fill: accent)[RESEARCH STAY]
-    v(3.5pt)
+    v(if _compact { 2.5pt } else { 3.5pt })
     grid(
       columns: (1fr, auto),
       column-gutter: 16pt,
       align: (start + top, end + top),
-      text(font: mono, size: 9.9pt, weight: "semibold", fill: ink)[#title],
-      {
-        set align(end)
-        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#place]
-        linebreak()
-        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#dates]
-      },
+      text(font: mono, size: 9.7pt, weight: "semibold", fill: ink)[#title],
+      text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#place],
     )
-    if body != none {
-      v(1pt)
-      set text(font: mono, size: 9.3pt, fill: ink2)
-      set par(leading: 8pt, justify: false)
-      body
+    if body != none or dates != none {
+      v(if _compact { 1.5pt } else { 2.5pt })
+      grid(
+        columns: (1fr, auto),
+        column-gutter: 16pt,
+        align: (start + top, end + top),
+        {
+          set text(font: mono, size: SP.body-size, fill: ink2)
+          set par(leading: 8pt, justify: false)
+          if body != none { body }
+        },
+        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#dates],
+      )
     }
   })
 }
 
 // --- Labeled inline field used inside entry bodies (Thesis:, Supervisor:…). -
-#let kv(label, value) = block(above: 6pt, below: 0pt, {
+#let kv(label, value) = block(above: SP.kv-above, below: 0pt, {
   text(font: mono, size: 8.5pt, weight: "semibold", fill: ink)[#label:]
   h(5pt)
-  text(font: mono, size: 9.3pt, fill: ink2)[#value]
+  text(font: mono, size: SP.body-size, fill: ink2)[#value]
 })
 
 // --- A small rounded "open science" badge (Academicons glyph), as a soft
@@ -156,28 +188,28 @@
 }
 
 // --- A right-aligned label + value row (Methods & Technical Expertise). -----
-#let methodrow(label, value) = block(above: 7.5pt, below: 0pt, {
+#let methodrow(label, value) = block(above: SP.method-above, below: 0pt, {
   grid(
-    columns: (4.6cm, 1fr),
+    columns: (SP.method-col, 1fr),
     column-gutter: 14pt,
     align: (end + top, start + top),
-    text(font: mono, size: 9.3pt, weight: "semibold", fill: ink)[#label],
+    text(font: mono, size: SP.body-size, weight: "semibold", fill: ink)[#label],
     {
       set par(leading: 7.6pt, justify: false)
-      text(font: mono, size: 9.3pt, fill: ink2)[#value]
+      text(font: mono, size: SP.body-size, fill: ink2)[#value]
     },
   )
 })
 
 // --- A publication / talk list item: coral bullet + body + optional badges. --
-#let pubitem(body, badges: ()) = block(above: 11pt, below: 0pt, breakable: false, width: 100%, {
+#let pubitem(body, badges: ()) = block(above: SP.pub-above, below: 0pt, breakable: false, width: 100%, {
   grid(
     columns: (14pt, 1fr),
     column-gutter: 4pt,
     align: (left + top, left + top),
     { v(5pt); box(width: 7pt, height: 1.8pt, fill: accent, radius: 0.9pt) },
     {
-      set text(font: mono, size: 9.3pt, fill: ink2)
+      set text(font: mono, size: SP.body-size, fill: ink2)
       set par(leading: 7.9pt, justify: false)
       body
       if badges.len() > 0 {
@@ -189,7 +221,7 @@
 })
 
 // --- A small uppercase subgroup label (e.g. ORAL PRESENTATIONS). ------------
-#let subhead(title) = block(above: 15pt, below: 4pt, sticky: true, {
+#let subhead(title) = block(above: SP.subhead-above, below: SP.subhead-below, sticky: true, {
   text(font: mono, size: 8.2pt, weight: "semibold", tracking: 1.1pt, fill: accent)[#upper(title)]
 })
 
@@ -215,6 +247,8 @@
 ) = {
   set align(center)
   // Name: match the website masthead — both words semibold, surname in coral.
+  // The masthead is deliberately IDENTICAL in both profiles (no _compact
+  // branches): Full and Short must read as the same CV.
   block(below: 0pt, {
     text(font: mono, size: 26pt, weight: "semibold", tracking: 0.2pt, fill: ink)[#name ]
     text(font: mono, size: 26pt, weight: "semibold", tracking: 0.2pt, fill: accent)[#surname]
@@ -254,11 +288,14 @@
 
 // --- The document wrapper, applied as a show rule by typst-show.typ. ---------
 #let cv(doc) = {
-  set document(title: "Francisco Garre-Frutos — Curriculum Vitae", author: "Francisco Garre-Frutos")
+  set document(
+    title: "Francisco Garre-Frutos — Curriculum Vitae",
+    author: "Francisco Garre-Frutos",
+  )
   set page(
     paper: "a4",
     fill: paper,
-    margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
+    margin: SP.margin,
     footer: context {
       set text(font: mono, size: 7.6pt, tracking: 0.5pt, fill: ink3)
       grid(
@@ -270,7 +307,7 @@
       )
     },
   )
-  set text(font: mono, size: 9.3pt, weight: "regular", fill: ink, lang: "en", hyphenate: false)
+  set text(font: mono, size: SP.body-size, weight: "regular", fill: ink, lang: "en", hyphenate: false)
   set par(leading: 7.9pt, spacing: 7.9pt, justify: false)
   doc
 }
