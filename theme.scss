@@ -559,6 +559,26 @@ html.fgf-dark [data-site] .h-btn-primary:hover { background: color-mix(in srgb, 
 html.fgf-dark .cv-dl-light { display: none; }
 html.fgf-dark .cv-dl-dark { display: block; }
 
+/* CV download dropdown (Full / Short). <details>-based; a small inline script
+   on the CV page closes it on outside click or after picking an option. */
+/* margin: 0 undoes Bootstrap's default details { margin-bottom } which
+   otherwise knocks the pill off-center in the 64px nav row. */
+.cv-dl-menu { position: relative; display: flex; align-items: center; margin: 0; }
+.cv-dl-menu > summary {
+  cursor: pointer; user-select: none; list-style: none;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.cv-dl-menu > summary::-webkit-details-marker { display: none; }
+.cv-dl-menu .dd-caret { font-size: 10px; line-height: 1; transition: transform .15s ease; }
+.cv-dl-menu[open] .dd-caret { transform: rotate(180deg); }
+.cv-dl-list {
+  position: absolute; right: 0; top: calc(100% + 12px);
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 10px 14px; display: flex; flex-direction: column; gap: 8px;
+  min-width: 160px; z-index: 30; box-shadow: 0 8px 24px rgba(0, 0, 0, .14);
+  white-space: nowrap;
+}
+
 .cv-sec { margin-top: 38px; }
 .cv-sec:first-of-type { margin-top: 14px; }
 .cv-entry { display: grid; grid-template-columns: 1fr auto; gap: 1px 20px; margin-top: 18px; }

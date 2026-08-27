@@ -600,22 +600,26 @@ function buildHtml() {
     '<a href="/" style="display:flex; align-items:center; gap:13px;">' + LOGO + '<span class="nav-wordmark" style="font-family:\'IBM Plex Mono\',monospace; font-size:15px; font-weight:500; letter-spacing:0.11em; text-transform:uppercase; color:var(--ink); white-space:nowrap;"><span class="nav-fname">Francisco </span><span style="color:var(--accent);">Garre-Frutos</span></span></a>' +
     '<div style="display:flex; gap:22px; align-items:center;">' +
     '<a href="/" class="nav-link nav-home">← Home</a>' +
-    // Two links; theme.scss shows the one matching the current theme (html.fgf-dark).
     // Version dropdown: Full (default, first) / Short. Each item exists in a
-    // light and a dark flavour; theme.scss shows the pair matching the theme.
-    '<details class="cv-dl-menu" style="position:relative;">' +
-    '<summary class="detail-link" style="cursor:pointer; list-style:none; user-select:none;"><i class="fa-solid fa-file-arrow-down"></i> <span class="dl-text">Download PDF</span> <i class="fa-solid fa-caret-down" style="font-size:10px;"></i></summary>' +
-    '<div style="position:absolute; right:0; top:calc(100% + 10px); background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:10px 14px; display:flex; flex-direction:column; gap:8px; min-width:170px; z-index:30; box-shadow:0 8px 24px rgba(0,0,0,0.12); white-space:nowrap;">' +
+    // light and a dark flavour; theme.scss shows the pair matching the theme
+    // and styles the menu (.cv-dl-menu / .cv-dl-list). The ▾ caret signals the
+    // dropdown; the inline script below closes it on outside click / choice.
+    '<details class="cv-dl-menu">' +
+    '<summary class="detail-link"><i class="fa-solid fa-file-arrow-down"></i> <span class="dl-text">Download PDF</span> <span class="dd-caret">▾</span></summary>' +
+    '<div class="cv-dl-list">' +
     '<a href="Garre-Frutos-CV.pdf" target="_blank" class="detail-link cv-dl cv-dl-light">Full CV</a>' +
     '<a href="Garre-Frutos-CV-dark.pdf" target="_blank" class="detail-link cv-dl cv-dl-dark">Full CV</a>' +
     '<a href="Garre-Frutos-CV-Short.pdf" target="_blank" class="detail-link cv-dl cv-dl-light">Short CV</a>' +
     '<a href="Garre-Frutos-CV-Short-dark.pdf" target="_blank" class="detail-link cv-dl cv-dl-dark">Short CV</a>' +
     '</div></details>' +
     '<button data-theme-toggle aria-label="Toggle dark mode" class="theme-toggle"><i data-theme-icon class="fa-solid fa-sun" style="font-size:15px;"></i></button>' +
-    '</div></div></nav>';
-
-  // The Download button switches between the light/dark PDF based on the page
-  // theme — wired in assets/js/site.js (apply()), which targets #cv-dl.
+    '</div></div></nav>' +
+    // Close the dropdown when clicking anywhere outside it, and after picking
+    // an option (native <details> otherwise only closes on a second click).
+    '<script>(function(){var m=document.querySelector(".cv-dl-menu");if(!m)return;' +
+    'document.addEventListener("click",function(e){if(m.open&&!m.contains(e.target))m.open=false;});' +
+    'm.querySelectorAll(".cv-dl-list a").forEach(function(a){a.addEventListener("click",function(){m.open=false;});});' +
+    '})();</script>';
   const page =
     '---\n' +
     // Full tab title set here + empty title-prefix suppresses Quarto's default
