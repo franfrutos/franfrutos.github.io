@@ -28,7 +28,7 @@ papers:
     authors: Fernández, J. G., Ferrero, M., Garre-Frutos, F., & Vadillo, M. A.
     venue: Under review
     status: Stage 1 manuscript under review
-  # `id:` = stable selector for the BIAL short-CV profile (never rendered).
+  # `id:` = stable selector for the Short CV profile (never rendered).
   - id: explicit-knowledge
     thread: learning
     year: 2026
@@ -86,12 +86,15 @@ papers:
       DO  - 10.3758/s13423-025-02734-1
       ER  -
   - thread: learning
-    year: in press
+    year: 2026
     title: The role of selective attention in value-modulated attentional capture
     authors: Garre-Frutos, F., Vadillo, M. A., Theeuwes, J., van Moorselaar, D., & Lupiáñez, J.
     venue: Psychonomic Bulletin & Review
-    doi: 10.3758/s13423-026-02964-x   # final DOI (assigned at proofs; 404s until published online)
-    url: https://osf.io/preprints/psyarxiv/kv2rx   # readable preprint (PsyArXiv) until the DOI resolves — then swap url to the DOI
+    volume: 33
+    issue: 7
+    articleno: 242
+    url: https://doi.org/10.3758/s13423-026-02964-x
+    date: "2026/09/18"           # Crossref issued → citation_publication_date
     tags: [VMAC, selective attention]
     keywords: [attentional capture, learning, reward, selective attention, awareness]
     osf:
@@ -99,8 +102,7 @@ papers:
       materials: https://github.com/franfrutos/vmac_selective/tree/main/Materials
       data: https://github.com/franfrutos/vmac_selective/tree/main/Input
       code: https://github.com/franfrutos/vmac_selective/tree/main/Scripts
-      # Accepted / in press — final access (OA vs postprint) not decided yet → "in production" gear badge.
-      production: true
+      oa: https://link.springer.com/article/10.3758/s13423-026-02964-x
     abstract: >-
       Stimuli that reliably predict reward can increase their capacity to capture attention. This Value-Modulated Attentional Capture (VMAC) is typically viewed as independent of task goals or physical salience, arising from associative learning. However, recent evidence suggests that the awareness of the stimulus-reward contingency may be necessary during the acquisition of such attentional biases, although the underlying mechanism remains unclear. One possibility is that awareness mediates the learning process of VMAC by directing selective attention toward the reward-predictive feature. The present preregistered study tested whether reward-related attentional biases arise primarily from such selective attention, independently of awareness. Participants performed a visual search task in which one of two singleton distractors—one predicting high reward, the other low reward—appeared on a subset of trials. Selective attention to the reward-predictive feature (i.e., distractor color) was manipulated between groups: In some trials, one group reported the reward-predictive distractor's color, while the other reported a non-reward-predictive feature (its location). Otherwise, the stimulus–reward contingencies remained identical for both groups. The typical VMAC effect, as measured by slower response times for the high-value compared to the low-value distractor, emerged only in the group that attended to the color. Critically, the previous result cannot be explained by individual differences in awareness. These findings indicate that selective attention to the reward-predictive feature contributes to the acquisition of reward-related attentional biases, independently of awareness about the color-reward contingency.
   - thread: learning
