@@ -27,6 +27,17 @@ export function slugify(s) {
 }
 export const paperSlug = (p) => p.slug || slugify(p.title);
 
+// Sort key for reverse-chronological paper lists (CV + website): the `date`
+// field (YYYY/MM/DD — Crossref issued date, or the PsyArXiv posting date of
+// the cited version) when present, else 1 January of `year`. Non-numeric
+// years ("in press") rank newest. Ties keep the papers.yml order.
+export const pubTime = (p) => {
+  if (p.date) { const [y, m, d] = String(p.date).split('/').map(Number); return Date.UTC(y, (m || 1) - 1, d || 1); }
+  const n = Number(p.year);
+  return Number.isFinite(n) ? Date.UTC(n, 0, 1) : Number.MAX_SAFE_INTEGER;
+};
+export const byDateDesc = (a, b) => pubTime(b) - pubTime(a);
+
 // The "hills" wordmark mark, shown in the page navs.
 export const LOGO = '<svg width="37" height="21" viewBox="0 0 38 22" fill="none" aria-hidden="true" style="display:block; overflow:visible; transform:translateY(-1px);"><path d="M3,17.4 C9,17.4 10,9.2 18,8.2 C25,7.4 30,7.2 35,7" fill="none" style="stroke:var(--ink3); stroke-width:1.3; opacity:.6;" stroke-linecap="round"></path><circle cx="35" cy="7" r="2.9" fill="none" style="stroke:var(--ink3); stroke-width:1; opacity:.55;"></circle><circle cx="35" cy="7" r="1.3" style="fill:var(--ink3); opacity:.6;"></circle><line x1="2" y1="18" x2="34" y2="18" style="stroke:var(--ink3); stroke-width:.9; opacity:.3;"></line><path d="M2,18 C5.5,18 5.5,8.5 9,8.5 C12.5,8.5 12.5,18 16,18 Z" style="fill:var(--ink3); opacity:.42;"></path><path d="M9,18 C13,18 13,5 17,5 C21,5 21,18 25,18 Z" style="fill:var(--logo-ocre); opacity:.52;"></path><path d="M18,18 C21.5,18 21.5,9.5 25,9.5 C28.5,9.5 28.5,18 32,18 Z" style="fill:var(--accent); opacity:.42;"></path></svg>';
 

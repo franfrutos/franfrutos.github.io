@@ -37,6 +37,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/uwge3
+    date: "2026/03/22"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [VMAC, awareness, Pavlovian]
     keywords: [selective attention, reward learning, reversal learning, explicit knowledge, associative learning]
     osf:
@@ -167,6 +168,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/p4m29
+    date: "2024/06/19"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [IOR, reward learning]
     keywords: [Learned value, Selection history, Inhibition of Return, Spatial Cueing]
     osf:
@@ -200,6 +202,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/rkpb8
+    date: "2026/06/21"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [perceptual load, distraction]
     keywords: [attentional capture, Perceptual Load, visual distraction, distractor relevance]
     osf:
@@ -218,6 +221,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/xq2h8
+    date: "2026/06/23"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [perceptual load, suppression]
     keywords: [Attentional Capture, Distractor Suppression, Visual Search, Perceptual Load]
     osf:
@@ -235,6 +239,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/n7zuw
+    date: "2026/06/05"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [PAS, awareness, validity]
     keywords: [perceptual awareness scale, validity, psychometrics, unconscious processing]
     osf:
@@ -252,6 +257,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/c4fw7
+    date: "2026/09/21"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [habits, multiverse, reliability]
     keywords: [habits, forced-response task, multiverse analysis, split-half reliability, goal-directed behavior, preprocessing]
     osf:
@@ -267,6 +273,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/r62pa
+    date: "2026/09/21"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [habits, validity]
     keywords: [habit formation, habit expression, learning, validity, reliability]
     osf:
@@ -284,6 +291,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/ve3qf   # unversioned → always resolves to the latest version
+    date: "2026/08/02"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [habits, individual differences]
     keywords: [habit learning, habit expression, temporal stability, individual differences, forced-response task, test-retest reliability]
     osf:
@@ -301,6 +309,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/xkaw6
+    date: "2026/04/23"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
     tags: [creativity, measurement]
     keywords: [invented alien creatures task, creativity, digital, process measures]
     osf:
@@ -340,6 +349,7 @@ papers:
     issue: 1
     articleno: 7
     url: https://doi.org/10.3758/s13428-025-02865-2
+    date: "2025/11/24"           # Crossref issued (online first) → citation_publication_date
     tags: [habits, psychometrics]
     keywords: [habit formation, learning, replicability, reliability, convergent validity]
     osf:

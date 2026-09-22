@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as yaml from './vendor/js-yaml.mjs';
-import { LOGO, BADGES } from './_shared.mjs';
+import { LOGO, BADGES, byDateDesc } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -264,8 +264,7 @@ function shortTalkItem(t, venueShort) {
 }
 
 function typstBodyShort(cv, papers) {
-  const yr = (p) => { const n = Number(p.year); return Number.isFinite(n) ? n : Infinity; };
-  const published = papers.filter(isPublished).slice().sort((a, b) => yr(b) - yr(a));
+  const published = papers.filter(isPublished).slice().sort(byDateDesc);
 
   // Masthead: exactly the same as FULL (same contacts, no profile tagline).
   let out = headerTyp(cv.header);
@@ -286,7 +285,7 @@ function typstBodyShort(cv, papers) {
   out += daggerLegend(published);
 
   out += section('Selected Preprints & Ongoing Work');
-  const preprints = byId(papers, SHORT.preprints);
+  const preprints = byId(papers, SHORT.preprints).sort(byDateDesc);   // ids select; date orders
   preprints.forEach((p) => { out += pubItem(p, { badges: false }); });
   out += daggerLegend(preprints);
 
@@ -318,11 +317,8 @@ function typstBodyShort(cv, papers) {
 
 // --- Assemble the raw Typst body from a cv object + papers ------------------
 function typstBody(cv, papers) {
-  // Non-numeric years ("in press") rank as the most recent so they sort to the top.
-  const yr = (p) => { const n = Number(p.year); return Number.isFinite(n) ? n : Infinity; };
-  const byYearDesc = (a, b) => yr(b) - yr(a);
-  const published = papers.filter(isPublished).slice().sort(byYearDesc);
-  const ongoing = papers.filter((p) => !isPublished(p)).slice().sort(byYearDesc);
+  const published = papers.filter(isPublished).slice().sort(byDateDesc);
+  const ongoing = papers.filter((p) => !isPublished(p)).slice().sort(byDateDesc);
 
   let out = '';
 
@@ -547,11 +543,8 @@ const secHtml = (title, inner) => '<section class="cv-sec"><div class="sec-label
 function buildHtml() {
   const cv = readYaml('data/cv.yml');
   const { papers } = readYaml('data/papers.yml');
-  // Non-numeric years ("in press") rank as the most recent so they sort to the top.
-  const yr = (p) => { const n = Number(p.year); return Number.isFinite(n) ? n : Infinity; };
-  const byYearDesc = (a, b) => yr(b) - yr(a);
-  const published = papers.filter(isPublished).slice().sort(byYearDesc);
-  const ongoing = papers.filter((p) => !isPublished(p)).slice().sort(byYearDesc);
+  const published = papers.filter(isPublished).slice().sort(byDateDesc);
+  const ongoing = papers.filter((p) => !isPublished(p)).slice().sort(byDateDesc);
   const h = cv.header;
 
   const contacts = (h.contacts || []).map((c) => {
