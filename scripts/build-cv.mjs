@@ -134,6 +134,22 @@ function talkItem(t) {
   return '#pubitem([' + body + '])\n';
 }
 
+// APA-style software reference: Authors (year). *Title* (Version x) [kind].
+// Venue. DOI link · Source code link. Title links to the package site.
+function softwareItem(s) {
+  const title = '#emph[' + escTyp(s.title) + ']';
+  let body = authorsTyp(s.authors) + ' (' + escTyp(s.year) + '). ' +
+    (s.url ? '#plink("' + escStr(s.url) + '")[' + title + ']' : title);
+  if (s.version) body += ' (Version ' + escTyp(s.version) + ')';
+  if (s.kind) body += ' ' + escTyp('[' + s.kind + ']');
+  body += '. ' + escTyp(s.venue || '') + '.';
+  const links = [];
+  if (s.doi) links.push('#plink("https://doi.org/' + escStr(s.doi) + '")[' + escTyp('https://doi.org/' + s.doi) + ']');
+  if (s.code) links.push('Source code: #plink("' + escStr(s.code) + '")[GitHub]');
+  if (links.length) body += ' ' + links.join(' · ');
+  return '#pubitem([' + body + '])\n';
+}
+
 // --- Generic entry emitter --------------------------------------------------
 function emitEntry(e) {
   const args = [];
@@ -346,6 +362,11 @@ function typstBody(cv, papers) {
   ongoing.forEach((p) => { out += pubItem(p); });
   out += daggerLegend(ongoing);
 
+  if ((cv.software || []).length) {
+    out += section('Software');
+    cv.software.forEach((s) => { out += softwareItem(s); });
+  }
+
   out += section('Methods & Technical Expertise');
   (cv.methods || []).forEach(([label, value]) => {
     out += '#methodrow([' + inlineMd(label) + '], [' + inlineMd(value) + '])\n';
@@ -520,6 +541,19 @@ function talkHtml(t) {
   const linked = t.url ? '<a class="pub-title-link" target="_blank" href="' + htmlEsc(t.url) + '">' + title + '</a>' : title;
   return '<li class="cv-pub">' + authorsHtml(t.authors) + ' (' + htmlEsc(t.year) + '). ' + linked + ' ' + inlineHtml(t.venue) + '</li>';
 }
+function softwareHtml(s) {
+  const a = (href, txt) => '<a class="pub-title-link" target="_blank" href="' + htmlEsc(href) + '">' + txt + '</a>';
+  const title = '<em>' + htmlEsc(s.title) + '</em>';
+  let h = authorsHtml(s.authors) + ' (' + htmlEsc(s.year) + '). ' + (s.url ? a(s.url, title) : title);
+  if (s.version) h += ' (Version ' + htmlEsc(s.version) + ')';
+  if (s.kind) h += ' [' + htmlEsc(s.kind) + ']';
+  h += '. ' + htmlEsc(s.venue || '') + '.';
+  const links = [];
+  if (s.doi) links.push(a('https://doi.org/' + s.doi, htmlEsc('https://doi.org/' + s.doi)));
+  if (s.code) links.push('Source code: ' + a(s.code, 'GitHub'));
+  if (links.length) h += ' ' + links.join(' · ');
+  return '<li class="cv-pub">' + h + '</li>';
+}
 function entryHtml(e) {
   let h = '<div class="cv-entry"><div class="t">' + inlineHtml(e.title) + '</div><div class="r">' + inlineHtml(e.right) + '</div>';
   if (e.org != null || e.dates != null) h += '<div class="o">' + inlineHtml(e.org) + '</div><div class="d">' + inlineHtml(e.dates) + '</div>';
@@ -574,6 +608,7 @@ function buildHtml() {
     pubs += '<div class="cv-subhead">Outreach publication</div><ul class="cv-publist">' + cv.outreach_publications.map(talkHtml).join('') + '</ul>';
   body += secHtml('Publications', pubs);
   body += secHtml('Preprints & Ongoing Work', '<ul class="cv-publist">' + ongoing.map(pubHtml).join('') + '</ul>');
+  if ((cv.software || []).length) body += secHtml('Software', '<ul class="cv-publist">' + cv.software.map(softwareHtml).join('') + '</ul>');
   body += secHtml('Methods & Technical Expertise',
     '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');
   body += secHtml('Funded Projects', cv.funded.map(entryHtml).join(''));

@@ -63,7 +63,7 @@ education:
 # The undergraduate/MSc research scholarships live under `awards:` (they are
 # competitive awards, not appointments).
 # Ordering is intentional (professional progression, not strict reverse
-# chronology): the upcoming Ghent stay sits with the current postdoc stage.
+# chronology): the Ghent stay sits with the current postdoc stage.
 experience:
   - id: uam
     title: Postdoctoral Researcher
@@ -73,7 +73,7 @@ experience:
     stays:
       - title: "Ghent University · [Braem Lab](https://users.ugent.be/~sbraem/)"
         right: Ghent, Belgium
-        dates: Sept.–Dec. 2026 (scheduled)
+        dates: Sept.–Dec. 2026
         fields:
           - [Host, "Senne Braem."]
   - id: ugr-bridge
@@ -173,6 +173,19 @@ training:
     title: CIMCYC Workshop on Computational Modelling of Behavioral Data
     org: CIMCYC · University of Granada · 9 hours
     dates: Jun. 2022
+
+# Research software. Rendered as an APA-style software reference (title links to
+# the package site; DOI + source code follow).
+software:
+  - authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., & Vadillo, M. A.
+    year: 2026
+    title: "uSDT: Hierarchical signal detection theory models for unconscious processing"
+    version: 0.1.0
+    kind: R package
+    venue: CRAN
+    url: https://ricardoreysaez.github.io/uSDT/
+    doi: 10.32614/CRAN.package.uSDT
+    code: https://github.com/RicardoReySaez/uSDT
 
 # CV-only publications (not on the website). Rendered after the journal articles.
 outreach_publications:
@@ -302,6 +315,10 @@ conferences:
       title: Evaluation of the permutation-based split-half reliability in experimental paradigms for habit induction in humans.
       venue: XIV SEPEX Conference, Almería, Spain, October 23–25.
   poster:
+    - authors: Franco-Martínez, A., Garre-Frutos, F., & Tomás, G.
+      year: 2026
+      title: Measuring creativity process and product with a digitized Invented Alien Creatures task.
+      venue: "XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain, September 9–11."
     - authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
       year: 2026
       title: Do we learn habits at the same rate in November as in March?

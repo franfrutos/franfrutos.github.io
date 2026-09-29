@@ -122,6 +122,12 @@ journey:
     title: 'Measuring individual differences with experimental tasks: current pitfalls and future directions'
     venue: Symposium · XIV SEPEX Conference
     place: Almería, Spain · Oct 2024
+  - city: Ghent
+    country: Belgium
+    year: '2026'
+    type: Appointment
+    title: Visiting researcher
+    venue: Braem lab · Ghent University
   - city: Amsterdam
     country: Netherlands
     year: '2024'
@@ -204,6 +210,14 @@ journey:
     venue: XV SEPEX & II Joint Meeting SEPEX–BAPS
     note: 'Invited symposium · Experimental Psychometrics'
     authors: Martínez-López, P., Garre-Frutos, F., Vadillo, M. A., & Luque, D.
+    place: Valencia, Spain · Sep 2026
+  - city: Valencia
+    country: Spain
+    year: '2026'
+    type: Poster
+    title: Measuring creativity process and product with a digitized Invented Alien Creatures task
+    venue: XV SEPEX & II Joint Meeting SEPEX–BAPS
+    authors: Franco-Martínez, A., Garre-Frutos, F., & Tomás, G.
     place: Valencia, Spain · Sep 2026
   - city: Valencia
     country: Spain
