@@ -146,6 +146,7 @@ function softwareItem(s) {
   const links = [];
   if (s.doi) links.push('#plink("https://doi.org/' + escStr(s.doi) + '")[' + escTyp('https://doi.org/' + s.doi) + ']');
   if (s.code) links.push('Source code: #plink("' + escStr(s.code) + '")[GitHub]');
+  if (s.tutorial) links.push('#plink("' + escStr(s.tutorial) + '")[Tutorial]');
   if (links.length) body += ' ' + links.join(' · ');
   return '#pubitem([' + body + '])\n';
 }
@@ -551,6 +552,7 @@ function softwareHtml(s) {
   const links = [];
   if (s.doi) links.push(a('https://doi.org/' + s.doi, htmlEsc('https://doi.org/' + s.doi)));
   if (s.code) links.push('Source code: ' + a(s.code, 'GitHub'));
+  if (s.tutorial) links.push(a(s.tutorial, 'Tutorial'));
   if (links.length) h += ' ' + links.join(' · ');
   return '<li class="cv-pub">' + h + '</li>';
 }

@@ -186,6 +186,7 @@ software:
     url: https://ricardoreysaez.github.io/uSDT/
     doi: 10.32614/CRAN.package.uSDT
     code: https://github.com/RicardoReySaez/uSDT
+    tutorial: https://ricardoreysaez.github.io/uSDT/articles/uSDT-tutorial.html
 
 # CV-only publications (not on the website). Rendered after the journal articles.
 outreach_publications:
