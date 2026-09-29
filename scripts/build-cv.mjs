@@ -226,13 +226,12 @@ const SHORT = {
   // conference, city, and presentation type — symposium titles and day ranges
   // dropped. Selection favours first-author, invited/oral, international.
   conferences: [
-    ['sepex-baps-explicit',   'Invited talk, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain.'],
     ['sepex-baps-multilevel', 'Invited talk, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain.'],
+    ['aps-explicit',          'Oral presentation, APS Annual Convention, Barcelona, Spain.'],
     ['eam-meta',              'Oral presentation, XI Conference of the European Association of Methodology, Tenerife, Spain.'],
     ['assc28-selective',      'Poster, 28th Annual Meeting of the Association for the Scientific Study of Consciousness, Heraklion, Greece.'],
     ['rldm-modelling',        'Poster, Reinforcement Learning and Decision-Making Conference, Dublin, Ireland.'],
     ['assc27-informational',  'Poster, 27th Annual Meeting of the Association for the Scientific Study of Consciousness, Tokyo, Japan.'],
-    ['escop-ior',             'Poster, 23rd Conference of the European Society for Cognitive Psychology, Porto, Portugal.'],
   ],
 };
 
@@ -305,6 +304,11 @@ function typstBodyShort(cv, papers) {
   const preprints = byId(papers, SHORT.preprints).sort(byDateDesc);   // ids select; date orders
   preprints.forEach((p) => { out += pubItem(p, { badges: false }); });
   out += daggerLegend(preprints);
+
+  if ((cv.software || []).length) {
+    out += section('Software');
+    cv.software.forEach((s) => { out += softwareItem(s); });
+  }
 
   out += section('Selected Conference Presentations');
   const allTalks = [...(cv.conferences.oral || []), ...(cv.conferences.poster || [])];

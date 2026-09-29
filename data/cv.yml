@@ -274,7 +274,8 @@ conferences:
       year: 2026
       title: "Advancing credibility in habit research: No trust without valid measurement."
       venue: "Invited talk, symposium *Experimental Psychometrics*, XV SEPEX & II Joint Meeting SEPEX–BAPS, Valencia, Spain, September 9–11."
-    - authors: Garre-Frutos, F., Martínez-López, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
+    - id: aps-explicit
+      authors: Garre-Frutos, F., Martínez-López, P., Rey-Sáez, R., Luque, D., Vadillo, M. A., & González, F.
       year: 2026
       title: Explicit knowledge modulates Pavlovian attentional biases.
       venue: APS Annual Convention, Barcelona, Spain, May 28–30.
