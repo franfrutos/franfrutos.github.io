@@ -404,9 +404,9 @@ conferences:
 
 teaching:
   - title: Attention and Memory
-    right: 6 ECTS
+    right: 6 ECTS/year
     org: Universitat Oberta de Catalunya
-    dates: 2025 – 2026
+    dates: 2025/26 – 2026/27
     fields:
       - [Degree, "BSc Psychology."]
   - title: Behavioural Analysis and Motor Development in Physical Activity
@@ -482,7 +482,7 @@ service:
     title: Ad hoc reviewer
     org: Peer review
     fields:
-      - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, and *Frontiers in Cognition.*"]
+      - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, *Brain Research*, and *Frontiers in Cognition*."]
   - id: societies
     title: Professional Societies
     org: Professional memberships
