@@ -69,8 +69,12 @@
 #let icon(name, size: 9.5pt, fill: accent) = {
   let s = _ICONS.at(name, default: none)
   if s != none {
-    let k = s.at(2, default: 1)  // optional per-glyph scale (see zenodo)
-    text(font: s.at(0), size: size * k, fill: fill, baseline: 0.6pt + (k - 1) * 1pt)[#s.at(1)]
+    // Optional per-glyph scale (see zenodo). Academicons glyphs are centred 0.375em
+    // above the baseline, so scaling raises the centre by 0.375em * (k - 1): lower it
+    // by exactly that. Collapsed edges stop the bigger glyph from growing the line.
+    let k = s.at(2, default: 1)
+    let edges = if k == 1 { (:) } else { (top-edge: "baseline", bottom-edge: "baseline") }
+    text(font: s.at(0), size: size * k, fill: fill, baseline: 0.6pt + size * 0.375 * (k - 1), ..edges)[#s.at(1)]
   }
 }
 // Open-science practice glyphs as (font, codepoint). Most are Academicons;

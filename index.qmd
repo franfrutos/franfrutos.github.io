@@ -75,14 +75,14 @@ header-includes: |
           </div>
           <div style="padding:16px 18px; border-top:1px solid var(--line); background:var(--card);">
             <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink3); margin:0 0 13px;">Find me on</p>
-            <div style="display:flex; gap:21px; align-items:center; flex-wrap:wrap;">
+            <div style="display:flex; gap:13px; align-items:center; flex-wrap:wrap;">
               <a href="https://scholar.google.es/citations?user=RWd96bwAAAAJ&hl=es" target="_blank" title="Google Scholar" class="social-link"><i class="ai ai-google-scholar" style="font-size:20px;"></i></a>
               <a href="https://orcid.org/0000-0001-9810-186X" target="_blank" title="ORCID" class="social-link"><i class="ai ai-orcid" style="font-size:20px;"></i></a>
               <a href="https://github.com/franfrutos" target="_blank" title="GitHub" class="social-link"><i class="fa-brands fa-github" style="font-size:19px;"></i></a>
               <a href="https://www.researchgate.net/profile/Francisco-Garre-Frutos-2" target="_blank" title="ResearchGate" class="social-link"><i class="ai ai-researchgate" style="font-size:19px;"></i></a>
               <a href="https://bsky.app/profile/frangfr.bsky.social" target="_blank" title="Bluesky" class="social-link"><i class="fa-brands fa-bluesky" style="font-size:19px;"></i></a>
               <a href="https://osf.io/4ney2/" target="_blank" title="OSF" class="social-link"><i class="ai ai-osf" style="font-size:19px;"></i></a>
-              <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier%3A%220000-0001-9810-186X%22&l=list&p=1&s=10&sort=newest" target="_blank" title="Zenodo" class="social-link"><i class="ai ai-zenodo" style="font-size:32px;"></i></a>
+              <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier%3A%220000-0001-9810-186X%22&l=list&p=1&s=10&sort=newest" target="_blank" title="Zenodo" class="social-link" style="height:20px;"><i class="ai ai-zenodo" style="font-size:30px;"></i></a>
               <a href="mailto:fgfrutos@gmail.com" title="Email" class="social-link"><i class="fa-solid fa-envelope" style="font-size:18px;"></i></a>
             </div>
           </div>
@@ -216,7 +216,7 @@ So instead of just dropping a boring "CV" section here (you can [see my boring c
       </div>
       <div>
         <p style="font-size:24px; font-family:'Source Serif 4',serif; color:var(--panel-ink); margin:0 0 30px; max-width:540px; line-height:1.4;">Drop me a line — I'm always happy to talk.</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <div style="display:flex; gap:12px 8px; flex-wrap:wrap;">
           <a href="mailto:fgfrutos@gmail.com" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase; display:inline-flex; align-items:center; gap:9px; padding:13px 20px; background:var(--panel-accent); color:#fff; border-radius:3px; font-weight:500;"><i class="fa-solid fa-envelope"></i> fgfrutos@gmail.com</a>
           <a href="https://scholar.google.es/citations?user=RWd96bwAAAAJ&hl=es" target="_blank" title="Google Scholar" class="social-ic-dark"><i class="ai ai-google-scholar" style="font-size:18px;"></i></a>
           <a href="https://orcid.org/0000-0001-9810-186X" target="_blank" title="ORCID" class="social-ic-dark"><i class="ai ai-orcid" style="font-size:18px;"></i></a>
@@ -224,7 +224,7 @@ So instead of just dropping a boring "CV" section here (you can [see my boring c
           <a href="https://www.researchgate.net/profile/Francisco-Garre-Frutos-2" target="_blank" title="ResearchGate" class="social-ic-dark"><i class="ai ai-researchgate" style="font-size:17px;"></i></a>
           <a href="https://bsky.app/profile/frangfr.bsky.social" target="_blank" title="Bluesky" class="social-ic-dark"><i class="fa-brands fa-bluesky" style="font-size:17px;"></i></a>
           <a href="https://osf.io/4ney2/" target="_blank" title="OSF" class="social-ic-dark"><i class="ai ai-osf" style="font-size:17px;"></i></a>
-          <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier%3A%220000-0001-9810-186X%22&l=list&p=1&s=10&sort=newest" target="_blank" title="Zenodo" class="social-ic-dark"><i class="ai ai-zenodo" style="font-size:29px;"></i></a>
+          <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier%3A%220000-0001-9810-186X%22&l=list&p=1&s=10&sort=newest" target="_blank" title="Zenodo" class="social-ic-dark"><i class="ai ai-zenodo" style="font-size:24px;"></i></a>
         </div>
       </div>
     </div>
