@@ -102,6 +102,11 @@ experience:
 # is stated once, in the Amsterdam appointment; the end-of-degree award once,
 # here. Travel awards / society prizes go here too when they arrive.
 awards:
+  - id: santander-postdoc
+    title: Santander Postdoctoral Mobility Grant
+    right: Ghent, Belgium
+    org: Autonomous University of Madrid · Becas Santander Programme
+    dates: 2026
   - id: bridging
     title: Bridging Postdoctoral Contract
     right: Granada, Spain
@@ -491,7 +496,7 @@ service:
     title: Professional Societies
     org: Professional memberships
     fields:
-      - [Memberships, "Association for Psychological Science; Sociedad Española de Psicología Experimental; Association for the Scientific Study of Consciousness; [Spanish Reproducibility Network (SPRN)](https://sprn.es)."]
+      - [Memberships, "[Association for Psychological Science](https://www.psychologicalscience.org); [Sociedad Española de Psicología Experimental](https://websepex.com); [Association for the Scientific Study of Consciousness](https://theassc.org); [Spanish Reproducibility Network (SPRN)](https://sprn.es)."]
 
 outreach:
   - title: Psychobeers

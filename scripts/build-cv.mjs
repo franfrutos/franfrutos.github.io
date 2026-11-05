@@ -125,6 +125,16 @@ function pubItem(p, opts = {}) {
   return '#pubitem([' + body + '], badges: (' + badges + ',))\n';
 }
 
+// Contribution type lives in the data: `conferences.oral` vs `.poster`, and an
+// "Invited talk, " prefix on the venue for invited symposium talks. The Full CV
+// groups invited talks under their own subhead (and drops the redundant prefix);
+// the Short CV groups its selection the same way, from the type prefix of each
+// condensed venue string in SHORT.conferences.
+const isInvited = (t) => /^Invited talk\b/i.test(String(t.venue || ''));
+const stripInvited = (v) => String(v || '').replace(/^Invited talk,\s*/i, '').replace(/^symposium/, 'Symposium');
+// Short venues start with their type: "Invited talk, …" / "Oral presentation, …" / "Poster, …"
+const splitType = (v) => { const m = /^(Invited talk|Oral presentation|Poster),\s*/i.exec(v); return m ? [m[1], v.slice(m[0].length)] : [null, v]; };
+
 function talkItem(t) {
   // venue goes through inlineMd (not escTyp) so *asterisks* italicise symposium names.
   const title = '#emph[' + escTyp(t.title) + ']';
@@ -213,7 +223,7 @@ function headerTyp(h, { contactIcons = null, tagline = null } = {}) {
 // ============================================================================
 const SHORT = {
   eduFieldIds: ['phd'],                                     // MSc/BSc render bare
-  awards: ['bridging', 'rldm', 'sepex-outreach', 'fpu', 'eebb', 'end-of-degree'],
+  awards: ['santander-postdoc', 'bridging', 'rldm', 'sepex-outreach', 'fpu', 'eebb', 'end-of-degree'],
   preprints: ['explicit-knowledge', 'load-distractors', 'load-facilitation', 'choose-your-own-pas', 'ior-learned-value'],
   // Leadership first (Co-PI), then thematic relevance, then the international
   // collaboration grant (Theeuwes visiting scholarship). Any future PI/Co-PI
@@ -272,10 +282,10 @@ function fundedEntry(e, { condensed = false } = {}) {
 }
 
 // Compact conference item (SHORT): authors (year). Title. Compressed venue.
-function shortTalkItem(t, venueShort) {
+function shortTalkItem(t, venue) {
   const body =
     authorsTyp(t.authors) + ' (' + escTyp(t.year) + '). ' +
-    '#emph[' + escTyp(t.title) + '] ' + inlineMd(venueShort);
+    '#emph[' + escTyp(t.title) + '] ' + inlineMd(venue);
   return '#pubitem([' + body + '])\n';
 }
 
@@ -312,9 +322,19 @@ function typstBodyShort(cv, papers) {
 
   out += section('Selected Conference Presentations');
   const allTalks = [...(cv.conferences.oral || []), ...(cv.conferences.poster || [])];
-  SHORT.conferences.forEach(([id, venueShort]) => {
-    const talk = allTalks.find((x) => x.id === id);
-    if (talk) out += shortTalkItem(talk, venueShort);
+  const groups = [['Invited talk', 'Invited talks'], ['Oral presentation', 'Oral presentations'], ['Poster', 'Poster presentations']];
+  const selected = SHORT.conferences
+    .map(([id, venueShort]) => {
+      const talk = allTalks.find((x) => x.id === id);
+      const [type, venue] = splitType(venueShort);
+      return talk ? { talk, type, venue } : null;
+    })
+    .filter(Boolean);
+  groups.forEach(([type, label], gi) => {
+    const items = selected.filter((s) => s.type === type);
+    if (!items.length) return;
+    out += (gi ? '\n' : '') + '#subhead("' + label + '")\n\n';
+    items.forEach((s) => { out += shortTalkItem(s.talk, s.venue); });
   });
 
   out += section('Methods & Technical Expertise');
@@ -381,8 +401,15 @@ function typstBody(cv, papers) {
   cv.funded.forEach((e) => { out += fundedEntry(e); });
 
   out += section('Conference Presentations');
+  const invited = cv.conferences.oral.filter(isInvited);
+  const oralRest = cv.conferences.oral.filter((t) => !isInvited(t));
+  if (invited.length) {
+    out += '#subhead("Invited talks")\n\n';
+    invited.forEach((t) => { out += talkItem({ ...t, venue: stripInvited(t.venue) }); });
+    out += '\n';
+  }
   out += '#subhead("Oral presentations")\n\n';
-  cv.conferences.oral.forEach((t) => { out += talkItem(t); });
+  oralRest.forEach((t) => { out += talkItem(t); });
   out += '\n#subhead("Poster presentations")\n\n';
   cv.conferences.poster.forEach((t) => { out += talkItem(t); });
 
@@ -618,8 +645,11 @@ function buildHtml() {
   body += secHtml('Methods & Technical Expertise',
     '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');
   body += secHtml('Funded Projects', cv.funded.map(entryHtml).join(''));
+  const invitedH = cv.conferences.oral.filter(isInvited).map((t) => ({ ...t, venue: stripInvited(t.venue) }));
+  const oralH = cv.conferences.oral.filter((t) => !isInvited(t));
   body += secHtml('Conference Presentations',
-    '<div class="cv-subhead">Oral presentations</div><ul class="cv-publist">' + cv.conferences.oral.map(talkHtml).join('') + '</ul>' +
+    (invitedH.length ? '<div class="cv-subhead">Invited talks</div><ul class="cv-publist">' + invitedH.map(talkHtml).join('') + '</ul>' : '') +
+    '<div class="cv-subhead">Oral presentations</div><ul class="cv-publist">' + oralH.map(talkHtml).join('') + '</ul>' +
     '<div class="cv-subhead">Poster presentations</div><ul class="cv-publist">' + cv.conferences.poster.map(talkHtml).join('') + '</ul>');
   body += secHtml('Academic Events Organized', cv.events.map(entryHtml).join(''));
   body += secHtml('Teaching', cv.teaching.map(entryHtml).join(''));
