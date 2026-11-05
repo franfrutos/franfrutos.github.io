@@ -19,25 +19,25 @@
 // the SP tokens below differ.
 #let _compact = sys.inputs.at("fgfcompact", default: "0") == "1"
 #let SP = if _compact {(
-  margin: (top: 1.85cm, bottom: 1.65cm, left: 1.9cm, right: 1.9cm),
-  body-size: 9.3pt,
-  sec-above: 23pt, sec-below: 10.5pt,
-  entry-above: 13pt,
-  stay-above: 9.5pt,
+  margin: (top: 1.7cm, bottom: 1.5cm, left: 1.7cm, right: 1.7cm),
+  body-size: 9pt,
+  sec-above: 17pt, sec-below: 7.5pt,
+  entry-above: 9.5pt,
+  stay-above: 7pt,
   kv-above: 5pt,
-  method-above: 7pt, method-col: 4.0cm,
-  pub-above: 9pt,
-  subhead-above: 12.5pt, subhead-below: 3.5pt,
+  method-above: 5pt, method-col: 3.9cm,
+  pub-above: 6.5pt,
+  subhead-above: 9.5pt, subhead-below: 3pt,
 )} else {(
-  margin: (top: 2cm, bottom: 1.7cm, left: 2cm, right: 2cm),
-  body-size: 9.3pt,
-  sec-above: 27pt, sec-below: 12pt,
-  entry-above: 16.5pt,
-  stay-above: 11pt,
+  margin: (top: 1.8cm, bottom: 1.55cm, left: 1.8cm, right: 1.8cm),
+  body-size: 9pt,
+  sec-above: 18pt, sec-below: 8pt,
+  entry-above: 11pt,
+  stay-above: 8pt,
   kv-above: 6pt,
-  method-above: 7.5pt, method-col: 4.6cm,
-  pub-above: 11pt,
-  subhead-above: 15pt, subhead-below: 4pt,
+  method-above: 6pt, method-col: 4.3cm,
+  pub-above: 7.5pt,
+  subhead-above: 11pt, subhead-below: 3pt,
 )}
 #let ink    = if _dark { rgb("#e9ebef") } else { rgb("#1a1d24") }  // primary text
 #let ink2   = if _dark { rgb("#aab0bd") } else { rgb("#454b59") }  // secondary
@@ -47,7 +47,8 @@
 #let paper  = if _dark { rgb("#1b1e26") } else { white }           // page fill
 #let chip   = if _dark { rgb("#2a2018") } else { accent.lighten(91%) }  // badge fill
 #let chipln = if _dark { rgb("#5a3a30") } else { accent.lighten(55%) }  // badge stroke
-#let mono   = "IBM Plex Mono"
+#let mono   = "IBM Plex Mono"      // label layer: masthead, section labels, org lines, dates, field labels, footer
+#let serif  = "Source Serif 4"     // reading layer: entry titles, references, bodies, field values
 
 // --- Icon fonts (bundled in fonts/). Glyph codepoints taken from the same
 //     Font Awesome 6.6 / Academicons 1.9.4 the website loads. -----------------
@@ -91,7 +92,7 @@
     {
       box(width: 22pt, height: 2pt, fill: accent, baseline: -2.5pt)
       h(9pt)
-      text(font: mono, size: 9.3pt, weight: "semibold", tracking: 1.4pt, fill: ink3)[#upper(title)]
+      text(font: mono, size: 8.6pt, weight: "semibold", tracking: 1.4pt, fill: ink3)[#upper(title)]
     },
     line(length: 100%, stroke: 0.6pt + hair),
   )
@@ -105,8 +106,8 @@
         columns: (1fr, auto),
         column-gutter: 16pt,
         align: (start + bottom, end + bottom),
-        text(font: mono, size: 10.7pt, weight: "semibold", fill: ink)[#title],
-        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#right],
+        text(font: serif, size: 10pt, weight: "semibold", fill: ink)[#title],
+        text(font: mono, size: 8.4pt, style: "italic", fill: ink3)[#right],
       )
     }
     if org != none or dates != none {
@@ -116,14 +117,14 @@
         column-gutter: 16pt,
         // top-aligned so a two-line org keeps the date pinned to its first line
         align: (start + top, end + top),
-        text(font: mono, size: 8.2pt, weight: "medium", tracking: 0.7pt, fill: ink3)[#upper(org)],
-        text(font: mono, size: 9.2pt, style: "italic", fill: ink3)[#dates],
+        text(font: mono, size: 7.6pt, weight: "medium", tracking: 0.7pt, fill: ink3)[#upper(org)],
+        text(font: mono, size: 8.4pt, style: "italic", fill: ink3)[#dates],
       )
     }
     if body != none {
-      v(if _compact { 4pt } else { 7pt })
-      set text(font: mono, size: SP.body-size, fill: ink2)
-      set par(leading: 8pt, justify: false)
+      v(if _compact { 3pt } else { 5pt })
+      set text(font: serif, size: SP.body-size, fill: ink2)
+      set par(leading: 7.4pt, justify: false)
       body
     }
   })
@@ -138,14 +139,14 @@
   block(above: SP.stay-above, below: 0pt, breakable: false, width: 100%,
     stroke: (left: 1pt + hair),
     inset: if _compact { (left: 10pt, top: 1pt, bottom: 1pt) } else { (left: 12pt, top: 2pt, bottom: 2pt) }, {
-    text(font: mono, size: 7.6pt, weight: "semibold", tracking: 1.3pt, fill: accent)[RESEARCH STAY]
+    text(font: mono, size: 7.2pt, weight: "semibold", tracking: 1.3pt, fill: accent)[RESEARCH STAY]
     v(if _compact { 2.5pt } else { 3.5pt })
     grid(
       columns: (1fr, auto),
       column-gutter: 16pt,
       align: (start + top, end + top),
-      text(font: mono, size: 9.7pt, weight: "semibold", fill: ink)[#title],
-      text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#place],
+      text(font: serif, size: 9.4pt, weight: "semibold", fill: ink)[#title],
+      text(font: mono, size: 8.4pt, style: "italic", fill: ink3)[#place],
     )
     if body != none or dates != none {
       v(if _compact { 1.5pt } else { 2.5pt })
@@ -154,11 +155,11 @@
         column-gutter: 16pt,
         align: (start + top, end + top),
         {
-          set text(font: mono, size: SP.body-size, fill: ink2)
-          set par(leading: 8pt, justify: false)
+          set text(font: serif, size: SP.body-size, fill: ink2)
+          set par(leading: 7.4pt, justify: false)
           if body != none { body }
         },
-        text(font: mono, size: 9.1pt, style: "italic", fill: ink3)[#dates],
+        text(font: mono, size: 8.4pt, style: "italic", fill: ink3)[#dates],
       )
     }
   })
@@ -166,9 +167,9 @@
 
 // --- Labeled inline field used inside entry bodies (Thesis:, Supervisor:…). -
 #let kv(label, value) = block(above: SP.kv-above, below: 0pt, {
-  text(font: mono, size: 8.5pt, weight: "semibold", fill: ink)[#label:]
+  text(font: mono, size: 7.6pt, weight: "semibold", fill: ink)[#label:]
   h(5pt)
-  text(font: mono, size: SP.body-size, fill: ink2)[#value]
+  text(font: serif, size: SP.body-size, fill: ink2)[#value]
 })
 
 // --- A small rounded "open science" badge (Academicons glyph), as a soft
@@ -176,12 +177,12 @@
 #let osfbadge(key, on: true, url: none) = {
   let g = _OSF.at(key)
   let chipbox = box(
-    inset: (x: 4pt, y: 3pt),
-    radius: 3.5pt,
+    inset: (x: 3.5pt, y: 2.5pt),
+    radius: 3pt,
     fill: if on { chip } else { none },
     stroke: 0.5pt + if on { chipln } else { hair },
     baseline: 3.6pt,
-    text(font: g.at(0), size: 9.5pt, fill: if on { accent } else { ink3 })[#g.at(1)],
+    text(font: g.at(0), size: 8.5pt, fill: if on { accent } else { ink3 })[#g.at(1)],
   )
   // Lit badges link to their resource (same semantics as the website badges).
   if on and url != none { link(url, chipbox) } else { chipbox }
@@ -193,10 +194,10 @@
     columns: (SP.method-col, 1fr),
     column-gutter: 14pt,
     align: (end + top, start + top),
-    text(font: mono, size: SP.body-size, weight: "semibold", fill: ink)[#label],
+    text(font: mono, size: 8pt, weight: "semibold", fill: ink)[#label],
     {
-      set par(leading: 7.6pt, justify: false)
-      text(font: mono, size: SP.body-size, fill: ink2)[#value]
+      set par(leading: 7.4pt, justify: false)
+      text(font: serif, size: SP.body-size, fill: ink2)[#value]
     },
   )
 })
@@ -209,11 +210,11 @@
     align: (left + top, left + top),
     { v(5pt); box(width: 7pt, height: 1.8pt, fill: accent, radius: 0.9pt) },
     {
-      set text(font: mono, size: SP.body-size, fill: ink2)
-      set par(leading: 7.9pt, justify: false)
+      set text(font: serif, size: SP.body-size, fill: ink2)
+      set par(leading: 7.4pt, justify: false)
       body
       if badges.len() > 0 {
-        v(4pt)
+        v(3pt)
         box(stack(dir: ltr, spacing: 5pt, ..badges.map(b => osfbadge(b.at(0), on: b.at(1), url: b.at(2, default: none)))))
       }
     },
@@ -222,7 +223,7 @@
 
 // --- A small uppercase subgroup label (e.g. ORAL PRESENTATIONS). ------------
 #let subhead(title) = block(above: SP.subhead-above, below: SP.subhead-below, sticky: true, {
-  text(font: mono, size: 8.2pt, weight: "semibold", tracking: 1.1pt, fill: accent)[#upper(title)]
+  text(font: mono, size: 7.8pt, weight: "semibold", tracking: 1.1pt, fill: accent)[#upper(title)]
 })
 
 // --- A visibly-clickable link for titles (publications, theses): signalled by
@@ -250,19 +251,19 @@
   // The masthead is deliberately IDENTICAL in both profiles (no _compact
   // branches): Full and Short must read as the same CV.
   block(below: 0pt, {
-    text(font: mono, size: 26pt, weight: "semibold", tracking: 0.2pt, fill: ink)[#name ]
-    text(font: mono, size: 26pt, weight: "semibold", tracking: 0.2pt, fill: accent)[#surname]
+    text(font: mono, size: 22pt, weight: "semibold", tracking: 0.2pt, fill: ink)[#name ]
+    text(font: mono, size: 22pt, weight: "semibold", tracking: 0.2pt, fill: accent)[#surname]
   })
-  v(7pt)
-  text(font: mono, size: 8.6pt, weight: "medium", tracking: 2.4pt, fill: ink2)[
+  v(5pt)
+  text(font: mono, size: 8pt, weight: "medium", tracking: 2.2pt, fill: ink2)[
     #upper(role)#h(8pt)#text(fill: accent)[·]#h(8pt)#upper(field)
   ]
-  v(3pt)
-  text(font: mono, size: 9.5pt, style: "italic", fill: ink3)[#location]
-  v(11pt)
+  v(2pt)
+  text(font: mono, size: 8.6pt, style: "italic", fill: ink3)[#location]
+  v(8pt)
   // Sized + spaced so all contacts fit on ONE line (no orphaned "Bluesky").
   block(width: 100%, {
-    set text(font: mono, size: 8.5pt, fill: ink2)
+    set text(font: mono, size: 8pt, fill: ink2)
     contacts
       .map(c => box({
         icon(c.icon, size: 9pt, fill: accent)
@@ -274,13 +275,13 @@
   if tagline != "" {
     v(13pt)
     block(width: 80%, {
-      set text(font: mono, size: 10.5pt, style: "italic", fill: ink2)
+      set text(font: serif, size: 10pt, style: "italic", fill: ink2)
       set par(leading: 6.6pt, justify: false)
       tagline
     })
   }
   // Clean coral rule closes the masthead (replaces the dot motif).
-  v(15pt)
+  v(11pt)
   box(width: 42pt, height: 2.5pt, fill: accent, radius: 1.25pt)
   set align(left)
   v(2pt)
@@ -307,7 +308,7 @@
       )
     },
   )
-  set text(font: mono, size: SP.body-size, weight: "regular", fill: ink, lang: "en", hyphenate: false)
-  set par(leading: 7.9pt, spacing: 7.9pt, justify: false)
+  set text(font: serif, size: SP.body-size, weight: "regular", fill: ink, lang: "en", hyphenate: false)
+  set par(leading: 7.4pt, spacing: 7.4pt, justify: false)
   doc
 }
