@@ -56,10 +56,11 @@ const head = `<!-- GENERATED from data/site.yml by scripts/build-meta.mjs — do
   })();
 </script>
 
-<!-- Fonts: IBM Plex Mono everywhere (400/500/600/700) -->
+<!-- Fonts: Source Serif 4 for prose (400/500/600 + italics), IBM Plex Mono for the
+     label layer (wordmark, eyebrows, dates, chips, buttons, code) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&display=swap" rel="stylesheet">
 
 <!-- Icon fonts: self-hosted subset of Font Awesome + Academicons (only the glyphs
      the site uses, ~9 KB total vs ~420 KB from the CDNs). Built by scripts/build-icons.py. -->

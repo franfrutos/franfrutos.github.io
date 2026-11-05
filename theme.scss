@@ -1,8 +1,11 @@
 /*-- scss:defaults --*/
 
-// Use IBM Plex Mono as the base everywhere; neutralise Bootstrap defaults that
+// Two-font system: Source Serif 4 is the reading face (body, titles, abstracts);
+// IBM Plex Mono is the label layer (wordmark, eyebrows, dates, chips, buttons,
+// code). Same family, so they share x-height and weights. Rules below that
+// still force Mono are the label layer on purpose. Neutralise Bootstrap defaults that
 // would otherwise fight the full-bleed custom design.
-$font-family-sans-serif: 'IBM Plex Mono', ui-monospace, monospace !default;
+$font-family-sans-serif: 'Source Serif 4', Georgia, serif !default;
 $font-family-monospace:  'IBM Plex Mono', ui-monospace, monospace !default;
 $body-bg:    #1b1e26 !default;
 $body-color: #e9ebef !default;
@@ -97,7 +100,7 @@ a { text-decoration: none; }
   min-height: 100vh;
   background: var(--bg);
   color: var(--ink);
-  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-family: 'Source Serif 4', Georgia, serif;
   -webkit-font-smoothing: antialiased;
   line-height: 1.62;
 }
@@ -347,7 +350,7 @@ footer.footer { display: none !important; }
 .jrow:hover, .jrow.on { background: var(--card); border-color: var(--line); }
 .jyear { grid-row: span 2; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--accent); padding-top: 3px; }
 .jhead { display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap; }
-.jplace { font-family: 'IBM Plex Mono', monospace; font-size: 17.5px; font-weight: 600; color: var(--ink); line-height: 1.15; }
+.jplace { font-family: 'Source Serif 4', serif; font-size: 17.5px; font-weight: 600; color: var(--ink); line-height: 1.15; }
 .jtype {
   font-family: 'IBM Plex Mono', monospace; font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase;
   color: var(--ink3); border: 1px solid var(--line); border-radius: 100px; padding: 2px 8px; white-space: nowrap;
@@ -499,7 +502,7 @@ html.fgf-dark [data-site] .h-btn-primary:hover { background: color-mix(in srgb, 
 .foot-link:hover { border-color: var(--accent); background: var(--card); }
 .foot-next { text-align: right; }
 .foot-dir { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--accent); }
-.foot-title { font-family: 'IBM Plex Mono', monospace; font-size: 16.5px; color: var(--ink); line-height: 1.28; }
+.foot-title { font-family: 'Source Serif 4', serif; font-size: 16.5px; color: var(--ink); line-height: 1.28; }
 
 .kw {
   display: inline-flex; align-items: center; gap: 8px;
@@ -582,7 +585,7 @@ html.fgf-dark .cv-dl-dark { display: block; }
 .cv-sec { margin-top: 38px; }
 .cv-sec:first-of-type { margin-top: 14px; }
 .cv-entry { display: grid; grid-template-columns: 1fr auto; gap: 1px 20px; margin-top: 18px; }
-.cv-entry .t { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 15px; color: var(--ink); }
+.cv-entry .t { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 15px; color: var(--ink); }
 .cv-entry .r { font-style: italic; color: var(--ink3); font-size: 13px; text-align: right; white-space: nowrap; }
 .cv-entry .o { font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink3); }
 .cv-entry .d { font-style: italic; color: var(--ink3); font-size: 12.5px; text-align: right; white-space: nowrap; align-self: start; }

@@ -137,10 +137,10 @@
       '<article class="pub-row" style="padding:20px 16px; margin:0 -16px; border-top:1px solid var(--line); display:grid; grid-template-columns:54px 1fr; gap:18px; border-radius:8px;">' +
         '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:13px; color:var(--ink3); padding-top:5px;">' + esc(p.year) + '</span>' +
         '<div>' +
-          '<h4 style="font-family:\'IBM Plex Mono\', monospace; font-weight:600; font-size:19.5px; line-height:1.34; margin:0 0 6px;">' + titleInner + '</h4>' +
-          '<p style="font-size:14.5px; color:var(--ink2); margin:0 0 11px; font-family:\'IBM Plex Mono\',monospace; letter-spacing:-0.01em;">' + authorPartsHTML(p.authors) + '</p>' +
+          '<h4 style="font-family:\'Source Serif 4\', serif; font-weight:600; font-size:19.5px; line-height:1.34; margin:0 0 6px;">' + titleInner + '</h4>' +
+          '<p style="font-size:14.5px; color:var(--ink2); margin:0 0 11px; font-family:\'Source Serif 4\',serif; letter-spacing:-0.01em;">' + authorPartsHTML(p.authors) + '</p>' +
           '<div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">' +
-            '<span class="pub-venue" style="font-style:italic; font-family:\'IBM Plex Mono\',monospace; font-size:15.5px; color:var(--accent); white-space:nowrap;">' + esc(p.venue) + '</span>' +
+            '<span class="pub-venue" style="font-style:italic; font-family:\'Source Serif 4\',serif; font-size:15.5px; color:var(--accent); white-space:nowrap;">' + esc(p.venue) + '</span>' +
             '<div style="display:flex; gap:8px; margin-left:auto; align-items:center; flex-wrap:wrap; justify-content:flex-end;">' + badgesHTML + detailHTML + '</div>' +
           '</div>' +
         '</div>' +
@@ -154,7 +154,7 @@
       '<div class="thread-grid" style="display:grid; grid-template-columns:300px 1fr; gap:64px; align-items:start; border-top:1px solid var(--line); padding-top:42px; margin-top:42px;">' +
         '<div class="sticky-side" style="position:sticky; top:88px;">' +
           '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:12.5px; color:var(--accent);">' + esc(t.num) + '</span>' +
-          '<h3 style="font-family:\'IBM Plex Mono\', monospace; font-weight:600; font-size:25px; line-height:1.15; letter-spacing:-0.01em; margin:8px 0 14px; color:var(--ink);">' + esc(t.title) + '</h3>' +
+          '<h3 style="font-family:\'Source Serif 4\', serif; font-weight:600; font-size:25px; line-height:1.15; letter-spacing:-0.01em; margin:8px 0 14px; color:var(--ink);">' + esc(t.title) + '</h3>' +
           '<p style="font-size:16px; color:var(--ink2); margin:0; line-height:1.58;">' + esc(t.blurb) + '</p>' +
           '<p style="font-family:\'IBM Plex Mono\',monospace; font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink3); margin:18px 0 0;">' + esc(count) + '</p>' +
         '</div>' +
@@ -359,12 +359,12 @@
         '<span style="display:inline-flex; align-items:center; gap:5px; font-family:\'IBM Plex Mono\',monospace; font-size:9px; letter-spacing:0.07em; text-transform:uppercase; color:var(--accent); border:1px solid color-mix(in srgb, var(--accent) 32%, transparent); border-radius:100px; padding:3px 10px; white-space:nowrap;"><i class="fa-solid ' + icon + '" style="font-size:9.5px;"></i> ' + esc(j.type) + '</span>' +
         '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:9.5px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink3);">' + esc(j.city + ', ' + j.country) + '</span>' +
         distinction + '</div>';
-      var title = '<div style="font-family:\'IBM Plex Mono\',monospace; font-size:17px; color:var(--ink); line-height:1.4;">' + esc(j.title) + '</div>';
+      var title = '<div style="font-family:\'Source Serif 4\',serif; font-size:17px; color:var(--ink); line-height:1.4;">' + esc(j.title) + '</div>';
       var subtitle = '';
       if (j.subtitle) {
         var inner = j.link
-          ? '<a href="' + esc(j.link) + '" target="_blank" class="thesis-link" style="font-family:\'IBM Plex Mono\',monospace; font-style:italic; font-size:14.5px; color:var(--ink); line-height:1.45;">' + esc(j.subtitle) + ' <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:9px;"></i></a>'
-          : '<span style="font-family:\'IBM Plex Mono\',monospace; font-style:italic; font-size:14.5px; color:var(--ink2); line-height:1.45;">' + esc(j.subtitle) + '</span>';
+          ? '<a href="' + esc(j.link) + '" target="_blank" class="thesis-link" style="font-family:\'Source Serif 4\',serif; font-style:italic; font-size:14.5px; color:var(--ink); line-height:1.45;">' + esc(j.subtitle) + ' <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:9px;"></i></a>'
+          : '<span style="font-family:\'Source Serif 4\',serif; font-style:italic; font-size:14.5px; color:var(--ink2); line-height:1.45;">' + esc(j.subtitle) + '</span>';
         subtitle = '<div style="display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-top:6px;"><span style="font-family:\'IBM Plex Mono\',monospace; font-size:9px; letter-spacing:0.07em; text-transform:uppercase; color:var(--accent); flex:none;">Thesis</span>' + inner + '</div>';
       }
       var note = j.note ? '<div style="font-family:\'IBM Plex Mono\',monospace; font-size:10.5px; letter-spacing:0.02em; color:var(--ink3); margin-top:7px;">' + esc(j.note) + '</div>' : '';
@@ -392,7 +392,7 @@
         return ((b.ongoing ? 9999 : parseInt(b.year, 10)) || 0) - ((a.ongoing ? 9999 : parseInt(a.year, 10)) || 0);
       });
       listEl.innerHTML = list.length === 0
-        ? '<p style="font-size:15px; color:var(--ink3); font-family:\'IBM Plex Mono\',monospace; font-style:italic; padding:24px 2px;">Nothing here yet for this filter.</p>'
+        ? '<p style="font-size:15px; color:var(--ink3); font-family:\'Source Serif 4\',serif; font-style:italic; padding:24px 2px;">Nothing here yet for this filter.</p>'
         : list.map(listItemHTML).join('');
       if (countEl) countEl.textContent = list.length + (list.length === 1 ? ' entry' : ' entries');
       // re-mark active chip

@@ -63,7 +63,7 @@ header-includes: |
 
   <h1 class="masthead-name" style="font-family:'IBM Plex Mono', monospace; font-weight:600; font-size:50px; line-height:0.98; letter-spacing:-0.01em; margin:34px 0 0; color:var(--ink);">Francisco Garre-Frutos<span style="color:var(--ink3); font-weight:400; letter-spacing:0;">, PhD</span></h1>
 
-  <p class="masthead-thesis" style="font-family:'IBM Plex Mono',monospace; font-size:20px; line-height:1.4; letter-spacing:0; color:var(--ink2); max-width:760px; margin:26px 0 0;">How learning and attention shape human cognition and behavior.</p>
+  <p class="masthead-thesis" style="font-family:'Source Serif 4',serif; font-size:20px; line-height:1.4; letter-spacing:0; color:var(--ink2); max-width:760px; margin:26px 0 0;">How learning and attention shape human cognition and behavior.</p>
 
   <div class="hero-grid" style="display:grid; grid-template-columns:300px 1fr; gap:64px; align-items:start; margin-top:56px;">
     <div>
@@ -123,7 +123,7 @@ Beyond that, I have a soft spot for metascience, computational modelling and psy
 <!-- RESEARCH -->
 <section id="research" style="max-width:1080px; margin:0 auto; padding:8px 40px 88px;">
   <div style="display:flex; align-items:baseline; gap:18px; padding-bottom:18px; border-bottom:1px solid var(--ink); margin-bottom:30px;">
-    <h2 style="font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--ink);">Research</h2>
+    <h2 style="font-family:'Source Serif 4', serif; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--ink);">Research</h2>
   </div>
   <div id="research-chips" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;"></div>
   <div id="research-threads"></div>
@@ -147,12 +147,12 @@ Beyond that, I have a soft spot for metascience, computational modelling and psy
 <!-- JOURNEY / MAP -->
 <section id="journey" style="max-width:1140px; margin:0 auto; padding:46px 40px 92px;">
   <div style="display:flex; align-items:baseline; gap:18px; padding-bottom:18px; border-bottom:1px solid var(--ink); margin-bottom:8px;">
-    <h2 style="font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--ink);">My journey in science</h2>
+    <h2 style="font-family:'Source Serif 4', serif; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--ink);">My journey in science</h2>
   </div>
   <div class="journey-grid" style="display:grid; grid-template-columns:300px 1fr; gap:64px; align-items:start; margin-top:26px;">
     <div class="sticky-side" style="position:sticky; top:88px;">
       <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; color:var(--accent); margin:0 0 14px;">The less boring CV section</p>
-      <p style="font-family:'IBM Plex Mono',monospace; font-style:italic; font-size:19px; line-height:1.46; color:var(--ink2); margin:0;">A map of some of the things I&rsquo;ve done.</p>
+      <p style="font-family:'Source Serif 4',serif; font-style:italic; font-size:19px; line-height:1.46; color:var(--ink2); margin:0;">A map of some of the things I&rsquo;ve done.</p>
     </div>
 ```
 
@@ -205,16 +205,16 @@ So instead of just dropping a boring "CV" section here (you can [see my boring c
 <section id="contact" style="background:var(--panel-bg); color:var(--panel-ink);">
   <div style="max-width:1080px; margin:0 auto; padding:78px 40px 40px;">
     <div style="display:flex; align-items:baseline; gap:18px; padding-bottom:18px; border-bottom:1px solid var(--panel-line); margin-bottom:40px;">
-      <h2 style="font-family:'IBM Plex Mono', monospace; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--panel-ink);">Get in touch</h2>
+      <h2 style="font-family:'Source Serif 4', serif; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--panel-ink);">Get in touch</h2>
     </div>
     <div class="contact-grid" style="display:grid; grid-template-columns:300px 1fr; gap:64px; align-items:start;">
       <div>
         <p style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; color:var(--panel-ink2); margin:0 0 14px;">Based at</p>
-        <p style="font-size:18px; font-family:'IBM Plex Mono',monospace; color:var(--panel-ink); margin:0; line-height:1.45;">Cognition, Attention &amp; Learning Lab (CALL)</p>
-        <p style="font-size:15px; font-family:'IBM Plex Mono',monospace; font-style:italic; color:var(--panel-ink2); margin:6px 0 0; line-height:1.45;">Autonomous University of Madrid, Spain</p>
+        <p style="font-size:18px; font-family:'Source Serif 4',serif; color:var(--panel-ink); margin:0; line-height:1.45;">Cognition, Attention &amp; Learning Lab (CALL)</p>
+        <p style="font-size:15px; font-family:'Source Serif 4',serif; font-style:italic; color:var(--panel-ink2); margin:6px 0 0; line-height:1.45;">Autonomous University of Madrid, Spain</p>
       </div>
       <div>
-        <p style="font-size:24px; font-family:'IBM Plex Mono',monospace; color:var(--panel-ink); margin:0 0 30px; max-width:540px; line-height:1.4;">Drop me a line — I'm always happy to talk.</p>
+        <p style="font-size:24px; font-family:'Source Serif 4',serif; color:var(--panel-ink); margin:0 0 30px; max-width:540px; line-height:1.4;">Drop me a line — I'm always happy to talk.</p>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
           <a href="mailto:fgfrutos@gmail.com" style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.05em; text-transform:uppercase; display:inline-flex; align-items:center; gap:9px; padding:13px 20px; background:var(--panel-accent); color:#fff; border-radius:3px; font-weight:500;"><i class="fa-solid fa-envelope"></i> fgfrutos@gmail.com</a>
           <a href="https://scholar.google.es/citations?user=RWd96bwAAAAJ&hl=es" target="_blank" title="Google Scholar" class="social-ic-dark"><i class="ai ai-google-scholar" style="font-size:18px;"></i></a>
