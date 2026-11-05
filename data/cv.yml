@@ -311,7 +311,7 @@ conferences:
     - authors: Garre-Frutos, F., Vadillo, M. A., & Lupiáñez, J.
       year: 2024
       title: An online replication and multiverse reliability analysis of value-modulated attentional capture.
-      venue: XIV SEPEX Conference, Almería, Spain, October 23–25.
+      venue: "Invited talk, XIV SEPEX Conference, Almería, Spain, October 23–25."
     - authors: Martínez-López, P., Garre-Frutos, F., Vadillo, M. A., & Luque, D.
       year: 2024
       title: Evaluation of the permutation-based split-half reliability in experimental paradigms for habit induction in humans.
@@ -491,7 +491,7 @@ service:
     title: Professional Societies
     org: Professional memberships
     fields:
-      - [Memberships, "Association for Psychological Science; Sociedad Española de Psicología Experimental; Association for the Scientific Study of Consciousness."]
+      - [Memberships, "Association for Psychological Science; Sociedad Española de Psicología Experimental; Association for the Scientific Study of Consciousness; [Spanish Reproducibility Network (SPRN)](https://sprn.es)."]
 
 outreach:
   - title: Psychobeers
