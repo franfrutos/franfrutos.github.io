@@ -33,7 +33,7 @@ SOLID = ['arrow-up-right-from-square', 'bars', 'briefcase', 'circle-check', 'cod
          'up-right-from-square', 'xmark']
 BRANDS = ['bluesky', 'github', 'r-project', 'x-twitter']
 AI = ['google-scholar', 'open-access', 'open-data', 'open-materials', 'orcid', 'osf',
-      'preregistered', 'psyarxiv', 'researchgate', 'zotero']
+      'preregistered', 'psyarxiv', 'researchgate', 'zenodo', 'zotero']
 
 
 def codepoints(css_path, prefix, names):

@@ -552,6 +552,7 @@ html.fgf-dark [data-site] .h-btn-primary:hover { background: color-mix(in srgb, 
 .cv-contacts a { color: var(--ink2); border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); }
 .cv-contacts a:hover { color: var(--accent); }
 .cv-contacts i { color: var(--accent); margin-right: 6px; font-size: 12.5px; }
+.cv-contacts i.cv-ic-zenodo { font-size: 21px; vertical-align: -2px; } /* boxed wordmark glyph: scaled to match the marks */
 .cv-contacts .dot { color: var(--ink3); margin: 0 9px; }
 .cv-tagline { font-style: italic; color: var(--ink2); font-size: 14.5px; max-width: 620px; margin: 16px auto 0; line-height: 1.6; }
 .cv-rule { width: 44px; height: 2.5px; background: var(--accent); border-radius: 2px; margin: 22px auto 0; }

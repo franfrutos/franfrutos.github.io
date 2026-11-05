@@ -64,10 +64,14 @@
   scholar: (AI,        "\u{e9d4}"),
   orcid:   (AI,        "\u{e9d9}"),
   osf:     (AI,        "\u{e9ef}"),
+  zenodo:  (AI,        "\u{e911}", 1.75),  // boxed wordmark: short glyph, scaled to match the marks
 )
 #let icon(name, size: 9.5pt, fill: accent) = {
   let s = _ICONS.at(name, default: none)
-  if s != none { text(font: s.at(0), size: size, fill: fill, baseline: 0.6pt)[#s.at(1)] }
+  if s != none {
+    let k = s.at(2, default: 1)  // optional per-glyph scale (see zenodo)
+    text(font: s.at(0), size: size * k, fill: fill, baseline: 0.6pt + (k - 1) * 1pt)[#s.at(1)]
+  }
 }
 // Open-science practice glyphs as (font, codepoint). Most are Academicons;
 // "open code" uses Font Awesome's </> (fa-code), matching the website.

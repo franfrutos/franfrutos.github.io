@@ -539,7 +539,7 @@ const BADGE_META = Object.fromEntries(BADGES.map((b) => [b.key, [b.icon, b.label
 const CONTACT_ICON = {
   phone: 'fa-solid fa-phone', email: 'fa-solid fa-envelope', web: 'fa-solid fa-globe',
   github: 'fa-brands fa-github', bluesky: 'fa-brands fa-bluesky',
-  scholar: 'ai ai-google-scholar', orcid: 'ai ai-orcid', osf: 'ai ai-osf',
+  scholar: 'ai ai-google-scholar', orcid: 'ai ai-orcid', osf: 'ai ai-osf', zenodo: 'ai ai-zenodo cv-ic-zenodo',
 };
 function badgesHtml(p) {
   const o = p.osf || {};

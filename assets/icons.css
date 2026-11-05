@@ -46,4 +46,5 @@
 .ai-preregistered::before{content:"\e906"}
 .ai-psyarxiv::before{content:"\e90e"}
 .ai-researchgate::before{content:"\e95e"}
+.ai-zenodo::before{content:"\e911"}
 .ai-zotero::before{content:"\e962"}

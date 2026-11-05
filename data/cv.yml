@@ -29,6 +29,7 @@ header:
     - { icon: scholar, label: Scholar,  url: "https://scholar.google.es/citations?user=RWd96bwAAAAJ&hl=es" }
     - { icon: orcid,   label: ORCID,    url: "https://orcid.org/0000-0001-9810-186X" }
     - { icon: osf,     label: OSF,      url: "https://osf.io/4ney2/" }
+    - { icon: zenodo,  label: Zenodo,   url: "https://zenodo.org/search?q=metadata.creators.person_or_org.identifiers.identifier%3A%220000-0001-9810-186X%22&l=list&p=1&s=10&sort=newest" }
     - { icon: bluesky, label: Bluesky,  url: "https://bsky.app/profile/frangfr.bsky.social" }
 
 # `id:` fields are stable, non-visible selectors used by the BIAL short-CV
