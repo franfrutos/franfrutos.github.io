@@ -278,22 +278,6 @@
     render();
   }
 
-  /* ---- Singleton dividers ------------------------------------------------ */
-  // 9 dots; the coral "singleton" jumps to whichever dot you hover and stays
-  // there. Each divider instance is independent.
-  function initMotif() {
-    document.querySelectorAll('.motif').forEach(function (m) {
-      var dots = m.querySelectorAll('.motif-dot');
-      if (!dots.length) return;
-      dots.forEach(function (d) {
-        d.addEventListener('mouseenter', function () {
-          dots.forEach(function (x) { x.classList.remove('singleton'); });
-          d.classList.add('singleton');
-        });
-      });
-    });
-  }
-
   /* ---- Journey map + list ------------------------------------------------ */
   function initJourney() {
     var journey = window.FGF_JOURNEY;
@@ -598,7 +582,6 @@
   function init() {
     initTheme();
     initResearch();
-    initMotif();
     initJourney();
     initNavMenu();
   }

@@ -108,42 +108,14 @@ Beyond that, I have a soft spot for metascience, computational modelling and psy
   </div>
 </header>
 
-<!-- SINGLETON DIVIDER 1 -->
-<div class="motif" style="max-width:1080px; margin:0 auto; padding:60px 40px; display:flex; gap:16px; justify-content:center; align-items:center;">
-  <span class="motif-dot"></span>
-  <span class="motif-dot"></span>
-  <span class="motif-dot"></span>
-  <span class="motif-dot"></span>
-  <span class="motif-dot singleton"></span>
-  <span class="motif-dot"></span>
-  <span class="motif-dot"></span>
-  <span class="motif-dot"></span>
-  <span class="motif-dot"></span>
-</div>
-
 <!-- RESEARCH -->
-<section id="research" style="max-width:1080px; margin:0 auto; padding:8px 40px 88px;">
+<section id="research" style="max-width:1080px; margin:68px auto 0; padding:8px 40px 88px;">
   <div style="display:flex; align-items:baseline; gap:18px; padding-bottom:18px; border-bottom:1px solid var(--ink); margin-bottom:30px;">
     <h2 style="font-family:'Source Serif 4', serif; font-weight:500; font-size:26px; letter-spacing:0; margin:0; color:var(--ink);">Research</h2>
   </div>
   <div id="research-chips" style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px;"></div>
   <div id="research-threads"></div>
 </section>
-
-<!-- SINGLETON DIVIDER 2 -->
-<div class="motif" style="max-width:1080px; margin:0 auto; padding:0 40px;">
-  <div style="display:flex; align-items:center; justify-content:center; gap:20px;">
-    <span class="motif-dot"></span>
-    <span class="motif-dot"></span>
-    <span class="motif-dot"></span>
-    <span class="motif-dot"></span>
-    <span class="motif-dot singleton"></span>
-    <span class="motif-dot"></span>
-    <span class="motif-dot"></span>
-    <span class="motif-dot"></span>
-    <span class="motif-dot"></span>
-  </div>
-</div>
 
 <!-- JOURNEY / MAP -->
 <section id="journey" style="max-width:1140px; margin:0 auto; padding:46px 40px 92px;">

@@ -392,19 +392,6 @@ footer.footer { display: none !important; }
 }
 .seg:not(.on):hover { border-color: var(--accent) !important; color: var(--accent) !important; }
 
-.motif-dot {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--ink3); opacity: .32; cursor: pointer;
-  transition: transform .22s ease, background .22s ease, box-shadow .22s ease, opacity .22s ease;
-}
-.motif .motif-dot.singleton {
-  background: var(--accent); opacity: 1; transform: scale(1.5);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent);
-}
-.motif .motif-dot:hover {
-  background: var(--accent); opacity: 1; transform: scale(1.5);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent);
-}
-
 .inline-link {
   color: var(--accent);
   border-bottom: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
