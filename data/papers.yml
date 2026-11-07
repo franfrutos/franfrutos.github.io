@@ -215,22 +215,40 @@ papers:
       In a previous study, we investigated how task performance is affected by fully irrelevant distractors (sharing neither features nor location with the target) vs. potentially relevant distractors (sharing features and location with it), as a function of perceptual load. We observed a systematic dissociation: the effect of potentially relevant distractors increased under high-load, whereas the effect of fully irrelevant distractors remained unchanged. However, it is unclear whether this dissociation reflected a difference between distractor types or instead resulted from two methodological factors. The present study addressed this question by testing whether the double dissociation persists even when key experimental design aspects are controlled. Namely, (i) the effectiveness of the perceptual load manipulation, and (ii) the comparability between distractor effects. In Experiment 1, we replicated the perceptual load pattern and observed the double dissociation. The effect of fully irrelevant distractors decreased under high-load, whereas that of potentially relevant distractors increased. Three subsequent experiments systematically manipulated task parameters that differ between the original perceptual load task and our previous work, to assess their contribution to an effective load manipulation. Despite these variations, the double dissociation remained robust. In a final experiment, we further improved the comparability between the effects of each distractor type by using a common baseline measure, confirming that perceptual load modulates the effects of fully irrelevant vs. potentially relevant distractors in different ways. These findings suggest that distractor processing depends critically on its task relevance, while also highlighting the need to investigate the boundary conditions of perceptual load effects.
   - id: load-facilitation
     thread: distraction
-    year: 2026
+    year: in press
     title: "Facilitation by irrelevant distractors under high perceptual load: Suppression or controlled distractor prioritization?"
     authors: Manini, G.†, Garre-Frutos, F.†, Martín-Arévalo, E., Botta, F., & Lupiáñez, J.
-    venue: PsyArXiv
-    preprint: true
-    url: https://osf.io/preprints/psyarxiv/xq2h8
-    date: "2026/06/23"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
+    venue: Journal of Cognition
+    url: https://osf.io/preprints/psyarxiv/xq2h8   # Preprint read-link until the final DOI is out
     tags: [perceptual load, suppression]
     keywords: [Attentional Capture, Distractor Suppression, Visual Search, Perceptual Load]
     osf:
       materials: https://github.com/franfrutos/reversed_effect_pl
       data: https://github.com/franfrutos/reversed_effect_pl/tree/main/Input
       code: https://github.com/franfrutos/reversed_effect_pl/tree/main/Scripts
-      # preprint → shows the PsyArXiv "Preprint" badge in the OA slot automatically
+      # Accepted / in press at Journal of Cognition — final access status pending → "in production" gear.
+      production: true
     abstract: >-
       Perceptual load theory is a key framework in visual attention research, demonstrating that under high-load conditions, fully irrelevant distractors are no longer processed and do not disrupt task performance. In our recent work (Manini et al., 2026), we replicated this effect. However, we also found that under high load, the distractor not only failed to impair performance but actually led to faster reaction times (RTs) in distractor-present trials. In the attentional capture literature, this reversed effect is typically considered to reflect distractor suppression. However, in the perceptual load task, where the distractor is placed outside the relevant search array, suppression should not logically lead to faster responses. Furthermore, the faster responses were accompanied by increased error rates, leading us to hypothesize that this reversed effect may reflect some form of distractor prioritization rather than distractor suppression. To test this hypothesis, we first analyzed the consistency of this effect across all available open-data resources using the Forster and Lavie (2008b) task. We then reanalyzed the same data, incorporating the spatial proximity between target and distractor as an additional variable: distractors appearing near the target strongly drove the reversed RT effect, while distractors presented far from the target led to increased error rates. These findings challenge the idea that high perceptual load prevents the processing of irrelevant stimuli. Moreover, they suggest that faster RTs in distractor-present conditions do not necessarily indicate distractor suppression, as commonly assumed in attentional capture research, offering new insight into the interpretation of behavioral observations in this field.
+  - id: multilevel-sdt
+    thread: validity
+    year: 2026
+    title: A multilevel signal detection theory approach to unconscious processing research
+    authors: Rey-Sáez, R., Franco-Martínez, A., Vadillo, M. A., & Garre-Frutos, F.
+    venue: PsyArXiv
+    preprint: true
+    url: https://osf.io/preprints/psyarxiv/7jrqm
+    date: "2026/11/07"           # Submitted; in PsyArXiv moderation → confirm the posting date once approved
+    tags: [unconscious processing, signal detection theory]
+    keywords: [Unconscious processing, Signal detection theory, Multilevel modeling, Measurement error, Awareness]
+    osf:
+      # Not preregistered. Data and scripts on GitHub; the full archive (fitted models, raw simulations) on Zenodo.
+      materials: https://doi.org/10.5281/zenodo.24019945
+      data: https://github.com/RicardoReySaez/uSDT_pub/tree/main/Data
+      code: https://github.com/RicardoReySaez/uSDT_pub/tree/main/R%20scripts
+      # preprint → shows the PsyArXiv "Preprint" badge in the OA slot automatically
+    abstract: >-
+      To test for unconscious processing, researchers typically compare measures of a stimulus's influence on behavior with measures of awareness of that stimulus. Three common hypotheses are often tested: whether influence is significant while awareness is not (group-level dissociation), whether both measures are independent across participants (correlation), or whether influence persists when awareness is extrapolated to be zero (regression intercept). Conventional analyses suffer from three well-known methodological limitations: First, both measures often differ in scale and number of trials, complicating meaningful comparisons of their relative sensitivities. Second, analyses based on participant-level sensitivities ignore measurement error, which attenuates correlations and inflates regression intercepts, leading to misleading evidence for unconscious processing. Third, the correlation hypothesis requires evidence of null association, but conventional significance tests provide limited evidence for the absence of an effect. To address these problems, we introduce a multilevel signal detection theory (SDT) model that jointly analyzes trial-level responses from both measures and allows all three hypotheses to be tested directly while accounting for measurement error. The model supports both frequentist and Bayesian estimation, allowing researchers to run non-superiority tests and quantify evidence for null hypotheses using Bayes factors. We illustrate this approach through reanalyses of three published studies on unconscious processing. The {uSDT} R package provides an accessible way to fit the joint multilevel SDT model and evaluate all three hypotheses more rigorously.
   - id: choose-your-own-pas
     thread: validity
     year: 2026

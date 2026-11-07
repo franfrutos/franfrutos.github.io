@@ -224,12 +224,12 @@ function headerTyp(h, { contactIcons = null, tagline = null } = {}) {
 const SHORT = {
   eduFieldIds: ['phd'],                                     // MSc/BSc render bare
   awards: ['santander-postdoc', 'bridging', 'rldm', 'sepex-outreach', 'fpu', 'eebb', 'end-of-degree'],
-  preprints: ['explicit-knowledge', 'load-distractors', 'load-facilitation', 'choose-your-own-pas', 'ior-learned-value'],
+  preprints: ['multilevel-sdt', 'explicit-knowledge', 'load-distractors', 'choose-your-own-pas', 'ior-learned-value'],
   // Leadership first (Co-PI), then thematic relevance, then the international
   // collaboration grant (Theeuwes visiting scholarship). Any future PI/Co-PI
   // project should be added here with high priority.
   funded: ['unlearn', 'lets-roc', 'vigilance-decrement', 'new-habits', 'visiting-scholars'],
-  training: ['bamb', 'eeg', 'jags', 'smlp-2023', 'cimcyc-modelling'],
+  training: ['bamb', 'eeg', 'jags', 'smlp-2023'],
   service: ['pci-rr', 'psicologica', 'adhoc'],
   // Curated conference subset (ids live in data/cv.yml conferences.oral/.poster).
   // The second element is a compressed form of the YAML venue string: same
