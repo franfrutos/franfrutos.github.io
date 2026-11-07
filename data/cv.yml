@@ -497,7 +497,7 @@ service:
     title: Ad hoc reviewer
     org: Peer review
     fields:
-      - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, *Brain Research*, and *Frontiers in Cognition*."]
+      - [Journals, "*Journal of Experimental Psychology: Human Perception and Performance*, *Psychological Research*, *Behavior Research Methods*, *Learning & Motivation*, *Brain Research*, *Attention, Perception, & Psychophysics*, and *Frontiers in Cognition*."]
   - id: societies
     title: Professional Societies
     org: Professional memberships
