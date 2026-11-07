@@ -21,6 +21,9 @@ import { LOGO, BADGES, byDateDesc, preprintServer } from './_shared.mjs';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
 const readYaml = (f) => yaml.load(fs.readFileSync(path.join(root, f), 'utf8'));
+// A paper that introduces a package (`software: <id>`) gets a CRAN badge after its open-science badges.
+const SOFTWARE = readYaml('data/cv.yml').software || [];
+const cranOf = (p) => (p.software && (SOFTWARE.find((s) => s.id === p.software) || {}).cran) || null;
 
 const ME = 'Garre-Frutos, F.';
 const ACCENT = '#e8421d';
@@ -94,6 +97,7 @@ function venueTyp(p) {
 function pubBadges(p) {
   const o = p.osf || {};
   const urlOf = (v) => (typeof v === 'string' ? v : (v ? p.url || null : null));
+  const cran = cranOf(p);
   return BADGE_KEYS.map((k) => {
     // The open-access slot adapts to how the paper is available: a preprint shows
     // the PsyArXiv glyph, a shared postprint likewise, and an accepted/in-press
@@ -105,7 +109,7 @@ function pubBadges(p) {
       if (!o.oa && o.production) return ['production', true, urlOf(o.production)];
     }
     return [k, !!o[k], urlOf(o[k])];
-  });
+  }).concat(cran ? [['cran', true, cran]] : []);
 }
 
 function pubItem(p, opts = {}) {
@@ -559,6 +563,8 @@ function badgesHtml(p) {
       ? '<a class="osf-badge" target="_blank" title="' + lab + '" href="' + htmlEsc(href) + '"><i class="' + ic + '"></i></a>'
       : '<span class="osf-badge off" title="' + lab + ' — not available"><i class="' + ic + '"></i></span>';
   });
+  const cran = cranOf(p);
+  if (cran) items.push('<a class="osf-badge" target="_blank" title="R package on CRAN" href="' + htmlEsc(cran) + '"><i class="fa-brands fa-r-project"></i></a>');
   return '<span class="cv-badges">' + items.join('') + '</span>';
 }
 function pubHtml(p) {

@@ -196,7 +196,7 @@ footer.footer { display: none !important; }
 .jchip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 /* Filter control: chips by default; a compact <select> dropdown when there are
-   many options (.many → >4) or on small screens. Scales as themes grow. */
+   many options (.many → >5) or on small screens. Scales as themes grow. */
 .filter-chips { display: flex; gap: 8px; flex-wrap: wrap; }
 .filter-dd { display: none; position: relative; align-items: center; }
 .filter-control.many .filter-chips { display: none; }
@@ -237,6 +237,81 @@ footer.footer { display: none !important; }
 }
 .osf-badge:hover { border-color: var(--accent); background: var(--accent); color: #fff !important; }
 .osf-badge:hover i { color: #fff !important; }
+
+/* ---- Software: CRAN pill, package card, console line ---------------------- */
+.sw-pill {
+  height: 34px; padding: 0 11px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); border-radius: 6px;
+  display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
+  font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-weight: 500; letter-spacing: .06em; color: var(--accent) !important;
+  transition: background .18s, border-color .18s, color .18s;
+}
+.sw-pill i { font-size: 15px; }
+.sw-pill:hover { background: var(--accent); border-color: var(--accent); color: #fff !important; }
+.sw-card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
+  transition: border-color .22s ease, box-shadow .22s ease;
+}
+.sw-card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: 0 18px 40px -28px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+.sw-curves { position: relative; height: 84px; background: var(--code); border-bottom: 1px solid var(--line); }
+.sw-curves svg { display: block; width: 100%; height: 100%; }
+.sw-curves path { stroke-width: 2; vector-effect: non-scaling-stroke; stroke-linejoin: round; }
+.sw-noise { stroke: var(--ink3); fill: color-mix(in srgb, var(--ink3) 12%, transparent); }
+.sw-signal { stroke: var(--accent); fill: color-mix(in srgb, var(--accent) 16%, transparent); }
+.sw-crit { stroke: var(--ink3); stroke-width: 1; stroke-dasharray: 3 4; vector-effect: non-scaling-stroke; opacity: .7; }
+.sw-dprime {
+  position: absolute; top: 10px; right: 14px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px;
+  color: var(--ink2); font-variant-numeric: tabular-nums;
+}
+.sw-body { display: grid; grid-template-columns: 122px 1fr; gap: 24px; padding: 24px 26px 6px; align-items: start; }
+.sw-hex {
+  display: block; width: 122px; height: auto; margin-top: -46px; position: relative;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .28)); transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+.sw-card:hover .sw-hex { transform: rotate(-5deg) scale(1.05); }
+.sw-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.sw-name { font-family: 'IBM Plex Mono', monospace; font-size: 25px; font-weight: 600; margin: 0; color: var(--ink); letter-spacing: -.01em; }
+.sw-name span { color: var(--accent); font-weight: 500; }
+.sw-tagline { font-family: 'Source Serif 4', serif; font-size: 16.5px; line-height: 1.38; font-weight: 600; color: var(--ink); margin: 10px 0 8px; }
+.sw-about { font-family: 'Source Serif 4', serif; font-size: 15px; line-height: 1.55; color: var(--ink2); margin: 0; }
+.sw-foot { padding: 16px 26px 22px; }
+.sw-console {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  background: var(--code); border: 1px solid var(--line); border-radius: 8px; padding: 9px 9px 9px 15px; margin-top: 2px;
+}
+.sw-console code { font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; color: var(--ink); background: none; padding: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sw-prompt { color: var(--accent); margin-right: 3px; }
+.sw-str { color: var(--accent); }
+.sw-copy {
+  flex: none; width: 30px; height: 30px; border: 1px solid var(--line); border-radius: 6px; background: transparent;
+  color: var(--ink2); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font-size: 13px;
+  transition: border-color .18s, color .18s, background .18s;
+}
+.sw-copy:hover { border-color: var(--accent); color: var(--accent); }
+.sw-copy.done { background: var(--accent); border-color: var(--accent); color: #fff; }
+.sw-links { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; letter-spacing: .02em; }
+.sw-links a { color: var(--ink2); border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); padding-bottom: 1px; transition: color .15s; }
+.sw-links a:hover { color: var(--accent); }
+.sw-links .sw-paper { margin-left: auto; color: var(--accent); border-bottom: 0; }
+.sw-strip { display: grid; grid-template-columns: 104px 1fr; gap: 24px; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 26px; }
+.sw-strip .sw-hex { width: 104px; margin-top: 0; }
+.sw-strip .sw-tagline { margin-bottom: 14px; font-size: 16px; }
+@media (max-width: 620px) {
+  .sw-body { grid-template-columns: 78px 1fr; gap: 0 16px; padding: 18px 18px 4px; }
+  .sw-hex { width: 78px; margin-top: -34px; }
+  .sw-main { display: contents; }
+  .sw-head { align-self: start; }
+  .sw-tagline, .sw-about { grid-column: 1 / -1; }
+  .sw-tagline { margin-top: 14px; }
+  .sw-name { font-size: 21px; }
+  .sw-foot { padding: 14px 18px 18px; }
+  .sw-strip { grid-template-columns: 1fr; padding: 20px; }
+  .sw-strip .sw-hex { width: 84px; }
+  .sw-console { padding: 8px 8px 8px 11px; gap: 8px; }
+  .sw-console code { font-size: 11.5px; }
+}
 
 /* "Disabled" badge — an open-science practice the paper does not have */
 .osf-badge.off { opacity: .4; border-style: dashed; color: var(--ink3); cursor: default; }

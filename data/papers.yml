@@ -19,6 +19,13 @@ threads:
     title: Validity
     blurb: Do we measure what we think we are measuring? Are our measures — and the inferences we draw from them — reliable enough? In this section, you can find some of my work on validity.
 
+# The block that closes the Research section (packages come from cv.yml `software:`).
+software_section:
+  num: "04"
+  short: Software
+  title: Software
+  blurb: Methods only help if people can actually use them. Here you can find open-source tools I have contributed to, free for anyone to use with their own data.
+
 papers:
   # cvOnly → CV's "Ongoing Work" only; no website page, no share card. Drop the
   # flag (and add a thread + url) once there's a preprint to link to.
@@ -238,6 +245,7 @@ papers:
     venue: PsyArXiv
     preprint: true
     url: https://osf.io/preprints/psyarxiv/7jrqm
+    software: usdt               # id in cv.yml `software:` → CRAN pill + software section on the paper page
     date: "2026/11/07"           # Submitted; in PsyArXiv moderation → confirm the posting date once approved
     tags: [unconscious processing, signal detection theory]
     keywords: [Unconscious processing, Signal detection theory, Multilevel modeling, Measurement error, Awareness]

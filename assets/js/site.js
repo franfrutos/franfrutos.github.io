@@ -59,7 +59,7 @@
       return '<option value="' + esc(d.key) + '"' + (d.key === currentKey ? ' selected' : '') + '>' + esc(d.label) + '</option>';
     }).join('');
     el.classList.add('filter-control');
-    el.classList.toggle('many', defs.length > 4);
+    el.classList.toggle('many', defs.length > 5);
     el.innerHTML = '<div class="filter-chips">' + chips + '</div>' +
       '<div class="filter-dd"><select class="filter-select" aria-label="Filter">' + opts + '</select></div>';
     el.querySelectorAll('[data-' + attr + ']').forEach(function (b) {
@@ -130,7 +130,7 @@
 
   function pubRowHTML(p) {
     var titleHref = '/research/' + paperSlug(p) + '/';
-    var badgesHTML = homeBadgesHTML(p);
+    var badgesHTML = homeBadgesHTML(p) + softwarePillHTML(p.software);
     var detailHTML = '<a href="' + titleHref + '" class="detail-link">Details →</a>';
     var titleInner = '<a href="' + titleHref + '" class="pub-title-link">' + esc(p.title) + '</a>';
     return '' +
@@ -145,6 +145,94 @@
           '</div>' +
         '</div>' +
       '</article>';
+  }
+
+  /* ---- Software: CRAN pill + package card ------------------------------ */
+  function softwarePillHTML(s) {
+    if (!s || !s.cran) return '';
+    return '<a href="' + esc(s.cran) + '" target="_blank" class="sw-pill" title="R package ' + esc(s.name) + ' on CRAN"><i class="fa-brands fa-r-project"></i>CRAN</a>';
+  }
+
+  function softwareCardHTML(s) {
+    var link = function (href, label) { return href ? '<a href="' + esc(href) + '" target="_blank">' + label + '</a>' : ''; };
+    return '' +
+      '<article class="sw-card" id="' + esc(s.id) + '">' +
+        '<div class="sw-curves" aria-hidden="true"><svg viewBox="0 0 640 84" preserveAspectRatio="none"><path class="sw-noise"></path><path class="sw-signal"></path><line class="sw-crit" x1="320" x2="320" y1="8" y2="84"></line></svg><span class="sw-dprime"></span></div>' +
+        '<div class="sw-body">' +
+          '<img class="sw-hex" src="' + esc(s.logo) + '" alt="' + esc(s.name) + ' hex sticker" width="122" height="141" loading="lazy">' +
+          '<div class="sw-main">' +
+            '<div class="sw-head"><h4 class="sw-name"><span>{</span>' + esc(s.name) + '<span>}</span></h4>' + softwarePillHTML(s) + '</div>' +
+            '<p class="sw-tagline">' + esc(s.tagline) + '</p>' +
+            '<p class="sw-about">' + esc(s.about) + '</p>' +
+          '</div>' +
+        '</div>' +
+        '<div class="sw-foot">' +
+          '<div class="sw-console"><code><span class="sw-prompt">&gt;</span> ' + consoleHTML(s.install) + '</code><button class="sw-copy" data-copy="' + esc(s.install) + '" aria-label="Copy install command"><i class="fa-solid fa-copy"></i></button></div>' +
+          '<div class="sw-links">' + link(s.docs, 'Docs') + link(s.tutorial, 'Tutorial') + link(s.code, 'GitHub') +
+            (s.paper ? '<a class="sw-paper" href="' + esc(s.paper) + '">Read the paper \u2192</a>' : '') + '</div>' +
+        '</div>' +
+      '</article>';
+  }
+
+  function consoleHTML(cmd) { return esc(cmd).replace(/(&quot;|")(.*?)(&quot;|")/, '<span class="sw-str">&quot;$2&quot;</span>'); }
+
+  function softwareBlockHTML(sec) {
+    var n = sec.packages.length;
+    return '' +
+      '<div class="thread-grid" style="display:grid; grid-template-columns:300px 1fr; gap:64px; align-items:start; border-top:1px solid var(--line); padding-top:42px; margin-top:42px;">' +
+        '<div class="sticky-side" style="position:sticky; top:88px;">' +
+          '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:12.5px; color:var(--accent);">' + esc(sec.num) + '</span>' +
+          '<h3 style="font-family:\'Source Serif 4\', serif; font-weight:600; font-size:25px; line-height:1.15; letter-spacing:-0.01em; margin:8px 0 14px; color:var(--ink);">' + esc(sec.title) + '</h3>' +
+          '<p style="font-size:16px; color:var(--ink2); margin:0; line-height:1.58;">' + esc(sec.blurb) + '</p>' +
+          '<p style="font-family:\'IBM Plex Mono\',monospace; font-size:11px; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink3); margin:18px 0 0;">' + n + (n === 1 ? ' package' : ' packages') + '</p>' +
+        '</div>' +
+        '<div class="sw-list">' + sec.packages.map(softwareCardHTML).join('') + '</div>' +
+      '</div>';
+  }
+
+  // The two distributions of signal detection theory, live: moving across the card
+  // separates them and d\u2032 follows; leaving it eases back to a modest sensitivity.
+  function initSoftwareCards(root) {
+    root.querySelectorAll('.sw-card').forEach(function (card) {
+      var W = 640, BASE = 84, SD = 54, AMP = 66, REST = 0.9;
+      var noise = card.querySelector('.sw-noise'), signal = card.querySelector('.sw-signal'), label = card.querySelector('.sw-dprime');
+      if (!noise || !signal || !label) return;
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var cur = REST, target = REST, raf = 0;
+      function curve(mu) {
+        // Only where the curve rises (its flat tails would stroke the base); the open path still fills.
+        var d = '', from = Math.max(0, mu - 3.3 * SD), to = Math.min(W, mu + 3.3 * SD);
+        for (var x = from; x <= to; x += 6) d += (d ? 'L' : 'M') + x.toFixed(1) + ' ' + (BASE - AMP * Math.exp(-0.5 * Math.pow((x - mu) / SD, 2))).toFixed(1);
+        return d;
+      }
+      function draw(v) {
+        noise.setAttribute('d', curve(W / 2 - v * SD / 2));
+        signal.setAttribute('d', curve(W / 2 + v * SD / 2));
+        label.textContent = 'd\u2032 = ' + v.toFixed(2);
+      }
+      function tick() {
+        cur += (target - cur) * 0.12;
+        if (Math.abs(target - cur) < 0.004) { cur = target; raf = 0; draw(cur); return; }
+        draw(cur); raf = requestAnimationFrame(tick);
+      }
+      function go(v) {
+        target = v;
+        if (reduce) { cur = v; draw(v); return; }
+        if (!raf) raf = requestAnimationFrame(tick);
+      }
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        go(0.3 + 3.1 * Math.max(0, Math.min(1, (e.clientX - r.left) / r.width)));
+      });
+      card.addEventListener('pointerleave', function () { go(REST); });
+      draw(cur);
+    });
+    root.querySelectorAll('.sw-copy').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var flash = function () { b.classList.add('done'); setTimeout(function () { b.classList.remove('done'); }, 1400); };
+        try { navigator.clipboard.writeText(b.getAttribute('data-copy')).then(flash, function () {}); } catch (e) {}
+      });
+    });
   }
 
   function threadBlockHTML(t) {
@@ -164,6 +252,7 @@
 
   function initResearch() {
     var themes = window.FGF_THEMES;
+    var software = window.FGF_SOFTWARE;
     var chipsEl = document.getElementById('research-chips');
     var threadsEl = document.getElementById('research-threads');
     if (!themes || !chipsEl || !threadsEl) return;
@@ -172,14 +261,17 @@
     var chipDefs = [{ key: 'all', label: 'All' }].concat(
       themes.map(function (t, i) { return { key: String(i), label: t.short }; })
     );
+    if (software) chipDefs.push({ key: 'software', label: software.short });
 
     function renderChips() {
       renderFilter(chipsEl, chipDefs, filter, 'filter', function (k) { filter = k; render(); });
     }
 
     function renderThreads() {
-      var visible = filter === 'all' ? themes : [themes[Number(filter)]];
-      threadsEl.innerHTML = visible.map(threadBlockHTML).join('');
+      var visible = filter === 'all' ? themes : (filter === 'software' ? [] : [themes[Number(filter)]]);
+      var showSoftware = software && (filter === 'all' || filter === 'software');
+      threadsEl.innerHTML = visible.map(threadBlockHTML).join('') + (showSoftware ? softwareBlockHTML(software) : '');
+      initSoftwareCards(threadsEl);
     }
 
     function render() { renderChips(); renderThreads(); }

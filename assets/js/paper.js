@@ -21,6 +21,12 @@
 
     var tabs = card.querySelectorAll('.cite-tab');
     var copyBtn = card.querySelector('.cite-copy');
+    document.querySelectorAll('.sw-copy').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var flash = function () { b.classList.add('done'); setTimeout(function () { b.classList.remove('done'); }, 1400); };
+        try { navigator.clipboard.writeText(b.getAttribute('data-copy')).then(flash, function () {}); } catch (e) {}
+      });
+    });
     var copyIcon = copyBtn.querySelector('i');
     var copyLabel = copyBtn.querySelector('span');
     var tab = 'apa';

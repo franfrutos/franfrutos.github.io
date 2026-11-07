@@ -183,7 +183,14 @@ training:
 # Research software. Rendered as an APA-style software reference (title links to
 # the package site; DOI + source code follow).
 software:
-  - authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., & Vadillo, M. A.
+  - id: usdt                         # papers.yml links here with `software: usdt`
+    name: uSDT
+    tagline: Hierarchical signal detection theory models for unconscious processing
+    about: Fits hierarchical SDT models to paired awareness and influence measures, compares their sensitivities, estimates their latent association and tests influence at zero awareness, with maximum likelihood or Bayesian estimation.
+    logo: /assets/logos/usdt-hex.png
+    cran: https://CRAN.R-project.org/package=uSDT
+    install: install.packages("uSDT")
+    authors: Rey-Sáez, R., Garre-Frutos, F., Franco-Martínez, A., & Vadillo, M. A.
     year: 2026
     title: "uSDT: Hierarchical signal detection theory models for unconscious processing"
     kind: R package

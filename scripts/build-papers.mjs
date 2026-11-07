@@ -64,6 +64,19 @@ function badgesHTML(p) {
     return '<span class="osf-badge off" title="' + esc(off) + '"><i class="' + icon + '" style="font-size:16px;"></i></span>';
   }).join('');
 }
+// CRAN pill and the software section, for a paper that introduces a package.
+const softwarePill = (s) => (s && s.cran ? '<a href="' + esc(s.cran) + '" target="_blank" class="sw-pill" title="R package ' + esc(s.name) + ' on CRAN"><i class="fa-brands fa-r-project"></i>CRAN</a>' : '');
+function softwareSection(s) {
+  if (!s) return '';
+  const link = (href, label) => (href ? '<a href="' + esc(href) + '" target="_blank">' + label + '</a>' : '');
+  const cmd = esc(s.install).replace(/(&quot;|")(.*?)(&quot;|")/, '<span class="sw-str">&quot;$2&quot;</span>');
+  return '<section style="padding:48px 0 0;"><div class="sec-label"><span></span><h2>Software</h2></div>' +
+    '<div class="sw-strip"><img class="sw-hex" src="' + esc(s.logo) + '" alt="' + esc(s.name) + ' hex sticker" width="104" height="120" loading="lazy">' +
+    '<div class="sw-main"><div class="sw-head"><h3 class="sw-name"><span>{</span>' + esc(s.name) + '<span>}</span></h3>' + softwarePill(s) + '</div>' +
+    '<p class="sw-tagline">' + esc(s.tagline) + '</p>' +
+    '<div class="sw-console"><code><span class="sw-prompt">&gt;</span> ' + cmd + '</code><button class="sw-copy" data-copy="' + esc(s.install) + '" aria-label="Copy install command"><i class="fa-solid fa-copy"></i></button></div>' +
+    '<div class="sw-links">' + link(s.docs, 'Docs') + link(s.tutorial, 'Tutorial') + link(s.code, 'GitHub') + '</div></div></div></section>';
+}
 function bibTail(p) {
   let t = '';
   if (p.volume != null) t += ', ' + p.volume;
@@ -251,7 +264,7 @@ function renderPaper(p, threadTitle, prev, next) {
 '    <p style="font-family:\'Source Serif 4\',serif; font-size:14.5px; color:var(--ink2); margin:0 0 10px; line-height:1.6; letter-spacing:-0.01em;">' + authorPartsHTML(p.authors) + '</p>\n' +
 '    <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-style:italic; font-family:\'Source Serif 4\',serif; font-size:20px; color:var(--accent);">' + esc(p.venue) + '</span>' + preprintTag + '</p>\n' +
 '    <div class="h-actions">' + primary + pdfBtn + zotero + '<a href="#cite" class="h-btn h-btn-ghost"><i class="fa-solid fa-quote-right"></i> Cite</a></div>\n' +
-'    <div class="h-badges" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">' + badgesHTML(p) +
+'    <div class="h-badges" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">' + badgesHTML(p) + softwarePill(p.software) +
       // Official Altmetric embed (their public API needs a key since Nov 2025, so a
       // fully site-themed badge isn't possible client-side). The donut's colors are
       // Altmetric's data encoding — .fgf-alt in theme.scss integrates the rest
@@ -259,7 +272,7 @@ function renderPaper(p, threadTitle, prev, next) {
       (altmetricDoi(p)
         ? '<span class="fgf-alt" style="margin-left:auto;"><span class="altmetric-embed" data-badge-type="donut" data-badge-popover="left" data-link-target="_blank" data-hide-no-mentions="true" data-doi="' + esc(altmetricDoi(p)) + '"></span></span>'
         : '') + '</div>\n' +
-'  </div></header>\n\n  ' + abstractSection + '\n\n' +
+'  </div></header>\n\n  ' + abstractSection + softwareSection(p.software) + '\n\n' +
 '  <section id="cite" style="padding:48px 0 0;"><div class="sec-label"><span></span><h2>How to cite</h2></div>\n' +
 '    <div class="cite-card" id="fgf-cite-card"><div class="cite-head"><div class="cite-tabs">' + tabBtns + '</div><button class="cite-copy"><i class="fa-regular fa-copy"></i> <span>Copy</span></button></div><div id="fgf-cite-body"></div></div>\n  </section>\n\n' +
 '  <nav class="paper-foot"><a class="foot-link" href="/research/' + paperSlug(prev) + '/"><span class="foot-dir">← Previous</span><span class="foot-title">' + esc(prev.title) + '</span></a><a class="foot-link foot-next" href="/research/' + paperSlug(next) + '/"><span class="foot-dir">Next →</span><span class="foot-title">' + esc(next.title) + '</span></a></nav>\n' +
