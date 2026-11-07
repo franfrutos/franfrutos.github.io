@@ -75,7 +75,7 @@ function softwareSection(s) {
     '<div class="sw-main"><div class="sw-head"><h3 class="sw-name"><span>{</span>' + esc(s.name) + '<span>}</span></h3>' + softwarePill(s) + '</div>' +
     '<p class="sw-tagline">' + esc(s.tagline) + '</p>' +
     '<div class="sw-console"><code><span class="sw-prompt">&gt;</span> ' + cmd + '</code><button class="sw-copy" data-copy="' + esc(s.install) + '" aria-label="Copy install command"><i class="fa-solid fa-copy"></i></button></div>' +
-    '<div class="sw-links">' + link(s.docs, 'Docs') + link(s.tutorial, 'Tutorial') + link(s.code, 'GitHub') + '</div></div></div></section>';
+    '<div class="sw-links">' + link(s.website, 'Website') + link(s.code, 'GitHub') + '</div></div></div></section>';
 }
 function bibTail(p) {
   let t = '';

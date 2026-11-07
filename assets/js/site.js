@@ -168,7 +168,7 @@
         '</div>' +
         '<div class="sw-foot">' +
           '<div class="sw-console"><code><span class="sw-prompt">&gt;</span> ' + consoleHTML(s.install) + '</code><button class="sw-copy" data-copy="' + esc(s.install) + '" aria-label="Copy install command"><i class="fa-solid fa-copy"></i></button></div>' +
-          '<div class="sw-links">' + link(s.docs, 'Docs') + link(s.tutorial, 'Tutorial') + link(s.code, 'GitHub') +
+          '<div class="sw-links">' + link(s.website, 'Website') + link(s.code, 'GitHub') +
             (s.paper ? '<a class="sw-paper" href="' + esc(s.paper) + '">Read the paper \u2192</a>' : '') + '</div>' +
         '</div>' +
       '</article>';

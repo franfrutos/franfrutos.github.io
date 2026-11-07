@@ -27,7 +27,7 @@ function softwareList() {
   return software.filter((s) => s.name).map((s) => {
     const p = papers.find((x) => x.software === s.id);
     return { id: s.id, name: s.name, tagline: s.tagline, about: s.about, logo: s.logo, cran: s.cran, install: s.install,
-      docs: s.url, tutorial: s.tutorial, code: s.code, paper: p ? '/research/' + paperSlug(p) + '/' : null };
+      website: s.url, code: s.code, paper: p ? '/research/' + paperSlug(p) + '/' : null };
   });
 }
 
