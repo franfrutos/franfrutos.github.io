@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as yaml from './vendor/js-yaml.mjs';
-import { LOGO, BADGES, byDateDesc, preprintServer } from './_shared.mjs';
+import { LOGO, BADGES, byDateDesc, preprintServer, DAG_TITLE } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -519,9 +519,13 @@ function inlineHtml(s) {
   return out + htmlEsc(s.slice(last));
 }
 function authorsHtml(s) {
-  const dag = (t) => t.replace(/†/g, '<sup class="shared-dagger">†</sup>');
+  const tip = htmlEsc(DAG_TITLE);
+  const dag = (t) => t.replace(/†/g, '<span class="shared-dagger" tabindex="0" role="img" aria-label="' + tip + '" data-tip="' + tip + '">†</span>');
   return String(s).split(ME).map((seg) => dag(htmlEsc(seg))).join('<span class="au-me">' + htmlEsc(ME) + '</span>');
 }
+// Same legend as the PDF, after any list with a † author line.
+const legendHtml = (items) => (items.some((p) => /\u2020/.test(String(p.authors || '')))
+  ? '<p class="cv-legend"><span>\u2020</span> Equal contribution.</p>' : '');
 function venueHtml(p) {
   if (isPublished(p)) {
     let tail = '';
@@ -604,7 +608,7 @@ function entryHtml(e) {
   // Nested research stays, mirroring the PDF's #substay.
   (e.stays || []).forEach((s) => {
     h += '<div class="cv-stay"><div class="stay-label">Research stay</div>' +
-      '<div class="cv-entry"><div class="t">' + inlineHtml(s.title) + '</div><div class="r">' + inlineHtml(s.right) + (s.dates ? '<br>' + inlineHtml(s.dates) : '') + '</div>';
+      '<div class="cv-entry"><div class="t">' + inlineHtml(s.title) + '</div><div class="r">' + inlineHtml(s.right) + (s.dates ? '<br><span class="sd">' + inlineHtml(s.dates) + '</span>' : '') + '</div>';
     const sb = (s.fields || []).map(([l, v]) => '<div class="cv-kv"><b>' + htmlEsc(l) + ':</b> ' + inlineHtml(v) + '</div>');
     if (sb.length) h += '<div class="b">' + sb.join('') + '</div>';
     h += '</div></div>';
@@ -642,11 +646,11 @@ function buildHtml() {
   body += secHtml('Education', cv.education.map(entryHtml).join(''));
   body += secHtml('Research Experience', cv.experience.map(entryHtml).join(''));
   body += secHtml('Awards & Fellowships', (cv.awards || []).map(entryHtml).join(''));
-  let pubs = '<ul class="cv-publist">' + published.map(pubHtml).join('') + '</ul>';
+  let pubs = '<ul class="cv-publist">' + published.map(pubHtml).join('') + '</ul>' + legendHtml(published);
   if ((cv.outreach_publications || []).length)
     pubs += '<div class="cv-subhead">Outreach publication</div><ul class="cv-publist">' + cv.outreach_publications.map(talkHtml).join('') + '</ul>';
   body += secHtml('Publications', pubs);
-  body += secHtml('Preprints & Ongoing Work', '<ul class="cv-publist">' + ongoing.map(pubHtml).join('') + '</ul>');
+  body += secHtml('Preprints & Ongoing Work', '<ul class="cv-publist">' + ongoing.map(pubHtml).join('') + '</ul>' + legendHtml(ongoing));
   if ((cv.software || []).length) body += secHtml('Software', '<ul class="cv-publist">' + cv.software.map(softwareHtml).join('') + '</ul>');
   body += secHtml('Methods & Technical Expertise',
     '<div class="cv-methods">' + (cv.methods || []).map(([l, v]) => '<div class="ml">' + htmlEsc(l) + '</div><div class="mv">' + inlineHtml(v) + '</div>').join('') + '</div>');

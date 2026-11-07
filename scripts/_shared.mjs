@@ -27,6 +27,9 @@ export function slugify(s) {
 }
 export const paperSlug = (p) => p.slug || slugify(p.title);
 
+// What the † on an author means: shown by the tooltip in site.js on every page.
+export const DAG_TITLE = 'Shared first authorship — these authors contributed equally';
+
 // Which preprint server a paper's read-link belongs to: drives the badge glyph,
 // its tooltip and the page button. PsyArXiv unless the venue or url says bioRxiv.
 export const preprintServer = (p) => (/biorxiv/i.test(String(p.venue || '') + ' ' + String(p.url || ''))

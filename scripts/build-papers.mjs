@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LOGO, BADGES, SITE, paperSlug, preprintServer } from './_shared.mjs';
+import { LOGO, BADGES, SITE, paperSlug, preprintServer, DAG_TITLE } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -20,11 +20,10 @@ const PDFDIR = path.join(root, 'assets/pdf');
 function pdfName(p) { const f = paperSlug(p) + '.pdf'; return fs.existsSync(path.join(PDFDIR, f)) ? f : null; }
 
 const ME = 'Garre-Frutos, F.', DAG = '†';
-const DAG_TITLE = 'Shared first authorship — these authors contributed equally';
 function esc(s) { return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
 function authorPartsHTML(s) {
   const out = [];
-  const pushText = (text) => { text.split(DAG).forEach((b, j, arr) => { if (b) out.push('<span>' + esc(b) + '</span>'); if (j < arr.length - 1) out.push('<span class="shared-dagger" title="' + esc(DAG_TITLE) + '">' + DAG + '</span>'); }); };
+  const pushText = (text) => { text.split(DAG).forEach((b, j, arr) => { if (b) out.push('<span>' + esc(b) + '</span>'); if (j < arr.length - 1) out.push('<span class="shared-dagger" tabindex="0" role="img" aria-label="' + esc(DAG_TITLE) + '" data-tip="' + esc(DAG_TITLE) + '">' + DAG + '</span>'); }); };
   s.split(ME).forEach((seg, i, arr) => { if (seg) pushText(seg); if (i < arr.length - 1) out.push('<span class="au-me">' + esc(ME) + '</span>'); });
   return out.join('');
 }

@@ -76,7 +76,7 @@
       bits.forEach(function (b, j) {
         if (b) out.push('<span>' + esc(b) + '</span>');
         if (j < bits.length - 1) {
-          out.push('<span class="shared-dagger" title="' + esc(DAG_TITLE) + '">' + DAG + '</span>');
+          out.push('<span class="shared-dagger" tabindex="0" role="img" aria-label="' + esc(DAG_TITLE) + '" data-tip="' + esc(DAG_TITLE) + '">' + DAG + '</span>');
         }
       });
     };
@@ -276,6 +276,39 @@
 
     function render() { renderChips(); renderThreads(); }
     render();
+  }
+
+  /* ---- Dagger tooltip ---------------------------------------------------- */
+  // One shared tooltip for every † on the page, including rows drawn later. It appears
+  // at once on hover, keyboard focus or tap (a native title does neither on touch) and
+  // is kept inside the viewport, so a dagger near the screen edge still reads whole.
+  function initDaggerTips() {
+    var wrap = document.querySelector('[data-site]');
+    if (!wrap) return;
+    var tip = document.createElement('div');
+    tip.className = 'dagger-tip';
+    tip.setAttribute('role', 'tooltip');
+    wrap.appendChild(tip);
+    function show(el) {
+      tip.style.left = '0';
+      tip.textContent = el.getAttribute('data-tip');
+      var r = el.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+      var y = r.top - h - 8;
+      tip.style.left = Math.max(8, Math.min(window.innerWidth - w - 8, r.left + r.width / 2 - w / 2)) + 'px';
+      tip.style.top = (y < 8 ? r.bottom + 8 : y) + 'px';
+      tip.classList.add('on');
+    }
+    function hide() { tip.classList.remove('on'); }
+    function dagger(e) { return e.target && e.target.closest ? e.target.closest('.shared-dagger') : null; }
+    ['mouseover', 'focusin'].forEach(function (ev) {
+      document.addEventListener(ev, function (e) { var d = dagger(e); if (d) show(d); });
+    });
+    ['mouseout', 'focusout'].forEach(function (ev) {
+      document.addEventListener(ev, function (e) { if (dagger(e)) hide(); });
+    });
+    document.addEventListener('click', function (e) { var d = dagger(e); if (d) show(d); else hide(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+    window.addEventListener('scroll', hide, { passive: true });
   }
 
   /* ---- Journey map + list ------------------------------------------------ */
@@ -581,6 +614,7 @@
 
   function init() {
     initTheme();
+    initDaggerTips();
     initResearch();
     initJourney();
     initNavMenu();

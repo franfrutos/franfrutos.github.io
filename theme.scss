@@ -365,7 +365,14 @@ footer.footer { display: none !important; }
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-.shared-dagger { color: var(--accent); cursor: help; vertical-align: super; font-size: 0.74em; font-weight: 600; }
+.shared-dagger { color: var(--accent); cursor: help; vertical-align: super; font-size: 0.74em; font-weight: 600; line-height: 0; border-radius: 2px; padding: 2px 4px; margin: 0 -4px; }
+.shared-dagger:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.dagger-tip {
+  position: fixed; left: 0; top: 0; z-index: 200; max-width: 240px; padding: 7px 10px; border-radius: 6px; pointer-events: none;
+  background: var(--ink); color: var(--bg); font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; line-height: 1.45;
+  opacity: 0; transition: opacity .1s ease;
+}
+.dagger-tip.on { opacity: 1; }
 
 /* Hero portrait card — inner card lifts on hover (coral offset frame stays put) */
 .portrait-card { transition: transform .4s cubic-bezier(.2, .7, .2, 1); }
@@ -665,6 +672,9 @@ html.fgf-dark .cv-dl-dark { display: block; }
 .cv-stay { margin: 12px 0 0 4px; padding: 2px 0 2px 15px; border-left: 1px solid var(--line); }
 .cv-stay .stay-label { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
 .cv-stay .cv-entry { margin-top: 4px; }
+/* As in the PDF: the fields sit beside the dates, not under them. */
+.cv-stay .cv-entry .r { grid-row: 1 / span 2; }
+.cv-stay .cv-entry .b { grid-column: 1; grid-row: 2; margin-top: 2px; }
 .cv-stay .cv-entry .t { font-size: 14px; }
 
 .cv-kv { margin: 2px 0; }
@@ -678,6 +688,8 @@ html.fgf-dark .cv-dl-dark { display: block; }
 .cv-publist { list-style: none; margin: 0; padding: 0; }
 .cv-pub { position: relative; padding-left: 20px; margin-top: 12px; color: var(--ink2); font-size: 14px; line-height: 1.62; }
 /* Short coral tick marker (matches the PDF and the section-header ticks). */
+.cv-legend { margin: 12px 0 0 20px; font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; font-style: italic; color: var(--ink3); }
+.cv-legend span { color: var(--accent); font-style: normal; }
 .cv-pub::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 10px; height: 2px; background: var(--accent); border-radius: 1px; }
 .cv-pub .au-me { font-weight: 600; color: var(--ink); }
 .cv-badges { display: inline-flex; gap: 6px; vertical-align: middle; margin-left: 6px; }
@@ -699,6 +711,9 @@ html.fgf-dark .cv-dl-dark { display: block; }
   .cv-page { padding: 28px 20px 70px; }
   .cv-entry { grid-template-columns: 1fr; }
   .cv-entry .r, .cv-entry .d { text-align: left; white-space: normal; }
+  .cv-stay .cv-entry .r, .cv-stay .cv-entry .b { grid-column: 1; grid-row: auto; }
+  .cv-stay .cv-entry .r br { display: none; }
+  .cv-stay .cv-entry .r .sd::before { content: " · "; }
   .cv-methods { grid-template-columns: 1fr; gap: 2px 0; }
   .cv-methods .ml { text-align: left; margin-top: 10px; }
 }
