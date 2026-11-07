@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as yaml from './vendor/js-yaml.mjs';
-import { LOGO, BADGES, byDateDesc } from './_shared.mjs';
+import { LOGO, BADGES, byDateDesc, preprintServer } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -100,7 +100,7 @@ function pubBadges(p) {
     // paper whose final access status is unknown shows a gear ("in production") —
     // each instead of a greyed OA.
     if (k === 'oa') {
-      if (p.preprint) return ['preprint', true, p.url || null];
+      if (p.preprint) return [preprintServer(p).badge, true, p.url || null];
       if (!o.oa && o.postprint) return ['postprint', true, urlOf(o.postprint)];
       if (!o.oa && o.production) return ['production', true, urlOf(o.production)];
     }
@@ -548,7 +548,7 @@ function badgesHtml(p) {
     let v = o[k];
     // The open-access slot adapts to how the paper is available (see build-papers).
     if (k === 'oa') {
-      if (p.preprint) { ic = 'ai ai-psyarxiv'; lab = 'Preprint'; v = p.url; }
+      if (p.preprint) { ic = preprintServer(p).icon; lab = 'Preprint'; v = p.url; }
       else if (!o.oa) {
         if (o.postprint) { ic = 'ai ai-psyarxiv'; lab = 'Postprint'; v = o.postprint; }
         else if (o.production) return '<span class="osf-badge" title="In production — final version not yet available"><i class="fa-solid fa-gear"></i></span>';

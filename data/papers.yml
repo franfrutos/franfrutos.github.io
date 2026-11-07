@@ -304,22 +304,25 @@ papers:
       Although habits are widely recognized as playing a key role across psychological science, current laboratory methods may limit our understanding of these behaviors. Within the dual-system framework, habits are defined as context-triggered, outcome-insensitive responses that emerge gradually with repeated instrumental training. Many human experimental paradigms have been developed in an attempt to test this characterization of habits. However, in most cases, they have not provided clear evidence of habit formation, suggesting a gap between habit theory and existing methodologies. In the present study, we systematically review evidence on the construct validity of fourteen paradigms in which the amount of training was manipulated. We also reanalyze publicly available datasets from studies using these paradigms to assess the psychometric reliability of their main measures, thereby extending the available validity evidence. Paradigms that most closely mirror classical approaches derived from habit theory have consistently failed to induce habits, whereas more recent approaches have revealed training effects. However, these novel paradigms often rely on broader operationalizations that substantially diverge from traditional definitions of habit. Among the paradigms reviewed, the forced-response task stands out as capable of inducing habitual behavior while providing a narrowly operationalized measure with acceptable reliability. Finally, we argue that strengthening the credibility of the field will require greater attention to the psychometric properties of habit measures, including precise operationalization, reliability, and systematic validity testing.
   - thread: validity
     year: 2026
-    title: Habit learning and expression as stable traits
+    title: Temporal stability for individual differences in both habit learning and expression
+    aliases: [habit-learning-and-expression-as-stable-traits]   # Old title's slug → redirect stub so old links keep working
     authors: Martínez-López, P., León, J. J., Garre-Frutos, F., Vázquez-Millán, A., Molinero, S., Giménez-Fernández, T., Vadillo, M. A., & Luque, D.
-    venue: PsyArXiv
+    venue: bioRxiv
     preprint: true
-    url: https://osf.io/preprints/psyarxiv/ve3qf   # unversioned → always resolves to the latest version
-    date: "2026/08/02"           # PsyArXiv posting date of the cited version → ordering + citation_publication_date
+    url: https://www.biorxiv.org/content/10.64898/2026.11.04.764200   # unversioned → always resolves to the latest version
+    doi: 10.64898/2026.11.04.764200
+    date: "2026/11/05"           # bioRxiv posting date of the cited version → ordering + citation_publication_date
     tags: [habits, individual differences]
     keywords: [habit learning, habit expression, temporal stability, individual differences, forced-response task, test-retest reliability]
     osf:
       prereg: https://osf.io/87h36/registrations
-      materials: https://osf.io/87h36
-      data: https://osf.io/87h36
-      code: https://osf.io/87h36
-      # preprint → PsyArXiv "Preprint" badge automatically (no oa needed)
+      # Zenodo concept DOIs → always resolve to the latest version of each record
+      materials: https://doi.org/10.5281/zenodo.23897240
+      data: https://doi.org/10.5281/zenodo.23925496
+      code: https://doi.org/10.5281/zenodo.23925710
+      # preprint → bioRxiv "Preprint" badge automatically (no oa needed)
     abstract: >-
-      Individual differences in the capacity to learn and control habits are central to current models of psychopathology, which assume an overreliance on habit behavior in transdiagnostic compulsivity. However, whether these tendencies reflect stable, trait-like cognitive processes remains unclear. We examined the temporal stability of individual differences in habit learning and expression. Across two preregistered experiments, we assessed stimulus–response habits using the same stimuli after one day or different stimuli after four months. Evidence for stable individual differences in habit commissions was strong and comparable across experiments, indicating trait-like habit learning and expression. Improvements in response time across learning were stable and correlated with habits, suggesting an early trait-like index of habitualization. Stable processes of habit formation were reflected during both habit acquisition and expression.
+      Actions transition from goal-directed to stimulus-driven habits through repetition. Individual differences in the capacity to learn and control habits are central to current models of psychopathology, which assume that overreliance on habitual control drives maladaptive behaviors. However, whether these tendencies reflect stable, trait-like cognitive processes remains unclear. We examined the temporal stability of individual differences in habit learning and expression. Across two preregistered experiments (total N = 313), we assessed stimulus-response habits using the same stimuli after one day or different stimuli after four months. Evidence for stable individual differences in habit commissions was strong and comparable across experiments, with computational modelling further supporting trait-like tendencies for habit learning and expression. Trait-like tendencies were also reflected in action automatization while practicing stimulus-response associations, which was associated with future habitual behavior. Our findings have theoretical implications for our understanding of habit formation and its role in psychopathology.
   - thread: validity
     year: 2026
     title: Measuring creativity process and product with a digitized Invented Alien Creatures Task

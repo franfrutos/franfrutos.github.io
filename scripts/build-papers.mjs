@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LOGO, BADGES, SITE, paperSlug } from './_shared.mjs';
+import { LOGO, BADGES, SITE, paperSlug, preprintServer } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -31,8 +31,8 @@ function authorPartsHTML(s) {
 // An explicit `doi:` field wins (e.g. a final article DOI assigned at proofs
 // stage while `url` still points at the readable preprint); else derive from url.
 function doiOf(p) { if (p.doi) return String(p.doi).replace(/^https?:\/\/doi\.org\//, ''); const m = (p.url || '').match(/doi\.org\/(.+)$/); return m ? m[1] : ''; }
-// True when `url` points at a PsyArXiv preprint (its DOI is 10.31234/…).
-const isPreprintUrl = (p) => /(?:^|\/)10\.31234\/|psyarxiv/i.test(p.url || '');
+// True when `url` points at a preprint server (PsyArXiv DOIs are 10.31234/…).
+const isPreprintUrl = (p) => /(?:^|\/)10\.31234\/|psyarxiv|biorxiv/i.test(p.url || '');
 // The DOI to *cite*: a PsyArXiv preprint DOI belongs to the preprint, so only cite
 // it when the venue is the preprint itself — for an in-press/published paper the
 // PsyArXiv url is just a convenience read-link, not the article's DOI.
@@ -52,7 +52,7 @@ function badgesHTML(p) {
     //   preprint → PsyArXiv "Preprint" · published OA → open-access · shared
     //   postprint → PsyArXiv "Postprint" · accepted/in press → gear · else greyed.
     if (b.key === 'oa') {
-      if (p.isPreprint) { icon = 'ai ai-psyarxiv'; tip = 'Preprint — publicly available on PsyArXiv'; v = p.url; }
+      if (p.isPreprint) { const s = preprintServer(p); icon = s.icon; tip = 'Preprint — publicly available on ' + s.name; v = p.url; }
       else if (!o.oa) {
         if (o.postprint) { icon = 'ai ai-psyarxiv'; tip = 'Postprint — author-accepted manuscript, free to read'; v = o.postprint; }
         else if (o.production) return '<span class="osf-badge" title="In production — final version not yet available"><i class="fa-solid fa-gear" style="font-size:16px;"></i></span>';
@@ -216,7 +216,7 @@ function renderPaper(p, threadTitle, prev, next) {
   // isn't out yet); anything else is the published version.
   const preprintLink = isPreprintUrl(p);
   const primary = p.url
-    ? '<a href="' + esc(p.url) + '" target="_blank" class="h-btn h-btn-primary"><i class="' + (preprintLink ? 'ai ai-psyarxiv' : 'fa-solid fa-up-right-from-square') + '"></i> ' + (preprintLink ? 'Preprint (PsyArXiv)' : 'Published version') + '</a>'
+    ? '<a href="' + esc(p.url) + '" target="_blank" class="h-btn h-btn-primary"><i class="' + (preprintLink ? preprintServer(p).icon : 'fa-solid fa-up-right-from-square') + '"></i> ' + (preprintLink ? 'Preprint (' + preprintServer(p).name + ')' : 'Published version') + '</a>'
     : '<span class="h-btn h-btn-ghost off"><i class="fa-solid fa-hourglass-half"></i> ' + esc(p.venue) + '</span>';
   // Direct link to the self-hosted full text (when we host one) so visitors — not
   // just Scholar's crawler — can read the PDF without leaving the site.
@@ -273,7 +273,9 @@ function renderPaper(p, threadTitle, prev, next) {
   // into _site/research/<slug>/ next to index.html (main() drops the file there).
   const pdf = pdfName(p);
   const resLine = pdf ? 'resources:\n  - ' + pdf + '\n' : '';
-  return '---\npagetitle: ' + JSON.stringify(p.title) + '\ndescription: ' + JSON.stringify(shareDescription(p)) + '\nimage: ' + JSON.stringify(SITE.url + '/assets/og/' + paperSlug(p) + '.png') + '\n' + resLine + 'header-includes: |\n' + paperHead(p) + '\n---\n\n::: {data-site=""}\n\n' + body + '\n:::\n';
+  // `aliases:` in papers.yml = old slugs (e.g. the paper was retitled): Quarto writes a redirect stub.
+  const aliasLine = (p.aliases || []).length ? 'aliases:\n' + p.aliases.map((a) => '  - /research/' + a + '/index.html\n').join('') : '';
+  return '---\npagetitle: ' + JSON.stringify(p.title) + '\ndescription: ' + JSON.stringify(shareDescription(p)) + '\nimage: ' + JSON.stringify(SITE.url + '/assets/og/' + paperSlug(p) + '.png') + '\n' + resLine + aliasLine + 'header-includes: |\n' + paperHead(p) + '\n---\n\n::: {data-site=""}\n\n' + body + '\n:::\n';
 }
 
 function main() {

@@ -8,7 +8,7 @@
  * _quarto.yml pre-render) and are git-ignored. No npm install — the YAML parser
  * is vendored at scripts/vendor/js-yaml.mjs.
  */
-import { byDateDesc } from './_shared.mjs';
+import { byDateDesc, preprintServer } from './_shared.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -30,9 +30,9 @@ function buildResearch() {
   return threads.map((t) => ({
     num: str(t.num), short: t.short, title: t.title, blurb: t.blurb,
     pubs: papers.filter((p) => p.thread === t.id).map((p) => {
-      const pub = { year: str(p.year), title: p.title, authors: p.authors, venue: p.venue, isPreprint: !!p.preprint };
+      const pub = { year: str(p.year), title: p.title, authors: p.authors, venue: p.venue, isPreprint: !!p.preprint, server: preprintServer(p).name };
       ['url', 'doi', 'slug', 'osf', 'tags', 'keywords', 'abstract', 'bibtex', 'ris',
-       'volume', 'issue', 'pages', 'articleno', 'status', 'date'].forEach((k) => { if (p[k] != null) pub[k] = p[k]; });
+       'volume', 'issue', 'pages', 'articleno', 'status', 'date', 'aliases'].forEach((k) => { if (p[k] != null) pub[k] = p[k]; });
       return pub;
     }).sort(byDateDesc),
   }));

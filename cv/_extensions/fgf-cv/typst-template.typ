@@ -86,6 +86,7 @@
   code:      (FA_SOLID, "\u{f121}"),  // fa-code </>
   oa:        (AI,       "\u{e939}"),  // ai-open-access
   preprint:  (AI,       "\u{e90e}"),  // ai-psyarxiv — a preprint shows its PsyArXiv glyph in the OA slot
+  biorxiv:   (AI,       "\u{e9a2}"),  // ai-biorxiv  — same slot, for a bioRxiv preprint
   postprint: (AI,       "\u{e90e}"),  // ai-psyarxiv — shown in the OA slot when not OA but a postprint is shared
   production:(FA_SOLID, "\u{f013}"),  // fa-gear — accepted/in press, final access status still pending
 )

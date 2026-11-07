@@ -114,7 +114,7 @@
       //   preprint → PsyArXiv "Preprint" · published OA → open-access · shared
       //   postprint → PsyArXiv "Postprint" · accepted/in press → gear · else greyed.
       if (b.key === 'oa') {
-        if (p.isPreprint) { icon = 'ai ai-psyarxiv'; tip = 'Preprint — publicly available on PsyArXiv'; v = p.url; }
+        if (p.isPreprint) { icon = p.server === 'bioRxiv' ? 'ai ai-biorxiv' : 'ai ai-psyarxiv'; tip = 'Preprint — publicly available on ' + (p.server || 'PsyArXiv'); v = p.url; }
         else if (!o.oa) {
           if (o.postprint) { icon = 'ai ai-psyarxiv'; tip = 'Postprint — author-accepted manuscript, free to read'; v = o.postprint; }
           else if (o.production) { return '<span class="osf-badge" title="In production — final version not yet available"><i class="fa-solid fa-gear" style="font-size:17px;"></i></span>'; }

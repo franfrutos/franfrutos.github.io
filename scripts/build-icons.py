@@ -32,7 +32,7 @@ SOLID = ['arrow-up-right-from-square', 'bars', 'briefcase', 'circle-check', 'cod
          'moon', 'people-group', 'phone', 'quote-right', 'star', 'sun', 'thumbtack',
          'up-right-from-square', 'xmark']
 BRANDS = ['bluesky', 'github', 'r-project', 'x-twitter']
-AI = ['google-scholar', 'open-access', 'open-data', 'open-materials', 'orcid', 'osf',
+AI = ['biorxiv', 'google-scholar', 'open-access', 'open-data', 'open-materials', 'orcid', 'osf',
       'preregistered', 'psyarxiv', 'researchgate', 'zenodo', 'zotero']
 
 

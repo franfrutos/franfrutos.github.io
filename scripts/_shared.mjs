@@ -27,6 +27,12 @@ export function slugify(s) {
 }
 export const paperSlug = (p) => p.slug || slugify(p.title);
 
+// Which preprint server a paper's read-link belongs to: drives the badge glyph,
+// its tooltip and the page button. PsyArXiv unless the venue or url says bioRxiv.
+export const preprintServer = (p) => (/biorxiv/i.test(String(p.venue || '') + ' ' + String(p.url || ''))
+  ? { name: 'bioRxiv', icon: 'ai ai-biorxiv', badge: 'biorxiv' }
+  : { name: 'PsyArXiv', icon: 'ai ai-psyarxiv', badge: 'preprint' });
+
 // Sort key for reverse-chronological paper lists (CV + website): the `date`
 // field (YYYY/MM/DD — Crossref issued date, or the PsyArXiv posting date of
 // the cited version) when present, else 1 January of `year`. Non-numeric
