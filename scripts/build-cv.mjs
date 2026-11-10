@@ -234,7 +234,7 @@ const SHORT = {
   // project should be added here with high priority.
   funded: ['unlearn', 'lets-roc', 'vigilance-decrement', 'new-habits', 'visiting-scholars'],
   training: ['bamb', 'eeg', 'jags', 'smlp-2023'],
-  service: ['pci-rr', 'psicologica', 'adhoc'],
+  service: ['pci', 'psicologica', 'adhoc'],
   // Curated conference subset (ids live in data/cv.yml conferences.oral/.poster).
   // The second element is a compressed form of the YAML venue string: same
   // conference, city, and presentation type — symposium titles and day ranges

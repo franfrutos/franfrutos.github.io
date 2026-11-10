@@ -479,13 +479,13 @@ events:
     dates: 2024
 
 service:
-  - id: pci-rr
+  - id: pci
     title: Recommender
-    right: PCI Registered Reports
-    org: Editorial service
+    right: PCI RR & PCI Psychology
+    org: Editorial service · Peer Community In
     dates: Since 2026
     fields:
-      - [Role, "Handling editor for Stage 1 and Stage 2 Registered Reports at Peer Community In Registered Reports (PCI RR)."]
+      - [Role, "Handling editor for Stage 1 and Stage 2 Registered Reports at [PCI RR](https://rr.peercommunityin.org), and for preprints at [PCI Psychology](https://psych.peercommunityin.org/public/user_public_page?userId=2370)."]
   - id: psicologica
     title: Junior Editor
     right: "*Psicológica*"
