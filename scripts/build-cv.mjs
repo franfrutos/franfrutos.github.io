@@ -670,7 +670,7 @@ function buildHtml() {
 
   const nav =
     '<nav style="position:sticky; top:0; z-index:20; background:var(--nav); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">' +
-    '<div class="page-nav-inner" style="max-width:880px; margin:0 auto; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between;">' +
+    '<div class="page-nav-inner" style="max-width:1080px; margin:0 auto; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between;">' +
     '<a href="/" style="display:flex; align-items:center; gap:13px;">' + LOGO + '<span class="nav-wordmark" style="font-family:\'IBM Plex Mono\',monospace; font-size:15px; font-weight:500; letter-spacing:0.11em; text-transform:uppercase; color:var(--ink); white-space:nowrap;"><span class="nav-fname">Francisco </span><span style="color:var(--accent);">Garre-Frutos</span></span></a>' +
     '<div style="display:flex; gap:22px; align-items:center;">' +
     '<a href="/" class="nav-link nav-home">← Home</a>' +

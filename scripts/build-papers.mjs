@@ -252,7 +252,7 @@ function renderPaper(p, threadTitle, prev, next) {
   const body =
 '```{=html}\n' +
 '<nav style="position:sticky; top:0; z-index:20; background:var(--nav); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">\n' +
-'  <div class="page-nav-inner" style="max-width:820px; margin:0 auto; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between;">\n' +
+'  <div class="page-nav-inner" style="max-width:1080px; margin:0 auto; padding:0 40px; height:64px; display:flex; align-items:center; justify-content:space-between;">\n' +
 '    <a href="/" style="display:flex; align-items:center; gap:13px;">' + LOGO + '<span class="nav-wordmark" style="font-family:\'IBM Plex Mono\',monospace; font-size:15px; font-weight:500; letter-spacing:0.11em; text-transform:uppercase; color:var(--ink); white-space:nowrap;"><span class="nav-fname">Francisco </span><span style="color:var(--accent);">Garre-Frutos</span></span></a>\n' +
 '    <div style="display:flex; gap:26px; align-items:center;"><a href="/#research" class="nav-link">← All research</a><button data-theme-toggle aria-label="Toggle dark mode" class="theme-toggle"><i data-theme-icon class="fa-solid fa-sun" style="font-size:15px;"></i></button></div>\n' +
 '  </div>\n</nav>\n\n' +
