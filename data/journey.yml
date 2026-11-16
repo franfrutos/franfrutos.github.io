@@ -146,12 +146,6 @@ journey:
     type: Course
     title: SMLP — Advanced Bayesian Data Analysis
     venue: University of Potsdam
-  - city: Potsdam
-    country: Germany
-    year: '2026'
-    type: Course
-    title: SMLP — Advanced Frequentist Statistics with Julia
-    venue: University of Potsdam
   - city: Barcelona
     country: Spain
     year: '2026'

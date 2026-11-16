@@ -155,10 +155,6 @@ methods:
 
 # Specialized training — title + date (right); org line holds institution · hours.
 training:
-  - id: smlp-2026
-    title: "Tenth Summer School on Statistical Methods for Linguistics and Psychology (SMLP): Advanced Methods in Frequentist Statistics with Julia"
-    org: University of Potsdam, Germany · 40 hours
-    dates: Aug. 2026
   - id: bamb
     title: Barcelona Summer School on Advanced Modeling of Behavior (BAMB 2026)
     org: Centre de Recerca Matemàtica (CRM), Barcelona · 92.5 hours
