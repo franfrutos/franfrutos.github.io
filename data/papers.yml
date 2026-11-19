@@ -36,6 +36,26 @@ papers:
     venue: Under review
     status: Stage 1 manuscript under review
   # `id:` = stable selector for the Short CV profile (never rendered).
+  - id: counting-suppression
+    thread: learning
+    year: 2026
+    title: "Counting on suppression: Does learning to ignore distractors depend on executive resources? A Registered Report"
+    authors: Garre-Frutos, F., Vadillo, M. A., Shanks, D. R., & Vicente-Conesa, F.
+    venue: PsyArXiv
+    preprint: true
+    status: Stage 1 under review at PCI RR
+    url: https://osf.io/preprints/psyarxiv/ke6jq
+    date: "2026/11/19"           # Submitted; in PsyArXiv moderation → confirm the posting date once approved
+    tags: [distractor suppression, statistical learning]
+    keywords: [Distractor suppression, Statistical learning, Working memory, Executive load, Dual task, Registered Report]
+    osf:
+      # Stage 1 Registered Report: PCI RR registers the protocol at in-principle acceptance,
+      # so the prereg slot shows an hourglass. No data yet (the code runs on simulated data).
+      stage1: true
+      materials: https://doi.org/10.5281/zenodo.24369069
+      code: https://github.com/franfrutos/rr_executive_vsl/tree/main/scripts
+    abstract: >-
+      Observers can learn to suppress the locations where salient distractors tend to appear, so that distractors at these locations are less likely to capture attention. This learned distractor suppression is thought to depend on an automatic mechanism that does not require working memory resources. However, previous dual-task studies in this literature have often asked participants to retain or manipulate information that was tested after search, which does not necessarily engage executive processes during learning. In the present study, we will test more directly whether learning to suppress a distractor location depends on executive resources. To do so, participants will perform an additional singleton task while counting the targets that contain a given line orientation, a concurrent executive task integrated into the search itself. We will compare this load group with a no-load control group that will perform the same task without the concurrent task. We hypothesise that the suppression effect will be smaller in the load group than in the control group (H1). Moreover, if this form of learning requires executive resources, the suppression effect could be absent in the load group (H2). The results will show whether learned distractor suppression is independent of executive resources, or whether previous null results reflect secondary tasks that left these resources available during search.
   - id: explicit-knowledge
     thread: learning
     year: 2026
@@ -246,7 +266,7 @@ papers:
     preprint: true
     url: https://osf.io/preprints/psyarxiv/7jrqm
     software: usdt               # id in cv.yml `software:` → CRAN pill + software section on the paper page
-    date: "2026/11/07"           # Submitted; in PsyArXiv moderation → confirm the posting date once approved
+    date: "2026/11/08"           # PsyArXiv posting date
     tags: [unconscious processing, signal detection theory]
     keywords: [Unconscious processing, Signal detection theory, Multilevel modeling, Measurement error, Awareness]
     osf:

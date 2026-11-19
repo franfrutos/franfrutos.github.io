@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as yaml from './vendor/js-yaml.mjs';
-import { LOGO, BADGES, byDateDesc, preprintServer, DAG_TITLE } from './_shared.mjs';
+import { LOGO, BADGES, byDateDesc, preprintServer, DAG_TITLE, STAGE1_TIP } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -83,7 +83,8 @@ function venueTyp(p) {
   }
   if (p.preprint) {
     let s = '#emph[' + escTyp(p.venue || 'PsyArXiv') + ']';
-    if (p.status) s += '; ' + escTyp(lcfirst(p.status));
+    // Escaped: a bare ";" right after #emph[...] ends the code expression and is swallowed.
+    if (p.status) s += '\\; ' + escTyp(lcfirst(p.status));
     return s + '.';
   }
   // e.g. "Under review" with a submission status
@@ -103,6 +104,7 @@ function pubBadges(p) {
     // the PsyArXiv glyph, a shared postprint likewise, and an accepted/in-press
     // paper whose final access status is unknown shows a gear ("in production") —
     // each instead of a greyed OA.
+    if (k === 'prereg' && !o.prereg && o.stage1) return ['stage1', true, null];
     if (k === 'oa') {
       if (p.preprint) return [preprintServer(p).badge, true, p.url || null];
       if (!o.oa && o.postprint) return ['postprint', true, urlOf(o.postprint)];
@@ -228,7 +230,7 @@ function headerTyp(h, { contactIcons = null, tagline = null } = {}) {
 const SHORT = {
   eduFieldIds: ['phd'],                                     // MSc/BSc render bare
   awards: ['santander-postdoc', 'bridging', 'rldm', 'sepex-outreach', 'fpu', 'eebb', 'end-of-degree'],
-  preprints: ['multilevel-sdt', 'explicit-knowledge', 'load-distractors', 'choose-your-own-pas', 'ior-learned-value'],
+  preprints: ['counting-suppression', 'multilevel-sdt', 'explicit-knowledge', 'load-distractors', 'choose-your-own-pas'],
   // Leadership first (Co-PI), then thematic relevance, then the international
   // collaboration grant (Theeuwes visiting scholarship). Any future PI/Co-PI
   // project should be added here with high priority.
@@ -554,6 +556,7 @@ function badgesHtml(p) {
   const items = BADGE_KEYS.map((k) => {
     let [ic, lab] = BADGE_META[k];
     let v = o[k];
+    if (k === 'prereg' && !v && o.stage1) return '<span class="osf-badge" title="' + htmlEsc(STAGE1_TIP) + '"><i class="fa-solid fa-hourglass-half"></i></span>';
     // The open-access slot adapts to how the paper is available (see build-papers).
     if (k === 'oa') {
       if (p.preprint) { ic = preprintServer(p).icon; lab = 'Preprint'; v = p.url; }

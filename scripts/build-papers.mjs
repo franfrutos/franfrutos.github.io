@@ -6,7 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LOGO, BADGES, SITE, paperSlug, preprintServer, DAG_TITLE } from './_shared.mjs';
+import { LOGO, BADGES, SITE, paperSlug, preprintServer, DAG_TITLE, STAGE1_TIP } from './_shared.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -47,6 +47,7 @@ function badgesHTML(p) {
     let { icon, tip, off } = b;
     // A badge is "on" when its value is a string URL (link there) or `true` (link to the paper/preprint URL).
     let v = o[b.key];
+    if (b.key === 'prereg' && !v && o.stage1) return '<span class="osf-badge" title="' + esc(STAGE1_TIP) + '"><i class="fa-solid fa-hourglass-half" style="font-size:15px;"></i></span>';
     // The open-access slot adapts to how the paper is available:
     //   preprint → PsyArXiv "Preprint" · published OA → open-access · shared
     //   postprint → PsyArXiv "Postprint" · accepted/in press → gear · else greyed.
@@ -244,6 +245,8 @@ function renderPaper(p, threadTitle, prev, next) {
     ? '<a href="https://www.zotero.org/save?type=doi&q=' + esc(citableDoi) + '" target="_blank" class="h-btn h-btn-ghost"><i class="ai ai-zotero"></i> Add to Zotero</a>'
     : '<a href="data:application/x-research-info-systems;charset=utf-8,' + encodeURIComponent(cd.ris) + '" download="' + esc(paperSlug(p)) + '.ris" class="h-btn h-btn-ghost"><i class="ai ai-zotero"></i> Add to Zotero</a>';
   const preprintTag = p.isPreprint ? '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:10px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink3); background:var(--chip); padding:3px 8px; border-radius:100px;">Preprint</span>' : '';
+  // A submission status (e.g. a Stage 1 Registered Report under review) as a second chip.
+  const statusTag = p.status ? '<span style="font-family:\'IBM Plex Mono\',monospace; font-size:10px; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink3); background:var(--chip); padding:3px 8px; border-radius:100px;">' + esc(p.status) + '</span>' : '';
   const abstractSection = p.abstract
     ? '<section style="padding:52px 0 8px;"><div class="sec-label"><span></span><h2>Abstract</h2></div><div class="abstract-panel"><p class="abstract-body" style="font-size:18px; color:var(--ink2); margin:0; line-height:1.72; max-width:700px; font-family:\'Source Serif 4\',serif;">' + abstractHtml(p.abstract) + '</p>' + (p.keywords && p.keywords.length ? ('<div style="display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-top:28px; padding-top:24px; border-top:1px solid var(--line);"><span style="font-family:\'IBM Plex Mono\',monospace; font-size:10.5px; letter-spacing:0.07em; text-transform:uppercase; color:var(--ink3); margin-right:4px;">Keywords</span>' + p.keywords.map((k) => '<span class="kw"><span class="kw-dot"></span>' + esc(k) + '</span>').join('') + '</div>') : '') + '</div></section>'
     : '<section style="padding:48px 0 8px;"><div class="sec-label"><span></span><h2>Abstract</h2></div><p style="font-size:15px; color:var(--ink3); font-family:\'Source Serif 4\',serif; font-style:italic;">Abstract coming soon — read the full text via the link above.</p></section>';
@@ -261,7 +264,7 @@ function renderPaper(p, threadTitle, prev, next) {
 '    <div style="display:flex; align-items:center; gap:12px; margin-bottom:22px; flex-wrap:wrap;"><span class="thread-pill">' + esc(threadTitle) + '</span><span style="font-family:\'IBM Plex Mono\',monospace; font-size:12px; letter-spacing:0.06em; color:var(--ink3);">' + esc(p.year) + '</span></div>\n' +
 '    <h1 style="font-family:\'Source Serif 4\', serif; font-weight:600; font-size:33px; line-height:1.2; letter-spacing:0; margin:0 0 24px; color:var(--ink); text-wrap:balance;">' + esc(p.title) + '</h1>\n' +
 '    <p style="font-family:\'Source Serif 4\',serif; font-size:14.5px; color:var(--ink2); margin:0 0 10px; line-height:1.6; letter-spacing:-0.01em;">' + authorPartsHTML(p.authors) + '</p>\n' +
-'    <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-style:italic; font-family:\'Source Serif 4\',serif; font-size:20px; color:var(--accent);">' + esc(p.venue) + '</span>' + preprintTag + '</p>\n' +
+'    <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;"><span style="font-style:italic; font-family:\'Source Serif 4\',serif; font-size:20px; color:var(--accent);">' + esc(p.venue) + '</span>' + preprintTag + statusTag + '</p>\n' +
 '    <div class="h-actions">' + primary + pdfBtn + zotero + '<a href="#cite" class="h-btn h-btn-ghost"><i class="fa-solid fa-quote-right"></i> Cite</a></div>\n' +
 '    <div class="h-badges" style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">' + badgesHTML(p) + softwarePill(p.software) +
       // Official Altmetric embed (their public API needs a key since Nov 2025, so a

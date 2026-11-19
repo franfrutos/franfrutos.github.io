@@ -110,6 +110,10 @@
     var o = p.osf || {};
     return BADGES.map(function (b) {
       var icon = b.icon, tip = b.tip, off = b.off, v = o[b.key];
+      // Stage 1 Registered Report: protocol under review, registered at in-principle acceptance.
+      if (b.key === 'prereg' && !v && o.stage1) {
+        return '<span class="osf-badge" title="Stage 1 Registered Report — protocol under peer review, registered at in-principle acceptance"><i class="fa-solid fa-hourglass-half" style="font-size:16px;"></i></span>';
+      }
       // The open-access slot adapts to how the paper is available:
       //   preprint → PsyArXiv "Preprint" · published OA → open-access · shared
       //   postprint → PsyArXiv "Postprint" · accepted/in press → gear · else greyed.

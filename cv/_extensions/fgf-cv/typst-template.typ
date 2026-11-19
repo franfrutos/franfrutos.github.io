@@ -90,6 +90,7 @@
   postprint: (AI,       "\u{e90e}"),  // ai-psyarxiv — shown in the OA slot when not OA but a postprint is shared
   cran:      (FA_BRANDS, "\u{f4f7}"),  // fa-r-project — the paper introduces an R package on CRAN
   production:(FA_SOLID, "\u{f013}"),  // fa-gear — accepted/in press, final access status still pending
+  stage1:    (FA_SOLID, "\u{f252}"),  // fa-hourglass-half — prereg slot of a Stage 1 Registered Report under review
 )
 
 // --- Section header: coral tick + uppercase muted label + hairline rule.
