@@ -702,6 +702,17 @@ html.fgf-dark .cv-dl-dark { display: block; }
 .cv-badges .osf-badge i { color: var(--accent); font-size: 13px; }
 .cv-badges .osf-badge:hover { background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: var(--accent); color: var(--accent); }
 .cv-badges .osf-badge:hover i { color: var(--accent); }
+/* Software links: labelled chips in the same soft coral as the badges. */
+.cv-links { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+.cv-link {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px; border-radius: 5px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .07em; text-transform: uppercase; color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  transition: background .15s ease, border-color .15s ease;
+}
+.cv-link i { font-size: 12.5px; }
+.cv-link:hover { color: var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); border-color: var(--accent); }
 /* Missing practice — greyed-off chip. */
 .cv-badges .osf-badge.off,
 .cv-badges .osf-badge.off:hover { background: transparent; border-color: var(--line); opacity: .5; cursor: default; }

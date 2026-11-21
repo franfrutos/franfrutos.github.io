@@ -150,21 +150,23 @@ function talkItem(t) {
   return '#pubitem([' + body + '])\n';
 }
 
-// APA-style software reference: Authors (year). *Title* (Version x) [kind].
-// Venue. DOI link · Source code link. Title links to the package site.
-function softwareItem(s) {
+// APA-style software reference: Authors (year). *Title* (Version x) [kind]. Venue.
+// The title links to the package site; the links themselves are a row of chips.
+const softwareLinks = (s) => [
+  ['cran', 'CRAN', s.cran],
+  ['website', 'Website', s.url],
+  ['github', 'GitHub', s.code],
+].filter((l) => l[2]);
+// opts.links === false (Short profile): omit the chip row, as for the paper badges.
+function softwareItem(s, opts = {}) {
   const title = '#emph[' + escTyp(s.title) + ']';
   let body = authorsTyp(s.authors) + ' (' + escTyp(s.year) + '). ' +
     (s.url ? '#plink("' + escStr(s.url) + '")[' + title + ']' : title);
   if (s.version) body += ' (Version ' + escTyp(s.version) + ')';
   if (s.kind) body += ' ' + escTyp('[' + s.kind + ']');
   body += '. ' + escTyp(s.venue || '') + '.';
-  const links = [];
-  if (s.doi) links.push('#plink("https://doi.org/' + escStr(s.doi) + '")[' + escTyp('https://doi.org/' + s.doi) + ']');
-  if (s.url) links.push('#plink("' + escStr(s.url) + '")[Website]');
-  if (s.code) links.push('Source code: #plink("' + escStr(s.code) + '")[GitHub]');
-  if (links.length) body += ' ' + links.join(' · ');
-  return '#pubitem([' + body + '])\n';
+  const links = opts.links === false ? [] : softwareLinks(s).map(([k, label, url]) => '("' + k + '", "' + label + '", "' + escStr(url) + '")');
+  return '#pubitem([' + body + ']' + (links.length ? ', links: (' + links.join(', ') + ',)' : '') + ')\n';
 }
 
 // --- Generic entry emitter --------------------------------------------------
@@ -323,7 +325,7 @@ function typstBodyShort(cv, papers) {
 
   if ((cv.software || []).length) {
     out += section('Software');
-    cv.software.forEach((s) => { out += softwareItem(s); });
+    cv.software.forEach((s) => { out += softwareItem(s, { links: false }); });
   }
 
   out += section('Selected Conference Presentations');
@@ -593,11 +595,10 @@ function softwareHtml(s) {
   if (s.version) h += ' (Version ' + htmlEsc(s.version) + ')';
   if (s.kind) h += ' [' + htmlEsc(s.kind) + ']';
   h += '. ' + htmlEsc(s.venue || '') + '.';
-  const links = [];
-  if (s.doi) links.push(a('https://doi.org/' + s.doi, htmlEsc('https://doi.org/' + s.doi)));
-  if (s.url) links.push(a(s.url, 'Website'));
-  if (s.code) links.push('Source code: ' + a(s.code, 'GitHub'));
-  if (links.length) h += ' ' + links.join(' · ');
+  const ICON = { cran: 'fa-brands fa-r-project', website: 'fa-solid fa-globe', github: 'fa-brands fa-github' };
+  const links = softwareLinks(s).map(([k, label, url]) =>
+    '<a class="cv-link" target="_blank" href="' + htmlEsc(url) + '"><i class="' + ICON[k] + '"></i>' + label + '</a>');
+  if (links.length) h += '<span class="cv-links">' + links.join('') + '</span>';
   return '<li class="cv-pub">' + h + '</li>';
 }
 function entryHtml(e) {

@@ -214,7 +214,30 @@
 })
 
 // --- A publication / talk list item: coral bullet + body + optional badges. --
-#let pubitem(body, badges: ()) = block(above: SP.pub-above, below: 0pt, breakable: false, width: 100%, {
+// --- Labelled link chip (software entries): icon + mono label, in the same soft
+//     coral chip as the open-science badges, so both rows read as one family. --
+#let _LINK = (
+  cran:    (FA_BRANDS, "\u{f4f7}"),  // fa-r-project
+  website: (FA_SOLID,  "\u{f0ac}"),  // fa-globe
+  github:  (FA_BRANDS, "\u{f09b}"),  // fa-github
+)
+#let linkchip(key, label, url) = {
+  let g = _LINK.at(key)
+  link(url, box(
+    inset: (x: 4pt, y: 2.5pt),
+    radius: 3pt,
+    fill: chip,
+    stroke: 0.5pt + chipln,
+    baseline: 3.6pt,
+    {
+      text(font: g.at(0), size: 8pt, fill: accent)[#g.at(1)]
+      h(3.5pt)
+      text(font: mono, size: 6.6pt, weight: "medium", tracking: 0.7pt, fill: accent)[#upper(label)]
+    },
+  ))
+}
+
+#let pubitem(body, badges: (), links: ()) = block(above: SP.pub-above, below: 0pt, breakable: false, width: 100%, {
   grid(
     columns: (14pt, 1fr),
     column-gutter: 4pt,
@@ -227,6 +250,10 @@
       if badges.len() > 0 {
         v(3pt)
         box(stack(dir: ltr, spacing: 5pt, ..badges.map(b => osfbadge(b.at(0), on: b.at(1), url: b.at(2, default: none)))))
+      }
+      if links.len() > 0 {
+        v(3pt)
+        box(stack(dir: ltr, spacing: 5pt, ..links.map(l => linkchip(l.at(0), l.at(1), l.at(2)))))
       }
     },
   )
