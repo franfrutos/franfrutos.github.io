@@ -200,7 +200,8 @@ outreach_publications:
   - authors: Garre-Frutos, F.
     year: 2025
     title: Is wanting enough? Control and automaticity in learned attentional biases.
-    venue: Ciencia Cognitiva, 19(1), 8–10.
+    # The same issue carries the Spanish version (?p=2484), linked from the venue line.
+    venue: "Ciencia Cognitiva, 19(1), 8–10. Spanish version: [*¿Querer es poder? Control y automaticidad en sesgos atencionales aprendidos*](https://www.cienciacognitiva.org/?p=2484), pp. 5–7."
     url: https://www.cienciacognitiva.org/?p=2486
 
 funded:
